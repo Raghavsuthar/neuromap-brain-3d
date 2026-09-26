@@ -124,6 +124,8 @@ function tissueMaterial(cat) {
       sheenColor: new THREE.Color(0xffd9cd),
       sheenRoughness: 0.55,
       envMapIntensity: 0.65,
+      // Double-sided so slice-plane cuts read as solid tissue, not hollow shells.
+      side: THREE.DoubleSide,
     });
   } else {
     mat = new THREE.MeshStandardMaterial({
@@ -131,6 +133,7 @@ function tissueMaterial(cat) {
       roughness: style.roughness,
       metalness: 0.0,
       envMapIntensity: 0.7,
+      side: THREE.DoubleSide,
     });
   }
   if (style.opacity !== undefined && style.opacity < 1) {
@@ -145,6 +148,18 @@ function tissueMaterial(cat) {
 const baseMats = {}; // cat -> shared material
 const hoverMats = {}; // cat -> shared hover variant
 const selectMats = {}; // cat -> shared selection variant
+
+// Lobe tints for cortex color-by-lobe mode, keyed by manifest region.
+const LOBE_COLORS = {
+  'Frontal lobe': 0xd97941,
+  'Parietal lobe': 0x4a90c9,
+  'Temporal lobe': 0x4ac978,
+  'Occipital lobe': 0x9a6ac9,
+  'Limbic lobe': 0xc9a44a,
+  Insula: 0x4ac9c2,
+};
+let lobeMode = false;
+const lobeMats = {}; // region -> shared physical material
 
 function variantMat(cat, emissiveScale, opacity) {
   const src = baseMats[cat];
@@ -163,6 +178,25 @@ function ensureVariants(cat) {
   if (!selectMats[cat]) selectMats[cat] = variantMat(cat, 0.5);
 }
 
+function lobeMaterial(region) {
+  if (!lobeMats[region]) {
+    const m = baseMats.cortex.clone();
+    m.color = new THREE.Color(LOBE_COLORS[region]);
+    m.clippingPlanes = clipActive ? onePlane : noPlanes;
+    lobeMats[region] = m;
+  }
+  return lobeMats[region];
+}
+
+// Base material honoring lobe-color mode (cortex only; other layers unchanged).
+function baseMaterialFor(mesh) {
+  const cat = mesh.userData.anat.cat;
+  if (lobeMode && cat === 'cortex' && LOBE_COLORS[mesh.userData.anat.region]) {
+    return lobeMaterial(mesh.userData.anat.region);
+  }
+  return baseMats[cat];
+}
+
 // ---------- state ----------
 const manifestById = new Map();
 let functions = {}; // manifest id -> plain-language function summary
@@ -171,13 +205,16 @@ const meshesByCat = new Map(); // cat -> Mesh[]
 const searchIndex = []; // { mesh, hay }
 const catState = {}; // cat -> visible (default true)
 const labelMats = new Set();
-let matchSet = null; // Set<Mesh> when searching, else null
+let matchSet = null; // Set<Mesh> when searching/isolating, else null
+let hemi = 'both'; // 'both' | 'left' | 'right'; median structures always visible
 let labelsOn = false;
 let labelWorld = 0.01;
 let selected = null;
 let hovered = null;
 let homePos = camera.position.clone();
 let homeTarget = new THREE.Vector3(0, 0, 0);
+let modelBBox = null;
+let modelSize = 1;
 let cortexOpacity = 1;
 // Slice plane: three.js keeps the half-space where
 // plane.normal.dot(p) + plane.constant < 0.
@@ -195,7 +232,7 @@ function setMeshMaterial(mesh, mat) {
 
 function clearSelection() {
   if (selected) {
-    setMeshMaterial(selected, baseMats[selected.userData.anat.cat]);
+    setMeshMaterial(selected, baseMaterialFor(selected));
     selected = null;
   }
   $('card').hidden = true;
@@ -225,6 +262,9 @@ function showCard(anat) {
   $('cardFunc').textContent = func || '';
   $('cardFunc').hidden = !func;
   $('funcLabel').hidden = !func;
+  $('cardDec').textContent = anat.decussation || '';
+  $('cardDec').hidden = !anat.decussation;
+  $('decLabel').hidden = !anat.decussation;
   $('cardSrc').textContent = `Source: ${anat.source || 'Z-Anatomy / BodyParts3D'}`;
   $('card').hidden = false;
 }
@@ -248,7 +288,7 @@ function select(mesh, pushHash = true) {
 // Clear the card without touching the URL hash (used internally by select).
 function clearSelectionHashOnly() {
   if (selected) {
-    setMeshMaterial(selected, baseMats[selected.userData.anat.cat]);
+    setMeshMaterial(selected, baseMaterialFor(selected));
     selected = null;
   }
   $('card').hidden = true;
@@ -257,7 +297,7 @@ function clearSelectionHashOnly() {
 function setHovered(mesh) {
   if (hovered === mesh) return;
   if (hovered && hovered !== selected) {
-    setMeshMaterial(hovered, baseMats[hovered.userData.anat.cat]);
+    setMeshMaterial(hovered, baseMaterialFor(hovered));
   }
   hovered = mesh;
   if (hovered && hovered !== selected) {
@@ -303,8 +343,10 @@ function focusOn(mesh) {
 
 function updateVisibility() {
   for (const m of anatomyMeshes) {
-    const catOn = catState[m.userData.anat.cat] !== false;
-    m.visible = catOn && (!matchSet || matchSet.has(m));
+    const a = m.userData.anat;
+    const catOn = catState[a.cat] !== false;
+    const sideOn = hemi === 'both' || a.side === 'median' || a.side === hemi;
+    m.visible = catOn && sideOn && (!matchSet || matchSet.has(m));
     const sp = m.userData.sprite;
     if (sp) sp.visible = labelsOn && m.visible;
   }
@@ -315,6 +357,7 @@ function allMats() {
     ...Object.values(baseMats),
     ...Object.values(hoverMats),
     ...Object.values(selectMats),
+    ...Object.values(lobeMats),
     ...labelMats,
   ];
 }
@@ -394,19 +437,21 @@ function applySlice() {
 
 function applyCortexOpacity(v) {
   cortexOpacity = v;
-  const mat = baseMats.cortex;
-  if (!mat) return;
+  const mats = [baseMats.cortex, ...Object.values(lobeMats)].filter(Boolean);
+  if (!mats.length) return;
   $('opval').textContent = `${Math.round(v * 100)}%`;
-  if (v >= 0.999) {
-    mat.opacity = 1;
-    mat.transparent = false;
-    mat.depthWrite = true;
-  } else {
-    mat.opacity = v;
-    mat.transparent = true;
-    mat.depthWrite = v >= 0.35;
+  for (const mat of mats) {
+    if (v >= 0.999) {
+      mat.opacity = 1;
+      mat.transparent = false;
+      mat.depthWrite = true;
+    } else {
+      mat.opacity = v;
+      mat.transparent = true;
+      mat.depthWrite = v >= 0.35;
+    }
+    mat.needsUpdate = true;
   }
-  mat.needsUpdate = true;
 }
 
 $('cortexOpacity').addEventListener('input', (e) => {
@@ -491,8 +536,7 @@ function wireViewerUI() {
   });
 
   // ----- labels -----
-  $('labelToggle').addEventListener('change', (e) => {
-    labelsOn = e.target.checked;
+  $('labelToggle').addEventListener('change', (e) => {    labelsOn = e.target.checked;
     if (labelsOn) {
       for (const m of anatomyMeshes) {
         if (!m.userData.sprite) makeLabelSprite(m);
@@ -516,6 +560,66 @@ function wireViewerUI() {
     sliceT = sliceSlider.value / 100;
     applySlice();
   });
+
+  // ----- hemisphere filter -----
+  const hemiBtns = [...document.querySelectorAll('[data-hemi]')];
+  hemiBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+      hemiBtns.forEach((x) => x.classList.toggle('on', x === b));
+      hemi = b.dataset.hemi;
+      updateVisibility();
+    });
+  });
+
+  // ----- lobe colors -----
+  $('lobeBtn').addEventListener('click', () => {
+    lobeMode = !lobeMode;
+    $('lobeBtn').textContent = `Lobe colors: ${lobeMode ? 'on' : 'off'}`;
+    for (const m of anatomyMeshes) {
+      if (m === selected || m === hovered) continue;
+      if (m.userData.anat.cat === 'cortex') m.material = baseMaterialFor(m);
+    }
+  });
+
+  // ----- preset camera views -----
+  document.querySelectorAll('[data-view3d]').forEach((b) => {
+    b.addEventListener('click', () => {
+      if (!modelBBox) return;
+      const c = modelBBox.getCenter(new THREE.Vector3());
+      const dirs = {
+        front: [0.05, 0.12, 1],
+        side: [1, 0.12, 0.08],
+        top: [0, 1, 0.08],
+        home: [0.55, 0.32, 1],
+      };
+      const v = new THREE.Vector3(...(dirs[b.dataset.view3d] || dirs.home)).normalize();
+      camera.position.copy(c).addScaledVector(v, modelSize * 1.35);
+      controls.target.copy(c);
+    });
+  });
+
+  // ----- isolate selected structure -----
+  let isolated = null;
+  const isoBtn = $('isolateBtn2');
+  isoBtn.addEventListener('click', () => {
+    if (!selected) return;
+    if (isolated === selected) {
+      isolated = null;
+      matchSet = null;
+      isoBtn.textContent = 'Isolate';
+    } else {
+      isolated = selected;
+      matchSet = new Set([selected]);
+      isoBtn.textContent = 'Show all';
+    }
+    updateVisibility();
+  });
+  const resetIsolate = () => {
+    isolated = null;
+    matchSet = null;
+    isoBtn.textContent = 'Isolate';
+  };
+  $('cardClose').addEventListener('click', resetIsolate);
 
   // ----- screenshot for teaching / presentations -----
   $('shotBtn').addEventListener('click', () => {
@@ -610,6 +714,7 @@ async function init() {
       cat,
       region: extra.bx_region || (rec && rec.region) || '',
       parent: extra.bx_parent || (rec && rec.parent) || '',
+      decussation: extra.bx_decussation || (rec && rec.decussation) || '',
       ta2: (rec && rec.ta2) || [],
       source: extra.bx_source || (rec && rec.source) || '',
     };
@@ -648,6 +753,8 @@ async function init() {
     z: [bbox.min.z, bbox.max.z],
   };
   labelWorld = size * 0.028;
+  modelBBox = bbox;
+  modelSize = size;
 
   wireViewerUI();
   applyCortexOpacity(1);

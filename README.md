@@ -7,10 +7,13 @@ sourced, scan-derived anatomy — 437 individually named structures across
 12 systems (cortical gyri/sulci, deep grey nuclei, diencephalon,
 white-matter tracts, ventricles, brainstem, cerebellum, Circle of Willis,
 dural sinuses, meninges, cranial nerves) — with PBR tissue materials,
-studio lighting, orbit/zoom/pan, click-to-inspect with TA2 anatomical
-paths, live search, toggleable labels, sagittal/coronal/axial slice
-planes, a cortex-opacity slider that fades the surface to reveal the
-deep brain, and one-click PNG screenshots for teaching.
+studio lighting, orbit/zoom/pan with preset Front/Side/Top views,
+click-to-inspect with TA2 anatomical paths and decussation notes,
+live search, toggleable labels, hemisphere isolation, color-by-lobe
+mode, sagittal/coronal/axial slice planes with solid-tissue cuts,
+a cortex-opacity slider that fades the surface to reveal the
+deep brain, per-structure Isolate mode, and one-click PNG screenshots
+for teaching.
 
 Each selection also shows a plain-language function summary for major
 structures (402 of 437; minor sulci and small branches intentionally

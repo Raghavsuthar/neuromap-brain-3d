@@ -12,6 +12,7 @@
   </head>
   <body>
     <div id="scene" aria-label="Interactive 3D brain viewport"></div>
+    <div id="vignette" aria-hidden="true"></div>
 
     <div id="loader" role="status">
       <div class="loader-box">
@@ -64,6 +65,26 @@
         <input id="cortexOpacity" type="range" min="0" max="100" value="100" />
       </label>
       <div class="row slice-row">
+        <span>Hemisphere</span>
+        <div class="seg" role="group" aria-label="Hemisphere">
+          <button type="button" data-hemi="both" class="on">Both</button>
+          <button type="button" data-hemi="left">Left</button>
+          <button type="button" data-hemi="right">Right</button>
+        </div>
+      </div>
+      <div class="row btn-row">
+        <button id="lobeBtn" type="button" title="Color cortex by lobe">Lobe colors: off</button>
+      </div>
+      <div class="row slice-row">
+        <span>Camera views</span>
+        <div class="seg" role="group" aria-label="Preset camera views">
+          <button type="button" data-view3d="front">Front</button>
+          <button type="button" data-view3d="side">Side</button>
+          <button type="button" data-view3d="top">Top</button>
+          <button type="button" data-view3d="home">3/4</button>
+        </div>
+      </div>
+      <div class="row slice-row">
         <span>Slice plane</span>
         <div class="seg" role="group" aria-label="Slice plane orientation">
           <button type="button" data-slice="off" class="on">Off</button>
@@ -105,9 +126,12 @@
       <p id="cardTa2" class="ta2"></p>
       <p class="ta2label" id="funcLabel" hidden>Function</p>
       <p id="cardFunc" class="func" hidden></p>
+      <p class="ta2label" id="decLabel" hidden>Decussation</p>
+      <p id="cardDec" class="func" hidden></p>
       <p id="cardSrc" class="src"></p>
       <div class="card-btns">
         <button id="focusBtn" type="button">Focus camera</button>
+        <button id="isolateBtn2" type="button" title="Show only this structure">Isolate</button>
         <button id="shareBtn" type="button" title="Copy a link to this exact view">
           Share link
         </button>
