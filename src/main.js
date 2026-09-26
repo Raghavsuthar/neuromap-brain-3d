@@ -236,6 +236,7 @@ function clearSelection() {
     selected = null;
   }
   $('card').hidden = true;
+  $('sr-status').textContent = '';
   if (window.location.hash.startsWith('#s=')) {
     history.replaceState(null, '', window.location.pathname + window.location.search);
   }
@@ -267,6 +268,8 @@ function showCard(anat) {
   $('decLabel').hidden = !anat.decussation;
   $('cardSrc').textContent = `Source: ${anat.source || 'Z-Anatomy / BodyParts3D'}`;
   $('card').hidden = false;
+  // Screen-reader announcement: canvas sprites expose no semantics.
+  $('sr-status').textContent = `${$('cardName').textContent}. ${$('cardMeta').textContent}`;
 }
 
 function select(mesh, pushHash = true) {
