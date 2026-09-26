@@ -1,0 +1,289 @@
+:root {
+  --bg: #0d0f12;
+  --panel: rgba(16, 20, 26, 0.82);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #eef1f4;
+  --dim: #9aa4ae;
+  --accent: #e8a08d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 50% 20%, #232b34 0%, #14181d 45%, var(--bg) 100%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+}
+
+#scene canvas {
+  display: block;
+  touch-action: none;
+}
+
+#loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 15, 18, 0.9);
+  z-index: 30;
+  transition: opacity 0.4s ease;
+}
+
+#loader.done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-box {
+  width: min(340px, 80vw);
+  text-align: center;
+}
+
+.loader-title {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.loader-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+#loadfill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.loader-msg {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.brand {
+  position: fixed;
+  top: 14px;
+  left: 16px;
+  z-index: 10;
+  pointer-events: none;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.brand h1 span {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.panel {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  width: 230px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+
+.row {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.slider-row span {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.slider-row input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.check-row input {
+  accent-color: var(--accent);
+}
+
+.cats summary {
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+  margin-bottom: 6px;
+}
+
+.cats label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cats input {
+  accent-color: var(--accent);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.card {
+  position: fixed;
+  left: 16px;
+  bottom: 44px;
+  z-index: 10;
+  width: min(340px, calc(100vw - 32px));
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px 12px;
+  backdrop-filter: blur(8px);
+}
+
+.card h2 {
+  margin: 4px 0 2px;
+  font-size: 17px;
+}
+
+.card .side {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  padding: 1px 9px;
+}
+
+.card .meta {
+  margin: 2px 0 8px;
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.ta2label {
+  margin: 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+}
+
+.ta2 {
+  margin: 3px 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.card .src {
+  margin: 0 0 10px;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+#cardClose {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.credit {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  text-align: center;
+  font-size: 11px;
+  color: var(--dim);
+  pointer-events: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 640px) {
+  .panel {
+    width: 188px;
+    font-size: 12px;
+  }
+
+  .card {
+    bottom: 40px;
+  }
+}

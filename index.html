@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NeuroMap 3D Brain — realistic interactive anatomy</title>
+    <meta
+      name="description"
+      content="A realistic, browser-based interactive 3D brain rendered from real sourced anatomy. Orbit, fade the cortex, and inspect 437 named structures."
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="scene" aria-label="Interactive 3D brain viewport"></div>
+
+    <div id="loader" role="status">
+      <div class="loader-box">
+        <div class="loader-title">Loading brain anatomy…</div>
+        <div class="loader-bar"><div id="loadfill"></div></div>
+        <div id="loadmsg" class="loader-msg">Fetching model</div>
+      </div>
+    </div>
+
+    <header class="brand">
+      <h1>NeuroMap <span>3D Brain</span></h1>
+      <p id="stats">Loading…</p>
+    </header>
+
+    <aside class="panel" aria-label="Viewer controls">
+      <label class="row slider-row">
+        <span>Cortex opacity <b id="opval">100%</b></span>
+        <input id="cortexOpacity" type="range" min="0" max="100" value="100" />
+      </label>
+      <div class="row btn-row">
+        <button id="isolateBtn" type="button" title="Fade cortex to reveal deep nuclei">
+          Reveal deep brain
+        </button>
+        <button id="resetBtn" type="button" title="Restore default camera">Reset view</button>
+      </div>
+      <label class="row check-row">
+        <input id="spinToggle" type="checkbox" checked /> Idle auto-rotate
+      </label>
+      <details class="cats" open>
+        <summary>Systems</summary>
+        <div id="catlist"></div>
+      </details>
+    </aside>
+
+    <section id="card" class="card" hidden aria-live="polite">
+      <button id="cardClose" type="button" aria-label="Clear selection">×</button>
+      <div id="cardSide" class="side"></div>
+      <h2 id="cardName"></h2>
+      <p id="cardMeta" class="meta"></p>
+      <p class="ta2label">TA2 anatomical path</p>
+      <p id="cardTa2" class="ta2"></p>
+      <p id="cardSrc" class="src"></p>
+      <button id="focusBtn" type="button">Focus camera</button>
+    </section>
+
+    <footer class="credit">
+      Anatomy © Z-Anatomy contributors · BodyParts3D / DBCLS (CC BY-SA 4.0) ·
+      deep nuclei ≈7&nbsp;mm, educational only
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
