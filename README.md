@@ -12,6 +12,11 @@ paths, live search, toggleable labels, sagittal/coronal/axial slice
 planes, a cortex-opacity slider that fades the surface to reveal the
 deep brain, and one-click PNG screenshots for teaching.
 
+Each selection also shows a plain-language function summary for major
+structures (402 of 437; minor sulci and small branches intentionally
+left blank rather than described loosely), and every view is shareable
+via `#s=<id>` deep links.
+
 Nothing here is fabricated: every mesh is a real, TA2-named anatomical
 structure derived from open anatomical and imaging data. If a structure
 isn't in the sourced model, it is left out rather than approximated with

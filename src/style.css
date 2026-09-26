@@ -337,6 +337,17 @@ button:hover {
   color: var(--dim);
 }
 
+.func {
+  margin: 3px 0 8px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.card-btns {
+  display: flex;
+  gap: 8px;
+}
+
 #cardClose {
   position: absolute;
   top: 6px;

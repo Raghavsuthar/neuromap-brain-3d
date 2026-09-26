@@ -7,6 +7,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 const BASE = import.meta.env.BASE_URL;
 const MODEL_URL = `${BASE}brain-atlas/models/brain.glb`;
 const MANIFEST_URL = `${BASE}brain-atlas/models/manifest.json`;
+const FUNCTIONS_URL = `${BASE}brain-atlas/functions.json`;
 const DRACO_PATH = `${BASE}brain-atlas/vendor/draco/`;
 
 // Entries that are scene-graph/collection bookkeeping, not anatomy.
@@ -163,6 +164,7 @@ function ensureVariants(cat) {
 
 // ---------- state ----------
 const manifestById = new Map();
+let functions = {}; // manifest id -> plain-language function summary
 const anatomyMeshes = []; // pickable meshes
 const meshesByCat = new Map(); // cat -> Mesh[]
 const searchIndex = []; // { mesh, hay }
@@ -196,6 +198,9 @@ function clearSelection() {
     selected = null;
   }
   $('card').hidden = true;
+  if (window.location.hash.startsWith('#s=')) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
 }
 
 function cleanTa2(ta2, region, parent, label) {
@@ -215,17 +220,37 @@ function showCard(anat) {
   const catLabel = (CATEGORY_STYLE[anat.cat] || {}).label || anat.cat;
   $('cardMeta').textContent = `${catLabel}${anat.region ? ` · ${anat.region}` : ''}`;
   $('cardTa2').textContent = cleanTa2(anat.ta2, anat.region, anat.parent, anat.label).join(' › ') || '—';
+  const func = functions[String(anat.id)];
+  $('cardFunc').textContent = func || '';
+  $('cardFunc').hidden = !func;
+  $('funcLabel').hidden = !func;
   $('cardSrc').textContent = `Source: ${anat.source || 'Z-Anatomy / BodyParts3D'}`;
   $('card').hidden = false;
 }
 
-function select(mesh) {
-  clearSelection();
+function select(mesh, pushHash = true) {
+  if (!mesh) {
+    clearSelection();
+    return;
+  }
+  clearSelectionHashOnly();
   if (!mesh) return;
   selected = mesh;
   ensureVariants(mesh.userData.anat.cat);
   setMeshMaterial(mesh, selectMats[mesh.userData.anat.cat]);
   showCard(mesh.userData.anat);
+  if (pushHash) {
+    history.replaceState(null, '', `#s=${mesh.userData.anat.id}`);
+  }
+}
+
+// Clear the card without touching the URL hash (used internally by select).
+function clearSelectionHashOnly() {
+  if (selected) {
+    setMeshMaterial(selected, baseMats[selected.userData.anat.cat]);
+    selected = null;
+  }
+  $('card').hidden = true;
 }
 
 function setHovered(mesh) {
@@ -410,6 +435,18 @@ function wireViewerUI() {
   $('focusBtn').addEventListener('click', () => {
     if (selected) focusOn(selected);
   });
+  $('shareBtn').addEventListener('click', async () => {
+    const url = window.location.href;
+    try {
+      await navigator.clipboard.writeText(url);
+      $('shareBtn').textContent = 'Copied!';
+    } catch {
+      $('shareBtn').textContent = url;
+    }
+    setTimeout(() => {
+      $('shareBtn').textContent = 'Share link';
+    }, 2000);
+  });
 
   // ----- search: isolate matches, click result to inspect -----
   const searchInput = $('search');
@@ -509,7 +546,11 @@ function wireViewerUI() {
 
 async function init() {
   loadmsg.textContent = 'Fetching metadata';
-  const manifest = await (await fetch(MANIFEST_URL)).json();
+  const [manifest, funcs] = await Promise.all([
+    (await fetch(MANIFEST_URL)).json(),
+    (await fetch(FUNCTIONS_URL)).json().catch(() => ({})),
+  ]);
+  functions = funcs;
   for (const n of manifest.nodes) manifestById.set(n.id, n);
 
   $('stats').textContent =
@@ -609,6 +650,17 @@ async function init() {
 
   wireViewerUI();
   applyCortexOpacity(1);
+
+  // Deep link: #s=<manifest id> reopens an exact shared view.
+  const deep = /^#s=(\d+)$/.exec(window.location.hash || '');
+  if (deep) {
+    const target = anatomyMeshes.find((m) => String(m.userData.anat.id) === deep[1]);
+    if (target) {
+      select(target, false);
+      focusOn(target);
+    }
+  }
+
   loadmsg.textContent = 'Ready';
   loaderEl.classList.add('done');
 }
