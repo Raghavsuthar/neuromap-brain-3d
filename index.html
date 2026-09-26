@@ -27,18 +27,46 @@
     </header>
 
     <aside class="panel" aria-label="Viewer controls">
+      <label class="row search-row">
+        <span>Search structures</span>
+        <input
+          id="search"
+          type="search"
+          placeholder="e.g. thalamus, arcuate, cingulum…"
+          autocomplete="off"
+        />
+      </label>
+      <div id="results" class="results" hidden></div>
       <label class="row slider-row">
         <span>Cortex opacity <b id="opval">100%</b></span>
         <input id="cortexOpacity" type="range" min="0" max="100" value="100" />
       </label>
+      <div class="row slice-row">
+        <span>Slice plane</span>
+        <div class="seg" role="group" aria-label="Slice plane orientation">
+          <button type="button" data-slice="off" class="on">Off</button>
+          <button type="button" data-slice="x">Sagittal</button>
+          <button type="button" data-slice="z">Coronal</button>
+          <button type="button" data-slice="y">Axial</button>
+        </div>
+        <input id="slicePos" type="range" min="0" max="100" value="50" disabled />
+      </div>
       <div class="row btn-row">
         <button id="isolateBtn" type="button" title="Fade cortex to reveal deep nuclei">
           Reveal deep brain
         </button>
         <button id="resetBtn" type="button" title="Restore default camera">Reset view</button>
       </div>
+      <div class="row btn-row">
+        <button id="shotBtn" type="button" title="Download a PNG of the current view">
+          Download screenshot
+        </button>
+      </div>
       <label class="row check-row">
         <input id="spinToggle" type="checkbox" checked /> Idle auto-rotate
+      </label>
+      <label class="row check-row">
+        <input id="labelToggle" type="checkbox" /> Labels
       </label>
       <details class="cats" open>
         <summary>Systems</summary>

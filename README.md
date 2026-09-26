@@ -8,8 +8,9 @@ sourced, scan-derived anatomy — 437 individually named structures across
 white-matter tracts, ventricles, brainstem, cerebellum, Circle of Willis,
 dural sinuses, meninges, cranial nerves) — with PBR tissue materials,
 studio lighting, orbit/zoom/pan, click-to-inspect with TA2 anatomical
-paths, and a cortex-opacity slider that fades the surface to reveal the
-deep brain.
+paths, live search, toggleable labels, sagittal/coronal/axial slice
+planes, a cortex-opacity slider that fades the surface to reveal the
+deep brain, and one-click PNG screenshots for teaching.
 
 Nothing here is fabricated: every mesh is a real, TA2-named anatomical
 structure derived from open anatomical and imaging data. If a structure

@@ -48,6 +48,7 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.1;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.localClippingEnabled = true; // slice-plane incisions
 container.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -164,11 +165,26 @@ function ensureVariants(cat) {
 const manifestById = new Map();
 const anatomyMeshes = []; // pickable meshes
 const meshesByCat = new Map(); // cat -> Mesh[]
+const searchIndex = []; // { mesh, hay }
+const catState = {}; // cat -> visible (default true)
+const labelMats = new Set();
+let matchSet = null; // Set<Mesh> when searching, else null
+let labelsOn = false;
+let labelWorld = 0.01;
 let selected = null;
 let hovered = null;
 let homePos = camera.position.clone();
 let homeTarget = new THREE.Vector3(0, 0, 0);
 let cortexOpacity = 1;
+// Slice plane: three.js keeps the half-space where
+// plane.normal.dot(p) + plane.constant < 0.
+const slicePlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
+const noPlanes = [];
+const onePlane = [slicePlane];
+let sliceMode = 'off';
+let sliceT = 0.5;
+let sliceBounds = null;
+let clipActive = false;
 
 function setMeshMaterial(mesh, mat) {
   mesh.material = mat;
@@ -254,13 +270,101 @@ renderer.domElement.addEventListener('pointermove', (e) => {
 });
 
 // ---------- UI wiring ----------
-$('cardClose').addEventListener('click', clearSelection);
-$('focusBtn').addEventListener('click', () => {
-  if (!selected) return;
-  const box = new THREE.Box3().setFromObject(selected);
+function focusOn(mesh) {
+  const box = new THREE.Box3().setFromObject(mesh);
+  controls.target.copy(box.getCenter(new THREE.Vector3()));
+}
+
+function updateVisibility() {
+  for (const m of anatomyMeshes) {
+    const catOn = catState[m.userData.anat.cat] !== false;
+    m.visible = catOn && (!matchSet || matchSet.has(m));
+    const sp = m.userData.sprite;
+    if (sp) sp.visible = labelsOn && m.visible;
+  }
+}
+
+function allMats() {
+  return [
+    ...Object.values(baseMats),
+    ...Object.values(hoverMats),
+    ...Object.values(selectMats),
+    ...labelMats,
+  ];
+}
+
+function makeLabelSprite(mesh) {
+  const anat = mesh.userData.anat;
+  const side = anat.side === 'left' ? 'L' : anat.side === 'right' ? 'R' : '';
+  const text = side ? `${anat.label} ${side}` : anat.label;
+  const c = document.createElement('canvas');
+  c.width = 256;
+  c.height = 64;
+  const g = c.getContext('2d');
+  g.fillStyle = 'rgba(10, 13, 17, 0.78)';
+  g.strokeStyle = 'rgba(255,255,255,0.35)';
+  g.lineWidth = 2;
+  g.beginPath();
+  g.roundRect(3, 6, 250, 52, 10);
+  g.fill();
+  g.stroke();
+  g.fillStyle = '#f2f5f7';
+  g.font = '600 25px system-ui, sans-serif';
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  const short = text.length > 26 ? text.slice(0, 25) + '…' : text;
+  g.fillText(short, 128, 33);
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 4;
+  const mat = new THREE.SpriteMaterial({
+    map: tex,
+    transparent: true,
+    depthTest: false,
+    depthWrite: false,
+  });
+  mat.clippingPlanes = clipActive ? onePlane : noPlanes;
+  labelMats.add(mat);
+  const sp = new THREE.Sprite(mat);
+  sp.scale.set(labelWorld * 2.4, labelWorld * 0.6, 1);
+  const box = new THREE.Box3().setFromObject(mesh);
   const center = box.getCenter(new THREE.Vector3());
-  controls.target.copy(center);
-});
+  center.y += box.getSize(new THREE.Vector3()).y * 0.5 + labelWorld * 0.5;
+  sp.position.copy(center);
+  sp.visible = false;
+  mesh.userData.sprite = sp;
+  scene.add(sp);
+  return sp;
+}
+
+function applySlice() {
+  if (sliceMode === 'off' || !sliceBounds) {
+    if (clipActive) {
+      clipActive = false;
+      for (const m of allMats()) {
+        m.clippingPlanes = noPlanes;
+        m.needsUpdate = true;
+      }
+    }
+    return;
+  }
+  const normals = {
+    x: new THREE.Vector3(1, 0, 0), // sagittal
+    z: new THREE.Vector3(0, 0, 1), // coronal
+    y: new THREE.Vector3(0, 1, 0), // axial / horizontal
+  };
+  const [lo, hi] = sliceBounds[sliceMode];
+  const pad = (hi - lo) * 0.02;
+  const c = hi + pad - sliceT * (hi - lo + pad * 2);
+  slicePlane.normal.copy(normals[sliceMode]);
+  slicePlane.constant = -c;
+  if (!clipActive) {
+    clipActive = true;
+    for (const m of allMats()) {
+      m.clippingPlanes = onePlane;
+      m.needsUpdate = true;
+    }
+  }
+}
 
 function applyCortexOpacity(v) {
   cortexOpacity = v;
@@ -301,6 +405,108 @@ manager.onProgress = (_url, loaded, total) => {
   loadfill.style.width = `${Math.round((loaded / total) * 100)}%`;
 };
 
+function wireViewerUI() {
+  $('cardClose').addEventListener('click', clearSelection);
+  $('focusBtn').addEventListener('click', () => {
+    if (selected) focusOn(selected);
+  });
+
+  // ----- search: isolate matches, click result to inspect -----
+  const searchInput = $('search');
+  const resultsBox = $('results');
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) {
+      matchSet = null;
+      resultsBox.hidden = true;
+      resultsBox.innerHTML = '';
+      updateVisibility();
+      return;
+    }
+    const matches = searchIndex.filter((e) => e.hay.includes(q));
+    matchSet = new Set(matches.map((e) => e.mesh));
+    updateVisibility();
+    resultsBox.hidden = false;
+    resultsBox.innerHTML = '';
+    const count = document.createElement('div');
+    count.className = 'count';
+    count.textContent =
+      matches.length === 0 ? 'No structures found' : `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
+    resultsBox.appendChild(count);
+    for (const e of matches.slice(0, 40)) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      const a = e.mesh.userData.anat;
+      b.textContent = `${a.label}${a.side === 'left' || a.side === 'right' ? ` (${a.side})` : ''}`;
+      b.addEventListener('click', () => {
+        select(e.mesh);
+        focusOn(e.mesh);
+      });
+      resultsBox.appendChild(b);
+    }
+  });
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      searchInput.value = '';
+      searchInput.dispatchEvent(new Event('input'));
+    }
+  });
+
+  // ----- labels -----
+  $('labelToggle').addEventListener('change', (e) => {
+    labelsOn = e.target.checked;
+    if (labelsOn) {
+      for (const m of anatomyMeshes) {
+        if (!m.userData.sprite) makeLabelSprite(m);
+      }
+    }
+    updateVisibility();
+  });
+
+  // ----- slice plane: sagittal / coronal / axial incisions -----
+  const segBtns = [...document.querySelectorAll('.seg button')];
+  const sliceSlider = $('slicePos');
+  segBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+      segBtns.forEach((x) => x.classList.toggle('on', x === b));
+      sliceMode = b.dataset.slice;
+      sliceSlider.disabled = sliceMode === 'off';
+      applySlice();
+    });
+  });
+  sliceSlider.addEventListener('input', () => {
+    sliceT = sliceSlider.value / 100;
+    applySlice();
+  });
+
+  // ----- screenshot for teaching / presentations -----
+  $('shotBtn').addEventListener('click', () => {
+    renderer.render(scene, camera);
+    renderer.domElement.toBlob((blob) => {
+      if (!blob) return;
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'neuromap-brain-3d.png';
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    }, 'image/png');
+  });
+
+  // ----- arrow keys drive cortex opacity (outside form fields) -----
+  window.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+    e.preventDefault();
+    const slider = $('cortexOpacity');
+    const next = Math.min(
+      100,
+      Math.max(0, Number(slider.value) + (e.key === 'ArrowUp' ? 5 : -5)),
+    );
+    slider.value = String(next);
+    applyCortexOpacity(next / 100);
+  });
+}
+
 async function init() {
   loadmsg.textContent = 'Fetching metadata';
   const manifest = await (await fetch(MANIFEST_URL)).json();
@@ -325,7 +531,8 @@ async function init() {
   catlist.addEventListener('change', (e) => {
     const cat = e.target.dataset.cat;
     if (!cat) return;
-    for (const m of meshesByCat.get(cat) || []) m.visible = e.target.checked;
+    catState[cat] = e.target.checked;
+    updateVisibility();
     if (selected && !selected.visible) clearSelection();
   });
 
@@ -369,6 +576,10 @@ async function init() {
     obj.castShadow = true;
     obj.receiveShadow = true;
     obj.userData.anat = anat;
+    searchIndex.push({
+      mesh: obj,
+      hay: `${anat.label} ${anat.region} ${anat.parent} ${(CATEGORY_STYLE[cat] || {}).label || cat}`.toLowerCase(),
+    });
     anatomyMeshes.push(obj);
     if (!meshesByCat.has(cat)) meshesByCat.set(cat, []);
     meshesByCat.get(cat).push(obj);
@@ -389,6 +600,14 @@ async function init() {
   camera.far = size * 100;
   camera.updateProjectionMatrix();
 
+  sliceBounds = {
+    x: [bbox.min.x, bbox.max.x],
+    y: [bbox.min.y, bbox.max.y],
+    z: [bbox.min.z, bbox.max.z],
+  };
+  labelWorld = size * 0.028;
+
+  wireViewerUI();
   applyCortexOpacity(1);
   loadmsg.textContent = 'Ready';
   loaderEl.classList.add('done');
