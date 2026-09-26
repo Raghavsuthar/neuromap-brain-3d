@@ -372,13 +372,226 @@ button:hover {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
-@media (max-width: 640px) {
-  .panel {
-    width: 188px;
-    font-size: 12px;
+#viewtabs {
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  gap: 4px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 4px;
+  backdrop-filter: blur(8px);
+  max-width: calc(100vw - 500px);
+  overflow-x: auto;
+}
+
+#viewtabs button {
+  border: none;
+  background: none;
+  border-radius: 20px;
+  padding: 6px 13px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+#viewtabs button.on {
+  background: rgba(232, 160, 141, 0.18);
+  color: var(--accent);
+  opacity: 1;
+}
+
+#clinic {
+  position: fixed;
+  top: 64px;
+  left: 16px;
+  z-index: 10;
+  width: min(340px, calc(100vw - 32px));
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+
+#clinic[hidden] {
+  display: none;
+}
+
+#clinicList {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 4px;
+}
+
+.clinic-item {
+  text-align: left;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.clinic-item b {
+  display: block;
+  font-size: 13px;
+}
+
+.clinic-item small {
+  color: var(--dim);
+  font-size: 11px;
+}
+
+#clinicDetail {
+  overflow: auto;
+}
+
+#clinicBack {
+  margin-bottom: 8px;
+}
+
+#clinicBody h2 {
+  margin: 2px 0 4px;
+  font-size: 17px;
+}
+
+#clinicBody .code {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--accent);
+}
+
+#clinicBody h3 {
+  margin: 12px 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+}
+
+#clinicBody p {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+#clinicBody table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+#clinicBody th,
+#clinicBody td {
+  text-align: left;
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+#clinicBody th {
+  color: var(--dim);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+#clinicBody ul {
+  margin: 4px 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+#clinicBody li {
+  margin-bottom: 3px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.chips button {
+  font-size: 11px;
+  padding: 4px 9px;
+}
+
+.src-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.src-list a {
+  color: var(--text);
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 9px;
+  text-decoration: none;
+}
+
+.src-list a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.src-list a span {
+  color: var(--accent);
+}
+
+.disclaimer {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 9px;
+}
+
+.warnbox {
+  border: 1px solid #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  #viewtabs {
+    max-width: calc(100vw - 24px);
+    top: auto;
+    bottom: 12px;
+  }
+
+  #clinic {
+    top: 64px;
   }
 
   .card {
     bottom: 40px;
+  }
+
+  .panel {
+    display: none;
+    width: 188px;
+    font-size: 12px;
+  }
+
+  body[data-view='brain'] .panel {
+    display: block;
   }
 }

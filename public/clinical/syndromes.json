@@ -1,0 +1,493 @@
+[
+ {
+  "id": "mdd",
+  "name": "Major Depressive Disorder",
+  "icd11Code": "6A70",
+  "dsm5Code": "296.2x / 296.3x",
+  "category": "Mood Disorders",
+  "clinicalDefinition": "A persistent syndrome characterized by at least 2 weeks of pervasive depressed mood or anhedonia, accompanied by vegetative, cognitive, and somatic disturbances (sleep, appetite, fatigue, psychomotor changes, guilt, suicidal ideation).",
+  "primaryPathophysiologicalHallmark": "DMN hyperconnectivity causing unrelenting rumination; fronto-limbic hypoconnectivity (impaired DLPFC top-down suppression of limbic distress); monoaminergic depletion (5-HT/NE/DA) and neurotrophic BDNF deficit.",
+  "linkedCircuits": [
+   "default_mode_network",
+   "frontolimbic_circuit",
+   "mesolimbic_pathway",
+   "hpa_axis"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine",
+   "dopamine",
+   "glutamate"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine",
+   "bupropion",
+   "mirtazapine",
+   "aripiprazole",
+   "esketamine"
+  ],
+  "summary": "Major depressive disorder is a syndrome of persistent low mood or loss of pleasure lasting at least two weeks, accompanied by changes in sleep, appetite, energy, concentration and self-worth, with suicide risk assessment essential at every contact. Current models implicate dysregulation across monoamine, glutamate and stress-axis systems together with hyperactivity of self-referential brain networks. First-line care combines an evidence-based antidepressant with structured psychotherapy, escalating to augmentation or neuromodulation when response is partial.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "bipolar1",
+  "name": "Bipolar I Disorder, Manic Episode",
+  "icd11Code": "6A60",
+  "dsm5Code": "296.4x",
+  "category": "Mood Disorders",
+  "clinicalDefinition": "A distinct period of abnormally and persistently elevated, expansive, or irritable mood with abnormally increased activity or energy lasting at least 1 week, causing marked functional impairment or psychotic features.",
+  "primaryPathophysiologicalHallmark": "Impaired prefrontal-striatal gating; excessive intracellular secondary messenger signaling (PKC, IP3/DAG cascades); hyperactive mesolimbic dopamine driving grandiosity and impulsivity.",
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "cstc_loop",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "glutamate",
+   "gaba"
+  ],
+  "linkedDrugs": [
+   "lithium",
+   "divalproex",
+   "olanzapine",
+   "quetiapine",
+   "aripiprazole",
+   "risperidone"
+  ],
+  "summary": "Bipolar I disorder is defined by at least one manic episode of abnormally elevated or irritable mood with increased energy, impulsivity and often psychosis, usually alternating with depressive episodes. Management separates acute-phase control from long-term relapse prevention, where lithium and several second-generation antipsychotics carry the strongest maintenance evidence. Because antidepressant monotherapy can precipitate mania, mood stabilisation is the backbone of pharmacotherapy.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "schizophrenia",
+  "name": "Schizophrenia",
+  "icd11Code": "6A20",
+  "dsm5Code": "295.90",
+  "category": "Psychotic Disorders",
+  "clinicalDefinition": "A severe psychiatric disorder lasting >=6 months characterized by positive symptoms (delusions, hallucinations, disorganized speech/behavior) and negative symptoms (avolition, flat affect, asociality) with marked cognitive decline.",
+  "primaryPathophysiologicalHallmark": "Mesolimbic hyperdopaminergia (D2 overstimulation mediating aberrant salience / hallucinations) coupled with mesocortical hypodopaminergia and NMDA hypofunction on cortical GABAergic interneurons.",
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway",
+   "cstc_loop",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "glutamate",
+   "gaba",
+   "serotonin"
+  ],
+  "linkedDrugs": [
+   "risperidone",
+   "olanzapine",
+   "aripiprazole",
+   "quetiapine",
+   "clozapine"
+  ],
+  "summary": "Schizophrenia is a chronic psychotic illness combining positive symptoms such as delusions and hallucinations with negative symptoms, disorganisation and cognitive impairment lasting six months or more. The prevailing model pairs mesolimbic dopamine overactivity with cortical glutamate-GABA dysregulation. All licensed antipsychotics dampen dopamine D2 signalling to varying degrees; clozapine is reserved for treatment resistance, and long-acting injectables address the adherence gap behind most relapses.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   },
+   {
+    "name": "APA DSM-5-TR overview",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+   }
+  ]
+ },
+ {
+  "id": "gad",
+  "name": "Generalized Anxiety Disorder",
+  "icd11Code": "6B00",
+  "dsm5Code": "300.02",
+  "category": "Anxiety Disorders",
+  "clinicalDefinition": "Excessive anxiety and worry about a number of events or activities, occurring more days than not for at least 6 months, difficult to control and accompanied by somatic symptoms of muscle tension, restlessness, and fatigue.",
+  "primaryPathophysiologicalHallmark": "Dysfunctional CSTC loop gating ('worry loop') and frontolimbic hypoconnectivity leading to uninhibited amygdalar fear output and central noradrenergic hyper-responsiveness.",
+  "linkedCircuits": [
+   "cstc_loop",
+   "frontolimbic_circuit",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "gaba",
+   "norepinephrine"
+  ],
+  "linkedDrugs": [
+   "escitalopram",
+   "sertraline",
+   "venlafaxine",
+   "buspirone",
+   "clonazepam"
+  ],
+  "summary": "Generalised anxiety disorder is excessive, hard-to-control worry across multiple domains for six months or more, with muscle tension, restlessness, fatigue and disturbed sleep. First-line pharmacotherapy uses SSRIs or SNRIs, with cognitive-behavioural therapy carrying equal long-term weight, while benzodiazepines stay short-term only because of dependence. Noradrenergic hyperarousal with impaired prefrontal inhibition of threat circuits is the core mechanistic target.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "panic_disorder",
+  "name": "Panic Disorder",
+  "icd11Code": "6B01",
+  "dsm5Code": "300.01",
+  "category": "Anxiety Disorders",
+  "clinicalDefinition": "Recurrent unexpected panic attacks—abrupt surges of intense fear or discomfort peaking within minutes—with persistent worry about additional attacks or maladaptive avoidance behavior.",
+  "primaryPathophysiologicalHallmark": "Hypersensitive brainstem alarm system (locus coeruleus noradrenergic firing and parabrachial nucleus) triggered by faulty interoceptive signaling from anterior insula with inadequate ventromedial PFC suppression.",
+  "linkedCircuits": [
+   "salience_network",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "norepinephrine",
+   "serotonin",
+   "gaba"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine",
+   "clonazepam"
+  ],
+  "summary": "Panic disorder pairs recurrent unexpected panic attacks with persistent worry about further attacks and avoidance of triggering contexts. SSRIs are first-line drugs and exposure-based CBT the leading psychotherapy, while a hypersensitive brainstem alarm system driven by noradrenergic surges explains the abrupt autonomic storm. Treatment targets both attack prevention and the dismantling of anticipatory avoidance.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "ocd",
+  "name": "Obsessive-Compulsive Disorder",
+  "icd11Code": "6B20",
+  "dsm5Code": "300.3",
+  "category": "OCD-Spectrum Disorders",
+  "clinicalDefinition": "Presence of obsessions (intrusive, persistent thoughts/urges causing marked anxiety) and/or compulsions (repetitive behaviors or mental acts aimed at preventing distress according to rigid rules).",
+  "primaryPathophysiologicalHallmark": "Hyperactivity in the direct pathway of the orbitofrontal-striatal-thalamic loop ('habit and error detection loop'), creating a persistent 'feeling of incompleteness' unquenched by motor action.",
+  "linkedCircuits": [
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "dopamine",
+   "glutamate"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "aripiprazole",
+   "risperidone",
+   "clomipramine"
+  ],
+  "summary": "Obsessive-compulsive disorder combines intrusive unwanted thoughts or urges with repetitive rituals performed to neutralise distress, driven by hyperactivity in orbitofrontal-striatal-thalamic loops. High-dose SSRIs and clomipramine are the pharmacologic mainstays, and exposure with response prevention is the psychotherapy of choice. Dopamine-blocking augmentation helps the substantial minority with partial SSRI response, especially with comorbid tics.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "ptsd",
+  "name": "Post-Traumatic Stress Disorder",
+  "icd11Code": "6B40",
+  "dsm5Code": "309.81",
+  "category": "Trauma & Stressor Disorders",
+  "clinicalDefinition": "Development of characteristic symptoms following exposure to actual or threatened death, serious injury, or sexual violence: intrusive re-experiencing, persistent avoidance of trauma cues, negative alterations in cognition/mood, and marked hyperarousal.",
+  "primaryPathophysiologicalHallmark": "Failure of ventromedial PFC to exert top-down extinction of conditioned fear memories in the hyperactive amygdala, paired with hippocampal volume loss impairing contextual memory placement.",
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "salience_network",
+   "hpa_axis",
+   "default_mode_network"
+  ],
+  "linkedTransmitters": [
+   "norepinephrine",
+   "serotonin",
+   "glutamate",
+   "gaba"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "venlafaxine",
+   "mirtazapine",
+   "quetiapine"
+  ],
+  "summary": "Post-traumatic stress disorder follows exposure to threatened death or serious injury with intrusive re-experiencing, avoidance, negative mood-cognition shifts and hyperarousal. Trauma-focused psychotherapies carry the strongest evidence; SSRIs and SNRIs are first-line drugs, with adrenergic strategies used for nightmares and hyperarousal. Failed prefrontal extinction of amygdala fear memory is the central circuit model.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WFSBP guidelines",
+    "url": "https://www.wfsbp.org"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "adhd",
+  "name": "Attention-Deficit/Hyperactivity Disorder",
+  "icd11Code": "6A05",
+  "dsm5Code": "314.0x",
+  "category": "Neurodevelopmental Disorders",
+  "clinicalDefinition": "A persistent pattern of inattention and/or hyperactivity-impulsivity that interferes with functioning or development, present prior to age 12 across multiple settings.",
+  "primaryPathophysiologicalHallmark": "Hypofunction of dopamine and norepinephrine signaling in the dorsolateral and orbitofrontal prefrontal cortex, leading to sub-optimal signal-to-noise ratio in executive attention networks.",
+  "linkedCircuits": [
+   "mesocortical_pathway",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "norepinephrine"
+  ],
+  "linkedDrugs": [
+   "methylphenidate",
+   "bupropion"
+  ],
+  "summary": "Attention-deficit/hyperactivity disorder is a neurodevelopmental syndrome of persistent inattention or hyperactivity-impulsivity impairing function across settings from before age twelve. Stimulants that raise prefrontal dopamine and norepinephrine signalling are first-line, with atomoxetine, guanfacine and bupropion as alternatives. Management pairs medication with behavioural, academic and sleep-hygiene interventions.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   },
+   {
+    "name": "PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/"
+   }
+  ]
+ },
+ {
+  "id": "bpd",
+  "name": "Borderline Personality Disorder",
+  "icd11Code": "6D11.5",
+  "dsm5Code": "301.83",
+  "category": "Personality Disorders",
+  "clinicalDefinition": "A pervasive pattern of instability in interpersonal relationships, self-image, and affects, along with marked impulsivity beginning by early adulthood.",
+  "primaryPathophysiologicalHallmark": "Marked frontolimbic hypoconnectivity (PFC-amygdala disconnection) coupled with altered endogenous opioid and serotonergic neurotransmission predisposing to intense abandonment panic and chronic affective instability.",
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "default_mode_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "dopamine",
+   "gaba"
+  ],
+  "linkedDrugs": [
+   "lamotrigine",
+   "quetiapine",
+   "aripiprazole",
+   "sertraline"
+  ],
+  "summary": "Borderline personality disorder is a pervasive pattern of unstable relationships, self-image and affect with impulsivity and self-harm, rooted in frontolimbic disconnection and heightened rejection sensitivity. Structured psychotherapies such as dialectical behaviour therapy form the treatment backbone, as no drug is licensed specifically for the disorder. Mood stabilisers and second-generation antipsychotics are used adjunctively for affective instability and impulsivity.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "trd",
+  "name": "Treatment-Resistant Depression (TRD)",
+  "icd11Code": "6A70.3",
+  "dsm5Code": "296.3x (Specifier)",
+  "category": "Mood Disorders",
+  "clinicalDefinition": "Major Depressive Disorder that has failed to achieve adequate response despite at least two consecutive trials of antidepressant medications of adequate dose and duration from different pharmacological classes.",
+  "primaryPathophysiologicalHallmark": "Chronic neuroinflammatory state, severe synaptic loss in medial PFC and hippocampus, persistent HPA axis dysregulation with loss of glucocorticoid receptor sensitivity, and glutamatergic signaling deficits.",
+  "linkedCircuits": [
+   "default_mode_network",
+   "hpa_axis",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "glutamate",
+   "serotonin",
+   "dopamine"
+  ],
+  "linkedDrugs": [
+   "esketamine",
+   "aripiprazole",
+   "quetiapine",
+   "lithium",
+   "olanzapine",
+   "clomipramine"
+  ],
+  "summary": "Treatment-resistant depression denotes major depression failing at least two adequate antidepressant trials from different classes. Options with randomised support include dopamine-partial-agonist augmentation, lithium augmentation, esketamine, repetitive TMS, ECT and structured psychotherapy. Glutamatergic dysfunction, chronic stress-axis dysregulation and synaptic loss distinguish its biology from treatment-responsive depression.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "insomnia",
+  "name": "Insomnia Disorder",
+  "icd11Code": "7A00",
+  "dsm5Code": "307.42",
+  "category": "Sleep-Wake Disorders",
+  "clinicalDefinition": "A predominant complaint of dissatisfaction with sleep quantity or quality (difficulty initiating, maintaining, or non-restorative sleep) despite adequate opportunity, causing clinically significant daytime impairment.",
+  "primaryPathophysiologicalHallmark": "Hyperarousal across 24 hours mediated by overactivity of ascending reticular activating systems (histaminergic, noradrenergic, orexinergic) and deficient GABAergic anterior hypothalamic (VLPO) inhibition.",
+  "linkedCircuits": [
+   "hpa_axis",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "gaba",
+   "acetylcholine",
+   "norepinephrine"
+  ],
+  "linkedDrugs": [
+   "mirtazapine",
+   "quetiapine",
+   "clonazepam"
+  ],
+  "summary": "Insomnia disorder is dissatisfaction with sleep initiation, maintenance or quality despite adequate opportunity, with daytime impairment, driven by round-the-clock hyperarousal and deficient sleep-promoting inhibition. CBT for insomnia is first-line and outperforms drugs long-term; sedating antidepressants and short-course hypnotics are pharmacologic options. Treatment always starts with sleep restriction, stimulus control and circadian hygiene.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "aud",
+  "name": "Alcohol Use Disorder",
+  "icd11Code": "6C40",
+  "dsm5Code": "303.90",
+  "category": "Substance-Related Disorders",
+  "clinicalDefinition": "A problematic pattern of alcohol use leading to clinically significant impairment or distress, characterized by tolerance, withdrawal, craving, and inability to cut down.",
+  "primaryPathophysiologicalHallmark": "Initial acute positive reinforcement via GABA-A allosteric facilitation and mesolimbic dopamine surge, shifting in chronic dependence to allostatic neuroadaptation with NMDA receptor upregulation, down-regulated GABA, and excessive CRF.",
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "gaba",
+   "glutamate",
+   "dopamine"
+  ],
+  "linkedDrugs": [
+   "divalproex",
+   "clonazepam"
+  ],
+  "summary": "Alcohol use disorder is a problematic pattern of drinking with tolerance, withdrawal, craving and loss of control, maintained by a shift from GABA-dopamine reward toward glutamate-driven dependence and stress sensitisation. Acamprosate, naltrexone and supervised disulfiram support abstinence alongside motivational and relapse-prevention therapies. Benzodiazepines manage withdrawal itself but are not maintenance treatment because of cross-dependence.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "Cochrane Library mental health collections",
+    "url": "https://www.cochranelibrary.com/collections"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ }
+]

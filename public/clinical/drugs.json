@@ -1,0 +1,1822 @@
+[
+ {
+  "id": "sertraline",
+  "genericName": "Sertraline",
+  "brandName": "Zoloft",
+  "drugClass": "Selective Serotonin Reuptake Inhibitor (SSRI)",
+  "atcCode": "N06AB06",
+  "receptorTargets": [
+   {
+    "target": "SERT (5-HTT)",
+    "action": "Inhibitor",
+    "kiNm": 0.4,
+    "affinityRating": "High",
+    "clinicalRelevance": "Potent 5-HT reuptake blockade; therapeutic threshold reached at >80% transporter occupancy"
+   },
+   {
+    "target": "DAT",
+    "action": "Inhibitor",
+    "kiNm": 25.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Weak dopamine transporter inhibition; provides unique activating/energizing profile distinguishing from other SSRIs"
+   },
+   {
+    "target": "Sigma-1",
+    "action": "Agonist",
+    "kiNm": 32.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "May contribute to anxiolytic and anti-inflammatory properties in psychotic depression"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "26 hours (active metabolite N-desmethylsertraline: 62-104 hours)",
+   "bioavailability": "44% (absorption enhanced ~25% by food intake)",
+   "cypMetabolism": "Substrate of CYP2B6, CYP2C19, CYP3A4, CYP2D6; mild inhibitor of CYP2D6 at high doses",
+   "timeToPeak": "4.5 to 8.4 hours"
+  },
+  "dosingRange": {
+   "startingDose": "25 - 50 mg/day",
+   "targetDose": "50 - 150 mg/day",
+   "maxDose": "200 mg/day (up to 400 mg/day in specialist refractory OCD)",
+   "titrationSchedule": "Initiate at 50 mg/day (25 mg in panic/frail elderly); titrate by 25-50 mg increments at 1-2 week intervals."
+  },
+  "commonSideEffects": [
+   "Nausea/diarrhea (GI 5-HT3 activation)",
+   "Insomnia or somnolence",
+   "Sexual dysfunction (ejaculatory delay, anorgasmia)",
+   "Tremor",
+   "Sweating"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "GI upset / Diarrhea",
+    "receptorMediation": "5-HT3 and 5-HT4 receptor stimulation in enteric nervous system",
+    "clinicalManagement": "Take with meals; transient over 7-14 days"
+   },
+   {
+    "symptom": "Sexual Dysfunction",
+    "receptorMediation": "5-HT2A stimulation inhibiting spinal sexual reflex arc and reducing mesolimbic DA",
+    "clinicalManagement": "Dose reduction, weekend holiday, or add Bupropion 150mg"
+   },
+   {
+    "symptom": "Initial Agitation",
+    "receptorMediation": "Somatodendritic 5-HT2A/2C stimulation prior to autoreceptor downregulation",
+    "clinicalManagement": "Start low (25mg) in panic disorder and titrate slowly"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Suicidality in children, adolescents, and young adults (<=24 years) during initial phase of treatment."
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "ocd",
+   "panic_disorder",
+   "ptsd",
+   "gad"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "cstc_loop",
+   "default_mode_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "dopamine"
+  ],
+  "clinicalPearls": "Sertraline's weak DAT inhibition makes it preferred for depression with psychomotor retardation and fatigue. It is the most extensively validated first-line SSRI in cardiac disease (SADHART trial).",
+  "summary": "Sertraline is a first-line SSRI distinguished by modest dopamine-transporter inhibition that gives it a relatively activating profile within its class. Beyond major depression it is established across OCD, panic disorder, PTSD, social anxiety and PMDD, with the strongest cardiac-safety dataset among SSRIs. Gastrointestinal upset, sexual dysfunction and early agitation are the characteristic tolerability issues.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "escitalopram",
+  "genericName": "Escitalopram",
+  "brandName": "Lexapro / Cipralex",
+  "drugClass": "Selective Serotonin Reuptake Inhibitor (SSRI)",
+  "atcCode": "N06AB10",
+  "receptorTargets": [
+   {
+    "target": "SERT (Primary site)",
+    "action": "Inhibitor",
+    "kiNm": 1.1,
+    "affinityRating": "High",
+    "clinicalRelevance": "High-affinity competitive serotonin transporter inhibition"
+   },
+   {
+    "target": "SERT (Allosteric site)",
+    "action": "Allosteric Modulator",
+    "kiNm": 25.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Allosteric binding locks SERT in conformation with delayed dissociation; pure S-enantiomer"
+   },
+   {
+    "target": "5-HT2C",
+    "action": "Antagonist",
+    "kiNm": 2500.0,
+    "affinityRating": "Negligible",
+    "clinicalRelevance": "No meaningful off-target receptor interaction at clinical doses"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "27 - 32 hours",
+   "bioavailability": "80% (independent of food)",
+   "cypMetabolism": "CYP2C19 (major), CYP3A4, CYP2D6; minimal CYP inhibition (cleanest drug interaction profile among SSRIs)",
+   "timeToPeak": "5.0 hours"
+  },
+  "dosingRange": {
+   "startingDose": "10 mg/day (5 mg in elderly)",
+   "targetDose": "10 - 20 mg/day",
+   "maxDose": "20 mg/day (10 mg in patients >65 years due to QT prolongation risk)",
+   "titrationSchedule": "Start 10 mg daily; increase to 20 mg daily after minimum 1-2 weeks if tolerated and clinically indicated."
+  },
+  "commonSideEffects": [
+   "Nausea",
+   "Headache",
+   "Fatigue / somnolence",
+   "Anorgasmia / delayed ejaculation",
+   "Excessive yawning"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "QTc Prolongation",
+    "receptorMediation": "hERG potassium channel blockade at supratherapeutic levels",
+    "clinicalManagement": "Cap dose at 10 mg/day in elderly/hepatic impairment; baseline ECG if cardiac risk"
+   },
+   {
+    "symptom": "Sexual Dysfunction",
+    "receptorMediation": "5-HT2A post-synaptic activation lowering spinal reflex sensitivity",
+    "clinicalManagement": "Switching or augmenting with Bupropion or PDE5 inhibitors"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Increased risk of suicidal thoughts and behaviors in patients <=24 years."
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "gad",
+   "panic_disorder",
+   "ocd"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "cstc_loop",
+   "default_mode_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin"
+  ],
+  "clinicalPearls": "The quintessential 'pure' SSRI with virtually no dopamine, norepinephrine, or anticholinergic off-target binding. Ideal first-line agent when polypharmacy and drug-drug interactions are primary concerns.",
+  "summary": "Escitalopram is the purified S-enantiomer of citalopram and the most selective serotonin-reuptake inhibitor in routine use, giving it one of the cleanest drug-interaction profiles. It is a first-line option for depression and generalised anxiety, dosed once daily up to 20 mg. QT prolongation caps the dose in older adults and those with cardiac risk.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "venlafaxine",
+  "genericName": "Venlafaxine",
+  "brandName": "Effexor XR",
+  "drugClass": "Serotonin-Norepinephrine Reuptake Inhibitor (SNRI)",
+  "atcCode": "N06AX16",
+  "receptorTargets": [
+   {
+    "target": "SERT",
+    "action": "Inhibitor",
+    "kiNm": 30.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Inhibited across all therapeutic dose ranges (dominant at <150 mg/day)"
+   },
+   {
+    "target": "NET",
+    "action": "Inhibitor",
+    "kiNm": 650.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Norepinephrine reuptake blocked in a dose-dependent fashion, primarily at doses >=150-225 mg/day"
+   },
+   {
+    "target": "DAT",
+    "action": "Inhibitor",
+    "kiNm": 4500.0,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Weak inhibition at very high doses (>300 mg/day)"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "5 hours (parent drug), 11 hours (active metabolite O-desmethylvenlafaxine)",
+   "bioavailability": "45%",
+   "cypMetabolism": "Extensively converted by CYP2D6 to active metabolite Desvenlafaxine; minimal CYP inhibition",
+   "timeToPeak": "5.5 - 9.0 hours (XR formulation)"
+  },
+  "dosingRange": {
+   "startingDose": "37.5 - 75 mg/day XR",
+   "targetDose": "150 - 225 mg/day XR",
+   "maxDose": "375 mg/day XR (inpatient severe depression)",
+   "titrationSchedule": "Start 37.5-75 mg daily; increase by 75 mg/day every 1-2 weeks. Dual action achieved reliably above 150 mg/day."
+  },
+  "commonSideEffects": [
+   "Dose-dependent diastolic hypertension",
+   "Nausea",
+   "Hyperhidrosis (excessive sweating)",
+   "Tachycardia",
+   "Severe discontinuation syndrome"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Dose-Dependent Hypertension",
+    "receptorMediation": "Peripheral noradrenergic vascular stimulation (alpha-1 & beta-1)",
+    "clinicalManagement": "Monitor BP regularly; switch if diastolic >90 mmHg persists"
+   },
+   {
+    "symptom": "Severe Discontinuation Syndrome",
+    "receptorMediation": "Rapid clearance and precipitous drop in central 5-HT/NE tone",
+    "clinicalManagement": "Never stop abruptly; cross-taper with Fluoxetine for protracted withdrawal"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Suicidality in children and young adults <=24 years."
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "gad",
+   "panic_disorder",
+   "ptsd",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "default_mode_network",
+   "frontolimbic_circuit",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine"
+  ],
+  "clinicalPearls": "At low doses (<=75 mg), venlafaxine is essentially an SSRI; true dual-mechanism noradrenergic recruitment occurs above 150 mg/day. Prominent risk of severe 'electric shock' withdrawal sensations if doses are skipped.",
+  "summary": "Venlafaxine is an SNRI that behaves as an SSRI at low doses and recruits norepinephrine reuptake blockade above roughly 150 mg daily. It covers depression, generalised anxiety, panic and social anxiety but demands blood-pressure monitoring and a slow taper because of prominent discontinuation symptoms. Its short half-life makes missed doses symptomatic within a day.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "bupropion",
+  "genericName": "Bupropion",
+  "brandName": "Wellbutrin XL / Zyban",
+  "drugClass": "Norepinephrine-Dopamine Reuptake Inhibitor (NDRI)",
+  "atcCode": "N06AX12",
+  "receptorTargets": [
+   {
+    "target": "DAT",
+    "action": "Inhibitor",
+    "kiNm": 520.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Inhibits dopamine reuptake (~20-25% striatal occupancy), enhancing drive and reward"
+   },
+   {
+    "target": "NET",
+    "action": "Inhibitor",
+    "kiNm": 1400.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Inhibits norepinephrine reuptake via active metabolites hydroxybupropion"
+   },
+   {
+    "target": "Alpha-3-Beta-4 Nicotinic",
+    "action": "Antagonist",
+    "kiNm": 1800.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Antagonism of neuronal nicotinic receptors underpins anti-craving efficacy in smoking cessation"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "21 hours (active metabolites: 20-37 hours)",
+   "bioavailability": "5-20% (low oral due to extensive hepatic first-pass)",
+   "cypMetabolism": "CYP2B6 to hydroxybupropion; potent inhibitor of CYP2D6 (doubles Metoprolol, Atomoxetine levels)",
+   "timeToPeak": "5.0 hours (XL formulation)"
+  },
+  "dosingRange": {
+   "startingDose": "150 mg/day XL (morning)",
+   "targetDose": "300 mg/day XL",
+   "maxDose": "450 mg/day XL",
+   "titrationSchedule": "Start 150 mg XL in the morning. Increase to 300 mg XL after minimum 4-7 days if tolerated."
+  },
+  "commonSideEffects": [
+   "Insomnia",
+   "Anxiety / agitation",
+   "Weight loss / appetite reduction",
+   "Dry mouth",
+   "Tremor"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Lowered Seizure Threshold",
+    "receptorMediation": "Direct cortical excitation and GABA inhibition at peak levels",
+    "clinicalManagement": "Strictly contra-indicated in bulimia, anorexia, abrupt alcohol/BZD withdrawal"
+   },
+   {
+    "symptom": "Insomnia",
+    "receptorMediation": "Noradrenergic ascending activation in the locus coeruleus",
+    "clinicalManagement": "Administer exclusively in the morning; avoid late evening doses"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Suicidality in children/young adults; neuropsychiatric events in smoking cessation (largely revised by EAGLES trial)."
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "adhd",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "norepinephrine"
+  ],
+  "clinicalPearls": "Zero sexual dysfunction and zero weight gain (often induces weight loss). First-line choice in depression with apathy, hypersomnia, or concurrent ADHD. Absolute contraindication in eating disorders due to seizure risk.",
+  "summary": "Bupropion is a norepinephrine-dopamine reuptake inhibitor with no sexual side effects and no weight gain, often activating and modestly aiding smoking cessation. It suits depression with fatigue, hypersomnia or attentional features but is strictly contraindicated in eating disorders, seizure history and abrupt alcohol or benzodiazepine withdrawal because it lowers the seizure threshold.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "mirtazapine",
+  "genericName": "Mirtazapine",
+  "brandName": "Remeron",
+  "drugClass": "Noradrenergic & Specific Serotonergic Antidepressant (NaSSA)",
+  "atcCode": "N06AX11",
+  "receptorTargets": [
+   {
+    "target": "Alpha-2 Autoreceptor",
+    "action": "Antagonist",
+    "kiNm": 18.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Disinhibits presynaptic NE and 5-HT release by blocking autoinhibitory alpha-2 brakes"
+   },
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 6.3,
+    "affinityRating": "High",
+    "clinicalRelevance": "Blocks 5-HT2A: preserves sexual function and reduces anxiety"
+   },
+   {
+    "target": "5-HT2C",
+    "action": "Antagonist",
+    "kiNm": 39.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Synergizes with H1 to stimulate voracious appetite and carbohydrate craving"
+   },
+   {
+    "target": "5-HT3",
+    "action": "Antagonist",
+    "kiNm": 7.9,
+    "affinityRating": "High",
+    "clinicalRelevance": "Complete anti-emetic protection; zero SSRI-like nausea"
+   },
+   {
+    "target": "H1 Histamine",
+    "action": "Antagonist",
+    "kiNm": 0.14,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Potent sedation and metabolic orexigenic weight gain (saturates even at 7.5 mg)"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "20 - 40 hours",
+   "bioavailability": "50%",
+   "cypMetabolism": "CYP2D6, CYP3A4, CYP1A2; no clinically meaningful inhibition of CYP enzymes",
+   "timeToPeak": "2.0 hours"
+  },
+  "dosingRange": {
+   "startingDose": "15 mg/day (bedtime)",
+   "targetDose": "30 - 45 mg/day",
+   "maxDose": "45 mg/day",
+   "titrationSchedule": "Start 15 mg at bedtime. May increase to 30 mg then 45 mg every 1-2 weeks. Paradoxically, higher doses (30-45mg) are less sedating due to increased noradrenergic tone."
+  },
+  "commonSideEffects": [
+   "Marked sedation / somnolence",
+   "Increased appetite / weight gain",
+   "Dry mouth",
+   "Constipation",
+   "Peripheral edema"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Sedation",
+    "receptorMediation": "Extreme H1 receptor affinity (Ki 0.14 nM)",
+    "clinicalManagement": "Take at bedtime; educate patient that sedation diminishes at >=30mg due to NE release"
+   },
+   {
+    "symptom": "Weight Gain",
+    "receptorMediation": "Combined H1 and 5-HT2C antagonism in the arcuate nucleus of hypothalamus",
+    "clinicalManagement": "Monitor metabolic profile, fasting glucose, and BMI"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Suicidality in pediatric and young adult patients."
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "insomnia",
+   "ptsd",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "default_mode_network",
+   "hpa_axis",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "norepinephrine",
+   "serotonin"
+  ],
+  "clinicalPearls": "A powerful tool for depressed patients with insomnia and cachexia/weight loss (e.g. oncology, elderly). Combines synergistically with Venlafaxine ('California Rocket Fuel') to maximally drive dual NE/5-HT transmission.",
+  "summary": "Mirtazapine boosts noradrenergic and serotonergic transmission by blocking alpha-2 autoreceptors while antagonising 5-HT2, 5-HT3 and H1 receptors, which explains its anti-nausea effect and sedation. It is the antidepressant of choice when depression presents with insomnia and weight loss, taken at bedtime. Higher doses paradoxically sedate less as noradrenergic drive rises.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "aripiprazole",
+  "genericName": "Aripiprazole",
+  "brandName": "Abilify",
+  "drugClass": "Second-Generation Antipsychotic (D2 Partial Agonist)",
+  "atcCode": "N05AX12",
+  "receptorTargets": [
+   {
+    "target": "D2",
+    "action": "Partial Agonist",
+    "kiNm": 0.34,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Intrinsic activity ~30%; acts as functional antagonist in hyperdopaminergic states and agonist in hypodopaminergic states"
+   },
+   {
+    "target": "D3",
+    "action": "Partial Agonist",
+    "kiNm": 0.8,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Strong limbic affinity; enhances motivation and cognitive processing"
+   },
+   {
+    "target": "5-HT1A",
+    "action": "Partial Agonist",
+    "kiNm": 1.7,
+    "affinityRating": "High",
+    "clinicalRelevance": "Potent anxiolytic and antidepressant synergy; increases prefrontal cortical DA release"
+   },
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 3.4,
+    "affinityRating": "High",
+    "clinicalRelevance": "Reduces risk of EPS and promotes cortical dopamine transmission"
+   },
+   {
+    "target": "H1",
+    "action": "Antagonist",
+    "kiNm": 61.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Low affinity: low risk of sedation and weight gain compared to other SGAs"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "75 hours (active metabolite dehydro-aripiprazole: 94 hours)",
+   "bioavailability": "87%",
+   "cypMetabolism": "CYP2D6, CYP3A4 substrate; reduce dose by 50% in CYP2D6 poor metabolizers or when co-administered with fluoxetine/paroxetine",
+   "timeToPeak": "3.0 - 5.0 hours"
+  },
+  "dosingRange": {
+   "startingDose": "2 - 5 mg/day (adjunct MDD); 10 - 15 mg/day (Schizo/Bipolar)",
+   "targetDose": "2 - 10 mg/day (MDD); 15 - 30 mg/day (Psychosis)",
+   "maxDose": "30 mg/day",
+   "titrationSchedule": "For MDD adjunct: start 2-5 mg/day, increase by 2-5 mg after 1-2 weeks. For psychosis: start 10-15 mg/day; wait 2 weeks before dose adjustments due to long half-life."
+  },
+  "commonSideEffects": [
+   "Akathisia (motor restlessness)",
+   "Insomnia",
+   "Nausea",
+   "Headache",
+   "Impulse control disorders (gambling/compulsions)"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Akathisia",
+    "receptorMediation": "Basal ganglia D2 partial agonist intrinsic activity triggering striatal restlessness",
+    "clinicalManagement": "Start low (2mg); treat with Propranolol 10-40mg or low-dose Benzodiazepine"
+   },
+   {
+    "symptom": "Impulse Control Disorders",
+    "receptorMediation": "Mesolimbic D3 partial agonism in reward pathways",
+    "clinicalManagement": "Warn family; screen for pathological gambling or hypersexuality"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Increased mortality in elderly patients with dementia-related psychosis; Suicidality in children/young adults when used as MDD adjunct."
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "mdd",
+   "trd",
+   "ocd",
+   "bpd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "serotonin"
+  ],
+  "clinicalPearls": "The 'dopamine stabilizer': partial agonism avoids total D2 shutdown, preserving prolactin and reducing metabolic liability. Low doses (2-5 mg) are gold-standard for antidepressant augmentation in TRD.",
+  "summary": "Aripiprazole is a D2 partial agonist that dampens dopamine where it is excessive and supports it where deficient, giving antipsychotic efficacy with comparatively low metabolic and prolactin burden. It is used in schizophrenia, bipolar mania, and as augmentation in resistant depression and OCD. Akathisia and impulse-control symptoms are the signature tolerability signals to monitor.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "quetiapine",
+  "genericName": "Quetiapine",
+  "brandName": "Seroquel / Seroquel XR",
+  "drugClass": "Second-Generation Antipsychotic (MARTA / SDA)",
+  "atcCode": "N05AH04",
+  "receptorTargets": [
+   {
+    "target": "H1 Histamine",
+    "action": "Antagonist",
+    "kiNm": 11.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Potent sedation and hypnotic effect dominating at low doses (25-50 mg)"
+   },
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 38.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "SGA signature; active at moderate doses (150-300 mg)"
+   },
+   {
+    "target": "Alpha-1",
+    "action": "Antagonist",
+    "kiNm": 22.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Orthostatic hypotension and sedation"
+   },
+   {
+    "target": "NET (via Norquetiapine)",
+    "action": "Inhibitor",
+    "kiNm": 12.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Active metabolite norquetiapine blocks NET, conferring unique antidepressant efficacy in bipolar depression"
+   },
+   {
+    "target": "D2",
+    "action": "Antagonist",
+    "kiNm": 300.0,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Transient, fast-off D2 binding ('hit-and-run'); requires high doses (>=600 mg) for antipsychotic efficacy"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "6 hours (parent drug), 12 hours (active metabolite norquetiapine)",
+   "bioavailability": "9% (moderate due to extensive first-pass metabolism)",
+   "cypMetabolism": "CYP3A4 (major); avoid concurrent ketoconazole, erythromycin, or carbamazepine",
+   "timeToPeak": "1.5 hours (IR), 6.0 hours (XR)"
+  },
+  "dosingRange": {
+   "startingDose": "25 - 50 mg (sleep/anxiety); 50 mg (Bipolar); 150 mg (Psychosis)",
+   "targetDose": "150 - 300 mg (Bipolar depression); 400 - 800 mg (Mania/Schizophrenia)",
+   "maxDose": "800 mg/day",
+   "titrationSchedule": "Bipolar depression: Day 1: 50mg, Day 2: 100mg, Day 3: 200mg, Day 4: 300mg. Schizophrenia: titrate rapidly to 400-800 mg/day."
+  },
+  "commonSideEffects": [
+   "Marked somnolence/sedation",
+   "Weight gain & metabolic syndrome",
+   "Orthostatic dizziness",
+   "Dry mouth",
+   "Constipation"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Metabolic Dysregulation",
+    "receptorMediation": "Combined H1 + 5-HT2C antagonism with secondary insulin resistance",
+    "clinicalManagement": "Serial fasting glucose, lipid panel, waist circumference"
+   },
+   {
+    "symptom": "Orthostatic Hypotension",
+    "receptorMediation": "Alpha-1 adrenergic antagonism",
+    "clinicalManagement": "Slow positional changes; dose titration at bedtime"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Increased mortality in elderly patients with dementia-related psychosis; Suicidal thoughts in pediatric/young adults when used as MDD adjunct."
+  ],
+  "linkedSyndromes": [
+   "bipolar1",
+   "schizophrenia",
+   "mdd",
+   "trd",
+   "ptsd",
+   "insomnia"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "salience_network",
+   "default_mode_network"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "serotonin",
+   "norepinephrine"
+  ],
+  "clinicalPearls": "A dose-dependent 'chameleon': 25-50 mg = sleeping pill (pure H1); 150-300 mg = antidepressant (norquetiapine NET + 5-HT2A); 600-800 mg = antipsychotic (D2 threshold reached). Negligible EPS or hyperprolactinemia risk.",
+  "summary": "Quetiapine is a sedating second-generation antipsychotic used across schizophrenia, bipolar depression and mania, and adjunctively in resistant depression, with dose-dependent receptor engagement from histamine blockade at low doses to full D2 antagonism at high doses. Somnolence, dry mouth, weight gain and orthostatic hypotension are typical. Its broad dose range makes indication-specific dosing essential.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "olanzapine",
+  "genericName": "Olanzapine",
+  "brandName": "Zyprexa",
+  "drugClass": "Second-Generation Antipsychotic (MARTA)",
+  "atcCode": "N05AH03",
+  "receptorTargets": [
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 4.0,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Extreme affinity; exceeds D2 occupancy, providing strong antimanic and antipsychotic stability"
+   },
+   {
+    "target": "D2",
+    "action": "Antagonist",
+    "kiNm": 11.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Clean therapeutic window: 70-80% striatal occupancy without extreme EPS threshold"
+   },
+   {
+    "target": "H1",
+    "action": "Antagonist",
+    "kiNm": 7.0,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Profound sedation and rapid, marked orexigenic weight gain"
+   },
+   {
+    "target": "M1",
+    "action": "Antagonist",
+    "kiNm": 1.9,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Anticholinergic protection against EPS, but risk of constipation and cognitive slowing"
+   },
+   {
+    "target": "5-HT2C",
+    "action": "Antagonist",
+    "kiNm": 11.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Synergizes with H1 to trigger intense carbohydrate craving and hypertriglyceridemia"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "21 - 54 hours (mean 30 hours)",
+   "bioavailability": "85% (not affected by food)",
+   "cypMetabolism": "CYP1A2 (major substrate); clearance increased ~40% by cigarette smoking (polycyclic aromatic hydrocarbons)",
+   "timeToPeak": "6.0 hours"
+  },
+  "dosingRange": {
+   "startingDose": "5 - 10 mg/day (bedtime)",
+   "targetDose": "10 - 20 mg/day",
+   "maxDose": "20 mg/day (up to 30 mg in treatment-resistant cases)",
+   "titrationSchedule": "Start 5-10 mg daily at bedtime. May adjust by 5 mg increments at intervals of not less than 1 week."
+  },
+  "commonSideEffects": [
+   "Severe weight gain (mean 5-10+ kg)",
+   "Hyperglycemia & New-onset Type 2 Diabetes",
+   "Dyslipidemia (marked triglyceride spikes)",
+   "Sedation",
+   "Dry mouth"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Extreme Weight Gain / Diabetes",
+    "receptorMediation": "H1 and 5-HT2C blockade + direct pancreatic beta-cell muscarinic M3 inhibition",
+    "clinicalManagement": "Baseline & quarterly HbA1c/lipids; co-prescribe Metformin 1000-2000mg defensively"
+   },
+   {
+    "symptom": "CYP1A2 Induction by Smoking",
+    "receptorMediation": "Tar in tobacco smoke induces CYP1A2, dropping blood levels by 40%",
+    "clinicalManagement": "Smoking cessation requires immediate 30-50% dose reduction to avoid toxicity"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Dementia-related psychosis mortality. Post-injection delirium/sedation syndrome for long-acting injectable (Zyprexa Relprevv)."
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "trd",
+   "mdd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "serotonin",
+   "acetylcholine"
+  ],
+  "clinicalPearls": "One of the most effective non-clozapine antipsychotics and antimanic agents in psychiatry (CATIE trial). However, devastating metabolic adverse effects necessitate aggressive baseline and ongoing laboratory monitoring.",
+  "summary": "Olanzapine is a broad-spectrum second-generation antipsychotic with strong efficacy in schizophrenia and bipolar disorder, including rapid control of agitation. Its use is limited mainly by substantial weight gain and metabolic syndrome, mandating baseline and ongoing metabolic monitoring. Potent H1 and 5-HT2C blockade underlie both its calming effect and its metabolic liability.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "risperidone",
+  "genericName": "Risperidone",
+  "brandName": "Risperdal",
+  "drugClass": "Second-Generation Antipsychotic (SDA)",
+  "atcCode": "N05AX08",
+  "receptorTargets": [
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 0.5,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Sub-nanomolar affinity; blocks 5-HT2A completely before reaching full D2 blockade"
+   },
+   {
+    "target": "D2",
+    "action": "Antagonist",
+    "kiNm": 3.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Potent striatal D2 blockade; narrow therapeutic window: doses >4-6 mg/day frequently induce parkinsonian EPS"
+   },
+   {
+    "target": "Alpha-1",
+    "action": "Antagonist",
+    "kiNm": 2.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Causes orthostatic hypotension and nasal congestion"
+   },
+   {
+    "target": "Alpha-2",
+    "action": "Antagonist",
+    "kiNm": 8.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Presynaptic noradrenergic release enhancement"
+   },
+   {
+    "target": "H1",
+    "action": "Antagonist",
+    "kiNm": 20.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Mild-to-moderate sedation and weight gain"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "3 hours (parent drug), 24 hours (active metabolite 9-hydroxyrisperidone / Paliperidone)",
+   "bioavailability": "70%",
+   "cypMetabolism": "CYP2D6 converts to active paliperidone; active moiety half-life total ~24 hours",
+   "timeToPeak": "1.0 hour"
+  },
+  "dosingRange": {
+   "startingDose": "1 - 2 mg/day (0.5 mg in elderly)",
+   "targetDose": "2 - 6 mg/day",
+   "maxDose": "8 mg/day (rarely justified due to EPS above 6 mg)",
+   "titrationSchedule": "Start 1-2 mg/day; titrate by 1 mg/day every 24-48 hours. Most patients achieve complete D2 response at 2-4 mg/day."
+  },
+  "commonSideEffects": [
+   "Hyperprolactinemia (galactorrhea, amenorrhea, gynecomastia)",
+   "Dose-dependent EPS (parkinsonism, tremor, rigidity)",
+   "Weight gain",
+   "Orthostatic dizziness",
+   "Sedation"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Hyperprolactinemia",
+    "receptorMediation": "Complete D2 blockade in pituitary lactotrophs (outside blood-brain barrier)",
+    "clinicalManagement": "Check serum prolactin if sexual dysfunction/amenorrhea; switch to Aripiprazole if elevated"
+   },
+   {
+    "symptom": "EPS / Tremor",
+    "receptorMediation": "Striatal D2 occupancy exceeding 80% at doses >=4-6mg",
+    "clinicalManagement": "Reduce dose to <=4mg; add Trihexyphenidyl or switch agent"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Increased mortality in elderly patients with dementia-related psychosis."
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "ocd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "serotonin"
+  ],
+  "clinicalPearls": "The quintessential serotonin-dopamine antagonist (SDA). Be careful not to dose like a typical antipsychotic: 2-4 mg is the sweet spot. Highest incidence of prolactin elevation among all SGAs.",
+  "summary": "Risperidone is a potent D2 and 5-HT2A antagonist effective in schizophrenia, bipolar mania and irritability in autism, available in long-acting injectable form. Dose-dependent prolactin elevation, weight gain and extrapyramidal symptoms track its high D2 occupancy. It remains a benchmark comparator in antipsychotic trials.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "clozapine",
+  "genericName": "Clozapine",
+  "brandName": "Clozaril",
+  "drugClass": "Second-Generation Antipsychotic (Gold-Standard Atypical)",
+  "atcCode": "N05AH02",
+  "receptorTargets": [
+   {
+    "target": "D4",
+    "action": "Antagonist",
+    "kiNm": 9.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "High selectivity for limbic D4 over striatal D2"
+   },
+   {
+    "target": "D2",
+    "action": "Antagonist",
+    "kiNm": 125.0,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Transient, low-affinity 'fast-off' binding (30-60% occupancy); virtually never causes EPS or tardive dyskinesia"
+   },
+   {
+    "target": "5-HT2A",
+    "action": "Antagonist",
+    "kiNm": 5.0,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Strong serotonin antagonism balancing dopamine tone"
+   },
+   {
+    "target": "M1/M4",
+    "action": "Partial Agonist / Antagonist",
+    "kiNm": 1.9,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Complex muscarinic activity; paradoxically causes severe nocturnal hypersalivation (sialorrhea)"
+   },
+   {
+    "target": "H1",
+    "action": "Antagonist",
+    "kiNm": 6.0,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Profound sedation and metabolic weight gain"
+   },
+   {
+    "target": "Alpha-1",
+    "action": "Antagonist",
+    "kiNm": 7.0,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Significant orthostatic hypotension and syncope risk"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "12 - 16 hours",
+   "bioavailability": "50-60%",
+   "cypMetabolism": "CYP1A2 (major), CYP3A4, CYP2C19. Cigarette smoking dramatically lowers blood levels via CYP1A2 induction",
+   "timeToPeak": "1.5 - 2.5 hours"
+  },
+  "dosingRange": {
+   "startingDose": "12.5 mg once or twice daily",
+   "targetDose": "300 - 450 mg/day (therapeutic blood level >=350 ng/mL)",
+   "maxDose": "900 mg/day",
+   "titrationSchedule": "Mandatory slow titration: Day 1: 12.5mg, Day 2: 25mg, then increase by 25-50mg/day as tolerated up to 300mg by week 2-3 to prevent cardiovascular collapse and seizures."
+  },
+  "commonSideEffects": [
+   "Severe nocturnal sialorrhea (drooling)",
+   "Sedation",
+   "Severe constipation / paralytic ileus",
+   "Weight gain / metabolic syndrome",
+   "Tachycardia & orthostasis"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Agranulocytosis / Severe Neutropenia",
+    "receptorMediation": "Immune-mediated toxic oxidation of nitrenium ions leading to neutrophil apoptosis",
+    "clinicalManagement": "Mandatory REMS absolute neutrophil count (ANC) tracking: weekly for 6mo, biweekly for 6mo, then monthly"
+   },
+   {
+    "symptom": "Myocarditis / Cardiomyopathy",
+    "receptorMediation": "IgE-mediated eosinophilic hypersensitivity myocardial necrosis",
+    "clinicalManagement": "Baseline ECG, troponin, and weekly troponin/CRP during first 4 weeks"
+   },
+   {
+    "symptom": "Paralytic Gastrointestinal Ileus",
+    "receptorMediation": "Potent peripheral and central anticholinergic M1/M3 blockade",
+    "clinicalManagement": "Rule out constipation proactively; fatal bowel necrosis can occur without pain"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Severe neutropenia (agranulocytosis), Orthostatic hypotension/syncope, Seizures (dose-dependent), Myocarditis and cardiomyopathy, Dementia mortality."
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "serotonin",
+   "acetylcholine"
+  ],
+  "clinicalPearls": "The single most effective antipsychotic in existence; the only drug FDA-approved for treatment-resistant schizophrenia and reducing suicide in schizophrenia. Never given first-line due to agranulocytosis monitoring mandates.",
+  "summary": "Clozapine is the only antipsychotic with proven superiority in treatment-resistant schizophrenia and in reducing suicidality, acting through uniquely broad receptor binding with relatively low D2 occupancy. Mandatory blood monitoring manages the agranulocytosis risk, alongside vigilance for myocarditis, seizures and severe constipation. Its benefits outweigh burdens only where two prior antipsychotics have failed.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "lithium",
+  "genericName": "Lithium Carbonate",
+  "brandName": "Lithobid / Eskalith",
+  "drugClass": "Mood Stabilizer (Monovalent Cation)",
+  "atcCode": "N05AN01",
+  "receptorTargets": [
+   {
+    "target": "GSK-3beta",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Direct and indirect inhibition of glycogen synthase kinase 3beta; promotes neurogenesis, synaptogenesis, and neuroprotection"
+   },
+   {
+    "target": "Inositol Monophosphatase (IMPase)",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "'Inositol depletion hypothesis': shuts down hyperactive Gq-coupled phosphoinositide (IP3/DAG) second messenger cascades"
+   },
+   {
+    "target": "NMDA Receptor",
+    "action": "Modulator",
+    "kiNm": null,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Attenuates glutamate-mediated excitotoxicity and downregulates NMDA receptor surface density"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "18 - 24 hours (prolonged in renal impairment and elderly)",
+   "bioavailability": "100%",
+   "cypMetabolism": "Not metabolized by liver; excreted 100% unchanged through renal glomerular filtration (shares proximal tubule reabsorption with Sodium)",
+   "timeToPeak": "0.5 - 3.0 hours (IR), 4.0 - 12.0 hours (ER)"
+  },
+  "dosingRange": {
+   "startingDose": "300 mg twice daily (or 600 mg QHS)",
+   "targetDose": "900 - 1200 mg/day (Target level: Acute mania 0.8-1.2 mEq/L; Maintenance 0.6-0.8 mEq/L)",
+   "maxDose": "Titrate to 12-hour trough serum level (toxicity starts >1.2 mEq/L, severe >2.0 mEq/L)",
+   "titrationSchedule": "Check 12-hour trough level 5-7 days after initiation and after every dose change until steady state. Once stable, monitor every 3-6 months alongside renal and thyroid panels."
+  },
+  "commonSideEffects": [
+   "Fine hand tremor",
+   "Polyuria & polydipsia (nephrogenic DI)",
+   "Hypothyroidism & goiter",
+   "Nausea/vomiting",
+   "Weight gain",
+   "Acne/psoriasis exacerbation"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Nephrogenic Diabetes Insipidus",
+    "receptorMediation": "Interferes with vasopressin (ADH)-mediated V2 aquaporin-2 channel insertion in renal collecting duct",
+    "clinicalManagement": "Hydration; amiloride if severe polyuria; check eGFR and creatinine annually"
+   },
+   {
+    "symptom": "Hypothyroidism",
+    "receptorMediation": "Inhibits thyroid hormone iodination and release from thyroid follicles",
+    "clinicalManagement": "Check baseline and biannual TSH/free T4; treat with Levothyroxine without discontinuing Lithium"
+   },
+   {
+    "symptom": "Toxicity with Dehydration/NSAIDs/ACEi/Diuretics",
+    "receptorMediation": "Sodium depletion causes proximal tubule to hyper-reabsorb lithium ion",
+    "clinicalManagement": "Avoid NSAIDs, thiazides, and ACE inhibitors; maintain steady salt and fluid intake"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Lithium toxicity is closely related to serum levels and can occur at doses close to therapeutic concentrations (narrow therapeutic index)."
+  ],
+  "linkedSyndromes": [
+   "bipolar1",
+   "mdd",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "frontolimbic_circuit",
+   "hpa_axis"
+  ],
+  "linkedTransmitters": [
+   "glutamate",
+   "dopamine"
+  ],
+  "clinicalPearls": "The benchmark mood stabilizer for Bipolar I disorder with proven anti-suicidal properties independent of mood state. Always check levels exactly 12 hours post-dose (trough level).",
+  "summary": "Lithium remains the gold-standard mood stabiliser for bipolar prophylaxis, with unique anti-suicidal effects, acting through inositol and GSK-3 signalling rather than a single receptor. Its narrow therapeutic index demands serum monitoring and attention to renal, thyroid and hydration status. Even low-dose augmentation benefits resistant depression.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   }
+  ]
+ },
+ {
+  "id": "lamotrigine",
+  "genericName": "Lamotrigine",
+  "brandName": "Lamictal",
+  "drugClass": "Mood Stabilizer / Anticonvulsant",
+  "atcCode": "N03AX09",
+  "receptorTargets": [
+   {
+    "target": "Voltage-Gated Na+ Channels",
+    "action": "Blocker",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Use-dependent blockade of voltage-sensitive sodium channels on cortical and hippocampal pyramidal neurons"
+   },
+   {
+    "target": "Presynaptic Glutamate Release",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Stabilizes neuronal membranes, decreasing hyperactive glutamate and aspartate efflux in limbic pathways"
+   },
+   {
+    "target": "N- and P-Type Ca2+ Channels",
+    "action": "Weak Blocker",
+    "kiNm": null,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Attenuates high-voltage activated calcium influx in presynaptic terminals"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "25 - 30 hours (doubled to ~60h by Valproate; halved to ~15h by Carbamazepine/OCPs)",
+   "bioavailability": "98%",
+   "cypMetabolism": "Hepatic glucuronidation via UGT1A4; clearance increased up to 50% by estrogen-containing oral contraceptives",
+   "timeToPeak": "1.5 - 4.8 hours"
+  },
+  "dosingRange": {
+   "startingDose": "25 mg/day (Weeks 1-2)",
+   "targetDose": "100 - 200 mg/day (Maintenance)",
+   "maxDose": "200 mg/day (Bipolar); 400 mg/day (Epilepsy)",
+   "titrationSchedule": "Mandatory slow escalation: Wks 1-2: 25mg/day; Wks 3-4: 50mg/day; Wk 5: 100mg/day; Wk 6: 200mg/day. If co-administered with Valproate, start 25mg EVERY OTHER DAY."
+  },
+  "commonSideEffects": [
+   "Benign rash",
+   "Headache",
+   "Dizziness / ataxia",
+   "Nausea",
+   "Diplopia / blurred vision"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Stevens-Johnson Syndrome (SJS) / TEN",
+    "receptorMediation": "Immunologically mediated toxic epidermal necrolysis tied to rapid dose titration",
+    "clinicalManagement": "Adhere strictly to titration schedule; stop immediately at any sign of rash involving mucous membranes or fever"
+   },
+   {
+    "symptom": "Interaction with Oral Contraceptives",
+    "receptorMediation": "Estrogen induces UGT1A4 glucuronidation, halving lamotrigine serum levels",
+    "clinicalManagement": "Double dose during active pill days, reduce during placebo week to prevent toxicity"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Serious, potentially life-threatening rashes including Stevens-Johnson Syndrome (SJS) and Toxic Epidermal Necrolysis (TEN)."
+  ],
+  "linkedSyndromes": [
+   "bipolar1",
+   "bpd",
+   "mdd",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "glutamate",
+   "gaba"
+  ],
+  "clinicalPearls": "First-line for preventing Bipolar depression and rapid cycling without triggering manic switches. Excellent tolerability (weight neutral, non-sedating), but slow 6-week titration is non-negotiable.",
+  "summary": "Lamotrigine is a glutamate-release inhibitor most valuable for preventing bipolar depressive relapse rather than treating acute mania. A slow six-week titration is mandatory to limit rash risk, after which tolerability is among the best in class. Valproate doubles its levels while enzyme inducers halve them.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   }
+  ]
+ },
+ {
+  "id": "divalproex",
+  "genericName": "Divalproex / Valproic Acid",
+  "brandName": "Depakote / Depakene",
+  "drugClass": "Mood Stabilizer / Anticonvulsant",
+  "atcCode": "N03AG01",
+  "receptorTargets": [
+   {
+    "target": "GABA Transaminase (GABA-T)",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Inhibits GABA breakdown and stimulates GAD, augmenting central GABAergic inhibitory tone"
+   },
+   {
+    "target": "Voltage-Gated Na+ Channels",
+    "action": "Blocker",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Prolongs recovery from inactivation, dampening high-frequency repetitive firing in limbic loops"
+   },
+   {
+    "target": "T-type Ca2+ Channels",
+    "action": "Blocker",
+    "kiNm": null,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Attenuates thalamocortical oscillatory burst firing"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "9 - 16 hours",
+   "bioavailability": "90%",
+   "cypMetabolism": "Extensive hepatic glucuronidation (50%) and mitochondrial beta-oxidation (40%); potent inhibitor of CYP2C9 and UGT1A4 (doubles lamotrigine levels)",
+   "timeToPeak": "3.0 - 5.0 hours (delayed release)"
+  },
+  "dosingRange": {
+   "startingDose": "250 - 500 mg twice daily (or loading dose 20-25 mg/kg for acute mania)",
+   "targetDose": "1000 - 2000 mg/day (Serum therapeutic level: 50 - 125 mcg/mL)",
+   "maxDose": "Titrate to serum level (toxic threshold >125 mcg/mL)",
+   "titrationSchedule": "Acute mania: oral loading at 20-25 mg/kg/day gives rapid symptom control in 3-5 days. Check 12-hour trough level after 3-5 days."
+  },
+  "commonSideEffects": [
+   "Nausea/vomiting",
+   "Alopecia (hair thinning)",
+   "Significant weight gain",
+   "Fine tremor",
+   "Sedation"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Hepatotoxicity & Pancreatitis",
+    "receptorMediation": "Toxic metabolite 4-ene-VPA causes mitochondrial dysfunction and oxidative necrosis",
+    "clinicalManagement": "Baseline and periodic LFTs, amylase/lipase if acute abdominal pain arises"
+   },
+   {
+    "symptom": "Hyperammonemic Encephalopathy",
+    "receptorMediation": "Inhibition of carbamoyl phosphate synthetase I in the urea cycle",
+    "clinicalManagement": "Check serum ammonia in acute confusion/lethargy even if LFTs are normal; treat with L-carnitine"
+   },
+   {
+    "symptom": "Teratogenicity (Neural Tube Defects)",
+    "receptorMediation": "Inhibition of histone deacetylases (HDAC) and folate metabolism",
+    "clinicalManagement": "Major congenital malformations (spina bifida ~1-2%), facial dysmorphisms, and IQ deficits; avoid in women of childbearing potential"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Fatal hepatic failure, Pancreatitis, and Severe teratogenicity (neural tube defects, craniofacial defects, cognitive impairment)."
+  ],
+  "linkedSyndromes": [
+   "bipolar1",
+   "aud"
+  ],
+  "linkedCircuits": [
+   "cstc_loop",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "gaba",
+   "glutamate"
+  ],
+  "clinicalPearls": "Gold standard for acute manic excitement, mixed episodes, and rapid cycling. Oral loading (20 mg/kg) controls acute mania faster than lithium. Strongly avoid in females of childbearing age due to severe teratogenicity and PCOS risk.",
+  "summary": "Divalproex (valproate) controls acute mania and mixed states through GABA potentiation and histone-deacetylase effects, with loading-dose strategies for rapid stabilisation. Teratogenicity rules it out in pregnancy, and hepatic, haematologic and weight monitoring is routine. It is also a first-line migraine prophylactic.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "clonazepam",
+  "genericName": "Clonazepam",
+  "brandName": "Klonopin",
+  "drugClass": "Benzodiazepine (High-Potency)",
+  "atcCode": "N03AE01",
+  "receptorTargets": [
+   {
+    "target": "GABA-A Receptor (alpha1, alpha2, alpha3, alpha5 subunits)",
+    "action": "Positive Allosteric Modulator (PAM)",
+    "kiNm": 0.5,
+    "affinityRating": "Very High",
+    "clinicalRelevance": "Binds the BZD allosteric pocket between alpha and gamma subunits, increasing channel opening frequency to Cl- ions and producing rapid hyperpolarization"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "30 - 40 hours",
+   "bioavailability": "90%",
+   "cypMetabolism": "CYP3A4 hepatic nitroreduction to inactive 7-amino-clonazepam",
+   "timeToPeak": "1.0 - 4.0 hours"
+  },
+  "dosingRange": {
+   "startingDose": "0.25 - 0.5 mg twice daily",
+   "targetDose": "1.0 - 2.0 mg/day",
+   "maxDose": "4.0 mg/day (panic disorder)",
+   "titrationSchedule": "Start 0.25-0.5 mg BID; titrate by 0.5 mg every 3 days toward symptom control. Plan taper duration equivalent to at least length of active use."
+  },
+  "commonSideEffects": [
+   "Sedation / drowsiness",
+   "Ataxia / psychomotor impairment",
+   "Anterograde amnesia",
+   "Tolerance and physiological dependence",
+   "Respiratory depression (synergistic with opioids)"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Tolerance & Dependence",
+    "receptorMediation": "Downregulation and uncoupling of GABA-A receptor alpha-1/alpha-2 subunits from G-protein signaling",
+    "clinicalManagement": "Short-term bridge use only (2-4 weeks); taper by <=10% per week to avoid seizures and rebound panic"
+   },
+   {
+    "symptom": "Fatal Synergistic Respiratory Depression",
+    "receptorMediation": "Simultaneous depression of medullary respiratory drive when combined with Opioids or Alcohol",
+    "clinicalManagement": "Never combine with high-dose opioids or alcohol; co-prescribe Naloxone in at-risk patients"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Concomitant use of benzodiazepines and opioids may result in profound sedation, respiratory depression, coma, and death. Physical dependence and withdrawal."
+  ],
+  "linkedSyndromes": [
+   "panic_disorder",
+   "gad",
+   "insomnia",
+   "bipolar1"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "gaba"
+  ],
+  "clinicalPearls": "Long half-life (30-40h) makes it superior to Alprazolam (Xanax) by avoiding inter-dose rebound anxiety and intense addictive peaks. Excellent 2-4 week bridge while awaiting SSRI onset.",
+  "summary": "Clonazepam is a long-acting benzodiazepine that rapidly damps panic, acute mania-related agitation and catatonia via GABA-A potentiation. Dependence, withdrawal seizures and cognitive dulling restrict it to short-term or carefully supervised maintenance use with a taper plan. It is not a substitute for definitive SSRI or mood-stabiliser therapy.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "buspirone",
+  "genericName": "Buspirone",
+  "brandName": "Buspar",
+  "drugClass": "Azapirone Anxiolytic (5-HT1A Partial Agonist)",
+  "atcCode": "N05BE01",
+  "receptorTargets": [
+   {
+    "target": "5-HT1A",
+    "action": "Partial Agonist",
+    "kiNm": 15.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "High intrinsic activity at somatodendritic autoreceptors in raphe; partial agonist at cortical post-synaptic sites"
+   },
+   {
+    "target": "D2",
+    "action": "Antagonist / Presynaptic Modulator",
+    "kiNm": 150.0,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Weak dopamine D2 antagonist; may increase prefrontal dopamine and norepinephrine release"
+   },
+   {
+    "target": "Alpha-1",
+    "action": "Weak Ligand",
+    "kiNm": 400.0,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Negligible clinical sedation or hypotension"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "2 - 3 hours (short parent half-life)",
+   "bioavailability": "4% (extensive first-pass metabolism; increased threefold by food)",
+   "cypMetabolism": "CYP3A4 substrate; levels dramatically increased by grapefruit juice, verapamil, erythromycin",
+   "timeToPeak": "0.75 - 1.5 hours"
+  },
+  "dosingRange": {
+   "startingDose": "7.5 mg twice daily (or 5 mg TID)",
+   "targetDose": "20 - 30 mg/day (divided BID or TID)",
+   "maxDose": "60 mg/day",
+   "titrationSchedule": "Start 7.5 mg BID. Increase by 5 mg/day every 2-3 days up to 30 mg/day in divided doses. Requires 2-4 weeks for therapeutic anxiolysis."
+  },
+  "commonSideEffects": [
+   "Dizziness / lightheadedness",
+   "Nausea",
+   "Headache",
+   "Nervousness / excitement",
+   "Restlessness"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Lack of Sedation or Addiction",
+    "receptorMediation": "Completely devoid of GABA-A receptor affinity",
+    "clinicalManagement": "Zero abuse potential, no motor impairment, no withdrawal syndrome"
+   },
+   {
+    "symptom": "Delayed Efficacy",
+    "receptorMediation": "Requires 5-HT1A autoreceptor desensitization similar to SSRIs",
+    "clinicalManagement": "Educate patient that it cannot be taken PRN; must be taken consistently daily"
+   }
+  ],
+  "blackBoxWarnings": [
+   "None (one of the safest anxiolytics in psychopharmacology)."
+  ],
+  "linkedSyndromes": [
+   "gad",
+   "mdd"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "dopamine"
+  ],
+  "clinicalPearls": "Not a PRN anxiolytic: must be taken scheduled BID/TID. Ineffective for acute panic attacks. Excellent non-addictive maintenance option for GAD and augmenting SSRIs to alleviate SSRI-induced sexual dysfunction.",
+  "summary": "Buspirone is a 5-HT1A partial agonist for generalised anxiety that avoids the sedation, dependence and withdrawal of benzodiazepines. Its one-to-two-week onset lag and twice-daily dosing require expectation-setting, and it works best in benzodiazepine-naive patients. It also modestly augments SSRIs in resistant depression.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "methylphenidate",
+  "genericName": "Methylphenidate",
+  "brandName": "Ritalin / Concerta",
+  "drugClass": "Central Nervous System Stimulant (NDRI)",
+  "atcCode": "N06BA04",
+  "receptorTargets": [
+   {
+    "target": "DAT",
+    "action": "Inhibitor",
+    "kiNm": 60.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Allosterically blocks the dopamine transporter, preventing reuptake and elevating extracellular dopamine in the striatum and PFC"
+   },
+   {
+    "target": "NET",
+    "action": "Inhibitor",
+    "kiNm": 150.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Blocks norepinephrine reuptake transporter in the prefrontal cortex, enhancing signal gain"
+   },
+   {
+    "target": "5-HT1A",
+    "action": "Agonist",
+    "kiNm": null,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Trace affinity with minor physiological impact"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "2 - 3 hours (extended OROS Concerta delivers biphasic release over 10-12 hours)",
+   "bioavailability": "30% (d-threo-isomer active)",
+   "cypMetabolism": "De-esterified by hepatic carboxylesterase CES1A1 to inactive ritalinic acid (independent of CYP enzymes)",
+   "timeToPeak": "1-2 hours (IR), 6-8 hours (OROS)"
+  },
+  "dosingRange": {
+   "startingDose": "5 - 10 mg BID (IR) or 18 mg QAM (Concerta)",
+   "targetDose": "20 - 40 mg/day (IR) or 36 - 54 mg/day (Concerta)",
+   "maxDose": "60 mg/day (IR) or 72 mg/day (Concerta)",
+   "titrationSchedule": "Start 18 mg Concerta in morning; titrate by 18 mg weekly based on objective academic/occupational attention logs."
+  },
+  "commonSideEffects": [
+   "Appetite suppression & weight loss",
+   "Insomnia",
+   "Tachycardia & elevated systolic blood pressure",
+   "Anxiety",
+   "Rebound irritability upon wearing off"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Cardiovascular Activation",
+    "receptorMediation": "Peripheral noradrenergic beta-1 cardiac and alpha-1 vascular tone",
+    "clinicalManagement": "Monitor pulse and BP baseline and every follow-up; ECG if cardiac history"
+   },
+   {
+    "symptom": "Growth Velocity Attenuation",
+    "receptorMediation": "Suppression of appetite and sleep alterations in developing children",
+    "clinicalManagement": "Drug holidays on weekends/summers; track growth percentiles"
+   }
+  ],
+  "blackBoxWarnings": [
+   "High potential for abuse and dependence. Assess risk of abuse prior to prescribing and monitor for signs of misuse."
+  ],
+  "linkedSyndromes": [
+   "adhd",
+   "mdd"
+  ],
+  "linkedCircuits": [
+   "mesocortical_pathway",
+   "cstc_loop"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "norepinephrine"
+  ],
+  "clinicalPearls": "Unlike amphetamines (which reverse DAT/VMAT2 to dump dopamine), methylphenidate is a pure reuptake blocker, making it less prone to neurotoxic vesicular depletion and tachycardia.",
+  "summary": "Methylphenidate blocks dopamine and norepinephrine reuptake, making it first-line for ADHD across ages in immediate- and extended-release forms. Appetite suppression, insomnia and small blood-pressure rises are the routine monitoring points, with misuse liability managed through supervised prescribing. Cardiovascular screening precedes initiation.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ },
+ {
+  "id": "esketamine",
+  "genericName": "Esketamine / Ketamine",
+  "brandName": "Spravato",
+  "drugClass": "Glutamate NMDA Receptor Antagonist (Rapid-Acting Antidepressant)",
+  "atcCode": "N06AX27",
+  "receptorTargets": [
+   {
+    "target": "NMDA Receptor (PCP site)",
+    "action": "Non-Competitive Antagonist",
+    "kiNm": 300.0,
+    "affinityRating": "High",
+    "clinicalRelevance": "Blocks open NMDA channel pore on GABAergic cortical interneurons, disinhibiting pyramidal glutamate bursts"
+   },
+   {
+    "target": "AMPA Receptor",
+    "action": "Indirect Activator",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Surge in synaptic glutamate activates AMPA receptors, triggering voltage-gated Ca2+ channels and BDNF exocytosis"
+   },
+   {
+    "target": "mTORC1 Pathway",
+    "action": "Intracellular Activator",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Phosphorylates p70S6K and 4E-BP1, inducing rapid dendritic spine formation in prefrontal cortex within hours"
+   },
+   {
+    "target": "Mu Opioid Receptor",
+    "action": "Low-Affinity Agonist",
+    "kiNm": 11000.0,
+    "affinityRating": "Low",
+    "clinicalRelevance": "Minor contributor; opioid blockade with naltrexone attenuates but does not eliminate acute antidepressant effect"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "7 - 12 hours",
+   "bioavailability": "48% (intranasal formulation)",
+   "cypMetabolism": "CYP2B6, CYP3A4 to active noresketamine",
+   "timeToPeak": "20 - 40 minutes"
+  },
+  "dosingRange": {
+   "startingDose": "56 mg intranasal (Day 1)",
+   "targetDose": "56 mg or 84 mg twice weekly for 4 weeks",
+   "maxDose": "84 mg per session",
+   "titrationSchedule": "Induction: Twice weekly for 4 weeks. Maintenance: Weekly for weeks 5-8, then every 1-2 weeks. Must be administered under direct healthcare observation with 2-hour monitoring."
+  },
+  "commonSideEffects": [
+   "Dissociation / derealization",
+   "Transient blood pressure surge",
+   "Dizziness / vertigo",
+   "Nausea / vomiting",
+   "Hypoesthesia / sedation"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Transient Dissociation",
+    "receptorMediation": "Cortical-subcortical desynchronization from selective NMDA blockade",
+    "clinicalManagement": "Self-resolves in 60-90 minutes; calm, dark room with psychological grounding"
+   },
+   {
+    "symptom": "Acute Systolic/Diastolic BP Spikes",
+    "receptorMediation": "Centrally mediated sympathetic outflow",
+    "clinicalManagement": "Monitor BP at baseline, 40 min, and before discharge; do not administer if baseline BP >140/90"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Risk for sedation and dissociation, Abuse and misuse, REMS requirement, Suicidal thoughts and behaviors in young adults."
+  ],
+  "linkedSyndromes": [
+   "trd",
+   "mdd"
+  ],
+  "linkedCircuits": [
+   "default_mode_network",
+   "hpa_axis",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "glutamate"
+  ],
+  "clinicalPearls": "The first fundamentally novel mechanism antidepressant in 50 years. Generates rapid synaptogenesis and eliminates acute suicidal ideation within hours, contrasting with the 4-6 week lag of monoaminergic drugs.",
+  "summary": "Esketamine nasal spray is an NMDA antagonist producing rapid improvement in treatment-resistant depression through glutamate-driven synaptic plasticity. Administration is restricted to supervised settings with post-dose monitoring for dissociation and blood-pressure spikes. It complements rather than replaces ongoing oral antidepressants.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   }
+  ]
+ },
+ {
+  "id": "clomipramine",
+  "genericName": "Clomipramine",
+  "brandName": "Anafranil",
+  "drugClass": "Tricyclic Antidepressant (TCA)",
+  "atcCode": "N06AA04",
+  "receptorTargets": [
+   {
+    "target": "SERT (5-HTT)",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Most potent serotonin-reuptake blockade among TCAs; basis of the anti-obsessional effect"
+   },
+   {
+    "target": "NET",
+    "action": "Inhibitor",
+    "kiNm": null,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Norepinephrine reuptake blockade via parent drug and active desmethyl metabolite"
+   },
+   {
+    "target": "M1 Muscarinic",
+    "action": "Antagonist",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Dry mouth, constipation, urinary retention, blurred vision and cognitive dulling"
+   },
+   {
+    "target": "H1 Histamine",
+    "action": "Antagonist",
+    "kiNm": null,
+    "affinityRating": "High",
+    "clinicalRelevance": "Sedation and weight gain"
+   },
+   {
+    "target": "Alpha-1 Adrenergic",
+    "action": "Antagonist",
+    "kiNm": null,
+    "affinityRating": "Moderate",
+    "clinicalRelevance": "Orthostatic hypotension and reflex tachycardia"
+   }
+  ],
+  "pharmacokinetics": {
+   "halfLife": "20-40 hours (active desmethyl metabolite longer)",
+   "bioavailability": "About 50% (extensive first-pass metabolism)",
+   "cypMetabolism": "CYP2D6 and CYP2C19 substrate; poor metabolisers accumulate parent drug",
+   "timeToPeak": "2 to 6 hours"
+  },
+  "dosingRange": {
+   "startingDose": "25 mg/day (usually at bedtime)",
+   "targetDose": "100-150 mg/day",
+   "maxDose": "250 mg/day in OCD with plasma monitoring",
+   "titrationSchedule": "Start 25 mg daily; increase by 25 mg every few days as tolerated. ECG and postural vitals in older adults."
+  },
+  "commonSideEffects": [
+   "Anticholinergic effects (dry mouth, constipation, blurred vision)",
+   "Sedation and fatigue",
+   "Weight gain",
+   "Orthostatic hypotension",
+   "QT prolongation",
+   "Sweating and tremor"
+  ],
+  "sideEffectMechanisms": [
+   {
+    "symptom": "Anticholinergic cluster",
+    "receptorMediation": "M1 muscarinic antagonism",
+    "clinicalManagement": "Dose reduction, divided dosing; avoid in urinary retention, glaucoma, ileus"
+   },
+   {
+    "symptom": "Orthostatic hypotension",
+    "receptorMediation": "Alpha-1 adrenergic blockade",
+    "clinicalManagement": "Bedtime dosing, hydration, slow posture changes"
+   },
+   {
+    "symptom": "Cardiac conduction slowing",
+    "receptorMediation": "Cardiac sodium-channel blockade in overdose",
+    "clinicalManagement": "Baseline ECG; treat any overdose as a medical emergency"
+   }
+  ],
+  "blackBoxWarnings": [
+   "Suicidality in children, adolescents and young adults during early treatment.",
+   "Lethal in overdose: narrow therapeutic index; limit quantities in suicidal patients."
+  ],
+  "linkedSyndromes": [
+   "ocd",
+   "mdd",
+   "panic_disorder",
+   "trd"
+  ],
+  "linkedCircuits": [
+   "cstc_loop",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine"
+  ],
+  "clinicalPearls": "The most serotonergic tricyclic and a benchmark anti-obsessional; reserved for SSRI-resistant OCD and selected melancholic depressions because anticholinergic, cardiac and overdose toxicity demand respect.",
+  "summary": "Clomipramine is a tricyclic antidepressant and the most potent serotonin-reuptake blocker of its class, making it a reference treatment for obsessive-compulsive disorder after SSRI trials. Its broad receptor binding brings anticholinergic, sedative, hypotensive and pro-arrhythmic effects that require ECG and tolerability monitoring. A narrow therapeutic index and lethality in overdose mean quantities are limited in patients with suicidal ideation.",
+  "sources": [
+   {
+    "name": "IPS CPG 2025 update (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+   },
+   {
+    "name": "DrugBank",
+    "url": "https://go.drugbank.com/"
+   },
+   {
+    "name": "NCBI Bookshelf / StatPearls",
+    "url": "https://www.ncbi.nlm.nih.gov/books/"
+   }
+  ]
+ }
+]

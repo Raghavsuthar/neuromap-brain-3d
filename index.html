@@ -22,9 +22,31 @@
     </div>
 
     <header class="brand">
-      <h1>NeuroMap <span>3D Brain</span></h1>
+      <h1>NeuroMap <span>Brain + Clinic</span></h1>
       <p id="stats">Loading…</p>
     </header>
+
+    <nav id="viewtabs" aria-label="Content views">
+      <button type="button" data-view="brain" class="on">3D Brain</button>
+      <button type="button" data-view="circuits">Circuits</button>
+      <button type="button" data-view="transmitters">Transmitters</button>
+      <button type="button" data-view="syndromes">Syndromes</button>
+      <button type="button" data-view="drugs">Drugs</button>
+    </nav>
+
+    <aside id="clinic" aria-label="Clinical reference" hidden>
+      <div id="clinicHome">
+        <label class="row search-row">
+          <span id="clinicSearchLabel">Search</span>
+          <input id="clinicSearch" type="search" placeholder="" autocomplete="off" />
+        </label>
+        <div id="clinicList"></div>
+      </div>
+      <div id="clinicDetail" hidden>
+        <button id="clinicBack" type="button">← All</button>
+        <div id="clinicBody"></div>
+      </div>
+    </aside>
 
     <aside class="panel" aria-label="Viewer controls">
       <label class="row search-row">

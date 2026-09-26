@@ -22,6 +22,17 @@ structure derived from open anatomical and imaging data. If a structure
 isn't in the sourced model, it is left out rather than approximated with
 invented geometry.
 
+## Single page: brain + clinical reference
+
+The same page carries the full NeuroMap clinical database, parsed
+verbatim from the app's evidence-based repository — **7 circuits, 6
+neurotransmitters, 12 syndromes, 18 psychotropics** — behind the
+Circuits / Transmitters / Syndromes / Drugs tabs. Each entry shows its
+clinical summary, key pharmacology or circuit data, cross-linked chips
+that navigate between layers, and a Further-reading list of guidelines
+and references. Clinical deep links look like `#c=drugs:sertraline`.
+All clinical content is reference-only, not diagnostic advice.
+
 Run locally with no install beyond npm:
 
 ```bash

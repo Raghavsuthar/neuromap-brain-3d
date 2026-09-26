@@ -1,0 +1,261 @@
+[
+ {
+  "id": "cstc_loop",
+  "name": "Cortico-Striatal-Thalamic-Cortical (CSTC) Loop",
+  "tierCode": "CIRC-CSTC-01",
+  "brainStructures": [
+   "DLPFC",
+   "vmPFC",
+   "OFC",
+   "Caudate/Putamen",
+   "Thalamus",
+   "SNc"
+  ],
+  "function": "Motor gating, executive filtering, cognitive sequencing, obsessions, and worry modulation",
+  "description": "Topographically segregated recursive loops connecting the neocortex, basal ganglia, and thalamus. In OCD and GAD, disinhibition of thalamocortical reverberation leads to intrusive thoughts and compulsive motor/cognitive rituals.",
+  "keyNodes": [
+   "dlpfc",
+   "ofc",
+   "caudate",
+   "thalamus"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "glutamate",
+   "gaba",
+   "serotonin"
+  ],
+  "linkedSyndromes": [
+   "ocd",
+   "gad",
+   "schizophrenia",
+   "adhd"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "aripiprazole",
+   "clomipramine",
+   "risperidone"
+  ]
+ },
+ {
+  "id": "mesolimbic_pathway",
+  "name": "Mesolimbic Reward & Incentive Salience Pathway",
+  "tierCode": "CIRC-MESO-02",
+  "brainStructures": [
+   "Ventral Tegmental Area (VTA)",
+   "Nucleus Accumbens",
+   "Amygdala",
+   "Hippocampus"
+  ],
+  "function": "Reinforcement learning, reward anticipation, incentive salience ('wanting'), positive psychotic symptoms",
+  "description": "Dopaminergic projection from VTA to Nucleus Accumbens. Excessive phasic DA release causes aberrant assignment of salience (delusions/hallucinations in schizophrenia), while hypofunction mediates anhedonia and substance dependence.",
+  "keyNodes": [
+   "vta",
+   "nacc",
+   "amygdala",
+   "hippocampus"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "glutamate",
+   "gaba"
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "mdd",
+   "aud"
+  ],
+  "linkedDrugs": [
+   "aripiprazole",
+   "risperidone",
+   "olanzapine",
+   "bupropion",
+   "methylphenidate"
+  ]
+ },
+ {
+  "id": "mesocortical_pathway",
+  "name": "Mesocortical Cognitive & Affective Pathway",
+  "tierCode": "CIRC-MESO-03",
+  "brainStructures": [
+   "Ventral Tegmental Area (VTA)",
+   "DLPFC",
+   "vmPFC"
+  ],
+  "function": "Working memory, executive drive, social cognition, negative symptoms and cognitive deficits",
+  "description": "Dopaminergic fibers projecting from midbrain VTA to the prefrontal cortex. Hypoactivity in this tract is responsible for the negative (flat affect, avolition) and cognitive symptoms of schizophrenia.",
+  "keyNodes": [
+   "vta",
+   "dlpfc",
+   "vmpfc"
+  ],
+  "linkedTransmitters": [
+   "dopamine",
+   "norepinephrine"
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "adhd",
+   "mdd"
+  ],
+  "linkedDrugs": [
+   "aripiprazole",
+   "clozapine",
+   "bupropion",
+   "methylphenidate"
+  ]
+ },
+ {
+  "id": "default_mode_network",
+  "name": "Default Mode Network (DMN)",
+  "tierCode": "CIRC-DMN-04",
+  "brainStructures": [
+   "vmPFC",
+   "Posterior Cingulate Cortex (PCC)",
+   "Precuneus",
+   "Angular Gyrus",
+   "Hippocampus"
+  ],
+  "function": "Self-referential thought, autobiographical memory, mind-wandering, theory of mind",
+  "description": "Active during passive rest and internally directed attention. In Major Depressive Disorder, hyperconnectivity and failure of task-induced DMN suppression directly drives depressive rumination and negative self-schemas.",
+  "keyNodes": [
+   "vmpfc",
+   "pcc",
+   "hippocampus"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "glutamate",
+   "gaba"
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "trd",
+   "ptsd",
+   "bpd"
+  ],
+  "linkedDrugs": [
+   "esketamine",
+   "sertraline",
+   "escitalopram",
+   "venlafaxine"
+  ]
+ },
+ {
+  "id": "frontolimbic_circuit",
+  "name": "Fronto-Limbic Emotion Regulation Circuit",
+  "tierCode": "CIRC-FLIM-05",
+  "brainStructures": [
+   "vmPFC",
+   "DLPFC",
+   "dACC",
+   "Amygdala",
+   "Hippocampus",
+   "Raphe Nuclei"
+  ],
+  "function": "Top-down appraisal and suppression of emotional and threat responses, mood stabilization",
+  "description": "Bidirectional connections between prefrontal inhibitory hubs and the hyperreactive amygdala. Deficits in prefrontal inhibition allow excessive limbic activation, precipitating panic attacks, trauma re-experiencing, and affective lability.",
+  "keyNodes": [
+   "vmpfc",
+   "dlpfc",
+   "amygdala",
+   "hippocampus",
+   "raphe_nuclei"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine",
+   "gaba",
+   "glutamate"
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "gad",
+   "panic_disorder",
+   "ptsd",
+   "bpd"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine",
+   "lamotrigine",
+   "buspirone"
+  ]
+ },
+ {
+  "id": "salience_network",
+  "name": "Salience Network",
+  "tierCode": "CIRC-SALI-06",
+  "brainStructures": [
+   "Anterior Insula",
+   "Dorsal Anterior Cingulate (dACC)",
+   "Thalamus",
+   "Locus Coeruleus"
+  ],
+  "function": "Detecting biologically salient homeostatic stimuli, switching between Central Executive Network and DMN",
+  "description": "Coordinated by the anterior insula and dACC. Aberrant salience switching underlies somatic anxiety, chronic pain syndromes, emotional hypervigilance in PTSD, and dissociation.",
+  "keyNodes": [
+   "insula",
+   "dacc",
+   "thalamus",
+   "locus_coeruleus"
+  ],
+  "linkedTransmitters": [
+   "norepinephrine",
+   "serotonin",
+   "dopamine"
+  ],
+  "linkedSyndromes": [
+   "ptsd",
+   "gad",
+   "panic_disorder",
+   "schizophrenia"
+  ],
+  "linkedDrugs": [
+   "venlafaxine",
+   "quetiapine",
+   "clonazepam",
+   "aripiprazole"
+  ]
+ },
+ {
+  "id": "hpa_axis",
+  "name": "Hypothalamic-Pituitary-Adrenal (HPA) Axis",
+  "tierCode": "CIRC-HPA-07",
+  "brainStructures": [
+   "PVN of Hypothalamus",
+   "Anterior Pituitary",
+   "Adrenal Cortex",
+   "Hippocampus",
+   "Amygdala"
+  ],
+  "function": "Neuroendocrine stress response, cortisol feedback, autonomic tone, immune modulation",
+  "description": "Stress triggers hypothalamic CRH release -> pituitary ACTH -> adrenal cortisol. Chronic hyperactivity induces hippocampal glucocorticoid receptor downregulation, dendritic atrophy, and impaired neurogenesis in treatment-resistant depression.",
+  "keyNodes": [
+   "hypothalamus",
+   "amygdala",
+   "hippocampus"
+  ],
+  "linkedTransmitters": [
+   "norepinephrine",
+   "gaba",
+   "serotonin"
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "trd",
+   "ptsd",
+   "insomnia"
+  ],
+  "linkedDrugs": [
+   "esketamine",
+   "mirtazapine",
+   "sertraline",
+   "lithium"
+  ]
+ }
+]

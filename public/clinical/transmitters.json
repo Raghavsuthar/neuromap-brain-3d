@@ -1,0 +1,343 @@
+[
+ {
+  "id": "serotonin",
+  "name": "Serotonin (5-HT)",
+  "symbol": "5-HT",
+  "description": "Primary indoleamine neurotransmitter synthesized from L-tryptophan by tryptophan hydroxylase. Synthesized in the brainstem dorsal and median raphe nuclei with extensive projections across the neuraxis controlling affect, satiety, sexual function, and impulse control.",
+  "receptorSubtypes": [
+   {
+    "name": "5-HT1A",
+    "mechanism": "Gi/o (Inhibitory autoreceptor & post-synaptic)",
+    "primaryFunction": "Anxiolysis, antidepressant action, autoreceptor somatodendritic inhibition",
+    "brainLocations": "Raphe nuclei, Hippocampus, Cortex"
+   },
+   {
+    "name": "5-HT1D",
+    "mechanism": "Gi/o (Terminal autoreceptor)",
+    "primaryFunction": "Inhibits 5-HT release, vascular tone regulation",
+    "brainLocations": "Cerebral blood vessels, axon terminals"
+   },
+   {
+    "name": "5-HT2A",
+    "mechanism": "Gq (Excitatory PLC/IP3)",
+    "primaryFunction": "Target of SGA antagonism (reduces EPS, increases frontal DA), psychedelic hallucination target",
+    "brainLocations": "Neocortex Layer V, Basal Ganglia, Platelets"
+   },
+   {
+    "name": "5-HT2C",
+    "mechanism": "Gq (Excitatory)",
+    "primaryFunction": "Appetite suppression, DA/NE tonic inhibition in PFC. Antagonism promotes weight gain but enhances DA/NE",
+    "brainLocations": "Choroid plexus, Hypothalamus, PFC"
+   },
+   {
+    "name": "5-HT3",
+    "mechanism": "Ligand-gated ion channel (Cation influx)",
+    "primaryFunction": "Chemoreceptor trigger zone nausea, GI motility, anxiety modulation",
+    "brainLocations": "Area postrema, vagal afferents, Hippocampus"
+   },
+   {
+    "name": "5-HT7",
+    "mechanism": "Gs (cAMP stimulatory)",
+    "primaryFunction": "Circadian rhythm pacing, sleep architecture, cognition, antidepressant synergy",
+    "brainLocations": "Hypothalamus, Cortex, Thalamus"
+   }
+  ],
+  "majorPathways": [
+   "Dorsal raphe to Striatum (motor gating)",
+   "Dorsal raphe to Neocortex (affect & cognition)",
+   "Median raphe to Limbic system (anxiety/fear tone)",
+   "Spinal projections (pain, sexual reflexes)"
+  ],
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "cstc_loop",
+   "default_mode_network",
+   "hpa_axis"
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "gad",
+   "ocd",
+   "panic_disorder",
+   "ptsd",
+   "trd"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine",
+   "mirtazapine",
+   "buspirone",
+   "aripiprazole",
+   "clozapine",
+   "olanzapine",
+   "clomipramine"
+  ]
+ },
+ {
+  "id": "dopamine",
+  "name": "Dopamine (DA)",
+  "symbol": "DA",
+  "description": "Catecholamine derived from L-tyrosine via tyrosine hydroxylase and DOPA decarboxylase. Controls reward reinforcement, volition, movement coordination, neuroendocrine prolactin suppression, and working memory gating.",
+  "receptorSubtypes": [
+   {
+    "name": "D1",
+    "mechanism": "Gs (Adenylyl cyclase stimulatory)",
+    "primaryFunction": "Enhances cortical signal-to-noise ratio, cognitive throughput",
+    "brainLocations": "Striatum, Neocortex"
+   },
+   {
+    "name": "D2",
+    "mechanism": "Gi/o (Adenylyl cyclase inhibitory)",
+    "primaryFunction": "Target of all approved antipsychotics; >65% blockade needed for antipsychotic effect, >80% causes EPS",
+    "brainLocations": "Striatum, Limbic system, Pituitary lactotrophs"
+   },
+   {
+    "name": "D3",
+    "mechanism": "Gi/o (High limbic selectivity)",
+    "primaryFunction": "Motivation, mood, addiction vulnerability, partial agonism promotes drive",
+    "brainLocations": "Islands of Calleja, Nucleus Accumbens"
+   },
+   {
+    "name": "D4",
+    "mechanism": "Gi/o (Preferential cortical)",
+    "primaryFunction": "Novelty seeking, attention, highly bound by clozapine",
+    "brainLocations": "Frontal cortex, Hippocampus"
+   },
+   {
+    "name": "D5",
+    "mechanism": "Gs (Stimulatory)",
+    "primaryFunction": "Cognitive modulation and synaptic plasticity",
+    "brainLocations": "Hippocampus, Hypothalamus"
+   }
+  ],
+  "majorPathways": [
+   "Mesolimbic (VTA -> NAcc): reward & positive symptoms",
+   "Mesocortical (VTA -> Cortex): motivation & negative symptoms",
+   "Nigrostriatal (SN -> Striatum): EPS & movement",
+   "Tuberoinfundibular (Hypothalamus -> Pituitary): prolactin control"
+  ],
+  "linkedCircuits": [
+   "mesolimbic_pathway",
+   "mesocortical_pathway",
+   "cstc_loop",
+   "salience_network"
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "bipolar1",
+   "adhd",
+   "mdd",
+   "aud"
+  ],
+  "linkedDrugs": [
+   "aripiprazole",
+   "risperidone",
+   "olanzapine",
+   "quetiapine",
+   "clozapine",
+   "bupropion",
+   "methylphenidate"
+  ]
+ },
+ {
+  "id": "norepinephrine",
+  "name": "Norepinephrine (NE)",
+  "symbol": "NE",
+  "description": "Central catecholamine synthesized from dopamine by dopamine beta-hydroxylase. The locus coeruleus contains >50% of brain noradrenergic neurons, maintaining alertness, cardiovascular tone, stress responsiveness, and cognitive focus.",
+  "receptorSubtypes": [
+   {
+    "name": "Alpha-1",
+    "mechanism": "Gq (Vasoconstriction & excitation)",
+    "primaryFunction": "Sympathetic arousal; blockade causes orthostatic hypotension, reflex tachycardia, and sedation",
+    "brainLocations": "Vascular smooth muscle, Cortex"
+   },
+   {
+    "name": "Alpha-2A",
+    "mechanism": "Gi/o (Pre-synaptic autoreceptor & post-synaptic PFC)",
+    "primaryFunction": "Inhibits NE release; post-synaptic stimulation in PFC improves working memory and ADHD symptoms",
+    "brainLocations": "Locus Coeruleus, Prefrontal Cortex"
+   },
+   {
+    "name": "Beta-1",
+    "mechanism": "Gs (Cardiac & cortical stimulation)",
+    "primaryFunction": "Heart rate, inotropy; central arousal and tremors",
+    "brainLocations": "Heart, Cortex, Striatum"
+   },
+   {
+    "name": "Beta-2",
+    "mechanism": "Gs (Bronchodilation & tremor)",
+    "primaryFunction": "Peripheral bronchodilation, somatic anxiety symptoms",
+    "brainLocations": "Lungs, skeletal muscle, brain"
+   }
+  ],
+  "majorPathways": [
+   "Locus coeruleus ascending to Frontal Cortex (attention & focus)",
+   "Locus coeruleus to Limbic structures (panic, trauma recall)",
+   "Descending bulbospinal tract (nociception gate)"
+  ],
+  "linkedCircuits": [
+   "salience_network",
+   "frontolimbic_circuit",
+   "hpa_axis",
+   "mesocortical_pathway"
+  ],
+  "linkedSyndromes": [
+   "gad",
+   "ptsd",
+   "panic_disorder",
+   "adhd",
+   "mdd"
+  ],
+  "linkedDrugs": [
+   "venlafaxine",
+   "bupropion",
+   "mirtazapine",
+   "quetiapine",
+   "methylphenidate"
+  ]
+ },
+ {
+  "id": "gaba",
+  "name": "GABA (Gamma-Aminobutyric Acid)",
+  "symbol": "GABA",
+  "description": "Chief inhibitory neurotransmitter of the vertebrate central nervous system, synthesized from glutamate via glutamic acid decarboxylase (GAD). Maintains neural inhibition and prevents excitotoxic or seizure activity.",
+  "receptorSubtypes": [
+   {
+    "name": "GABA-A",
+    "mechanism": "Ligand-gated Cl- channel (Pentamer)",
+    "primaryFunction": "Rapid hyperpolarization; positive allosteric site for Benzodiazepines, Barbiturates, Z-drugs",
+    "brainLocations": "Ubiquitous central neurons, interneurons"
+   },
+   {
+    "name": "GABA-B",
+    "mechanism": "Gi/o (G-protein coupled heterodimer)",
+    "primaryFunction": "Slow, prolonged inhibitory tone; activates inward rectifying K+ channels, reduces presynaptic Ca2+",
+    "brainLocations": "Hippocampus, Cortex, Spinal cord"
+   }
+  ],
+  "majorPathways": [
+   "Local cortical interneurons (chandelier and basket cells maintaining gamma oscillations)",
+   "Striatal medium spiny neurons to Globus Pallidus",
+   "Purkinje cells to deep cerebellar nuclei"
+  ],
+  "linkedCircuits": [
+   "cstc_loop",
+   "frontolimbic_circuit",
+   "mesolimbic_pathway"
+  ],
+  "linkedSyndromes": [
+   "gad",
+   "panic_disorder",
+   "insomnia",
+   "bipolar1",
+   "aud"
+  ],
+  "linkedDrugs": [
+   "clonazepam",
+   "divalproex",
+   "quetiapine",
+   "olanzapine"
+  ]
+ },
+ {
+  "id": "glutamate",
+  "name": "Glutamate (Glu)",
+  "symbol": "Glu",
+  "description": "Principal excitatory neurotransmitter in the mammalian brain, present in >50% of central synapses. Crucial for long-term potentiation (LTP), synaptic plasticity, and network synchrony, but excessive levels cause neurotoxicity.",
+  "receptorSubtypes": [
+   {
+    "name": "NMDA (GluN1/2)",
+    "mechanism": "Ligand/voltage-gated Ca2+ channel (Mg2+ block)",
+    "primaryFunction": "Synaptic plasticity, memory formation, target of ketamine antagonism",
+    "brainLocations": "Cortex, Hippocampus, Striatum"
+   },
+   {
+    "name": "AMPA (GluA1-4)",
+    "mechanism": "Ligand-gated Na+/K+ channel",
+    "primaryFunction": "Fast basal excitatory transmission, AMPA throughput elevation key to rapid ketamine antidepressant effects",
+    "brainLocations": "Widespread CNS"
+   },
+   {
+    "name": "mGluR1-8",
+    "mechanism": "G-protein coupled (Group I Gq, Group II/III Gi)",
+    "primaryFunction": "Presynaptic autoinhibition and modulatory tuning of excitatory tone",
+    "brainLocations": "Presynaptic terminals, glial membranes"
+   }
+  ],
+  "majorPathways": [
+   "Cortico-cortical projection neurons",
+   "Cortico-striatal pyramidal pathways",
+   "Perforant path in Hippocampus (LTP circuit)"
+  ],
+  "linkedCircuits": [
+   "cstc_loop",
+   "default_mode_network",
+   "frontolimbic_circuit",
+   "mesolimbic_pathway"
+  ],
+  "linkedSyndromes": [
+   "mdd",
+   "trd",
+   "schizophrenia",
+   "bipolar1"
+  ],
+  "linkedDrugs": [
+   "esketamine",
+   "lamotrigine",
+   "divalproex",
+   "lithium"
+  ]
+ },
+ {
+  "id": "acetylcholine",
+  "name": "Acetylcholine (ACh)",
+  "symbol": "ACh",
+  "description": "Synthesized from choline and acetyl-CoA by choline acetyltransferase (ChAT). Mediates cortical arousal, attention, encoding of new memories, and autonomic parasympathetic outflow.",
+  "receptorSubtypes": [
+   {
+    "name": "M1 (Muscarinic)",
+    "mechanism": "Gq (G-protein coupled)",
+    "primaryFunction": "Cognition, memory, salivary/lacrimal secretion. Antagonism causes memory blur, dry mouth, constipation",
+    "brainLocations": "Cortex, Hippocampus, Glands"
+   },
+   {
+    "name": "M2/M4",
+    "mechanism": "Gi/o (Inhibitory)",
+    "primaryFunction": "Autoreceptor feedback and striatal modulation",
+    "brainLocations": "Heart (M2), Striatum (M4)"
+   },
+   {
+    "name": "Alpha-4-Beta-2 Nicotinic",
+    "mechanism": "Ligand-gated cation channel",
+    "primaryFunction": "DA release in NAcc, attention, nicotine dependence target",
+    "brainLocations": "Dopaminergic and cortical terminals"
+   },
+   {
+    "name": "Alpha-7 Nicotinic",
+    "mechanism": "Ligand-gated high Ca2+ channel",
+    "primaryFunction": "Sensory gating, auditory P50 filtering deficits in schizophrenia",
+    "brainLocations": "Hippocampus, Cortex"
+   }
+  ],
+  "majorPathways": [
+   "Nucleus Basalis of Meynert to widespread Neocortex",
+   "Septal nuclei to Hippocampus (theta rhythm generation)",
+   "Pontomesencephalotegmental complex to Thalamus"
+  ],
+  "linkedCircuits": [
+   "default_mode_network",
+   "cstc_loop"
+  ],
+  "linkedSyndromes": [
+   "schizophrenia",
+   "mdd",
+   "insomnia"
+  ],
+  "linkedDrugs": [
+   "clozapine",
+   "olanzapine",
+   "quetiapine"
+  ]
+ }
+]
