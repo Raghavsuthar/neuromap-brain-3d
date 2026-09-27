@@ -489,5 +489,79 @@
     "url": "https://icd.who.int/browse11/l-m/en"
    }
   ]
+ },
+ {
+  "id": "social_anxiety",
+  "name": "Social Anxiety Disorder",
+  "icd11Code": "6B03",
+  "dsm5Code": "300.23",
+  "category": "Anxiety Disorders",
+  "clinicalDefinition": "Marked fear of social scrutiny with avoidance of social or performance situations lasting at least six months, accompanied by panic-like somatic symptoms on exposure and functional impairment.",
+  "primaryPathophysiologicalHallmark": "Hyperactive amygdala-insula threat response to social-evaluative cues with deficient prefrontal regulation, on shared serotonergic dysregulation with other anxiety disorders.",
+  "linkedCircuits": [
+   "frontolimbic_circuit",
+   "salience_network"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine"
+  ],
+  "summary": "Social anxiety disorder is a persistent fear of embarrassment or scrutiny in social and performance situations, maintained by avoidance that prevents corrective learning. SSRIs and SNRIs are first-line drugs and exposure-based CBT the leading psychotherapy, with feared situations ranked into a graded hierarchy. Early onset and comorbidity with depression make active treatment, not reassurance, the standard.",
+  "sources": [
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "CANMAT guidelines",
+    "url": "https://www.canmat.org/"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
+ },
+ {
+  "id": "pdd",
+  "name": "Persistent Depressive Disorder",
+  "icd11Code": "6A72",
+  "dsm5Code": "300.4",
+  "category": "Mood Disorders",
+  "clinicalDefinition": "Chronically depressed mood for at least two years with fewer concurrent symptoms than major depression, often punctuated by superimposed major depressive episodes (double depression).",
+  "primaryPathophysiologicalHallmark": "The same monoamine and self-referential network dysregulation as major depression in milder chronic form, with strong familial loading in early-onset cases.",
+  "linkedCircuits": [
+   "default_mode_network",
+   "frontolimbic_circuit"
+  ],
+  "linkedTransmitters": [
+   "serotonin",
+   "norepinephrine"
+  ],
+  "linkedDrugs": [
+   "sertraline",
+   "escitalopram",
+   "venlafaxine"
+  ],
+  "summary": "Persistent depressive disorder (dysthymia) is a chronic low-grade depression lasting years rather than weeks, frequently complicated by superimposed major episodes. Treatment mirrors major depression with SSRIs or SNRIs plus structured psychotherapy, and duration of maintenance is typically longer given the relapsing course. Chronicity itself, not severity, defines the diagnosis and the follow-up plan.",
+  "sources": [
+   {
+    "name": "CANMAT 2023 MDD guideline (PMC, free full text)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11351064/"
+   },
+   {
+    "name": "NICE mental health guidance index",
+    "url": "https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions"
+   },
+   {
+    "name": "WHO ICD-11 browser",
+    "url": "https://icd.who.int/browse11/l-m/en"
+   }
+  ]
  }
 ]
