@@ -126,6 +126,7 @@ function tissueMaterial(cat) {
       envMapIntensity: 0.65,
       // Double-sided so slice-plane cuts read as solid tissue, not hollow shells.
       side: THREE.DoubleSide,
+      clippingPlanes: [slicePlane],
     });
   } else {
     mat = new THREE.MeshStandardMaterial({
@@ -134,6 +135,7 @@ function tissueMaterial(cat) {
       metalness: 0.0,
       envMapIntensity: 0.7,
       side: THREE.DoubleSide,
+      clippingPlanes: [slicePlane],
     });
   }
   if (style.opacity !== undefined && style.opacity < 1) {
@@ -166,6 +168,9 @@ function variantMat(cat, emissiveScale, opacity) {
   const m = src.clone();
   m.emissive = new THREE.Color(src.color).multiplyScalar(emissiveScale);
   m.emissiveIntensity = 1;
+  // NOTE: clone() deep-copies planes (frozen snapshot) — rebind the live
+  // shared plane so toggles keep working on hover/selection materials.
+  m.clippingPlanes = [slicePlane];
   if (opacity !== undefined) {
     m.transparent = true;
     m.opacity = opacity;
@@ -182,7 +187,8 @@ function lobeMaterial(region) {
   if (!lobeMats[region]) {
     const m = baseMats.cortex.clone();
     m.color = new THREE.Color(LOBE_COLORS[region]);
-    m.clippingPlanes = clipActive ? onePlane : noPlanes;
+    // Rebind live plane (clone() would freeze a snapshot).
+    m.clippingPlanes = [slicePlane];
     lobeMats[region] = m;
   }
   return lobeMats[region];
@@ -216,15 +222,15 @@ let homeTarget = new THREE.Vector3(0, 0, 0);
 let modelBBox = null;
 let modelSize = 1;
 let cortexOpacity = 1;
-// Slice plane: three.js keeps the half-space where
-// plane.normal.dot(p) + plane.constant < 0.
-const slicePlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 0);
-const noPlanes = [];
-const onePlane = [slicePlane];
+// Slice plane: assigned to EVERY material at creation so the clipping
+// shader path compiles once up front. Toggling only changes the plane
+// constant/normal (pure uniform updates, no recompiles). three.js keeps the
+// POSITIVE side (normal.dot(p) + constant > 0), so the neutral state uses a
+// hugely positive constant to keep everything.
+const slicePlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e10);
 let sliceMode = 'off';
 let sliceT = 0.5;
 let sliceBounds = null;
-let clipActive = false;
 
 function setMeshMaterial(mesh, mat) {
   mesh.material = mat;
@@ -393,8 +399,8 @@ function makeLabelSprite(mesh) {
     transparent: true,
     depthTest: false,
     depthWrite: false,
+    clippingPlanes: [slicePlane],
   });
-  mat.clippingPlanes = clipActive ? onePlane : noPlanes;
   labelMats.add(mat);
   const sp = new THREE.Sprite(mat);
   sp.scale.set(labelWorld * 2.4, labelWorld * 0.6, 1);
@@ -409,14 +415,11 @@ function makeLabelSprite(mesh) {
 }
 
 function applySlice() {
+  // Slice state lives entirely in slicePlane's normal/constant (shared live
+  // by every material), so toggling never recompiles shaders.
   if (sliceMode === 'off' || !sliceBounds) {
-    if (clipActive) {
-      clipActive = false;
-      for (const m of allMats()) {
-        m.clippingPlanes = noPlanes;
-        m.needsUpdate = true;
-      }
-    }
+    slicePlane.normal.set(0, 1, 0);
+    slicePlane.constant = 1e10;
     return;
   }
   const normals = {
@@ -429,13 +432,6 @@ function applySlice() {
   const c = hi + pad - sliceT * (hi - lo + pad * 2);
   slicePlane.normal.copy(normals[sliceMode]);
   slicePlane.constant = -c;
-  if (!clipActive) {
-    clipActive = true;
-    for (const m of allMats()) {
-      m.clippingPlanes = onePlane;
-      m.needsUpdate = true;
-    }
-  }
 }
 
 function applyCortexOpacity(v) {
@@ -549,7 +545,10 @@ function wireViewerUI() {
   });
 
   // ----- slice plane: sagittal / coronal / axial incisions -----
-  const segBtns = [...document.querySelectorAll('.seg button')];
+  // NOTE: scoped to [data-slice] only — hemisphere and camera buttons share
+  // the .seg style but must not trigger slice logic (their dataset.slice is
+  // undefined, which previously threw and mangled toggle highlights).
+  const segBtns = [...document.querySelectorAll('[data-slice]')];
   const sliceSlider = $('slicePos');
   segBtns.forEach((b) => {
     b.addEventListener('click', () => {
@@ -758,6 +757,7 @@ async function init() {
   labelWorld = size * 0.028;
   modelBBox = bbox;
   modelSize = size;
+  applySlice(); // sync plane in case slice was toggled while loading
 
   wireViewerUI();
   applyCortexOpacity(1);
