@@ -59,6 +59,7 @@ function detailHtml(layer, e) {
     return `
       <div class="code">${esc(e.tierCode)}</div>
       <h2>${esc(e.name)}</h2>
+      <div class="btn-row"><button type="button" data-show3d="${esc(e.id)}">Show on 3D brain</button></div>
       <h3>Function</h3><p>${esc(e.function)}</p>
       <h3>Description</h3><p>${esc(e.description)}</p>
       <h3>Key structures</h3><p>${esc((e.brainStructures || []).join(' → '))}</p>
@@ -231,6 +232,14 @@ document.querySelectorAll('#viewtabs button').forEach((b) =>
 $('clinicBack').addEventListener('click', () => showHome());
 $('clinicSearch').addEventListener('input', renderList);
 $('clinicBody').addEventListener('click', (e) => {
+  const show = e.target.closest('[data-show3d]');
+  if (show) {
+    setView('brain');
+    if (window.__neuroMap && window.__neuroMap.showCircuit) {
+      window.__neuroMap.showCircuit(show.dataset.show3d);
+    }
+    return;
+  }
   const btn = e.target.closest('[data-go]');
   if (!btn) return;
   const [layer, id] = btn.dataset.go.split(':');

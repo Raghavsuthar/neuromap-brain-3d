@@ -15,6 +15,13 @@ a cortex-opacity slider that fades the surface to reveal the
 deep brain, per-structure Isolate mode, and one-click PNG screenshots
 for teaching.
 
+The 3D view also renders the 7 psychiatric circuits as glowing pathways:
+pick a circuit to isolate its member structures and trace the loop with
+traveling signal pulses (mapping table in
+`brain-atlas/circuits3d.json`; brainstem nuclei absent from the source
+model, e.g. VTA, are declared omitted rather than invented). Circuit
+detail pages link back with "Show on 3D brain".
+
 Each selection also shows a plain-language function summary for major
 structures (402 of 437; minor sulci and small branches intentionally
 left blank rather than described loosely), and every view is shareable

@@ -9,6 +9,7 @@ const BASE = import.meta.env.BASE_URL;
 const MODEL_URL = `${BASE}brain-atlas/models/brain.glb`;
 const MANIFEST_URL = `${BASE}brain-atlas/models/manifest.json`;
 const FUNCTIONS_URL = `${BASE}brain-atlas/functions.json`;
+const CIRCUITS_URL = `${BASE}brain-atlas/circuits3d.json`;
 const DRACO_PATH = `${BASE}brain-atlas/vendor/draco/`;
 
 // Entries that are scene-graph/collection bookkeeping, not anatomy.
@@ -206,6 +207,13 @@ function baseMaterialFor(mesh) {
 // ---------- state ----------
 const manifestById = new Map();
 let functions = {}; // manifest id -> plain-language function summary
+let circuits3d = []; // psychiatry circuits with label-match node rules
+let activeCircuit = null; // active circuit object or null
+let circuitMembers = new Set(); // Set<Mesh> in the active circuit
+const circuitGroup = new THREE.Group();
+scene.add(circuitGroup);
+let circuitPulses = []; // { mesh, curve, t }
+const animClock = new THREE.Clock();
 const anatomyMeshes = []; // pickable meshes
 const meshesByCat = new Map(); // cat -> Mesh[]
 const searchIndex = []; // { mesh, hay }
@@ -353,13 +361,92 @@ function focusOn(mesh) {
 function updateVisibility() {
   for (const m of anatomyMeshes) {
     const a = m.userData.anat;
-    const catOn = catState[a.cat] !== false;
+    // Active circuit overrides category toggles for its members (focus mode).
+    const catOn = activeCircuit ? circuitMembers.has(m) : catState[a.cat] !== false;
     const sideOn = hemi === 'both' || a.side === 'median' || a.side === hemi;
     m.visible = catOn && sideOn && (!matchSet || matchSet.has(m));
     const sp = m.userData.sprite;
     if (sp) sp.visible = labelsOn && m.visible;
   }
 }
+
+// Resolve a circuit's label-match rules to meshes. Rules are auditable
+// substrings; anything without a sourced mesh stays out (see omitted).
+function resolveCircuitMembers(circuit) {
+  const groups = [];
+  for (const node of circuit.nodes || []) {
+    const subs = (node.match || []).map((s) => s.toLowerCase());
+    const meshes = anatomyMeshes.filter((m) =>
+      subs.some((s) => m.userData.anat.label.toLowerCase().includes(s)),
+    );
+    groups.push({ key: node.key, meshes });
+  }
+  return groups;
+}
+
+function clearCircuitTubes() {
+  circuitGroup.traverse((o) => {
+    if (o.isMesh) {
+      o.geometry.dispose();
+      if (o.material && o.material._owned) o.material.dispose();
+    }
+  });
+  circuitGroup.clear();
+  circuitPulses = [];
+}
+
+function setActiveCircuit(id) {
+  activeCircuit = circuits3d.find((c) => c.id === id) || null;
+  clearCircuitTubes();
+  circuitMembers = new Set();
+  document.querySelectorAll('#circuitlist .circuit-btn').forEach((b) =>
+    b.classList.toggle('on', !!activeCircuit && b.dataset.circuit === activeCircuit.id),
+  );
+  if (!activeCircuit) {
+    $('circuitBar').hidden = true;
+    updateVisibility();
+    return;
+  }
+  const groups = resolveCircuitMembers(activeCircuit);
+  for (const g of groups) for (const m of g.meshes) circuitMembers.add(m);
+  // Tube path through group centroids (closed loop), in circuit color.
+  const centers = [];
+  for (const g of groups) {
+    if (!g.meshes.length) continue;
+    const box = new THREE.Box3();
+    for (const m of g.meshes) box.expandByObject(m);
+    centers.push(box.getCenter(new THREE.Vector3()));
+  }
+  if (centers.length >= 2) {
+    const curve = new THREE.CatmullRomCurve3(centers, true, 'centripetal', 0.6);
+    const mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(activeCircuit.color || '#38BDF8'),
+      transparent: true,
+      opacity: 0.85,
+    });
+    mat._owned = true;
+    circuitGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 72, modelSize * 0.004, 8, true), mat));
+    for (let i = 0; i < 2; i++) {
+      const pmat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      pmat._owned = true;
+      const p = new THREE.Mesh(new THREE.SphereGeometry(modelSize * 0.007, 12, 10), pmat);
+      circuitGroup.add(p);
+      circuitPulses.push({ mesh: p, curve, t: i / 2 });
+    }
+  }
+  $('circuitName').textContent = activeCircuit.name;
+  $('circuitInfo').textContent = `${activeCircuit.tierCode || ''} · ${activeCircuit.function || ''}`;
+  $('circuitBar').hidden = false;
+  if (selected && !circuitMembers.has(selected)) clearSelection();
+  updateVisibility();
+}
+
+// Called from the clinical tab ("Show on 3D brain").
+window.__neuroMap = Object.assign(window.__neuroMap || {}, {
+  showCircuit(id) {
+    setActiveCircuit(id);
+  },
+});
 
 function allMats() {
   return [
@@ -474,6 +561,26 @@ const manager = new THREE.LoadingManager();
 manager.onProgress = (_url, loaded, total) => {
   loadfill.style.width = `${Math.round((loaded / total) * 100)}%`;
 };
+
+function buildCircuitList() {
+  const list = $('circuitlist');
+  list.innerHTML = '';
+  for (const c of circuits3d) {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'circuit-btn';
+    b.dataset.circuit = c.id;
+    const hex = c.color || '#38BDF8';
+    b.innerHTML = `<span class="dot" style="background:${hex}"></span><span></span>`;
+    b.querySelector('span:last-child').textContent = c.name;
+    b.title = c.function || c.name;
+    b.addEventListener('click', () => {
+      setActiveCircuit(activeCircuit && activeCircuit.id === c.id ? null : c.id);
+    });
+    list.appendChild(b);
+  }
+  $('circuitClear').addEventListener('click', () => setActiveCircuit(null));
+}
 
 function wireViewerUI() {
   $('cardClose').addEventListener('click', clearSelection);
@@ -653,11 +760,13 @@ function wireViewerUI() {
 
 async function init() {
   loadmsg.textContent = 'Fetching metadata';
-  const [manifest, funcs] = await Promise.all([
+  const [manifest, funcs, circuitsFile] = await Promise.all([
     (await fetch(MANIFEST_URL)).json(),
     (await fetch(FUNCTIONS_URL)).json().catch(() => ({})),
+    (await fetch(CIRCUITS_URL)).json().catch(() => ({ circuits: [] })),
   ]);
   functions = funcs;
+  circuits3d = circuitsFile.circuits || [];
   for (const n of manifest.nodes) manifestById.set(n.id, n);
 
   $('stats').textContent =
@@ -761,6 +870,7 @@ async function init() {
 
   wireViewerUI();
   applyCortexOpacity(1);
+  buildCircuitList();
 
   // Deep link: #s=<manifest id> reopens an exact shared view.
   const deep = /^#s=(\d+)$/.exec(window.location.hash || '');
@@ -788,6 +898,11 @@ window.addEventListener('resize', () => {
 });
 
 renderer.setAnimationLoop(() => {
+  const dt = Math.min(animClock.getDelta(), 0.05);
+  for (const p of circuitPulses) {
+    p.t = (p.t + dt * 0.15) % 1;
+    p.mesh.position.copy(p.curve.getPointAt(p.t));
+  }
   controls.update();
   renderer.render(scene, camera);
 });

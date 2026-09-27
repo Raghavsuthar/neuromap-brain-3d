@@ -1,0 +1,101 @@
+{
+  "_note": "Psychiatric circuits overlaid on the sourced 437-structure atlas. Each node group lists label substrings matched (case-insensitive) against manifest labels. Groups with no match in the model are listed under omitted (e.g. VTA, locus coeruleus and raphe nuclei are not segmented in the source model) and left out rather than approximated.",
+  "circuits": [
+    {
+      "id": "cstc_loop",
+      "name": "Cortico-Striatal-Thalamic-Cortical (CSTC) Loop",
+      "tierCode": "CIRC-CSTC-01",
+      "color": "#38BDF8",
+      "function": "Motor gating, executive filtering, obsessions and worry modulation.",
+      "nodes": [
+        { "key": "dlpfc", "match": ["Middle frontal gyrus"] },
+        { "key": "ofc", "match": ["Orbital gyri", "Orbital part of inferior frontal gyrus"] },
+        { "key": "caudate_putamen", "match": ["Caudate nucleus", "Putamen"] },
+        { "key": "pallidum", "match": ["Globus pallidus external", "Globus pallidus internal"] },
+        { "key": "thalamus", "match": ["Anterior nuclei of thalamus", "Mediodorsal nucleus", "Ventral anterior nucleus", "Ventral laterodorsal nucleus", "Ventral lateroventral nucleus", "Intralaminar and lateral posterior nuclei"] },
+        { "key": "snc", "match": ["Substantia nigra"] }
+      ],
+      "omitted": []
+    },
+    {
+      "id": "mesolimbic_pathway",
+      "name": "Mesolimbic Reward Pathway",
+      "tierCode": "CIRC-MESO-02",
+      "color": "#F472B6",
+      "function": "Reinforcement, reward anticipation, incentive salience; positive psychotic symptoms.",
+      "nodes": [
+        { "key": "accumbens", "match": ["Nucleus accumbens"] },
+        { "key": "amygdala", "match": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"] },
+        { "key": "hippocampus", "match": ["Hippocampus"] }
+      ],
+      "omitted": ["VTA (not segmented in source model)"]
+    },
+    {
+      "id": "mesocortical_pathway",
+      "name": "Mesocortical Pathway",
+      "tierCode": "CIRC-MESO-03",
+      "color": "#A3E635",
+      "function": "Working memory, executive drive; negative and cognitive symptoms.",
+      "nodes": [
+        { "key": "dlpfc", "match": ["Middle frontal gyrus", "Superior frontal gyrus"] },
+        { "key": "vmpfc", "match": ["Straight gyrus (Gyrus rectus)", "Orbital gyri"] }
+      ],
+      "omitted": ["VTA (not segmented in source model)"]
+    },
+    {
+      "id": "default_mode_network",
+      "name": "Default Mode Network (DMN)",
+      "tierCode": "CIRC-DMN-04",
+      "color": "#A855F7",
+      "function": "Self-referential thought, autobiographical memory, rumination.",
+      "nodes": [
+        { "key": "vmpfc", "match": ["Straight gyrus (Gyrus rectus)", "Orbital gyri"] },
+        { "key": "pcc_precuneus", "match": ["Cingulate gyrus (Posteroventral part)", "Cingulate gyrus and sulcus (Posterior dorsal part)", "Precuneus"] },
+        { "key": "ag", "match": ["Angular gyrus"] },
+        { "key": "hippocampus", "match": ["Hippocampus", "Medial occipitotemporal gyrus (Parahippocampal)"] }
+      ],
+      "omitted": []
+    },
+    {
+      "id": "frontolimbic_circuit",
+      "name": "Fronto-Limbic Emotion Regulation Circuit",
+      "tierCode": "CIRC-FLIM-05",
+      "color": "#F59E0B",
+      "function": "Top-down appraisal and suppression of threat responses, mood stabilization.",
+      "nodes": [
+        { "key": "vmpfc_dlpfc", "match": ["Straight gyrus (Gyrus rectus)", "Middle frontal gyrus"] },
+        { "key": "acc", "match": ["Cingulate gyrus and sulcus (Middle anterior part)"] },
+        { "key": "amygdala", "match": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"] },
+        { "key": "hippocampus", "match": ["Hippocampus"] }
+      ],
+      "omitted": []
+    },
+    {
+      "id": "salience_network",
+      "name": "Salience Network",
+      "tierCode": "CIRC-SALI-06",
+      "color": "#2DD4BF",
+      "function": "Detecting salient stimuli; switching between executive and default-mode networks.",
+      "nodes": [
+        { "key": "insula", "match": ["Insula (Subcentral gyrus and ant. and post. sulci)", "Circular sulcus of insula"] },
+        { "key": "dacc", "match": ["Cingulate gyrus and sulcus (Middle anterior part)"] },
+        { "key": "thalamus", "match": ["Mediodorsal nucleus", "Intralaminar and lateral posterior nuclei"] }
+      ],
+      "omitted": ["Locus coeruleus (not segmented in source model)"]
+    },
+    {
+      "id": "hpa_axis",
+      "name": "HPA Axis",
+      "tierCode": "CIRC-HPA-07",
+      "color": "#FB7185",
+      "function": "Neuroendocrine stress response, cortisol feedback, autonomic tone.",
+      "nodes": [
+        { "key": "hypothalamus", "match": ["Anterior hypothalamus", "Lateral hypothalamus", "Posterior hypothalamus", "Preoptic hypothalamus", "Tuberal hypothalamus"] },
+        { "key": "pituitary", "match": ["Adenohypophysis", "Neurohypophysis"] },
+        { "key": "amygdala", "match": ["Central nucleus", "Basolateral complex"] },
+        { "key": "hippocampus", "match": ["Hippocampus"] }
+      ],
+      "omitted": ["Adrenal cortex (outside the brain model)"]
+    }
+  ]
+}

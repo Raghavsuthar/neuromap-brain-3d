@@ -310,6 +310,59 @@ a:focus-visible {
   flex: none;
 }
 
+.circuit-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  text-align: left;
+  padding: 5px 4px;
+  font-size: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.circuit-btn.on {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#circuitBar {
+  position: fixed;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: calc(100vw - 32px);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 7px 8px 7px 16px;
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+}
+
+#circuitBar[hidden] {
+  display: none;
+}
+
+#circuitBar b {
+  white-space: nowrap;
+}
+
+#circuitInfo {
+  color: var(--dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 46vw;
+}
+
 .card {
   position: fixed;
   left: 16px;
