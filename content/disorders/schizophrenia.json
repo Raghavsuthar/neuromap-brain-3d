@@ -435,8 +435,8 @@
     {
       "title": "2 · Dopamine runs hot in the striatum",
       "text": "Molecular imaging shows excess presynaptic dopamine in the caudate, putamen and accumbens — the final common pathway of psychosis.",
-      "lens": "neurochemistry",
-      "lensTarget": "dopamine-mesolimbic",
+      "lens": "chemistry",
+      "lensTarget": "dopamine",
       "camera": "front",
       "focusAtlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"]
     },
@@ -621,5 +621,5 @@
       "sourceIds": ["misiak-2021-inflammation"]
     }
   ],
-  "related": []
+  "related": ["mdd", "bipolar-1", "bipolar-2", "ocd"]
 }

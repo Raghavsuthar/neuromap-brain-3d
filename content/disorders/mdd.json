@@ -1,0 +1,702 @@
+{
+  "id": "mdd",
+  "name": "Major depressive disorder",
+  "icd11": { "code": "6A70 single episode / 6A71 recurrent depressive disorder", "url": "https://icd.who.int/browse11/l-m/en" },
+  "dsm5tr": { "code": "296.14-296.32", "url": "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+  "block": "Mood (affective) disorders",
+  "overview": [
+    {
+      "id": "mdd-ov-1",
+      "text": "Major depressive disorder is a persistent depressive state with loss of interest or pleasure plus associated symptoms that impair function, typically without any history of mania or hypomania. Diagnosis is clinical under ICD-11 and DSM-5-TR, and remains a disorder of description rather than of any single laboratory test.",
+      "evidence": "established",
+      "sourceIds": ["icd11-browser", "dsm5tr-overview", "canmat-depression-2023"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "mdd-ov-2",
+      "text": "The large ENIGMA imaging studies show real but small average brain differences, with the most robust finding being slightly smaller hippocampi in recurrent and adult-onset illness. These group effects are too small to diagnose an individual, and their main value is mechanistic.",
+      "evidence": "strong",
+      "sourceIds": ["enigma-mdd-subcort-2016", "enigma-mdd-cortical-2017", "enigma-mdd-dti-2020"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "mdd-ov-3",
+      "text": "Antidepressant response rates are modest and roughly half of patients do not remit on the first adequate trial, so guidelines emphasise combined pharmacological and psychological treatment, measurement-based care, and early review of partial response. Suicide risk requires direct assessment at every contact.",
+      "evidence": "established",
+      "sourceIds": ["canmat-depression-2023", "nice-ng222", "ips-cpg"],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "depressed-mood",
+      "name": "Depressed mood",
+      "description": {
+        "id": "mdd-sym-mood",
+        "text": "Pervasively low or irritable mood most of the day, nearly every day. It is the core symptom of the episode and lifts with treatment in the majority of patients.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "dsm5tr-overview"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-limbic-affective"],
+      "brainFindingIds": ["mdd-cortical-thinning", "mdd-hippocampal"]
+    },
+    {
+      "id": "anhedonia",
+      "name": "Anhedonia and low motivation",
+      "description": {
+        "id": "mdd-sym-anhedonia",
+        "text": "Loss of pleasure and diminished interest in previously rewarding activity, which drives the low drive and social withdrawal of depression. Reward-learning circuitry is central to how this domain is modelled.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-reward-ventral-striatum"],
+      "brainFindingIds": ["mdd-hippocampal"]
+    },
+    {
+      "id": "anxiety-worry",
+      "name": "Anxiety and worry",
+      "description": {
+        "id": "mdd-sym-anxiety",
+        "text": "Rumination, worry and physical anxiety symptoms are extremely common in depression and often persist after mood improves. Treating them explicitly improves outcome and is required when they cross the threshold for a separate anxiety disorder.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-limbic-affective"],
+      "brainFindingIds": ["mdd-amygdala-early-onset"]
+    },
+    {
+      "id": "fatigue",
+      "name": "Fatigue and reduced energy",
+      "description": {
+        "id": "mdd-sym-fatigue",
+        "text": "Persistent physical or mental tiredness that is not proportionate to activity and does not resolve with rest. It is one of the most disabling symptoms and often the last to remit.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-prefrontal-control"],
+      "brainFindingIds": ["mdd-cortical-thinning"]
+    },
+    {
+      "id": "cognitive",
+      "name": "Cognitive difficulties",
+      "description": {
+        "id": "mdd-sym-cog",
+        "text": "Slower processing speed, impaired attention and executive function, and reduced working memory, which persist in a substantial minority even after mood remission and are a major obstacle to returning to work.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "enigma-mdd-cortical-2017"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-prefrontal-control"],
+      "brainFindingIds": ["mdd-cortical-thinning", "mdd-white-matter"]
+    },
+    {
+      "id": "sleep-appetite",
+      "name": "Sleep and appetite disturbance",
+      "description": {
+        "id": "mdd-sym-sleep",
+        "text": "Insomnia or hypersomnia, and either loss of appetite with weight loss or increased appetite with weight gain. The pattern tracks with the more activated versus more melancholic presentation and predicts response to some drug classes.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-stress-hpa"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "suicidal-ideation",
+      "name": "Suicidal ideation and hopelessness",
+      "description": {
+        "id": "mdd-sym-suicide",
+        "text": "Hopelessness, guilt and suicidal thinking, which carry most of the mortality of depression. Risk is highest in young men early in the illness and in people recently hospitalised, so direct enquiry at every contact is essential and a protective plan is part of care.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["mdd-limbic-affective"],
+      "brainFindingIds": ["mdd-hippocampal"]
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "mdd-hippocampal",
+      "where": { "atlasLabels": ["Hippocampus"], "precision": "exact" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": -0.14, "sourceId": "enigma-mdd-subcort-2016" },
+      "claim": {
+        "id": "mdd-hippocampal-c",
+        "text": "In 1728 patients and 7199 controls the ENIGMA working group found significantly smaller hippocampi in depression, about one percent smaller in volume, and a larger effect in recurrent than single-episode illness.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-hippocampal-first-episode",
+      "where": { "atlasLabels": ["Hippocampus"], "precision": "exact" },
+      "finding": "volume-reduction",
+      "stage": "first-episode",
+      "claim": {
+        "id": "mdd-hipp-first-c",
+        "text": "The same study detected no difference between first-episode patients and controls, so the hippocampal finding reflects illness burden rather than the presence of depression at first presentation.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-amygdala-early-onset",
+      "where": { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "proxy" },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "effectSize": { "metric": "cohens_d", "value": -0.11, "sourceId": "enigma-mdd-subcort-2016" },
+      "claim": {
+        "id": "mdd-amyg-c",
+        "text": "Patients whose illness began at or before age 21 showed a trend toward smaller amygdalae alongside the hippocampal effect. The source reports the whole amygdala, so it is applied across all four amygdala sub-meshes here and flagged as a proxy.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-ventricular",
+      "where": { "atlasLabels": ["Lateral ventricle"], "precision": "exact" },
+      "finding": "volume-increase",
+      "stage": "any",
+      "effectSize": { "metric": "cohens_d", "value": 0.12, "sourceId": "enigma-mdd-subcort-2016" },
+      "claim": {
+        "id": "mdd-ventricles-c",
+        "text": "In the same early-onset subgroup the lateral ventricles were about five percent larger, one of the larger relative differences reported. This is a group finding and is not a diagnostic marker for an individual patient.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-cortical-thinning",
+      "where": { "atlasLabels": ["Orbital gyri", "Orbital part of inferior frontal gyrus", "Cingulate gyrus and sulcus (Middle anterior part)", "Cingulate gyrus and sulcus (Middle posterior part)", "Insula (Subcentral gyrus and ant. and post. sulci)", "Superior temporal gyrus (Lateral part)", "Middle temporal gyrus", "Inferior temporal gyrus"], "precision": "proxy" },
+      "finding": "thickness-reduction",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": -0.12, "sourceId": "enigma-mdd-cortical-2017" },
+      "claim": {
+        "id": "mdd-cortical-c",
+        "text": "Across 2148 patients and 7957 controls from 20 sites, adults with depression had thinner cortex in orbitofrontal, anterior and posterior cingulate, insular and temporal regions, with effect sizes between minus 0.10 and minus 0.14. The atlas has no single orbitofrontal or cingulate mesh, so documented gyral proxies are used and flagged.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-cortical-2017"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-adolescent",
+      "where": { "atlasLabels": ["Straight gyrus (Gyrus rectus)", "Superior frontal gyrus", "Cuneus", "Occipital pole", "Postcentral gyrus", "Precentral gyrus"], "precision": "proxy" },
+      "finding": "thickness-reduction",
+      "stage": "any",
+      "effectSize": { "metric": "cohens_d", "value": -0.4, "sourceId": "enigma-mdd-cortical-2017" },
+      "claim": {
+        "id": "mdd-adolescent-c",
+        "text": "Adolescents with depression had lower total cortical surface area but no thickness difference, with regional reductions in medial orbitofrontal and superior frontal cortex and in visual, somatosensory and motor areas, with effect sizes between minus 0.26 and minus 0.57. The effect size shown here is the midpoint of that reported range and is not a single study estimate.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-cortical-2017"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-white-matter",
+      "where": { "atlasLabels": ["Corpus callosum", "Anterior thalamic radiation", "Posterior thalamic radiation", "Superior thalamic radiation", "Superior longitudinal fasciculus II", "Superior longitudinal fasciculus III", "Inferior fronto-occipital fasciculus", "Inferior longitudinal fasciculus", "Uncinate fasciculus", "Arcuate fasciculus"], "precision": "exact" },
+      "finding": "dysconnectivity",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": 0.19, "sourceId": "enigma-mdd-dti-2020" },
+      "claim": {
+        "id": "mdd-wm-c",
+        "text": "Diffusion imaging in 1305 patients and 1602 controls found subtly lower fractional anisotropy in 16 of 25 tracts examined, with effect sizes between 0.12 and 0.26 and the largest differences in the corpus callosum and corona radiata. The effect size shown here is the midpoint of that range.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-dti-2020"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "mdd-reward-ventral-striatum",
+      "name": "Reward and ventral striatal circuit",
+      "nodes": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "atlasLabels": ["Medial occipitotemporal gyrus (Parahippocampal)"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus"], "precision": "exact" }
+      ],
+      "edges": [
+        { "from": "Hippocampus", "to": "Nucleus accumbens", "type": "excitatory", "transmitter": "glutamate" },
+        { "from": "Medial occipitotemporal gyrus (Parahippocampal)", "to": "Nucleus accumbens", "type": "modulatory", "transmitter": "dopamine" }
+      ],
+      "function": {
+        "id": "mdd-reward-f",
+        "text": "Blunted responsiveness to reward in ventral striatum and hippocampus underlies anhedonia and the reduced motivation of depression. This circuit is the target of behavioural activation and of antidepressants that gradually restore reward learning.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-prefrontal-control",
+      "name": "Prefrontal executive control circuit",
+      "nodes": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus", "Opercular part of inferior frontal gyrus", "Triangular part of inferior frontal gyrus"], "precision": "proxy" },
+        { "atlasLabels": ["Anterior nuclei of thalamus"], "precision": "exact" }
+      ],
+      "edges": [
+        { "from": "Anterior nuclei of thalamus", "to": "Middle frontal gyrus", "type": "excitatory", "transmitter": "glutamate" },
+        { "from": "Anterior nuclei of thalamus", "to": "Middle frontal gyrus", "type": "modulatory", "transmitter": "dopamine" }
+      ],
+      "function": {
+        "id": "mdd-pfc-f",
+        "text": "Weakened prefrontal control of attention and rumination explains the cognitive and worry symptoms of depression. Genetic enrichment in prefrontal regions across depression GWAS points to the same location.",
+        "evidence": "strong",
+        "sourceIds": ["pgc-depression-2019", "enigma-mdd-cortical-2017", "canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-limbic-affective",
+      "name": "Limbic and affective regulation circuit",
+      "nodes": [
+        { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus"], "precision": "exact" },
+        { "atlasLabels": ["Straight gyrus (Gyrus rectus)", "Orbital gyri", "Cingulate gyrus and sulcus (Middle anterior part)"], "precision": "proxy" }
+      ],
+      "edges": [
+        { "from": "Basolateral complex", "to": "Straight gyrus (Gyrus rectus)", "type": "excitatory", "transmitter": "glutamate" },
+        { "from": "Hippocampus", "to": "Cingulate gyrus and sulcus (Middle anterior part)", "type": "modulatory", "transmitter": "serotonin" }
+      ],
+      "function": {
+        "id": "mdd-limbic-f",
+        "text": "Amygdala, hippocampus and anterior cingulate work together to appraise threat and generate mood. Disrupted interaction in this loop underlies the anxiety, guilt and low mood of depression, and each node is a documented site of the cortical thinning found in adults.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-mdd-cortical-2017", "enigma-mdd-subcort-2016", "canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "mdd-stress-hpa",
+      "name": "Stress and hypothalamic-pituitary-adrenal circuit",
+      "nodes": [
+        { "atlasLabels": ["Preoptic hypothalamus", "Tuberal hypothalamus", "Anterior hypothalamus", "Lateral hypothalamus"], "precision": "exact" },
+        { "atlasLabels": ["Septal nuclei", "Habenula"], "precision": "exact" },
+        { "markerId": "lc", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "Habenula", "to": "Locus coeruleus (schematic)", "type": "modulatory", "transmitter": "noradrenaline" },
+        { "from": "Anterior hypothalamus", "to": "Middle frontal gyrus", "type": "modulatory", "transmitter": "noradrenaline" }
+      ],
+      "function": {
+        "id": "mdd-hpa-f",
+        "text": "Stress-system activation links sleep, appetite and mood disturbance in depression. The adrenal cortex that completes this axis has no mesh in the atlas, so the loop is drawn only as far as the hypothalamic and brainstem structures that are resolved, with the locus coeruleus as a schematic marker.",
+        "evidence": "moderate",
+        "sourceIds": ["canmat-depression-2023", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Reduced serotonergic function, the target of most first-line antidepressants",
+      "where": [
+        { "markerId": "raphe-medial", "precision": "schematic" },
+        { "atlasLabels": ["Middle frontal gyrus", "Hippocampus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "mdd-nc-5ht",
+        "text": "Serotonin reuptake inhibition is the shared mechanism of most antidepressants used in depression, though benefit appears to depend on downstream plasticity rather than on correcting a simple serotonin deficit.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Reduced noradrenergic drive contributing to fatigue and poor concentration",
+      "where": [
+        { "markerId": "lc", "precision": "schematic" },
+        { "atlasLabels": ["Superior parietal lobule", "Medial occipitotemporal gyrus (Parahippocampal)"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "mdd-nc-na",
+        "text": "Locus coeruleus noradrenergic projections to cortex and hippocampus are the basis for the noradrenergic antidepressants and for the attention and energy symptoms of depression. The locus coeruleus itself is not resolved by the atlas and is shown as a calibrated marker.",
+        "evidence": "moderate",
+        "sourceIds": ["iuphar", "canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "dopamine",
+      "alteration": "Reduced mesolimbic reward responsiveness",
+      "where": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "mdd-nc-da",
+        "text": "Blunted striatal reward responsiveness underlies anhedonia, which is why noradrenergic-dopaminergic antidepressants such as bupropion are effective and why activation of reward learning is a behavioural treatment target.",
+        "evidence": "moderate",
+        "sourceIds": ["canmat-depression-2023", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Glutamatergic system impairment, the target of the newest rapid-acting antidepressants",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "mdd-nc-glu",
+        "text": "NMDA receptor antagonism with esketamine produces rapid antidepressant effects through downstream AMPA signalling, and synaptic and neurotransmitter gene sets are among those enriched in large genetic studies of depression.",
+        "evidence": "strong",
+        "sourceIds": ["ketamine-dep-2026", "pgc-depression-2019", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "neuroplasticity",
+      "alteration": "Impaired BDNF-TrkB plasticity signalling",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "mdd-nc-bdnf",
+        "text": "Reduced neurotrophic support for synaptic remodelling in hippocampus and prefrontal cortex is the neuroplasticity account of depression, consistent with BDNF-pathway enrichment in depression GWAS.",
+        "evidence": "strong",
+        "sourceIds": ["pgc-depression-2019", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": ["BDNF", "SLC6A4", "GRIA1"],
+    "architecture": [
+      {
+        "id": "mdd-gen-1",
+        "text": "A meta-analysis of three genome-wide studies covering 807553 people identified 102 independent variants, 269 genes and 15 gene sets associated with depression, and 87 of the 102 variants replicated in a further 1306354 individuals.",
+        "evidence": "strong",
+        "sourceIds": ["pgc-depression-2019"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "mdd-gen-2",
+        "text": "The associated genes and gene sets were enriched for synaptic structure and neurotransmission, and enrichment analysis specifically implicated prefrontal brain regions, matching the cortical imaging findings.",
+        "evidence": "strong",
+        "sourceIds": ["pgc-depression-2019"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "mdd-gen-3",
+        "text": "Because no single variant accounts for more than a small share of liability, depression is taught as a polygenic disorder in which environment, illness burden and treatment response all matter. Candidate-gene findings such as the serotonin transporter promoter polymorphism are real but small and debated, so no large effect is claimed for them.",
+        "evidence": "moderate",
+        "sourceIds": ["pgc-depression-2019", "canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Hippocampal volume on MRI",
+      "finding": {
+        "id": "mdd-bm-hipp",
+        "text": "Smaller hippocampi are the most replicated structural finding in depression, with a standardised difference around 0.14 that is absent in first-episode illness. The group difference is far too small to distinguish an individual patient from a control.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-mdd-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "White-matter fractional anisotropy",
+      "finding": {
+        "id": "mdd-bm-fa",
+        "text": "Diffusion imaging shows subtle widespread anisotropy reductions in adult depression, driven by recurrent and adult-onset illness. It is a research marker with no established clinical interpretation for an individual.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-mdd-dti-2020"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Inflammatory markers",
+      "finding": {
+        "id": "mdd-bm-inflam",
+        "text": "Peripheral inflammatory markers are modestly elevated on average in depression and in psychosis risk, but heterogeneity is high and no threshold has diagnostic value. Inflammation is best treated as a group-level research signal, not a clinical test.",
+        "evidence": "emerging",
+        "sourceIds": ["misiak-2021-inflammation"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Cortical thickness and surface-area pattern",
+      "finding": {
+        "id": "mdd-bm-ctx",
+        "text": "The combination of orbitofrontal, cingulate, insular and temporal thinning in adults with lower surface area in adolescents is reasonably reproducible, and enrichment analysis also points to prefrontal regions genetically. It remains a research pattern rather than a diagnostic one.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-mdd-cortical-2017", "pgc-depression-2019"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": ["tx-ssri", "tx-ssri-sertraline", "tx-ssri-escitalopram", "tx-snri", "tx-mirtazapine", "tx-bupropion", "tx-tca", "tx-esketamine", "tx-ect-depression", "tx-rtms-depression", "tx-vns-depression", "tx-psych-depression"],
+  "pathway": [
+    {
+      "step": "Mild to moderate: drug or psychotherapy, either first",
+      "options": ["tx-ssri", "tx-ssri-sertraline", "tx-ssri-escitalopram", "tx-psych-depression"],
+      "claim": {
+        "id": "mdd-pw-1",
+        "text": "For mild to moderate depression, guidelines support offering either an antidepressant or structured psychotherapy as a first option, since both work and some patients prefer to avoid medication initially. Choice should follow patient preference, prior response and comorbidity.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "nice-ng222", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Moderate to severe or prior response: combine",
+      "options": ["tx-snri", "tx-mirtazapine", "tx-bupropion", "tx-psych-depression"],
+      "claim": {
+        "id": "mdd-pw-2",
+        "text": "For more severe illness or a previous good response, guidelines recommend combined pharmacological and psychological treatment, choosing a drug class by symptom pattern such as insomnia or weight concern rather than by a single protocol for everyone.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Partial response: measure and switch or augment",
+      "options": ["tx-snri", "tx-mirtazapine", "tx-bupropion", "tx-tca"],
+      "claim": {
+        "id": "mdd-pw-3",
+        "text": "After an adequate trial with partial improvement, guidelines advise measuring symptom change objectively, then switching class or augmenting. Optimising the dose and duration comes before any switch, and a second adequate trial should use a different mechanism.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "nice-ng222"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Treatment resistance or urgent need: rapid and somatic options",
+      "options": ["tx-esketamine", "tx-ect-depression", "tx-rtms-depression", "tx-vns-depression"],
+      "claim": {
+        "id": "mdd-pw-4",
+        "text": "Treatment resistance, or urgent need such as severe suicidality or catatonia, leads to electroconvulsive therapy, ketamine or esketamine, and neuromodulation. Vagus nerve stimulation is reserved for the most refractory cases and its evidence is mixed: the RECOVER trial missed its prespecified primary endpoint while several secondary measures favoured active stimulation.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-depression-2023", "ips-cpg", "recover-vns-2026", "lefaucheur-2020-rtms"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Remission: continue and prevent relapse",
+      "options": ["tx-psych-depression", "tx-ssri", "tx-snri"],
+      "claim": {
+        "id": "mdd-pw-5",
+        "text": "After remission, continuing antidepressant medication for at least six to twelve months and adding relapse-prevention strategies such as mindfulness-based cognitive therapy reduces recurrence. Medication should be tapered slowly and not stopped abruptly.",
+        "evidence": "established",
+        "sourceIds": ["canmat-depression-2023", "nice-ng222"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · A polygenic illness with a prefrontal signature",
+      "text": "Over 800000 people in one analysis yielded 102 independent variants, with the associated genes pointing at synaptic transmission and at prefrontal cortex. No single gene causes depression.",
+      "lens": "gene",
+      "lensTarget": "BDNF",
+      "camera": "home"
+    },
+    {
+      "title": "2 · The hippocampus is consistently smaller",
+      "text": "Across 1728 patients the ENIGMA group found smaller hippocampi, a standardised difference near 0.14 that appears only with recurrent or adult-onset illness and is absent at first episode.",
+      "lens": "pathology",
+      "camera": "side",
+      "focusAtlasLabels": ["Hippocampus"]
+    },
+    {
+      "title": "3 · Prefrontal and limbic cortex thin",
+      "text": "Adults show thinning in orbitofrontal, cingulate, insular and temporal cortex with small effects. Adolescents show reduced surface area instead, in frontal and sensory areas with much larger effects.",
+      "lens": "pathology",
+      "lensTarget": "mdd-cortical-thinning",
+      "camera": "front"
+    },
+    {
+      "title": "4 · White matter loses integrity",
+      "text": "Sixteen of twenty-five tracts showed lower fractional anisotropy, largest in the corpus callosum and corona radiata, suggesting distributed disconnectivity rather than one damaged tract.",
+      "lens": "pathology",
+      "lensTarget": "mdd-white-matter",
+      "camera": "top"
+    },
+    {
+      "title": "5 · Reward circuitry explains anhedonia",
+      "text": "Ventral striatum, hippocampus and parahippocampal input form the reward circuit whose blunted responsiveness produces anhedonia and low drive.",
+      "lens": "circuit",
+      "lensTarget": "mdd-reward-ventral-striatum",
+      "camera": "side"
+    },
+    {
+      "title": "6 · Serotonin, noradrenaline, glutamate",
+      "text": "Raphe and locus coeruleus drive feed cortex and limbic structures; the newest rapid-acting drugs work on glutamate instead. Both brainstem nuclei are shown as schematic markers because the atlas does not resolve them.",
+      "lens": "chemistry",
+      "lensTarget": "serotonin",
+      "camera": "front"
+    },
+    {
+      "title": "7 · Treatment is stepped, and resistance is real",
+      "text": "Drug or therapy first, combine for moderate illness, switch class on partial response, and use ECT or ketamine when urgent, with neuromodulation for the most refractory cases.",
+      "lens": "drug",
+      "lensTarget": "esketamine",
+      "camera": "home"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "mdd-q1",
+      "topic": "Classification",
+      "question": "Which ICD-11 codes cover single-episode and recurrent depressive disorder?",
+      "choices": ["6A70 and 6A71", "6A20 and 6A21", "6B00 and 6B01", "6A60 and 6A61"],
+      "answer": 0,
+      "explanation": "ICD-11 uses 6A70 for single episode depressive disorder and 6A71 for recurrent depressive disorder, both inside the mood and affective disorders block.",
+      "sourceIds": ["icd11-browser"]
+    },
+    {
+      "id": "mdd-q2",
+      "topic": "Psychopathology",
+      "question": "Which symptom pair is core to a depressive episode?",
+      "choices": ["Auditory hallucinations and delusions", "Low mood and loss of pleasure", "Elevated mood and reduced need for sleep", "Obsessions and compulsions"],
+      "answer": 1,
+      "explanation": "Depressed mood and anhedonia are the two core symptoms; the other pairs belong to psychosis, mania and obsessive-compulsive disorder.",
+      "sourceIds": ["canmat-depression-2023", "dsm5tr-overview"]
+    },
+    {
+      "id": "mdd-q3",
+      "topic": "Psychopathology",
+      "question": "A patient's anhedonia and fatigue resolve fully once sleep and an antidepressant are corrected. What does this suggest?",
+      "choices": ["The original episode was severe", "Some symptoms were secondary to sleep disturbance or medication", "The diagnosis was incorrect", "Insight is impaired"],
+      "answer": 1,
+      "explanation": "Sleep, appetite and fatigue symptoms are frequently secondary and reversible, which is why guidelines emphasise treating them directly rather than assuming they all reflect core illness.",
+      "sourceIds": ["canmat-depression-2023"]
+    },
+    {
+      "id": "mdd-q4",
+      "topic": "Brain pathology",
+      "question": "What did the ENIGMA subcortical study find in depression, and for whom?",
+      "choices": ["Larger hippocampi, strongest in first episode", "Smaller hippocampi, stronger in recurrent and early-onset illness", "No differences in any subgroup", "Larger amygdalae only"],
+      "answer": 1,
+      "explanation": "Hippocampal volume was about one percent smaller overall, with a larger effect in recurrent depression and no difference at first episode, plus smaller amygdalae and larger ventricles in the early-onset subgroup.",
+      "sourceIds": ["enigma-mdd-subcort-2016"]
+    },
+    {
+      "id": "mdd-q5",
+      "topic": "Brain pathology",
+      "question": "How did cortical findings differ between adults and adolescents with depression?",
+      "choices": ["Adults thinner, adolescents lower surface area without thickness change", "Both showed the same pattern", "Adults had larger surface area, adolescents thicker cortex", "No differences in either group"],
+      "answer": 0,
+      "explanation": "Adults showed thinning in orbitofrontal, cingulate, insular and temporal cortex with small effects, while adolescents had lower total surface area and much larger regional effects without a thickness difference.",
+      "sourceIds": ["enigma-mdd-cortical-2017"]
+    },
+    {
+      "id": "mdd-q6",
+      "topic": "Brain pathology",
+      "question": "What did the ENIGMA diffusion study report?",
+      "choices": ["Lower fractional anisotropy in 16 of 25 tracts, largest in corpus callosum and corona radiata", "Higher anisotropy throughout", "Differences only in children", "No white-matter differences"],
+      "answer": 0,
+      "explanation": "Subtle widespread anisotropy reductions with standardised differences of 0.12 to 0.26, driven by recurrent adult-onset illness, suggest distributed disconnectivity.",
+      "sourceIds": ["enigma-mdd-dti-2020"]
+    },
+    {
+      "id": "mdd-q7",
+      "topic": "Genetics",
+      "question": "What did the large PGC depression meta-analysis identify?",
+      "choices": ["A single causal gene", "102 independent variants, 269 genes and 15 gene sets, enriched for synaptic function", "No heritable component", "Only rare recessive variants"],
+      "answer": 1,
+      "explanation": "Analysing 807553 individuals yielded 102 independent variants, with synaptic structure and neurotransmission gene sets enriched and prefrontal regions highlighted, 87 of 102 variants replicating independently.",
+      "sourceIds": ["pgc-depression-2019"]
+    },
+    {
+      "id": "mdd-q8",
+      "topic": "Neurochemistry",
+      "question": "What is the shared molecular mechanism of most first-line antidepressants?",
+      "choices": ["Dopamine D2 blockade", "Serotonin transporter inhibition", "Muscarinic agonism", "NMDA receptor activation"],
+      "answer": 1,
+      "explanation": "SSRIs and related agents block the serotonin transporter, though benefit appears to require downstream plasticity rather than a simple correction of serotonin deficiency.",
+      "sourceIds": ["iuphar", "canmat-depression-2023"]
+    },
+    {
+      "id": "mdd-q9",
+      "topic": "Neurochemistry",
+      "question": "Which brainstem nucleus is shown as a schematic marker rather than a mesh, and why does it matter?",
+      "choices": ["Substantia nigra, because it is too small", "Locus coeruleus, because the atlas cannot resolve it though it is central to noradrenergic antidepressants", "Hippocampus, because it is not a nucleus", "Amygdala, because it is four separate meshes"],
+      "answer": 1,
+      "explanation": "The locus coeruleus is the source of cortical noradrenaline and the target of noradrenergic drug classes, but the atlas has no mesh for it, so it is shown as a calibrated marker labelled schematic.",
+      "sourceIds": ["iuphar", "iuphar"]
+    },
+    {
+      "id": "mdd-q10",
+      "topic": "Neurochemistry",
+      "question": "How do ketamine and esketamine differ from monoamine antidepressants in speed of action?",
+      "choices": ["They act within hours through NMDA antagonism and downstream AMPA signalling", "They act only after several weeks", "They act faster because they block dopamine", "They work by enhancing serotonin release"],
+      "answer": 0,
+      "explanation": "NMDA antagonism triggers a glutamate surge and plasticity signalling, which explains their rapid antidepressant effect and why they are given in a monitored setting.",
+      "sourceIds": ["ketamine-dep-2026", "iuphar"]
+    },
+    {
+      "id": "mdd-q11",
+      "topic": "Pharmacology",
+      "question": "Which adverse effect cluster is characteristic of tricyclics like amitriptyline, and which receptors produce it?",
+      "choices": ["Weight gain and sedation from D2 blockade", "Anticholinergic, orthostatic and sedating effects from muscarinic, alpha-1 and histamine blockade", "Akathisia from partial agonism", "Hyperprolactinaemia from dopamine blockade"],
+      "answer": 1,
+      "explanation": "Tricyclics combine serotonin and noradrenaline reuptake inhibition with muscarinic, alpha-1 and histamine antagonism, which produces dry mouth, constipation, orthostasis, sedation and cardiotoxic overdose risk.",
+      "sourceIds": ["iuphar", "canmat-depression-2023"]
+    },
+    {
+      "id": "mdd-q12",
+      "topic": "Pharmacology",
+      "question": "A depressed patient has insomnia and poor appetite. Which drug class is often preferred, and at what cost?",
+      "choices": ["An SSRI, at the cost of insomnia", "Mirtazapine, because of alpha-2A and H1 blockade, at the cost of weight gain and sedation", "Bupropion, because of dopamine blockade, at the cost of akathisia", "Haloperidol, at the cost of tremor"],
+      "answer": 1,
+      "explanation": "Mirtazapine blocks alpha-2A autoreceptors to raise monoamines while blocking H1 to improve sleep and appetite, with weight gain and residual sedation as the trade-off.",
+      "sourceIds": ["iuphar", "canmat-depression-2023"]
+    },
+    {
+      "id": "mdd-q13",
+      "topic": "Treatments",
+      "question": "What does the RECOVER trial of vagus nerve stimulation in markedly treatment-resistant depression actually show?",
+      "choices": ["Clear superiority on the prespecified primary endpoint", "The prespecified primary endpoint did not separate from sham, while several secondary symptom, function and quality-of-life measures favoured active stimulation", "No effect on any measure at any timepoint", "A significant reduction in completed suicide"],
+      "answer": 1,
+      "explanation": "This mixed result is reported honestly: the primary outcome did not differentiate the groups, but symptom, function and quality-of-life secondary measures favoured active stimulation, and benefits were durable at 18 to 24 months.",
+      "sourceIds": ["recover-vns-2026"]
+    },
+    {
+      "id": "mdd-q14",
+      "topic": "Treatments",
+      "question": "Which neuromodulation has the strongest guideline support for treatment-resistant depression?",
+      "choices": ["Deep brain stimulation of the ventral striatum", "Repetitive transcranial magnetic stimulation of the left dorsolateral prefrontal cortex", "Vagus nerve stimulation from implanted electrodes", "Transcranial focused ultrasound"],
+      "answer": 1,
+      "explanation": "rTMS over left dorsolateral prefrontal cortex is guideline-supported for treatment-resistant depression, while implanted VNS and other surgical options are reserved for the most refractory cases with weaker evidence.",
+      "sourceIds": ["lefaucheur-2020-rtms", "canmat-depression-2023"]
+    },
+    {
+      "id": "mdd-q15",
+      "topic": "Biomarkers",
+      "question": "How should hippocampal volume be used in depression?",
+      "choices": ["To diagnose depression in an individual patient", "As a mechanistic research finding, since the group difference is too small for individuals", "To choose between SSRIs and tricyclics", "To predict antidepressant response reliably"],
+      "answer": 1,
+      "explanation": "The hippocampal effect is real and replicated but averages around 0.14 standardised difference, and it is absent in first-episode illness, so it informs mechanism rather than individual diagnosis or treatment choice.",
+      "sourceIds": ["enigma-mdd-subcort-2016"]
+    },
+    {
+      "id": "mdd-q16",
+      "topic": "Pathway",
+      "question": "For mild to moderate depression, what do guidelines say about starting choice?",
+      "choices": ["Medication is always required", "Either an antidepressant or structured psychotherapy may be offered first, guided by patient preference", "Electroconvulsive therapy is first line", "Polypharmacy is recommended"],
+      "answer": 1,
+      "explanation": "Both medication and structured psychotherapy are first-line options for mild to moderate depression, and preference and prior response should drive the choice rather than a single mandated protocol.",
+      "sourceIds": ["canmat-depression-2023", "nice-ng222", "ips-cpg"]
+    }
+  ],
+  "related": ["bipolar-1", "bipolar-2", "ocd", "schizophrenia"]
+}

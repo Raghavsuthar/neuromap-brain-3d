@@ -1,0 +1,570 @@
+{
+  "id": "bipolar-2",
+  "name": "Bipolar type II disorder",
+  "icd11": { "code": "6A61", "url": "https://icd.who.int/browse11/l-m/en" },
+  "dsm5tr": { "code": "296.89", "url": "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+  "block": "Mood (affective) disorders",
+  "overview": [
+    {
+      "id": "bp2-ov-1",
+      "text": "Bipolar type II disorder is defined by at least one hypomanic episode and at least one major depressive episode, with no history of full mania. Because hypomania does not cause marked functional impairment, it is frequently missed, so the diagnosis often arrives years late or as recurrent depression.",
+      "evidence": "established",
+      "sourceIds": ["icd11-browser", "dsm5tr-overview", "canmat-bipolar-2018-summary"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "bp2-ov-2",
+      "text": "Type II is not simply milder than type I. It is dominated by depressive episodes, carries its own suicide risk, and shows a pattern of antidepressant-induced or spontaneous switching that is easy to miss, which is why detecting the hypomanic signature is the central clinical task.",
+      "evidence": "strong",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021", "ips-cpg"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "bp2-ov-3",
+      "text": "The imaging and genetic literature is largely shared with type I, since large studies such as the bipolar exome analysis report their findings across both subtypes. The most consistent structural finding is bilateral frontotemporal and parietal cortical thinning, entangled with medication exposure.",
+      "evidence": "strong",
+      "sourceIds": ["bipolar-exome-akap11-2022", "enigma-bipolar-cortical-2018"],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "hypomania",
+      "name": "Hypomania",
+      "description": {
+        "id": "bp2-sym-hypo",
+        "text": "Elevated or irritable mood with increased energy, reduced need for sleep and increased activity lasting at least four days, with observable change but without marked functional impairment, hospitalisation or psychosis. Its absence is what makes this type II rather than type I.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "dsm5tr-overview"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-frontolimbic-dysreg"],
+      "brainFindingIds": ["bp2-ctx-thin"]
+    },
+    {
+      "id": "bipolar-depression",
+      "name": "Bipolar depression",
+      "description": {
+        "id": "bp2-sym-dep",
+        "text": "The predominant pole of the disorder, typically more frequent and longer-lasting than depressive episodes in type I. It is the main driver of disability and of suicide risk in type II, and it is the phase most often mistreated with an antidepressant alone.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-reward-ventral-striatum"],
+      "brainFindingIds": ["bp2-ctx-thin", "bp2-ventricles"]
+    },
+    {
+      "id": "mixed-episodes",
+      "name": "Mixed features and rapid cycling",
+      "description": {
+        "id": "bp2-sym-mixed",
+        "text": "Mixed states and four or more episodes in a year are recognised and are associated with poorer outcomes and greater switch risk. In type II they may be missed because the hypomanic component is brief.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-frontolimbic-dysreg"],
+      "brainFindingIds": ["bp2-ctx-thin"]
+    },
+    {
+      "id": "switching",
+      "name": "Switching and treatment resistance",
+      "description": {
+        "id": "bp2-sym-switch",
+        "text": "Repeated loss of antidepressant response with transient improvement followed by agitation or insomnia is a classic pattern of unrecognised bipolar II. Antidepressant monotherapy is specifically warned against because of this risk.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-reward-ventral-striatum"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "cognition",
+      "name": "Cognition and interepisode function",
+      "description": {
+        "id": "bp2-sym-cog",
+        "text": "Attention, processing speed and executive function often remain impaired between episodes, and long cumulative depressive burden is associated with worse occupational and social function even when mood is currently normal.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "enigma-bipolar-cortical-2018"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-reward-ventral-striatum"],
+      "brainFindingIds": ["bp2-ctx-thin"]
+    },
+    {
+      "id": "suicidal-ideation",
+      "name": "Suicidal ideation",
+      "description": {
+        "id": "bp2-sym-suicide",
+        "text": "Suicide risk in type II is substantial and concentrated in depressive and mixed episodes, in the early years of illness and after each hospitalisation. Direct risk assessment at every contact is required, and mood-stabilising treatment reduces it.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp2-reward-ventral-striatum"],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "bp2-ctx-thin",
+      "where": { "atlasLabels": ["Opercular part of inferior frontal gyrus", "Middle temporal gyrus", "Superior temporal gyrus (Lateral part)", "Superior parietal lobule", "Middle frontal gyrus", "Superior frontal gyrus"], "precision": "exact" },
+      "finding": "thickness-reduction",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": -0.276, "sourceId": "enigma-bipolar-cortical-2018" },
+      "claim": {
+        "id": "bp2-ctx-c",
+        "text": "The largest cortical analysis of bipolar disorder covered both subtypes and found thinning in frontal, temporal and parietal regions of both hemispheres, with a strong effect at left rostral middle frontal cortex. That reported value is used here. The study did not publish a separate type II estimate, so this mapping is applied to type II and flagged as such.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp2-ventricles",
+      "where": { "atlasLabels": ["Lateral ventricle"], "precision": "exact" },
+      "finding": "volume-increase",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": 0.18, "sourceId": "enigma-bipolar-longitudinal-2022" },
+      "claim": {
+        "id": "bp2-ventricles-c",
+        "text": "Longitudinal ENIGMA data found faster enlargement of ventricular volumes in bipolar disorder than in controls, with reported standardised differences between 0.18 and 0.22. The study pooled bipolar subtypes, so the finding is applied to type II as a shared group-level result.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp2-limbic-volumes",
+      "where": { "atlasLabels": ["Hippocampus", "Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group", "Mediodorsal nucleus"], "precision": "proxy" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "bp2-limbic-c",
+        "text": "Cross-disorder ENIGMA mega-analyses of 5604 individuals report small subcortical differences in bipolar disorder affecting hippocampus, amygdala and thalamus. These are not specific to type II and are too small to use in an individual patient.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-subcort-mega-2023", "enigma-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "bp2-reward-ventral-striatum",
+      "name": "Reward and ventral striatal circuit",
+      "nodes": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus", "Medial occipitotemporal gyrus (Parahippocampal)"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "VTA (schematic)", "to": "Nucleus accumbens", "type": "modulatory", "transmitter": "dopamine" },
+        { "from": "Hippocampus", "to": "Nucleus accumbens", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp2-reward-f",
+        "text": "In type II this circuit is under-driven for most of the illness, producing the anhedonia and low drive of bipolar depression, with brief hypomanic over-activity. The ventral tegmental area has no mesh in the atlas and is drawn as a calibrated marker.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "enigma-subcort-mega-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp2-frontolimbic-dysreg",
+      "name": "Fronto-limbic dysregulation circuit",
+      "nodes": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus", "Opercular part of inferior frontal gyrus"], "precision": "proxy" },
+        { "atlasLabels": ["Cingulate gyrus and sulcus (Middle anterior part)", "Straight gyrus (Gyrus rectus)", "Orbital gyri"], "precision": "proxy" },
+        { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus"], "precision": "exact" }
+      ],
+      "edges": [
+        { "from": "Middle frontal gyrus", "to": "Basolateral complex", "type": "inhibitory", "transmitter": "GABA" },
+        { "from": "Hippocampus", "to": "Cingulate gyrus and sulcus (Middle anterior part)", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp2-frontolimbic-f",
+        "text": "Impaired top-down regulation of limbic structures is what lets a brief hypomanic surge appear and then collapse back into depression. The prefrontal and cingulate sites named here are documented gyral proxies, since the atlas has no single mesh for those regions.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp2-thalamocortical",
+      "name": "Thalamocortical timing circuit",
+      "nodes": [
+        { "atlasLabels": ["Anterior nuclei of thalamus", "Mediodorsal nucleus", "Pulvinar", "Ventral anterior nucleus"], "precision": "exact" },
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" }
+      ],
+      "edges": [
+        { "from": "Mediodorsal nucleus", "to": "Middle frontal gyrus", "type": "excitatory", "transmitter": "glutamate" },
+        { "from": "Anterior nuclei of thalamus", "to": "Superior frontal gyrus", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp2-thalamocortical-f",
+        "text": "Thalamocortical loops set cortical oscillation timing and connect directly to the prefrontal thinning found in bipolar disorder. The atlas resolves the thalamus only as nuclei groups, so the mapping is applied across several groups and flagged as a proxy.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Serotonergic modulation as the main route into bipolar depression treatment",
+      "where": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        { "markerId": "raphe-medial", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "bp2-nc-5ht",
+        "text": "The guideline-supported drugs for bipolar depression are predominantly agents that combine dopamine with serotonin receptor actions, plus lamotrigine, which is why plain serotonergic antidepressants are not appropriate monotherapy here.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "dopamine",
+      "alteration": "Dopaminergic swing from hypomanic over-drive to depressive under-drive",
+      "where": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "bp2-nc-da",
+        "text": "Dopamine remains the transmitter most tied to the elevated pole, and the antipsychotics used in bipolar disorder act on D2 and 5-HT2A rather than on serotonin alone, which is how switching risk is kept lower.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Reduced glutamate release as the mechanism of lamotrigine in bipolar depression",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "bp2-nc-glu",
+        "text": "Lamotrigine modulates glutamate release and voltage-gated sodium channels, and its utility is concentrated in preventing depressive relapse rather than in treating acute mania.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "intracellular-signalling",
+      "alteration": "Lithium-sensitive intracellular signalling including GSK3B",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "bp2-nc-gsk3b",
+        "text": "Lithium's proposed cellular target is GSK3B, and the bipolar exome study showed that the AKAP11 risk protein interacts with GSK3B. Rare-variant risk and a proposed drug mechanism therefore converge on the same kinase, in both bipolar subtypes.",
+        "evidence": "moderate",
+        "sourceIds": ["bipolar-exome-akap11-2022", "canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": ["AKAP11", "GSK3B", "CHD8"],
+    "architecture": [
+      {
+        "id": "bp2-gen-1",
+        "text": "The bipolar exome analysis reported its rare-variant findings across both bipolar subtypes, finding an excess of ultra-rare protein-truncating variants in evolutionarily constrained genes in each, and AKAP11 emerging as a definitive risk gene with an odds ratio of about 7. No separate type II estimate was published, so the shared result is used and labelled as such.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "bp2-gen-2",
+        "text": "Polygenic risk from common variants is the larger contributor to liability in both subtypes, with a substantial proportion of heritability still unexplained by either class of variant.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022", "pgc3-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Cortical thickness pattern",
+      "finding": {
+        "id": "bp2-bm-ctx",
+        "text": "Bilateral frontal, temporal and parietal thinning is the most robust imaging finding across bipolar subtypes, and it is confounded by medication exposure. It is a mechanistic research finding, not a diagnostic test.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-meds-2026"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Inflammatory markers",
+      "finding": {
+        "id": "bp2-bm-inflam",
+        "text": "Peripheral inflammatory markers are modestly elevated on average in mood disorders including bipolar depression, with high heterogeneity and no diagnostic threshold, so this is graded emerging.",
+        "evidence": "emerging",
+        "sourceIds": ["misiak-2021-inflammation"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": ["tx-lithium-bipolar2", "tx-quetiapine-bipolar2", "tx-lurasidone-bipolar2", "tx-lamotrigine-bipolar2", "tx-ect-bipolar2", "tx-psychoeducation-bipolar2", "tx-cbt-bipolar2"],
+  "pathway": [
+    {
+      "step": "Confirm the bipolar diagnosis before treating the depression",
+      "options": ["tx-psychoeducation-bipolar2"],
+      "claim": {
+        "id": "bp2-pw-1",
+        "text": "The first task in suspected type II is to establish whether hypomanic episodes have occurred, using a collateral history and a written life-chart, because antidepressant monotherapy in unrecognised bipolar disorder carries a real switch risk. Once the diagnosis is secure, treatment targets both poles.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Acute bipolar depression",
+      "options": ["tx-quetiapine-bipolar2", "tx-lurasidone-bipolar2", "tx-lithium-bipolar2"],
+      "claim": {
+        "id": "bp2-pw-2",
+        "text": "For acute bipolar depression, guideline-supported agents are quetiapine, lurasidone, lithium and the olanzapine with fluoxetine combination. Agents effective for mania but not for depression are unsuitable, and lamotrigine is not an acute treatment.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Maintenance: prevent the depressive pole",
+      "options": ["tx-lithium-bipolar2", "tx-lamotrigine-bipolar2", "tx-quetiapine-bipolar2"],
+      "claim": {
+        "id": "bp2-pw-3",
+        "text": "Since type II is depression-dominant, maintenance should combine a mood stabiliser for the hypomanic pole with lamotrigine or quetiapine for the depressive pole, and deprescribing after stability is discouraged.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Severe, refractory or catatonia",
+      "options": ["tx-ect-bipolar2"],
+      "claim": {
+        "id": "bp2-pw-4",
+        "text": "Electroconvulsive therapy is used for severe depression, catatonia, rapid cycling or treatment resistance in type II, where most episodes are depressive. Its role is as an add-on or acute rescue rather than a routine maintenance treatment.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Every stage: psychoeducation, family work and sleep",
+      "options": ["tx-psychoeducation-bipolar2", "tx-cbt-bipolar2"],
+      "claim": {
+        "id": "bp2-pw-5",
+        "text": "Structured psychological treatment, family intervention and sleep regularisation are recommended alongside medication in type II, since the hypomanic signature is usually only recognisable after the fact unless the family has been taught what to look for.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · No mania, ever",
+      "text": "Type II is hypomania plus depression. Because hypomania does not impair function, the diagnosis is usually made years late, and missing it is the commonest reason these patients cycle on antidepressants.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · A depression that keeps returning",
+      "text": "Most time unwell in type II is spent depressed, which is what drives disability and suicide risk. Repeated loss of antidepressant response is itself a diagnostic clue.",
+      "lens": "pathology",
+      "lensTarget": "bp2-ctx-thin",
+      "camera": "front"
+    },
+    {
+      "title": "3 · The same frontotemporal thinning",
+      "text": "Cortical findings are shared with type I: bilateral frontal, temporal and parietal thinning, confounded by medication. The largest studies pool both subtypes, which is stated wherever a type II mapping is inferred.",
+      "lens": "pathology",
+      "camera": "side"
+    },
+    {
+      "title": "4 · Reward drive collapses, then briefly surges",
+      "text": "Ventral striatal reward drive is low for most of the illness and briefly over-active in hypomania. The same circuit explains both poles.",
+      "lens": "circuit",
+      "lensTarget": "bp2-reward-ventral-striatum",
+      "camera": "side"
+    },
+    {
+      "title": "5 · Serotonin alone is the wrong lever",
+      "text": "Guideline drugs for bipolar depression all act beyond serotonin alone. Plain antidepressants as monotherapy are warned against because of switching risk.",
+      "lens": "chemistry",
+      "lensTarget": "serotonin",
+      "camera": "front"
+    },
+    {
+      "title": "6 · One kinase links genes and drugs",
+      "text": "The AKAP11 risk protein interacts with GSK3B, the proposed lithium target. Rare-variant risk and drug mechanism converge on the same molecule in both subtypes.",
+      "lens": "gene",
+      "lensTarget": "GSK3B",
+      "camera": "top"
+    },
+    {
+      "title": "7 · Treat both poles, teach the family",
+      "text": "Quetiapine, lurasidone or lithium acutely; lamotrigine or quetiapine to prevent the depressive pole; and psychoeducation so the family recognises the hypomanic signature.",
+      "lens": "drug",
+      "lensTarget": "lamotrigine",
+      "camera": "home"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "bp2-q1",
+      "topic": "Classification",
+      "question": "What is the defining difference between bipolar type I and type II?",
+      "choices": ["Type I is treated with antipsychotics, type II with mood stabilisers", "Type I requires at least one full manic episode, type II requires hypomania instead", "Type I is genetic, type II is not", "Type I is bipolar and type II is schizoaffective"],
+      "answer": 1,
+      "explanation": "ICD-11 6A60 is bipolar type I, defined by at least one manic episode, and 6A61 is type II, defined by hypomanic rather than manic episodes, so treatment choice does not define the diagnosis.",
+      "sourceIds": ["icd11-browser", "canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp2-q2",
+      "topic": "Psychopathology",
+      "question": "Why is bipolar type II often diagnosed years late?",
+      "choices": ["Because hypomanic episodes cause marked functional impairment that is hidden", "Because hypomania does not cause marked impairment, so it is missed and only the depression is treated", "Because the disorder only appears in old age", "Because imaging cannot detect it"],
+      "answer": 1,
+      "explanation": "Hypomania is defined by absence of marked functional impairment, so it is easily misread as good mood or stress, leaving a history of recurrent depression as the presenting problem.",
+      "sourceIds": ["canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp2-q3",
+      "topic": "Psychopathology",
+      "question": "Which phase of bipolar type II accounts for most disability and suicide risk?",
+      "choices": ["Hypomania", "Depressive episodes", "Remission", "Prodromal phase"],
+      "answer": 1,
+      "explanation": "Type II is depression-dominant, and the depressive and mixed phases carry the main burden of disability and of suicide risk, which is why acute treatment must cover the depressive pole.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"]
+    },
+    {
+      "id": "bp2-q4",
+      "topic": "Psychopathology",
+      "question": "A patient improves on an SSRI, then becomes agitated and sleepless after six weeks. What should be suspected?",
+      "choices": ["Tolerance to the SSRI", "Antidepressant-induced switching in unrecognised bipolar disorder", "Depressive relapse", "Anticholinergic delirium"],
+      "answer": 1,
+      "explanation": "Transient improvement followed by agitation and reduced sleep need is the classic switching pattern, which is why antidepressants as monotherapy are not recommended in bipolar disorder and a collateral history for hypomania is essential.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    },
+    {
+      "id": "bp2-q5",
+      "topic": "Brain pathology",
+      "question": "What cortical finding is shared across bipolar subtypes, and what is its main confound?",
+      "choices": ["Cortical thickening, confounded by age", "Bilateral frontal, temporal and parietal thinning, confounded by medication exposure", "No cortical difference, confounded by scanner", "Cingulate thinning only, confounded by sex"],
+      "answer": 1,
+      "explanation": "The 6503-individual ENIGMA study found bilateral thinning in these regions, and also found that lithium, antiepileptic and antipsychotic treatment were associated with thickness and surface area, making medication status essential to report.",
+      "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-meds-2026"]
+    },
+    {
+      "id": "bp2-q6",
+      "topic": "Brain pathology",
+      "question": "Why is the cortical thinning finding applied to bipolar type II here without a type II effect size?",
+      "choices": ["Because type II has identical imaging to type I", "Because the large study pooled both subtypes and published no separate type II estimate, so the shared result is used and labelled", "Because imaging cannot distinguish subtypes", "Because type II has no structural findings"],
+      "answer": 1,
+      "explanation": "Publishing a number as if it were subtype-specific when the study pooled subtypes would overstate the evidence, so the mapping is declared shared and the pooled effect size is reported as such.",
+      "sourceIds": ["enigma-bipolar-cortical-2018"]
+    },
+    {
+      "id": "bp2-q7",
+      "topic": "Genetics",
+      "question": "What rare-variant result applies to both bipolar subtypes?",
+      "choices": ["A single causal gene explains most cases", "An excess of ultra-rare protein-truncating variants in constrained genes, with AKAP11 emerging as a definitive risk gene at about seven times the odds", "Rare variants are found only in type I", "Genome-wide association genes are enriched for rare truncating variants"],
+      "answer": 1,
+      "explanation": "Across 13933 cases and 14422 controls, ultra-rare protein-truncating variants were enriched in evolutionarily constrained genes in both subtypes, AKAP11 reached an odds ratio near 7, and genome-wide association genes were not significantly enriched for them.",
+      "sourceIds": ["bipolar-exome-akap11-2022"]
+    },
+    {
+      "id": "bp2-q8",
+      "topic": "Neurochemistry",
+      "question": "Why are plain serotonergic antidepressants inappropriate as monotherapy in bipolar depression?",
+      "choices": ["They have no antidepressant action", "They can destabilise mood and provoke switching into hypomania or mixed states", "They are contraindicated with lithium", "They are ineffective when combined with quetiapine"],
+      "answer": 1,
+      "explanation": "Guidelines recommend agents that act beyond serotonin alone, such as quetiapine, lurasidone, lithium and the olanzapine with fluoxetine combination, precisely because of switch risk with serotonergic monotherapy.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    },
+    {
+      "id": "bp2-q9",
+      "topic": "Pharmacology",
+      "question": "Which drug prevents depressive relapse but does not treat acute mania?",
+      "choices": ["Lamotrigine", "Lithium", "Valproate", "Aripiprazole"],
+      "answer": 0,
+      "explanation": "Lamotrigine is a slow-titrating maintenance agent for the depressive pole with no role in acute mania, and it requires very gradual escalation because of the risk of severe rash.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"]
+    },
+    {
+      "id": "bp2-q10",
+      "topic": "Pharmacology",
+      "question": "Which is the safest long-term agent for someone needing an antidepressant but at high switch risk?",
+      "choices": ["An SSRI alone", "Lurasidone, which is dopamine and serotonin receptor active with a low metabolic burden", "A high-dose SSRI", "A benzodiazepine"],
+      "answer": 1,
+      "explanation": "Lurasidone has guideline support for bipolar depression and a favourable metabolic and prolactin profile, so it covers the depressive pole without serotonergic monotherapy switching risk.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"]
+    },
+    {
+      "id": "bp2-q11",
+      "topic": "Treatments",
+      "question": "Which psychosocial intervention is most valuable in type II specifically?",
+      "choices": ["Family psychoeducation teaching the hypomanic signature, since episodes are only recognised in retrospect", "Group therapy for social anxiety", "Cognitive remediation for memory", "Occupational therapy only"],
+      "answer": 0,
+      "explanation": "Because hypomania causes no impairment and is usually recognised only after the fact, teaching family members what to look for, alongside sleep regularisation and a written relapse plan, is the key intervention in type II.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"]
+    },
+    {
+      "id": "bp2-q12",
+      "topic": "Treatments",
+      "question": "When is ECT used in bipolar type II?",
+      "choices": ["Routinely at first diagnosis", "For severe depression, catatonia, rapid cycling or treatment resistance", "To prevent relapse in all patients", "Never, as it causes mania"],
+      "answer": 1,
+      "explanation": "ECT is reserved for severe or refractory depressive presentations, catatonia and rapid cycling, acting as an acute rescue or add-on rather than a routine maintenance treatment.",
+      "sourceIds": ["canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp2-q13",
+      "topic": "Pathway",
+      "question": "What is the first clinical task in suspected bipolar type II presenting as recurrent depression?",
+      "choices": ["Start a high-dose SSRI", "Establish whether hypomanic episodes have occurred, using collateral history and a life-chart", "Order a brain MRI", "Start lamotrigine"],
+      "answer": 1,
+      "explanation": "Establishing the presence of hypomania is the step that prevents years of antidepressant monotherapy in unrecognised bipolar disorder, which is the main cause of switching in these patients.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"]
+    },
+    {
+      "id": "bp2-q14",
+      "topic": "Pathway",
+      "question": "Why does maintenance therapy in type II need an agent for depression as well as for the elevated pole?",
+      "choices": ["Because depressive episodes are more common and more disabling in type II", "Because mood stabilisers cause depression", "Because lamotrigine treats mania", "Because lithium is ineffective"],
+      "answer": 0,
+      "explanation": "Because type II is depression-dominant, maintenance must combine a hypomania-directed agent with lamotrigine or quetiapine for the depressive pole, and deprescribing after stability is discouraged.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    },
+    {
+      "id": "bp2-q15",
+      "topic": "Biomarkers",
+      "question": "Is there any validated blood or scan test that confirms bipolar type II?",
+      "choices": ["Yes, a serum dopamine assay", "No; imaging findings are group-level and medication-confounded, and inflammatory markers are heterogeneous", "Yes, a cortical thickness threshold", "Yes, a lithium response test"],
+      "answer": 1,
+      "explanation": "The cortical and subcortical findings are group-level and confounded by medication, and inflammatory markers are heterogeneous with no threshold, so diagnosis remains clinical.",
+      "sourceIds": ["enigma-bipolar-cortical-2018", "misiak-2021-inflammation"]
+    },
+    {
+      "id": "bp2-q16",
+      "topic": "Brain pathology",
+      "question": "Which reward-circuit account best fits type II?",
+      "choices": ["Reward drive is always normal", "Reward drive is under-driven for most of the illness with brief hypomanic over-activity, the same circuit expressing both poles", "Reward drive is permanently lost", "Only the hippocampus is involved"],
+      "answer": 1,
+      "explanation": "Because the same ventral striatal circuit is over-driven in hypomania and under-driven in bipolar depression, one circuit accounts for the alternation, which is how the circuit lens is set up here.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "enigma-subcort-mega-2023"]
+    }
+  ],
+  "related": ["bipolar-1", "mdd", "schizophrenia"]
+}

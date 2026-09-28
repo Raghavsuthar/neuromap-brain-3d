@@ -3,7 +3,27 @@
     {
       "id": "schizophrenia",
       "name": "Schizophrenia",
-      "block": "Schizophrenia and other primary psychotic disorders (ICD-11)"
+      "block": "Schizophrenia and other primary psychotic disorders"
+    },
+    {
+      "id": "mdd",
+      "name": "Major depressive disorder",
+      "block": "Mood (affective) disorders"
+    },
+    {
+      "id": "bipolar-1",
+      "name": "Bipolar type I disorder",
+      "block": "Mood (affective) disorders"
+    },
+    {
+      "id": "bipolar-2",
+      "name": "Bipolar type II disorder",
+      "block": "Mood (affective) disorders"
+    },
+    {
+      "id": "ocd",
+      "name": "Obsessive-compulsive disorder",
+      "block": "Obsessive-compulsive or related disorders"
     }
   ]
 }

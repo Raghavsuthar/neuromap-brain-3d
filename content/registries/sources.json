@@ -234,6 +234,268 @@
       "title": "IUPHAR/BPS Guide to Pharmacology: curated receptor, signalling and distribution data",
       "authors": "International Union of Basic and Clinical Pharmacology / British Pharmacological Society",
       "url": "https://www.guidetopharmacology.org/"
+    },
+    {
+      "id": "enigma-mdd-subcort-2016",
+      "type": "meta-analysis",
+      "title": "Subcortical brain alterations in major depressive disorder: findings from the ENIGMA Major Depressive Disorder working group",
+      "authors": "Schmaal L et al., ENIGMA MDD Working Group",
+      "year": 2016,
+      "doi": "10.1038/mp.2015.69",
+      "pmid": "26122586",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26122586/"
+    },
+    {
+      "id": "enigma-mdd-cortical-2017",
+      "type": "meta-analysis",
+      "title": "Cortical abnormalities in adults and adolescents with major depression based on brain scans from 20 cohorts worldwide in the ENIGMA Major Depressive Disorder Working Group",
+      "authors": "Schmaal L et al., ENIGMA MDD Working Group",
+      "year": 2017,
+      "doi": "10.1038/mp.2016.60",
+      "pmid": "27137745",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27137745/"
+    },
+    {
+      "id": "enigma-mdd-dti-2020",
+      "type": "meta-analysis",
+      "title": "White matter disturbances in major depressive disorder: a coordinated analysis across 20 international cohorts in the ENIGMA MDD working group",
+      "year": 2020,
+      "doi": "10.1038/s41380-019-0477-2",
+      "pmid": "31471575",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31471575/"
+    },
+    {
+      "id": "enigma-mdd-aging-2021",
+      "type": "meta-analysis",
+      "title": "Brain aging in major depressive disorder: results from the ENIGMA major depressive disorder working group",
+      "authors": "McMahon KL et al., ENIGMA MDD Working Group",
+      "year": 2021,
+      "doi": "10.1038/s41380-020-0754-0",
+      "pmid": "32424236",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32424236/"
+    },
+    {
+      "id": "pgc-depression-2019",
+      "type": "gwas",
+      "title": "Genome-wide meta-analysis of depression identifies 102 independent variants and highlights the importance of the prefrontal brain regions",
+      "authors": "Howard DM et al., Major Depressive Disorder Working Group of the Psychiatric Genomics Consortium",
+      "year": 2019,
+      "doi": "10.1038/s41593-018-0326-7",
+      "pmid": "30718901",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30718901/"
+    },
+    {
+      "id": "canmat-depression-2023",
+      "type": "guideline",
+      "title": "CANMAT 2023 update on clinical guidelines for management of major depressive disorder in adults",
+      "authors": "Lam RW et al., CANMAT",
+      "year": 2024,
+      "doi": "10.1177/07067437241245384",
+      "pmid": "38711351",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38711351/"
+    },
+    {
+      "id": "nice-ng222",
+      "type": "guideline",
+      "title": "Depression in adults: treatment and management (NG222)",
+      "authors": "National Institute for Health and Care Excellence",
+      "year": 2022,
+      "url": "https://www.nice.org.uk/guidance/ng222"
+    },
+    {
+      "id": "recover-vns-2026",
+      "type": "rct",
+      "title": "The RECOVER trial of vagus nerve stimulation in markedly treatment-resistant depression: critical findings, lessons learned, and future directions",
+      "year": 2026,
+      "doi": "10.1176/appi.ajp.20251339",
+      "pmid": "42642808",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42642808/"
+    },
+    {
+      "id": "ketamine-dep-2026",
+      "type": "review",
+      "title": "Ketamine pharmacotherapy for major depressive disorder: a narrative review",
+      "year": 2026,
+      "doi": "10.1016/j.pnpbp.2026.111651",
+      "pmid": "41765199",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41765199/"
+    },
+    {
+      "id": "enigma-subcort-mega-2023",
+      "type": "meta-analysis",
+      "title": "Subcortical volumetric alterations in four major psychiatric disorders: a mega-analysis study of 5604 subjects and a volumetric heterogeneity model",
+      "authors": "ENIGMA Consortium",
+      "year": 2023,
+      "doi": "10.1038/s41380-023-02141-9",
+      "pmid": "37537281",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37537281/"
+    },
+    {
+      "id": "enigma-bipolar-cortical-2018",
+      "type": "meta-analysis",
+      "authors": "Hibar DP et al., ENIGMA Bipolar Disorder Working Group",
+      "title": "Cortical abnormalities in bipolar disorder: an MRI analysis of 6503 individuals from the ENIGMA Bipolar Disorder Working Group",
+      "year": 2018,
+      "doi": "10.1038/mp.2017.73",
+      "pmid": "28461699",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28461699/"
+    },
+    {
+      "id": "enigma-bipolar-longitudinal-2022",
+      "type": "meta-analysis",
+      "title": "Longitudinal structural brain changes in bipolar disorder: a multicenter neuroimaging study of 1232 individuals by the ENIGMA working group",
+      "year": 2022,
+      "doi": "10.1016/j.biopsych.2021.09.008",
+      "pmid": "34809987",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34809987/"
+    },
+    {
+      "id": "enigma-bipolar-meds-2026",
+      "type": "meta-analysis",
+      "title": "Psychotropic medications and their interactions with subcortical brain volume in bipolar disorder: an ENIGMA mega-analysis",
+      "year": 2026,
+      "doi": "10.1038/s41380-025-03432-z",
+      "pmid": "41540091",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41540091/"
+    },
+    {
+      "id": "lithium-volumes-2025",
+      "type": "meta-analysis",
+      "title": "Lithium and valproate affect subcortical brain volumes in individuals with bipolar disorder: a mega-analysis",
+      "authors": "J Affect Disord",
+      "year": 2025,
+      "doi": "10.1016/j.jad.2025.04.019",
+      "pmid": "40189070",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40189070/"
+    },
+    {
+      "id": "bipolar-exome-akap11-2022",
+      "type": "meta-analysis",
+      "title": "Exome sequencing in bipolar disorder identifies AKAP11 as a risk gene shared with schizophrenia",
+      "authors": "Palmer DS et al., Bipolar Exome (BipEx) Collaboration",
+      "year": 2022,
+      "doi": "10.1038/s41588-022-01034-x",
+      "pmid": "35410376",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35410376/"
+    },
+    {
+      "id": "bipolar-de-novo-2021",
+      "type": "primary",
+      "title": "De novo variation in bipolar disorder",
+      "authors": "Goes FS et al.",
+      "year": 2021,
+      "doi": "10.1038/s41380-019-0611-1",
+      "pmid": "31776463",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31776463/"
+    },
+    {
+      "id": "canmat-bipolar-2018-summary",
+      "type": "guideline",
+      "title": "The CANMAT and ISBD guidelines for the treatment of bipolar disorder: summary and a 2023 update of evidence",
+      "year": 2023,
+      "doi": "10.1176/appi.focus.20230009",
+      "pmid": "38695002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38695002/"
+    },
+    {
+      "id": "canmat-bipolar-recommendations-2021",
+      "type": "guideline",
+      "title": "CANMAT and ISBD recommendations for the treatment of bipolar disorder",
+      "year": 2021,
+      "doi": "10.1111/bdi.13135",
+      "pmid": "34599629",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34599629/"
+    },
+    {
+      "id": "wfsbp-ocd-2023",
+      "type": "guideline",
+      "title": "WFSBP guidelines for treatment of anxiety, obsessive-compulsive and posttraumatic stress disorders, version 3, part II: OCD and PTSD",
+      "year": 2023,
+      "doi": "10.1080/15622975.2022.2086296",
+      "pmid": "35900217",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35900217/"
+    },
+    {
+      "id": "ocd-neurocircuit-taxonomy-2021",
+      "type": "review",
+      "title": "Toward a neurocircuit-based taxonomy to guide treatment of obsessive-compulsive disorder",
+      "authors": "Shephard E et al.",
+      "year": 2021,
+      "doi": "10.1038/s41380-020-01007-8",
+      "pmid": "33414496",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33414496/"
+    },
+    {
+      "id": "cbt-ocd-meta-2015",
+      "type": "meta-analysis",
+      "title": "Efficacy of cognitive-behavioral therapy for obsessive-compulsive disorder: a review of the meta-analyses on exposure with response prevention and cognitive therapy",
+      "year": 2015,
+      "doi": "10.1016/j.psychres.2015.02.004",
+      "pmid": "25937054",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25937054/"
+    },
+    {
+      "id": "ocd-gwas-2013",
+      "type": "gwas",
+      "title": "Genome-wide association study of obsessive-compulsive disorder",
+      "authors": "Stewart E et al., OCD Consortium",
+      "year": 2013,
+      "doi": "10.1038/mp.2012.85",
+      "pmid": "22889921",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22889921/"
+    },
+    {
+      "id": "ocd-exome-2016",
+      "type": "primary",
+      "title": "Whole-exome sequencing in obsessive-compulsive disorder identifies rare mutations in immunological and neurodevelopmental pathways",
+      "year": 2016,
+      "doi": "10.1038/tp.2016.30",
+      "pmid": "27023170",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27023170/"
+    },
+    {
+      "id": "ocd-asymmetry-2020",
+      "type": "meta-analysis",
+      "title": "Mapping cortical and subcortical asymmetry in obsessive-compulsive disorder: findings from the ENIGMA Consortium",
+      "year": 2020,
+      "doi": "10.1016/j.biopsych.2019.04.022",
+      "pmid": "31178097",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31178097/"
+    },
+    {
+      "id": "ocd-morph-endophenotype-2015",
+      "type": "primary",
+      "title": "Subcortical and cortical morphological anomalies as an endophenotype in obsessive-compulsive disorder",
+      "year": 2015,
+      "doi": "10.1038/mp.2014.3",
+      "pmid": "24514568",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24514568/"
+    },
+    {
+      "id": "ocd-microstructure-2026",
+      "type": "meta-analysis",
+      "title": "Altered frontal and occipital cortical microstructure in obsessive-compulsive disorder: a multisite mega-analysis",
+      "year": 2026,
+      "doi": "10.1038/s41380-026-03500-y",
+      "pmid": "41833995",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41833995/"
+    },
+    {
+      "id": "ocd-neuroablation-dbs-2019",
+      "type": "meta-analysis",
+      "title": "Comparative effectiveness of neuroablation and deep brain stimulation for treatment-resistant obsessive-compulsive disorder: a meta-analytic study",
+      "year": 2019,
+      "doi": "10.1136/jnnp-2018-319318",
+      "pmid": "30679237",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30679237/"
+    },
+    {
+      "id": "nice-cg31",
+      "type": "guideline",
+      "title": "Obsessive-compulsive disorder and body dysmorphic disorder: treatment and management (CG31)",
+      "authors": "National Institute for Health and Care Excellence",
+      "year": 2005,
+      "url": "https://www.nice.org.uk/guidance/cg31"
     }
   ]
 }

@@ -197,8 +197,14 @@ function setView(view) {
   document.querySelector('.panel').hidden = clinical;
   $('clinic').hidden = !clinical;
   if (clinical) {
+    const layer = LAYERS[view];
+    // 'disorders' is a sibling tab owned by disorder.js and is never a clinical layer.
+    if (!layer) return;
     currentLayer = view;
-    $('clinicSearchLabel').textContent = `Search ${LAYERS[view].title}`;
+    // A clinical layer takes over the right-hand side from the disorder panel.
+    const dp = $('disorderPanel');
+    if (dp) dp.hidden = true;
+    $('clinicSearchLabel').textContent = `Search ${layer.title}`;
     $('clinicSearch').placeholder = `e.g. ${view === 'drugs' ? 'sertraline, SSRI, N06AB' : view === 'syndromes' ? 'depression, 6A70, mood' : view === 'circuits' ? 'CSTC, reward, DMN' : 'serotonin, 5-HT, dopamine'}…`;
     showHome(false);
     renderList();
@@ -226,9 +232,12 @@ async function loadClinical() {
   }
 }
 
-document.querySelectorAll('#viewtabs button').forEach((b) =>
-  b.addEventListener('click', () => setView(b.dataset.view)),
-);
+// The view tabs also contain the 'brain' and 'disorders' tabs; 'disorders' is
+// owned by disorder.js and must not be routed through the clinical layers.
+document.querySelectorAll('#viewtabs button').forEach((b) => {
+  if (b.dataset.view !== 'brain' && !LAYERS[b.dataset.view]) return;
+  b.addEventListener('click', () => setView(b.dataset.view));
+});
 $('clinicBack').addEventListener('click', () => showHome());
 $('clinicSearch').addEventListener('input', renderList);
 $('clinicBody').addEventListener('click', (e) => {

@@ -1,0 +1,629 @@
+{
+  "id": "bipolar-1",
+  "name": "Bipolar type I disorder",
+  "icd11": { "code": "6A60", "url": "https://icd.who.int/browse11/l-m/en" },
+  "dsm5tr": { "code": "296.44-296.64", "url": "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+  "block": "Mood (affective) disorders",
+  "overview": [
+    {
+      "id": "bp1-ov-1",
+      "text": "Bipolar type I disorder is defined by at least one manic episode, with or without major depressive episodes, and is distinguished from type II by the presence of full mania. Mania is a state of elevated or irritable mood with increased energy, reduced sleep need and impaired judgement, and it commonly requires hospital care.",
+      "evidence": "established",
+      "sourceIds": ["icd11-browser", "dsm5tr-overview", "canmat-bipolar-2018-summary"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "bp1-ov-2",
+      "text": "The largest cortical study, covering 6503 individuals, found thinner cortex in frontal, temporal and parietal regions bilaterally, with the strongest effects around left inferior frontal operculum, left fusiform and left rostral middle frontal cortex. It also found that prescribed medications were associated with cortical thickness and surface area, so medication history confounds imaging findings in this disorder more than in most others.",
+      "evidence": "strong",
+      "sourceIds": ["enigma-bipolar-cortical-2018"],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "bp1-ov-3",
+      "text": "Genetics is polygenic with a demonstrable rare-variant component: whole-exome sequencing found an excess of ultra-rare protein-truncating variants in evolutionarily constrained genes in both bipolar subtypes, and AKAP11 emerged as a definitive risk gene at about seven times the odds. Longitudinal imaging found faster ventricular enlargement and an association between more manic episodes and faster prefrontal thinning, which is the imaging basis for prioritising mania prevention.",
+      "evidence": "strong",
+      "sourceIds": ["bipolar-exome-akap11-2022", "enigma-bipolar-longitudinal-2022"],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "mania",
+      "name": "Mania",
+      "description": {
+        "id": "bp1-sym-mania",
+        "text": "Elevated, expansive or irritable mood with increased energy, reduced need for sleep, pressured speech, racing thoughts, increased goal-directed activity and inflated self-esteem. Severity ranges from hypomanic intensity to a full episode with impaired judgement, and severe mania often needs inpatient care.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "dsm5tr-overview", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-frontolimbic-dysreg"],
+      "brainFindingIds": ["bp1-ctx-thin", "bp1-prefrontal-thinning-episodes"]
+    },
+    {
+      "id": "bipolar-depression",
+      "name": "Bipolar depression",
+      "description": {
+        "id": "bp1-sym-dep",
+        "text": "Depressive episodes in bipolar disorder are at least as disabling as mania and account for most time spent unwell, yet they respond to fewer drug classes than mania. They carry the main burden of suicide risk in the disorder.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-reward-ventral-striatum"],
+      "brainFindingIds": ["bp1-ctx-thin", "bp1-ventricles"]
+    },
+    {
+      "id": "mixed-episodes",
+      "name": "Mixed features",
+      "description": {
+        "id": "bp1-sym-mixed",
+        "text": "Depressive and manic symptoms occurring together, or rapid alternation between them, carries a worse prognosis and more switch risk than either pole alone. Rapid cycling, defined as four or more mood episodes in a year, is a recognised course specifier that changes management.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-frontolimbic-dysreg"],
+      "brainFindingIds": ["bp1-ctx-thin"]
+    },
+    {
+      "id": "cognition",
+      "name": "Cognition and interepisode function",
+      "description": {
+        "id": "bp1-sym-cog",
+        "text": "Attention, processing speed and executive function are often impaired between episodes, and roughly two-thirds of people have persistent functional difficulty. Episodic depression, missed work and disrupted sleep and routines contribute as much as the underlying illness.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "enigma-bipolar-cortical-2018"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-reward-ventral-striatum"],
+      "brainFindingIds": ["bp1-ctx-thin", "bp1-prefrontal-thinning-episodes"]
+    },
+    {
+      "id": "sleep-rhythm",
+      "name": "Sleep and circadian disruption",
+      "description": {
+        "id": "bp1-sym-sleep",
+        "text": "Reduced need for sleep in mania is one of the earliest and most reliable early-warning signs of an episode. Social jet lag, night work and irregular routines are also associated with relapse, which is why sleep regularisation is a core part of psychosocial treatment.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-frontolimbic-dysreg"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "suicidal-ideation",
+      "name": "Suicidal ideation",
+      "description": {
+        "id": "bp1-sym-suicide",
+        "text": "Suicide risk in bipolar disorder is several times higher than in the general population, concentrates in depressive and mixed episodes and in the first years of illness, and is reduced by mood-stabilising treatment. Direct risk assessment is required at every contact.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": ["bp1-reward-ventral-striatum"],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "bp1-ctx-thin",
+      "where": { "atlasLabels": ["Opercular part of inferior frontal gyrus", "Middle temporal gyrus", "Superior temporal gyrus (Lateral part)", "Superior parietal lobule", "Middle frontal gyrus", "Superior frontal gyrus"], "precision": "exact" },
+      "finding": "thickness-reduction",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": -0.293, "sourceId": "enigma-bipolar-cortical-2018" },
+      "claim": {
+        "id": "bp1-ctx-c",
+        "text": "In the largest cortical study of bipolar disorder, covering 6503 individuals, cortex was thinner in frontal, temporal and parietal regions of both hemispheres. The strongest single effect was at the left pars opercularis with a standardised difference of about minus 0.29, and that reported value is used here.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-prefrontal-thinning-episodes",
+      "where": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus", "Opercular part of inferior frontal gyrus", "Triangular part of inferior frontal gyrus"], "precision": "proxy" },
+      "finding": "thickness-reduction",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": 0.2, "sourceId": "enigma-bipolar-longitudinal-2022" },
+      "claim": {
+        "id": "bp1-prefrontal-c",
+        "text": "In a two-timepoint study of 307 patients and 925 controls, more manic or hypomanic episodes between scans predicted faster thinning in prefrontal cortex. The reported differences were modest, and overall cortical thinning was not accelerated relative to controls, so the effect size shown here is the lower bound of the reported range rather than a single estimate.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-ventricles",
+      "where": { "atlasLabels": ["Lateral ventricle"], "precision": "exact" },
+      "finding": "volume-increase",
+      "stage": "chronic",
+      "effectSize": { "metric": "cohens_d", "value": 0.18, "sourceId": "enigma-bipolar-longitudinal-2022" },
+      "claim": {
+        "id": "bp1-ventricles-c",
+        "text": "The same longitudinal study found faster enlargement of ventricular volumes in bipolar disorder than in controls, and slower thinning of fusiform and parahippocampal cortex, with reported standardised differences between 0.18 and 0.22. The value shown is the lower bound of that range.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-limbic-volumes",
+      "where": { "atlasLabels": ["Hippocampus", "Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group", "Mediodorsal nucleus", "Anterior nuclei of thalamus"], "precision": "proxy" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "bp1-limbic-c",
+        "text": "Cross-disorder ENIGMA mega-analyses of 5604 individuals report small subcortical volume differences in bipolar disorder affecting hippocampus, amygdala and thalamus. Effects are far smaller than the cortical differences and are not specific enough to distinguish bipolar disorder from other conditions in an individual.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-subcort-mega-2023", "enigma-subcort-2016"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-medication-effects",
+      "where": { "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens", "Hippocampus", "Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group", "Lateral ventricle"], "precision": "exact" },
+      "finding": "other",
+      "stage": "chronic",
+      "claim": {
+        "id": "bp1-med-effects-c",
+        "text": "Both the large cortical study and dedicated ENIGMA mega-analyses found that lithium, antiepileptic and antipsychotic treatment are associated with cortical thickness, surface area and subcortical volume. Any imaging claim in bipolar disorder must therefore state the medication status, because treatment is a major confounder rather than an incidental detail.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-meds-2026", "lithium-volumes-2025"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "bp1-frontolimbic-dysreg",
+      "name": "Fronto-limbic dysregulation circuit",
+      "nodes": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus", "Opercular part of inferior frontal gyrus"], "precision": "proxy" },
+        { "atlasLabels": ["Cingulate gyrus and sulcus (Middle anterior part)", "Straight gyrus (Gyrus rectus)", "Orbital gyri"], "precision": "proxy" },
+        { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus"], "precision": "exact" }
+      ],
+      "edges": [
+        { "from": "Middle frontal gyrus", "to": "Basolateral complex", "type": "inhibitory", "transmitter": "GABA" },
+        { "from": "Hippocampus", "to": "Cingulate gyrus and sulcus (Middle anterior part)", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp1-frontolimbic-f",
+        "text": "Deficient top-down control of limbic structures allows mood and drive to run away into mania, while the same circuit's failure to engage during depression produces the opposite deficit. The prefrontal sites named here are documented gyral proxies for regions the atlas does not resolve as single structures.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-reward-ventral-striatum",
+      "name": "Reward and ventral striatal circuit",
+      "nodes": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus", "Medial occipitotemporal gyrus (Parahippocampal)"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "VTA (schematic)", "to": "Nucleus accumbens", "type": "modulatory", "transmitter": "dopamine" },
+        { "from": "Hippocampus", "to": "Nucleus accumbens", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp1-reward-f",
+        "text": "In mania this circuit is over-driven, producing goal-directed activity and reduced reward sensitivity; in bipolar depression it is under-driven, producing anhedonia. The ventral tegmental area has no mesh in the atlas and is shown as a calibrated marker.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "enigma-subcort-mega-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "bp1-thalamocortical",
+      "name": "Thalamocortical timing circuit",
+      "nodes": [
+        { "atlasLabels": ["Anterior nuclei of thalamus", "Mediodorsal nucleus", "Ventral anterior nucleus", "Pulvinar"], "precision": "exact" },
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" }
+      ],
+      "edges": [
+        { "from": "Mediodorsal nucleus", "to": "Middle frontal gyrus", "type": "excitatory", "transmitter": "glutamate" },
+        { "from": "Anterior nuclei of thalamus", "to": "Superior frontal gyrus", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "bp1-thalamocortical-f",
+        "text": "Thalamocortical loops set cortical oscillation timing and connect directly to the prefrontal thinning seen in bipolar disorder. Because the atlas resolves the thalamus only as nuclei groups, the finding is applied across several groups and flagged as a proxy.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "dopamine",
+      "alteration": "Overshoot of mesolimbic reward drive in mania with reduced drive in bipolar depression",
+      "where": [
+        { "atlasLabels": ["Nucleus accumbens", "Caudate nucleus", "Putamen"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "bp1-nc-da",
+        "text": "Dopamine is the transmitter most closely tied to mania, which is why antipsychotics and atypical antipsychotics are first-line for acute mania, while bipolar depression needs agents that also act on serotonergic and glutamatergic systems.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "serotonin",
+      "alteration": "Modulatory serotonin involvement shaping second-generation drug profiles",
+      "where": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        { "markerId": "raphe-medial", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "bp1-nc-5ht",
+        "text": "5-HT2A antagonism is a defining component of second-generation antipsychotics used in bipolar disorder, and drugs with combined serotonin and dopamine actions carry most of the guideline support for bipolar depression.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Glutamatergic signalling, the pathway targeted by lamotrigine and by bipolar-depression antipsychotics",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "bp1-nc-glu",
+        "text": "Reducing glutamate release with lamotrigine is effective for preventing depressive relapse but not for acute mania, and atypical antipsychotics with 5-HT7 activity act partly through glutamatergic modulation to treat bipolar depression.",
+        "evidence": "moderate",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "intracellular-signalling",
+      "alteration": "Lithium-sensitive intracellular signalling including GSK3B",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "bp1-nc-gsk3b",
+        "text": "Lithium acts on intracellular targets rather than on a neurotransmitter receptor, with GSK3B inhibition the long-standing hypothesis; the bipolar exome study found that the AKAP11 risk protein interacts with GSK3B, which links a genetic risk gene to the drug's proposed target.",
+        "evidence": "moderate",
+        "sourceIds": ["bipolar-exome-akap11-2022", "canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "GABA",
+      "alteration": "GABAergic potentiation as a mechanism of valproate and of anticonvulsant mood stabilisers",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Basolateral complex"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "bp1-nc-gaba",
+        "text": "Valproate increases GABA and blocks voltage-gated sodium channels, an action shared with other anticonvulsants used in mania and in mixed or rapid-cycling courses.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": ["AKAP11", "GSK3B", "CHD8"],
+    "architecture": [
+      {
+        "id": "bp1-gen-1",
+        "text": "Whole-exome sequencing in 13933 patients and 14422 controls found an excess of ultra-rare protein-truncating variants in evolutionarily constrained genes in both bipolar subtypes, and no significant enrichment among genes from bipolar genome-wide studies, indicating that rare coding variation carries real but separate risk from common polygenic risk.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "bp1-gen-2",
+        "text": "AKAP11 emerged as a definitive risk gene with an odds ratio of about 7 and a gene-level p-value of 2.83e-9, and ultra-rare variants were also enriched among genes implicated by the schizophrenia exome study, which is direct evidence of partly shared rare-variant architecture across the two disorders.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022", "schema-paper"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "bp1-gen-3",
+        "text": "De novo variant studies support the same architecture: sequencing of 97 trios found thousands of de novo variants per trio, mostly non-coding, consistent with a polygenic background in which rare coding changes carry disproportionate individual effect.",
+        "evidence": "moderate",
+        "sourceIds": ["bipolar-de-novo-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Cortical thickness pattern",
+      "finding": {
+        "id": "bp1-bm-ctx",
+        "text": "Bilateral frontal, temporal and parietal thinning is the most robust imaging finding, with the largest effect around left inferior frontal operculum. It is a group finding entangled with medication exposure and cannot diagnose bipolar disorder in an individual.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-bipolar-cortical-2018"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Episode count and ventricular change",
+      "finding": {
+        "id": "bp1-bm-vent",
+        "text": "Faster ventricular enlargement and an association between more manic episodes and faster prefrontal thinning give a longitudinal signal tied to illness burden. This supports prioritising mania prevention, but it is not a monitoring test.",
+        "evidence": "moderate",
+        "sourceIds": ["enigma-bipolar-longitudinal-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Inflammatory markers",
+      "finding": {
+        "id": "bp1-bm-inflam",
+        "text": "Peripheral inflammatory markers are modestly elevated on average in mood disorders including bipolar disorder, with high heterogeneity and no diagnostic threshold. This remains an emerging research signal.",
+        "evidence": "emerging",
+        "sourceIds": ["misiak-2021-inflammation"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": ["tx-lithium-bipolar", "tx-valproate-bipolar", "tx-quetiapine-bipolar", "tx-aripiprazole-bipolar", "tx-lamotrigine-bipolar", "tx-lurasidone-bipolar", "tx-ect-bipolar", "tx-rtms-bipolar", "tx-psychoeducation-bipolar", "tx-cbt-bipolar", "tx-family-bipolar"],
+  "pathway": [
+    {
+      "step": "Acute mania: mood stabiliser plus or instead of an antipsychotic",
+      "options": ["tx-lithium-bipolar", "tx-valproate-bipolar", "tx-quetiapine-bipolar", "tx-aripiprazole-bipolar"],
+      "claim": {
+        "id": "bp1-pw-1",
+        "text": "Guideline first-line options for acute mania are lithium, valproate, quetiapine, asenapine, olanzapine, risperidone, aripiprazole or cariprazine, alone or in combination. Choice depends on severity, speed of onset, mood polarity, suicidality and the need for an agent that will later work for depression.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Bipolar depression: agents that work for the depressive pole",
+      "options": ["tx-quetiapine-bipolar", "tx-lurasidone-bipolar", "tx-lamotrigine-bipolar", "tx-aripiprazole-bipolar"],
+      "claim": {
+        "id": "bp1-pw-2",
+        "text": "For bipolar depression the guideline-supported options are quetiapine, lurasidone, lithium, lamotrigine and olanzapine with fluoxetine, and guidelines warn against using most other antidepressants alone because of switch risk. Lamotrigine prevents depressive relapse but is not an acute treatment.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Maintenance: the highest-stakes phase of care",
+      "options": ["tx-lithium-bipolar", "tx-lamotrigine-bipolar", "tx-quetiapine-bipolar"],
+      "claim": {
+        "id": "bp1-pw-3",
+        "text": "Maintenance is the step that reduces relapse most, and guidelines recommend combining a mood stabiliser for mania with lamotrigine, quetiapine or olanzapine-fluoxetine for the depressive pole. Deprescribing after stability is actively discouraged.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Refractory, severe or catatonia: somatic treatments",
+      "options": ["tx-ect-bipolar", "tx-rtms-bipolar"],
+      "claim": {
+        "id": "bp1-pw-4",
+        "text": "Electroconvulsive therapy is the most rapid and effective option for severe mania, severe bipolar depression and catatonia. Repetitive transcranial magnetic stimulation has guideline support as an adjunct, with the strongest evidence in acute mania.",
+        "evidence": "strong",
+        "sourceIds": ["canmat-bipolar-2018-summary", "lefaucheur-2020-rtms"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Every stage: psychoeducation, family work and sleep regularisation",
+      "options": ["tx-psychoeducation-bipolar", "tx-family-bipolar", "tx-cbt-bipolar"],
+      "claim": {
+        "id": "bp1-pw-5",
+        "text": "Psychoeducation, relapse planning with written early-warning signs, family intervention and structured psychological therapy are recommended at every stage alongside medication, because adherence, sleep regularity and expressed emotion are among the strongest predictors of relapse.",
+        "evidence": "established",
+        "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · One manic episode is enough",
+      "text": "Bipolar type I is defined by mania, not by depression. Type II never has full mania, which is why the two are separate disorders rather than severity grades of one.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · Cortex is thinner, frontally and temporally",
+      "text": "Across 6503 individuals, cortex was thinner in frontal, temporal and parietal regions on both sides, strongest around left inferior frontal operculum at about 0.29 standardised difference.",
+      "lens": "pathology",
+      "lensTarget": "bp1-ctx-thin",
+      "camera": "front"
+    },
+    {
+      "title": "3 · Medication confounds the imaging",
+      "text": "Lithium, antiepileptics and antipsychotics were all associated with cortical thickness and surface area. Any bipolar brain claim that ignores treatment status is not trustworthy.",
+      "lens": "pathology",
+      "lensTarget": "bp1-medication-effects",
+      "camera": "side"
+    },
+    {
+      "title": "4 · Mania loads the prefrontal cortex",
+      "text": "Two-timepoint imaging found no overall acceleration of cortical thinning, but more manic episodes predicted faster prefrontal thinning, and ventricles enlarged faster than in controls.",
+      "lens": "pathology",
+      "lensTarget": "bp1-prefrontal-thinning-episodes",
+      "camera": "top"
+    },
+    {
+      "title": "5 · The same reward circuit runs hot or cold",
+      "text": "Ventral striatum is over-driven in mania and under-driven in bipolar depression, which is why the same circuit explains opposite poles of the disorder.",
+      "lens": "circuit",
+      "lensTarget": "bp1-reward-ventral-striatum",
+      "camera": "side"
+    },
+    {
+      "title": "6 · A rare gene points at a drug target",
+      "text": "AKAP11, a definitive bipolar risk gene at about seven times odds, encodes a protein that interacts with GSK3B, the kinase hypothesised to be a lithium target. Genetics and pharmacology meet on the same molecule.",
+      "lens": "gene",
+      "lensTarget": "AKAP11",
+      "camera": "front"
+    },
+    {
+      "title": "7 · Treat the poles differently, prevent mania hardest",
+      "text": "Mania has many first-line agents. Bipolar depression has far fewer, and prevention is where the most relapse reduction lies, so sleep and family work are not optional extras.",
+      "lens": "drug",
+      "lensTarget": "lithium",
+      "camera": "home"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "bp1-q1",
+      "topic": "Classification",
+      "question": "What defines bipolar type I disorder in ICD-11 terms?",
+      "choices": ["At least one manic episode, under code 6A60", "At least one hypomanic episode and one depression, under 6A61", "Only recurrent depressive episodes, under 6A71", "Mania caused by a substance, under 6A22"],
+      "answer": 0,
+      "explanation": "ICD-11 code 6A60 covers bipolar type I disorder, defined by at least one manic episode, with or without depressive episodes; 6A61 is type II, which requires hypomania instead of mania.",
+      "sourceIds": ["icd11-browser", "canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp1-q2",
+      "topic": "Psychopathology",
+      "question": "Which feature most reliably distinguishes mania from hypomania?",
+      "choices": ["Reduced need for sleep, which only occurs in mania", "Severity and the degree to which judgement and function are impaired, and need for hospital care", "Racing thoughts, which only occur in mania", "Grandiosity, which only occurs in mania"],
+      "answer": 1,
+      "explanation": "The distinction is about severity and functional impairment rather than the presence of any single symptom, which is why type I and type II are separate diagnoses and not severity grades.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "dsm5tr-overview"]
+    },
+    {
+      "id": "bp1-q3",
+      "topic": "Psychopathology",
+      "question": "Why does mixed-feature status matter for prognosis?",
+      "choices": ["It is benign and needs no treatment change", "It carries a worse prognosis and higher switch risk than either pole alone", "It only occurs in type II", "It rules out a diagnosis of bipolar disorder"],
+      "answer": 1,
+      "explanation": "Mixed episodes and rapid cycling predict poorer outcomes and higher risk of switching, which changes drug choice, most often towards agents effective in mixed states and away from agents that destabilise mood.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    },
+    {
+      "id": "bp1-q4",
+      "topic": "Brain pathology",
+      "question": "What did the largest cortical study of bipolar disorder find?",
+      "choices": ["Thicker cortex in frontal regions", "Bilateral frontal, temporal and parietal thinning, strongest at left pars opercularis", "No replicable cortical differences", "Cingulate thickening only"],
+      "answer": 1,
+      "explanation": "In 6503 individuals cortex was thinner bilaterally in frontal, temporal and parietal regions, with the largest effect at the left pars opercularis at a standardised difference near minus 0.29.",
+      "sourceIds": ["enigma-bipolar-cortical-2018"]
+    },
+    {
+      "id": "bp1-q5",
+      "topic": "Brain pathology",
+      "question": "Why must medication status be stated alongside any bipolar imaging claim?",
+      "choices": ["Because scanners cannot image medicated patients", "Because lithium, antiepileptics and antipsychotics are themselves associated with cortical thickness and surface area, so treatment confounds the finding", "Because medication is irrelevant to brain structure", "Because only medicated patients show abnormalities"],
+      "answer": 1,
+      "explanation": "The ENIGMA analyses found significant associations of commonly prescribed medications with cortical thickness and surface area even after accounting for multiple medications, which makes treatment a major confounder in this disorder.",
+      "sourceIds": ["enigma-bipolar-cortical-2018", "enigma-bipolar-meds-2026", "lithium-volumes-2025"]
+    },
+    {
+      "id": "bp1-q6",
+      "topic": "Brain pathology",
+      "question": "What did the two-timepoint ENIGMA study find about episodes and the prefrontal cortex?",
+      "choices": ["Prefrontal thinning accelerated in everyone with bipolar disorder", "More manic or hypomanic episodes predicted faster prefrontal thinning, while overall cortical thinning was not accelerated", "No relationship between episodes and structure", "Only ventricular change, with no cortical association"],
+      "answer": 1,
+      "explanation": "In 307 patients and 925 controls, ventricular volumes enlarged faster and fusiform and parahippocampal cortex thinned more slowly, and more manic episodes predicted faster prefrontal thinning, which is the imaging basis for prioritising mania prevention.",
+      "sourceIds": ["enigma-bipolar-longitudinal-2022"]
+    },
+    {
+      "id": "bp1-q7",
+      "topic": "Genetics",
+      "question": "What did the bipolar exome study find about AKAP11?",
+      "choices": ["No association with bipolar disorder", "It emerged as a definitive risk gene with an odds ratio of about 7, and its protein interacts with GSK3B, a hypothesised lithium target", "It was significant only in healthy controls", "It affects only lithium response, not risk"],
+      "answer": 1,
+      "explanation": "Combining gene-level results across 13933 cases and 14422 controls, AKAP11 emerged with an odds ratio near 7 and a p-value of 2.83e-9, and AKAP-11 interacts with GSK3B, linking a risk gene to a proposed drug target.",
+      "sourceIds": ["bipolar-exome-akap11-2022"]
+    },
+    {
+      "id": "bp1-q8",
+      "topic": "Genetics",
+      "question": "How do rare coding variants relate to common polygenic risk in bipolar disorder?",
+      "choices": ["Rare variants replace polygenic risk entirely", "Ultra-rare protein-truncating variants in constrained genes carry real risk, while genome-wide association genes are not significantly enriched for them", "Only common variants matter", "Rare variants occur only in type II"],
+      "answer": 1,
+      "explanation": "The exome analysis found an excess of ultra-rare protein-truncating variants in constrained genes in both subtypes, with enrichment among schizophrenia exome genes, but no significant enrichment among bipolar genome-wide association genes, indicating two partly separate risk architectures.",
+      "sourceIds": ["bipolar-exome-akap11-2022"]
+    },
+    {
+      "id": "bp1-q9",
+      "topic": "Pharmacology",
+      "question": "Which drug is effective for bipolar depressive relapse prevention but not for acute mania?",
+      "choices": ["Lamotrigine", "Haloperidol", "Lithium", "Valproate"],
+      "answer": 0,
+      "explanation": "Lamotrigine is the guideline-supported agent for preventing depressive relapse, and it is not effective for treating an acute manic episode, so it is a maintenance rather than an acute-phase drug.",
+      "sourceIds": ["canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp1-q10",
+      "topic": "Pharmacology",
+      "question": "Why do guidelines warn against most antidepressants alone in bipolar depression?",
+      "choices": ["They have no antidepressant effect", "They can destabilise mood and provoke switching into mania or rapid cycling", "They interact with lithium fatally", "They are ineffective when combined with mood stabilisers"],
+      "answer": 1,
+      "explanation": "Antidepressants are not recommended as monotherapy in bipolar depression because of switch risk; where they are used they are combined with a mood stabiliser, and the combination with fluoxetine has specific guideline support.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    },
+    {
+      "id": "bp1-q11",
+      "topic": "Pharmacology",
+      "question": "Which monitoring is mandatory for lithium and why?",
+      "choices": ["Liver enzymes only, because of hepatotoxicity", "Serum levels, renal and thyroid function, because lithium has a narrow therapeutic index and causes nephrogenic diabetes insipidus and hypothyroidism", "Blood pressure only", "Nothing once the dose is stable"],
+      "answer": 1,
+      "explanation": "Chronic lithium impairs renal concentrating ability, inhibits thyroid hormone release and causes tremor, with higher target ranges used for acute mania and lower ranges for maintenance, so serial monitoring is not optional.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "lithium-volumes-2025"]
+    },
+    {
+      "id": "bp1-q12",
+      "topic": "Pharmacology",
+      "question": "A patient with frequent manic episodes needs an agent with a low metabolic and prolactin burden. Which fits best?",
+      "choices": ["Olanzapine, because it is weight neutral", "Lurasidone, because it is D2 and 5-HT2A antagonistic with a low metabolic burden", "Haloperidol, because it is high potency", "Valproate, because it blocks dopamine"],
+      "answer": 1,
+      "explanation": "Lurasidone has guideline support for bipolar depression and a favourable metabolic and prolactin profile, whereas olanzapine carries high metabolic risk and haloperidol carries the highest motor and prolactin burden in class.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"]
+    },
+    {
+      "id": "bp1-q13",
+      "topic": "Treatments",
+      "question": "Which treatment is fastest and most reliably effective for severe mania?",
+      "choices": ["Cognitive behavioural therapy", "Electroconvulsive therapy", "Psychoeducation", "Lamotrigine titration"],
+      "answer": 1,
+      "explanation": "Electroconvulsive therapy is the most rapid and reliably effective treatment for severe mania, severe bipolar depression and catatonia, while lamotrigine is a slow-titrating maintenance drug with no role in acute mania.",
+      "sourceIds": ["canmat-bipolar-2018-summary"]
+    },
+    {
+      "id": "bp1-q14",
+      "topic": "Treatments",
+      "question": "Which psychosocial elements are recommended at every stage of bipolar disorder?",
+      "choices": ["Only psychoeducation in first episode", "Psychoeducation with a written relapse plan, family intervention, sleep regularisation and structured psychological therapy", "Psychotherapy only after two relapses", "No psychosocial care, as medication is sufficient"],
+      "answer": 1,
+      "explanation": "Adherence, sleep regularity and expressed emotion are among the strongest predictors of relapse, so guidelines recommend psychoeducation, relapse planning, family work and CBT alongside medication at every stage.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"]
+    },
+    {
+      "id": "bp1-q15",
+      "topic": "Biomarkers",
+      "question": "What is the honest status of inflammatory markers in bipolar disorder?",
+      "choices": ["Validated diagnostic test", "Group-level elevation with high heterogeneity and no diagnostic threshold, so an emerging research signal", "Shown to be normal in bipolar disorder", "Specific to lithium toxicity"],
+      "answer": 1,
+      "explanation": "Inflammatory markers are modestly elevated on average in mood disorders with high between-study heterogeneity, and no cutoff has clinical value, so they are graded emerging rather than presented as a test.",
+      "sourceIds": ["misiak-2021-inflammation"]
+    },
+    {
+      "id": "bp1-q16",
+      "topic": "Pathway",
+      "question": "Why is maintenance the highest-stakes phase of bipolar management?",
+      "choices": ["Because acute episodes are never dangerous", "Because relapse prevention produces the largest reduction in recurrence, and deprescribing after stability is discouraged", "Because maintenance removes the need for psychosocial care", "Because acute treatment is not effective"],
+      "answer": 1,
+      "explanation": "Relapse causes most of the cumulative disability and suicide risk, and guidelines recommend combining a mania agent with a depressive-pole agent for maintenance while advising against deprescribing once stable.",
+      "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"]
+    }
+  ],
+  "related": ["bipolar-2", "mdd", "ocd", "schizophrenia"]
+}

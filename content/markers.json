@@ -22,6 +22,13 @@
       "anchorAtlasLabel": "Pons",
       "offset": [0.0, 0.006, -0.008],
       "note": "Locus coeruleus is a tiny nucleus in the dorsal rostral pontine tegmentum; approximate marker."
+    },
+    {
+      "id": "raphe-medial",
+      "label": "Medial raphe (schematic)",
+      "anchorAtlasLabel": "Midbrain",
+      "offset": [0.0, 0.004, -0.006],
+      "note": "Median and dorsal raphe nuclei lie on the midline dorsal to the midbrain tegmentum. The atlas has no raphe mesh, so both are shown as calibrated markers offset from the midbrain centroid."
     }
   ]
 }

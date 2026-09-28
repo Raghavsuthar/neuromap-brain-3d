@@ -60,6 +60,120 @@
         "sourceIds": ["enigma-consortium"],
         "lastReviewed": "2026-09-28"
       }
+    },
+    {
+      "symbol": "AKAP11",
+      "name": "A kinase anchor protein 11",
+      "variantClass": "rare-coding",
+      "effect": {
+        "text": "Ultra-rare protein-truncating variants in AKAP11 confer substantial bipolar disorder risk, with a reported odds ratio of about 7 and a gene-level p-value of 2.83e-9.",
+        "sourceId": "bipolar-exome-akap11-2022"
+      },
+      "function": {
+        "id": "akap11-function",
+        "text": "AKAP11 encodes a scaffold that localises PKA signalling to specific substrates; at protein level AKAP-11 interacts with GSK3B, the kinase hypothesised as a key target of lithium.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "GSK3B",
+      "name": "Glycogen synthase kinase 3 beta",
+      "variantClass": "other",
+      "function": {
+        "id": "gsk3b-function",
+        "text": "GSK3B is a constitutively active kinase that suppresses signalling including beta-catenin and is the long-hypothesised cellular target of lithium in bipolar disorder, linked to AKAP11 at the protein level.",
+        "evidence": "moderate",
+        "sourceIds": ["bipolar-exome-akap11-2022", "canmat-bipolar-2018-summary"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "CHD8",
+      "name": "Chromodomain helicase DNA binding protein 8",
+      "variantClass": "rare-coding",
+      "function": {
+        "id": "chd8-function",
+        "text": "CHD8 is a chromatin remodeler regulating neuronal development; ultra-rare disruptive variants are enriched among bipolar disorder cases and it interacts with schizophrenia risk genes.",
+        "evidence": "strong",
+        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "BDNF",
+      "name": "Brain-derived neurotrophic factor",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "bdnf-function",
+        "text": "BDNF supports neuronal survival and synaptic plasticity through TrkB and p75 receptors, and BDNF-pathway genes and synaptic gene sets are enriched in large genome-wide studies of depression.",
+        "evidence": "strong",
+        "sourceIds": ["pgc-depression-2019"],
+        "lastReviewed": "2026-09-29"
+      },
+      "linkedReceptorIds": ["NTRK2"]
+    },
+    {
+      "symbol": "SLC6A4",
+      "name": "Serotonin transporter gene (SERT)",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "slc6a4-gene",
+        "text": "SLC6A4 encodes the serotonin transporter targeted by SSRIs; a promoter polymorphism affecting expression has been studied extensively as a moderator of stress and antidepressant response, though its effect size is small and debated.",
+        "evidence": "moderate",
+        "sourceIds": ["iuphar", "canmat-depression-2023"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "GRIA1",
+      "name": "Glutamate ionotropic receptor AMPA type subunit 1",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "gria1-gene",
+        "text": "GRIA1 encodes the GluA1 AMPA-receptor subunit mediating fast excitatory transmission and plasticity, the pathway through which rapid-acting antidepressants such as ketamine are thought to act.",
+        "evidence": "moderate",
+        "sourceIds": ["ketamine-dep-2026", "iuphar"],
+        "lastReviewed": "2026-09-29"
+      },
+      "linkedReceptorIds": ["GRIA1"]
+    },
+    {
+      "symbol": "DLGAP1",
+      "name": "Discs large associated protein 1",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "dlgap1-gene",
+        "text": "DLGAP1 encodes a postsynaptic scaffold at excitatory synapses that assembles glutamate receptor and signalling complexes, a candidate gene for cortico-striatal synapse dysfunction in obsessive-compulsive disorder.",
+        "evidence": "moderate",
+        "sourceIds": ["ocd-gwas-2013", "ocd-neurocircuit-taxonomy-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "SLC1A1",
+      "name": "Solute carrier family 1 member 1 (EAAT3)",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "slc1a1-gene",
+        "text": "SLC1A1 encodes a presynaptic glutamate reuptake transporter that clears synaptic glutamate, central to cortico-striatal glutamatergic signalling implicated in obsessive-compulsive disorder.",
+        "evidence": "moderate",
+        "sourceIds": ["ocd-gwas-2013", "ocd-neurocircuit-taxonomy-2021"],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "BTBD3",
+      "name": "BTB domain containing 3",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "btbd3-gene",
+        "text": "BTBD3 regulates transcriptional programmes and circadian timing and has been implicated as a rare-variant risk gene in obsessive-compulsive disorder alongside immunologically related genes.",
+        "evidence": "moderate",
+        "sourceIds": ["ocd-gwas-2013", "ocd-exome-2016"],
+        "lastReviewed": "2026-09-29"
+      }
     }
   ]
 }

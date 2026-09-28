@@ -1,4 +1,4 @@
-name: Content lint
+name: Content lint and tests
 
 on:
   push:
@@ -7,12 +7,49 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: node scripts/validate-disorders.mjs --strict
-      - run: node --check src/main.js && node --check src/clinical.js && node --check src/disorder.js && node --check scripts/validate-disorders.mjs
+
+      # 1. Syntax gate on every source and script file.
+      - name: Syntax check
+        run: |
+          node --check src/main.js
+          node --check src/clinical.js
+          node --check src/disorder.js
+          node --check scripts/validate-disorders.mjs
+          node --check scripts/test-mapping.mjs
+          node --check scripts/copy-content.mjs
+
+      # 2. JSON well-formedness for the whole content tree.
+      - name: Validate content JSON
+        run: |
+          for f in content/*.json content/*/*.json public/brain-atlas/models/manifest.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || exit 1
+          done
+
+      # 3. Content lint in release mode: no unsourced claims, no dangling
+      #    atlas labels, no unresolved references, quiz/tour minimums.
+      - name: Content lint (strict)
+        run: node scripts/validate-disorders.mjs --strict
+
+      # 4. Unit tests for the data -> 3D highlight mapping.
+      - name: Mapping tests
+        run: node scripts/test-mapping.mjs
+
+      # 5. Production build, including the content/ copy step.
+      - name: Build
+        run: npm ci && npm run build
+
+      # 6. The build must actually contain the content the app fetches.
+      - name: Verify content shipped
+        run: |
+          test -f dist/content/index.json
+          test -f dist/content/markers.json
+          for d in dist/content/disorders/*.json; do
+            echo "  shipped: $d"
+          done
