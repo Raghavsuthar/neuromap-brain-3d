@@ -91,3 +91,124 @@ MNI-space imaging atlases**, so they are **approximate** (about 7 mm,
 - **Three.js** (`GLTFLoader` + `DRACOLoader`, ACES tone mapping, room-environment IBL plus a three-point rig) for the 3D scene and picking.
 - **Vite** for the build; deployed to GitHub Pages on every push to `main`.
 - No backend, no auth, no analytics.
+
+## Architecture
+
+The app is a **single-page data-driven platform**. The 3D viewer and UI are generic; each disorder is a data file under `content/disorders/`. Adding a new disorder never requires touching viewer code.
+
+### Key modules
+
+| Module | Responsibility |
+|--------|----------------|
+| `src/main.js` | 3D viewer core: Three.js scene, model loading, clipping, materials, picking, camera, lenses |
+| `src/clinical.js` | Clinical reference UI (4 layers: circuits, transmitters, syndromes, drugs) |
+| `src/disorder.js` | Disorder engine: picker, tabs, lenses, entity cards, quiz, tour, deep links |
+| `src/disorder.css` | Disorder panel styles (picker, tabs, cards, quiz, tour) |
+| `src/clinical.js` | Clinical reference UI (search, detail sheets, cross-layer links) |
+| `src/main.js` | 3D viewer + generic lens API (`highlight`, `flyTo`, `showMarkers`, `drawTube`, `isolateMeshes`, `clear`) |
+
+### Data flow
+
+```
+content/disorders/schizophrenia.json  ──▶  src/disorder.js (loads, renders UI)
+content/registries/*.json (drugs, receptors, genes, treatments, sources)
+content/schema/disorder.schema.json  ──▶  scripts/validate-disorders.mjs (CI lint)
+public/brain-atlas/... (.glb, manifest.json, functions.json, draco decoder)
+```
+
+### Data contracts
+
+All content follows JSON Schema in `content/schema/disorder.schema.json`. The validator (`scripts/validate-disorders.mjs`) enforces:
+
+- Every `atlasLabels` value exists in `public/brain-atlas/models/manifest.json`
+- Every `sourceIds`, `receptorId`, `drugId`, `geneSymbol`, `treatmentId`, `disorderId` reference resolves
+- Every `Claim` has an evidence level; no `unsourced` in release builds (`--strict`)
+- `effectSize`, `kiNm`, `doseRange` must have a `sourceId`
+- Claim text ≤ 4 sentences (forces original summarizing)
+- All URLs well-formed
+
+Run locally: `npm run lint:content` (dev) or `npm run lint:content:strict` (CI).
+
+## Adding a new disorder (step-by-step)
+
+1. **Create the data file**  
+   Copy `content/disorders/TEMPLATE.json` → `content/disorders/<id>.json`  
+   Fill every field with **original wording** (no copy-paste from guidelines/DrugBank).  
+   Use `content/registries/*.json` IDs for cross-references.
+
+2. **Add the disorder to the index**  
+   Edit `content/index.json` and append `{ "id": "<id>", "name": "Name", "block": "ICD-11 block" }`.
+
+3. **Run the validator**  
+   ```bash
+   npm run lint:content:strict
+   ```
+   Fix every error — `unsourced` claims, dangling refs, malformed URLs, quiz answer indexes, etc.
+
+2. **Build and test locally**  
+   ```bash
+   npm run build
+   npm run dev
+   # open http://localhost:5173/neuromap-brain-3d/
+   ```
+   Verify: 3D brain loads, disorder picker appears, tabs render, quiz works, tour steps advance, 3D lenses switch.
+
+3. **Commit and push**  
+   ```bash
+   git add -A
+   git commit -m "Add <disorder> disorder: <one-line summary>"
+   git push origin main
+   ```
+
+4. **Verify GitHub Actions**  
+   - `Content lint` workflow passes (strict mode)
+   - GitHub Pages deploy completes
+   - Live site at `https://raghavsuthar.github.io/neuromap-brain-3d/` loads the new disorder
+
+### Template
+
+See `content/disorders/TEMPLATE.json` for the full field structure. Key rules:
+
+- **All text original** — no copy-paste from DSM/ICD/guidelines/DrugBank. Summarize in your own words.
+- **Every claim sourced** — at least 2 sources for syndromes/drugs; evidence level mandatory.
+- **Atlas labels** must match `public/brain-atlas/models/manifest.json` exactly (`exact`/`proxy`/`schematic`).
+- **No invented numbers** — effect sizes, Ki, occupancy, doses only from cited sources.
+- **Quiz ≥15 items**, tour 6–10 steps (strict mode enforces this).
+
+### Checklist before merge
+
+- [ ] `npm run lint:content:strict` passes (zero errors, zero warnings)
+- [ ] `npm run build` succeeds
+- [ ] Local `npm run dev` loads the new disorder end-to-end
+- [ ] Deep links work: `#d=<id>&lens=<lens>&id=<target>`
+- [ ] Accessibility: visible focus states, screen-reader announcements
+- [ ] Mobile layout works at 375px
+
+## Content lint rules (summary)
+
+| Rule | Severity |
+|------|----------|
+| Every `atlasLabels` value exists in `manifest.json` | Error |
+| Every `sourceIds`/`receptorId`/`drugId`/`geneSymbol`/`treatmentId`/`disorderId` resolves | Error |
+| Every `Claim` has `evidence` ∈ {established,strong,moderate,emerging,hypothesis,unsourced} | Error |
+| `effectSize`/`kiNm`/`doseRange` require `sourceId` | Error |
+| Claim text ≤ 4 sentences | Error |
+| All URLs well-formed | Error |
+| Quiz answer index in range, `sourceIds` ≥1 | Error |
+| `unsourced` claims forbidden in release (`--strict`) | Error |
+| Quiz ≥15 items, tour 6–10 steps | Error (`--strict`) |
+
+## Source & License Notes
+
+- **3D model:** CC BY-SA 4.0 (Z-Anatomy / BodyParts3D / DBCLS) — see `DATA_LICENSES.md`
+- **DrugBank data:** Only cited, not redistributed (requires separate license)
+- **IUPHAR/Guide to Pharmacology:** CC BY 4.0
+- **ENIGMA / PGC3 / SCHEMA / Sekar 2016 / Howes & Kapur 2009 / IUPHAR / DrugBank (cited) / FDA labels:** Open access or cited-only
+- **3D model vendor:** itayinbarr/brainproject (CC BY-SA 4.0)
+- **Code:** MIT License
+- **Content (registries, disorders):** CC BY-SA 4.0 (share-alike per model license)
+- **See `DATA_LICENSES.md` for full breakdown**
+
+---
+
+*Generated as part of Phase 1 (schizophrenia). Next: Phase 2 — MDD, Bipolar I/II, OCD.*

@@ -1,0 +1,149 @@
+{
+  "id": "TEMPLATE",
+  "name": "Disorder Name",
+  "icd11": { "code": "6A20", "url": "https://icd.who.int/browse11/l-m/en" },
+  "dsm5tr": { "code": "295.90", "url": "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+  "block": "ICD-11 block name",
+  "overview": [
+    {
+      "id": "ov-1",
+      "text": "Clinical definition and key facts. 1-4 sentences, original wording.",
+      "evidence": "established",
+      "sourceIds": ["source-id-1", "source-id-2"],
+      "lastReviewed": "2026-09-28"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "domain-1",
+      "name": "Symptom domain name",
+      "description": {
+        "id": "desc-1",
+        "text": "Original 1-4 sentence description of the domain.",
+        "evidence": "established",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["circuit-id-1"],
+      "brainFindingIds": ["finding-id-1"]
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "finding-1",
+      "where": {
+        "atlasLabels": ["Exact manifest label from public/brain-atlas/models/manifest.json"],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "finding-claim",
+        "text": "Original description with cited effect size if available.",
+        "evidence": "strong",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "circuit-id",
+      "name": "Circuit name",
+      "nodes": [
+        { "atlasLabels": ["Exact label from manifest"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "Node A label", "to": "Node B label", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "circ-func",
+        "text": "Original functional description.",
+        "evidence": "moderate",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "dopamine",
+      "alteration": "Description of alteration",
+      "where": [
+        { "atlasLabels": ["Caudate nucleus"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "nc-dopamine",
+        "text": "Original description of alteration.",
+        "evidence": "moderate",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": ["GENE1", "GENE2"],
+    "architecture": [
+      {
+        "id": "gen-arch-1",
+        "text": "Architecture description.",
+        "evidence": "strong",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Biomarker name",
+      "finding": {
+        "id": "bm-1",
+        "text": "Original description of biomarker finding.",
+        "evidence": "emerging",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-drug-id",
+    "tx-neuromod-id",
+    "tx-psych-id"
+  ],
+  "pathway": [
+    {
+      "step": "Step description",
+      "options": ["tx-drug-id", "tx-other-id"],
+      "claim": {
+        "id": "pw-1",
+        "text": "Guideline-referenced step description with citation.",
+        "evidence": "established",
+        "sourceIds": ["source-id"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "Step title",
+      "text": "Narration text for this step.",
+      "lens": "circuit",
+      "lensTarget": "circuit-id",
+      "camera": "side"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "topic": "Classification",
+      "question": "Question text?",
+      "choices": ["Choice A", "Choice B", "Choice C", "Choice D"],
+      "answer": 0,
+      "explanation": "Original explanation with citation.",
+      "sourceIds": ["source-id"]
+    }
+  ],
+  "related": ["other-disorder-id"]
+}

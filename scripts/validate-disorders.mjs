@@ -136,7 +136,7 @@ function checkTreatments(knownDisorders) {
   }
 }
 
-const disorderFiles = readdirSync(join(ROOT, 'content/disorders')).filter((f) => f.endsWith('.json'));
+const disorderFiles = readdirSync(join(ROOT, 'content/disorders')).filter((f) => f.endsWith('.json') && f !== 'TEMPLATE.json');
 if (!disorderFiles.length) err('no disorder files in content/disorders');
 const knownDisorders = new Set(disorderFiles.map((f) => f.replace(/\.json$/, '')));
 
