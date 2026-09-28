@@ -204,6 +204,48 @@ function baseMaterialFor(mesh) {
   return baseMats[cat];
 }
 
+// Disorder-lens tint overrides (Mesh -> material). Selection and hover win.
+const hlTint = new Map();
+const hlMats = {}; // colorHex -> shared highlight material
+const markerGroup = new THREE.Group();
+scene.add(markerGroup);
+
+function highlightMaterial(colorHex) {
+  if (!hlMats[colorHex]) {
+    hlMats[colorHex] = new THREE.MeshStandardMaterial({
+      color: new THREE.Color(colorHex),
+      emissive: new THREE.Color(colorHex),
+      emissiveIntensity: 0.55,
+      roughness: 0.5,
+      metalness: 0.0,
+      side: THREE.DoubleSide,
+      clippingPlanes: [slicePlane],
+    });
+  }
+  return hlMats[colorHex];
+}
+
+// Single place that decides what every mesh looks like. All highlight,
+// selection, hover and lobe state flows through here — no disorder-specific
+// code paths in the viewer.
+function materialFor(mesh) {
+  const cat = mesh.userData.anat.cat;
+  if (mesh === selected) {
+    ensureVariants(cat);
+    return selectMats[cat];
+  }
+  if (mesh === hovered) {
+    ensureVariants(cat);
+    return hoverMats[cat];
+  }
+  if (hlTint.has(mesh)) return hlTint.get(mesh);
+  return baseMaterialFor(mesh);
+}
+
+function refreshMeshMaterials() {
+  for (const m of anatomyMeshes) m.material = materialFor(m);
+}
+
 // ---------- state ----------
 const manifestById = new Map();
 let functions = {}; // manifest id -> plain-language function summary
@@ -245,10 +287,8 @@ function setMeshMaterial(mesh, mat) {
 }
 
 function clearSelection() {
-  if (selected) {
-    setMeshMaterial(selected, baseMaterialFor(selected));
-    selected = null;
-  }
+  if (selected) selected = null;
+  refreshMeshMaterials();
   $('card').hidden = true;
   $('sr-status').textContent = '';
   if (window.location.hash.startsWith('#s=')) {
@@ -294,8 +334,7 @@ function select(mesh, pushHash = true) {
   clearSelectionHashOnly();
   if (!mesh) return;
   selected = mesh;
-  ensureVariants(mesh.userData.anat.cat);
-  setMeshMaterial(mesh, selectMats[mesh.userData.anat.cat]);
+  refreshMeshMaterials();
   showCard(mesh.userData.anat);
   if (pushHash) {
     history.replaceState(null, '', `#s=${mesh.userData.anat.id}`);
@@ -304,23 +343,15 @@ function select(mesh, pushHash = true) {
 
 // Clear the card without touching the URL hash (used internally by select).
 function clearSelectionHashOnly() {
-  if (selected) {
-    setMeshMaterial(selected, baseMaterialFor(selected));
-    selected = null;
-  }
+  if (selected) selected = null;
+  refreshMeshMaterials();
   $('card').hidden = true;
 }
 
 function setHovered(mesh) {
   if (hovered === mesh) return;
-  if (hovered && hovered !== selected) {
-    setMeshMaterial(hovered, baseMaterialFor(hovered));
-  }
   hovered = mesh;
-  if (hovered && hovered !== selected) {
-    ensureVariants(hovered.userData.anat.cat);
-    setMeshMaterial(hovered, hoverMats[hovered.userData.anat.cat]);
-  }
+  refreshMeshMaterials();
   renderer.domElement.style.cursor = hovered ? 'pointer' : '';
 }
 
@@ -441,10 +472,113 @@ function setActiveCircuit(id) {
   updateVisibility();
 }
 
-// Called from the clinical tab ("Show on 3D brain").
+// Called from the clinical tab ("Show on 3D brain") and the disorder module.
+// Generic, tested viewer API: highlight(atlasRefs, style), setLens-equivalent
+// orchestration lives in the caller, flyTo(atlasRef), clear(). No
+// disorder-specific code paths in the viewer.
+function meshesForLabels(labels) {
+  const set = new Set((labels || []).map((s) => String(s).toLowerCase()));
+  return anatomyMeshes.filter((m) => set.has(m.userData.anat.label.toLowerCase()));
+}
+
+function makeMarkerSprite(text, colorHex) {
+  const c = document.createElement('canvas');
+  c.width = 256;
+  c.height = 80;
+  const g = c.getContext('2d');
+  g.fillStyle = 'rgba(10, 13, 17, 0.85)';
+  g.strokeStyle = colorHex;
+  g.lineWidth = 3;
+  if (g.roundRect) {
+    g.beginPath();
+    g.roundRect(3, 14, 250, 52, 12);
+    g.fill();
+    g.stroke();
+  } else {
+    g.fillRect(3, 14, 250, 52);
+  }
+  g.fillStyle = '#f2f5f7';
+  g.font = '600 24px system-ui, sans-serif';
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  const short = text.length > 24 ? text.slice(0, 23) + '…' : text;
+  g.fillText(short, 128, 42);
+  const tex = new THREE.CanvasTexture(c);
+  tex.anisotropy = 4;
+  const sp = new THREE.Sprite(
+    new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false, depthWrite: false }),
+  );
+  sp.scale.set(labelWorld * 2.6, labelWorld * 0.8, 1);
+  return sp;
+}
+
 window.__neuroMap = Object.assign(window.__neuroMap || {}, {
   showCircuit(id) {
     setActiveCircuit(id);
+  },
+  // Items: [{ labels: [...exact manifest labels...], color: '#hex' }]
+  highlight(items) {
+    hlTint.clear();
+    for (const it of items || []) {
+      const mat = highlightMaterial(it.color || '#F59E0B');
+      for (const m of meshesForLabels(it.labels)) hlTint.set(m, mat);
+    }
+    refreshMeshMaterials();
+  },
+  clearHighlight() {
+    hlTint.clear();
+    refreshMeshMaterials();
+  },
+  // Isolation filter through the tested visibility path (null restores).
+  isolateMeshes(meshes) {
+    matchSet = meshes ? new Set(meshes) : null;
+    updateVisibility();
+  },
+  meshesForLabels,
+  flyToMeshes(meshes) {
+    const list = (meshes || []).filter(Boolean);
+    if (!list.length) return;
+    const box = new THREE.Box3();
+    for (const m of list) box.expandByObject(m);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = Math.max(box.getSize(new THREE.Vector3()).length(), 0.02);
+    const dir = camera.position.clone().sub(controls.target);
+    if (dir.lengthSq() < 1e-6) dir.set(0.55, 0.32, 1);
+    dir.normalize();
+    controls.target.copy(center);
+    camera.position.copy(center).addScaledVector(dir, Math.max(size * 2.2, 0.12));
+  },
+  // Schematic markers for nuclei the atlas cannot resolve (VTA, raphe, LC).
+  // defs: [{ id, label, anchorAtlasLabel, offset:[x,y,z], color }]
+  showMarkers(defs) {
+    for (const d of defs || []) {
+      const anchors = meshesForLabels([d.anchorAtlasLabel]);
+      if (!anchors.length) continue;
+      const box = new THREE.Box3();
+      for (const m of anchors) box.expandByObject(m);
+      const c = box.getCenter(new THREE.Vector3());
+      const o = d.offset || [0, 0, 0];
+      const sp = makeMarkerSprite(d.label || d.id, d.color || '#F59E0B');
+      sp.position.set(c.x + o[0], c.y + o[1], c.z + o[2]);
+      sp.userData.markerId = d.id;
+      markerGroup.add(sp);
+    }
+  },
+  clearMarkers() {
+    while (markerGroup.children.length) {
+      const s = markerGroup.children.pop();
+      if (s.material) {
+        if (s.material.map) s.material.map.dispose();
+        s.material.dispose();
+      }
+    }
+  },
+  clear() {
+    hlTint.clear();
+    matchSet = null;
+    while (markerGroup.children.length) markerGroup.children.pop();
+    refreshMeshMaterials();
+    updateVisibility();
   },
 });
 
@@ -454,6 +588,7 @@ function allMats() {
     ...Object.values(hoverMats),
     ...Object.values(selectMats),
     ...Object.values(lobeMats),
+    ...Object.values(hlMats),
     ...labelMats,
   ];
 }
@@ -685,8 +820,7 @@ function wireViewerUI() {
     lobeMode = !lobeMode;
     $('lobeBtn').textContent = `Lobe colors: ${lobeMode ? 'on' : 'off'}`;
     for (const m of anatomyMeshes) {
-      if (m === selected || m === hovered) continue;
-      if (m.userData.anat.cat === 'cortex') m.material = baseMaterialFor(m);
+      if (m.userData.anat.cat === 'cortex') m.material = materialFor(m);
     }
   });
 

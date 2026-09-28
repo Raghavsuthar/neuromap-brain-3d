@@ -1,0 +1,625 @@
+{
+  "id": "schizophrenia",
+  "name": "Schizophrenia",
+  "icd11": { "code": "6A20", "url": "https://icd.who.int/browse11/l-m/en" },
+  "dsm5tr": { "code": "295.90", "url": "https://www.psychiatry.org/psychiatrists/practice/dsm" },
+  "block": "Schizophrenia and other primary psychotic disorders (ICD-11)",
+  "overview": [
+    {
+      "id": "scz-ov-1",
+      "text": "Schizophrenia is a chronic psychotic illness combining positive symptoms such as delusions and hallucinations with negative symptoms, disorganization and cognitive impairment, typically emerging in late adolescence or early adulthood. Diagnosis remains clinical, anchored in ICD-11 and DSM-5-TR criteria, because no biomarker is validated for routine use.",
+      "evidence": "established",
+      "sourceIds": ["icd11-browser", "dsm5tr-overview", "ips-cpg"],
+      "lastReviewed": "2026-09-28"
+    },
+    {
+      "id": "scz-ov-2",
+      "text": "Most patients achieve substantial recovery of positive symptoms with antipsychotic treatment, while negative and cognitive symptoms respond less and drive long-term disability. Coordinated early-intervention care, relapse prevention and physical-health monitoring determine long-term outcomes as much as drug choice.",
+      "evidence": "established",
+      "sourceIds": ["nice-cg178", "ips-cpg"],
+      "lastReviewed": "2026-09-28"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "positive",
+      "name": "Positive symptoms",
+      "description": {
+        "id": "scz-sym-pos",
+        "text": "Added experiences such as persecutory delusions, auditory verbal hallucinations, disorganized speech and grossly disorganized behavior. They fluctuate with illness activity and respond best to dopamine-blocking treatment.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "dsm5tr-overview"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-mesolimbic"],
+      "brainFindingIds": ["scz-da-striatum"]
+    },
+    {
+      "id": "negative",
+      "name": "Negative symptoms",
+      "description": {
+        "id": "scz-sym-neg",
+        "text": "Losses of normal function: avolition, asociality, anhedonia, alogia and blunted affect. Primary negative symptoms reflect the illness itself, while secondary ones stem from depression, medication or deprivation and must be distinguished because they are treatable.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-mesocortical"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "cognitive",
+      "name": "Cognitive symptoms",
+      "description": {
+        "id": "scz-sym-cog",
+        "text": "Deficits in processing speed, working memory, attention, verbal learning and social cognition are present in most patients and predict functional recovery better than psychotic symptoms do. They respond poorly to antipsychotics and are the main target of cognitive remediation.",
+        "evidence": "strong",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-mesocortical"],
+      "brainFindingIds": ["scz-ctx-thin"]
+    },
+    {
+      "id": "affective",
+      "name": "Affective symptoms",
+      "description": {
+        "id": "scz-sym-aff",
+        "text": "Depressive and anxious syndromes are common across all illness stages and carry most of the suicide risk, which concentrates in young men early in the course. Mood symptoms respond to antidepressant augmentation and clozapine, which uniquely reduces suicidality.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-frontolimbic"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "psychomotor",
+      "name": "Psychomotor and catatonia",
+      "description": {
+        "id": "scz-sym-psy",
+        "text": "Motor signs range from subtle neurological soft signs to full catatonia with stupor, posturing and waxy flexibility, which is a medical emergency. Benzodiazepines and ECT are the definitive catatonia treatments; antipsychotics alone can worsen it.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-mesocortical"],
+      "brainFindingIds": []
+    },
+    {
+      "id": "insight",
+      "name": "Insight",
+      "description": {
+        "id": "scz-sym-ins",
+        "text": "Impaired awareness of illness is itself a symptom, rooted in frontal dysfunction rather than denial, and it is the strongest predictor of treatment refusal. Psychoeducation, family work and long-acting formulations are built around this fact.",
+        "evidence": "moderate",
+        "sourceIds": ["ips-cpg"],
+        "lastReviewed": "2026-09-28"
+      },
+      "circuitIds": ["scz-mesocortical"],
+      "brainFindingIds": ["scz-ctx-thin"]
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "scz-ctx-thin",
+      "where": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus", "Superior temporal gyrus (Lateral part)", "Middle temporal gyrus"], "precision": "exact" },
+      "finding": "thickness-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "scz-ctx-thin-c",
+        "text": "The largest coordinated MRI meta-analysis found widespread cortical thinning in schizophrenia, most pronounced in frontal and temporal regions, in chronically ill medicated samples.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-cortical-2018"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-hipp-vol",
+      "where": { "atlasLabels": ["Hippocampus"], "precision": "exact" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "scz-hipp-vol-c",
+        "text": "Hippocampal volume is reliably reduced, among the largest subcortical effects detected across thousands of scanned individuals.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-subcort-2016"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-amyg-vol",
+      "where": { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "proxy" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "scz-amyg-vol-c",
+        "text": "Whole-amygdala volume reduction is reported at group level; it is shown across all four amygdala sub-meshes here because the source resolves only the whole structure.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-subcort-2016"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-thal-vol",
+      "where": { "atlasLabels": ["Anterior nuclei of thalamus", "Mediodorsal nucleus", "Pulvinar"], "precision": "proxy" },
+      "finding": "volume-reduction",
+      "stage": "chronic",
+      "claim": {
+        "id": "scz-thal-vol-c",
+        "text": "Thalamic volume reduction is reported for the whole thalamus; it is distributed across the resolved nuclei groups as a proxy.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-subcort-2016"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-fa",
+      "where": { "atlasLabels": ["Corpus callosum", "Arcuate fasciculus", "Superior longitudinal fasciculus I", "Superior longitudinal fasciculus II", "Superior longitudinal fasciculus III", "Inferior fronto-occipital fasciculus", "Inferior longitudinal fasciculus", "Corticospinal tract"], "precision": "exact" },
+      "finding": "other",
+      "stage": "chronic",
+      "claim": {
+        "id": "scz-fa-c",
+        "text": "Diffusion imaging meta-analysis finds widespread lower fractional anisotropy across commissural, association and projection fibres, indicating distributed white-matter dysconnectivity.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-dti-2018"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-da-striatum",
+      "where": { "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"], "precision": "exact" },
+      "finding": "altered-metabolism",
+      "stage": "any",
+      "claim": {
+        "id": "scz-da-striatum-c",
+        "text": "Molecular imaging consistently shows elevated presynaptic dopamine synthesis and release capacity in the striatum, most marked in acute psychosis.",
+        "evidence": "strong",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "scz-mesolimbic",
+      "name": "Mesolimbic salience circuit",
+      "nodes": [
+        { "atlasLabels": ["Nucleus accumbens"], "precision": "exact" },
+        { "atlasLabels": ["Basolateral complex", "Central nucleus"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "VTA", "to": "Nucleus accumbens", "type": "modulatory", "transmitter": "dopamine" },
+        { "from": "Basolateral complex", "to": "Nucleus accumbens", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "scz-mesolimbic-f",
+        "text": "Excess phasic dopamine here assigns salience to neutral stimuli, which the cortex then explains with delusional narratives; blocking this signal eases positive symptoms.",
+        "evidence": "strong",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-mesocortical",
+      "name": "Mesocortical executive circuit",
+      "nodes": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "edges": [
+        { "from": "VTA", "to": "Middle frontal gyrus", "type": "modulatory", "transmitter": "dopamine" }
+      ],
+      "function": {
+        "id": "scz-mesocortical-f",
+        "text": "Blunted cortical dopamine signaling impairs working memory, drive and executive control, mapping onto negative and cognitive symptoms that D2 blockade does not fix.",
+        "evidence": "strong",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "scz-frontolimbic",
+      "name": "Fronto-limbic regulation circuit",
+      "nodes": [
+        { "atlasLabels": ["Straight gyrus (Gyrus rectus)", "Middle frontal gyrus"], "precision": "proxy" },
+        { "atlasLabels": ["Basolateral complex", "Central nucleus", "Lateral nucleus", "Corticomedial group"], "precision": "exact" },
+        { "atlasLabels": ["Hippocampus"], "precision": "exact" }
+      ],
+      "edges": [
+        { "from": "Middle frontal gyrus", "to": "Basolateral complex", "type": "inhibitory", "transmitter": "GABA" },
+        { "from": "Hippocampus", "to": "Basolateral complex", "type": "excitatory", "transmitter": "glutamate" }
+      ],
+      "function": {
+        "id": "scz-frontolimbic-f",
+        "text": "Weak prefrontal inhibition of an over-reactive amygdala-hippocampal system produces threat bias, paranoia and affective instability.",
+        "evidence": "moderate",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "dopamine",
+      "alteration": "Mesolimbic excess with mesocortical deficit",
+      "where": [
+        { "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"], "precision": "exact" },
+        { "markerId": "vta", "precision": "schematic" }
+      ],
+      "claim": {
+        "id": "scz-nc-da",
+        "text": "The revised dopamine hypothesis places striatal hyperdopaminergia at the final common pathway of psychosis, with simultaneous prefrontal hypodopaminergia explaining negative and cognitive symptoms.",
+        "evidence": "strong",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "NMDA-receptor hypofunction, especially on parvalbumin interneurons",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "scz-nc-glu",
+        "text": "NMDA-receptor blockers reproduce the full symptom spectrum including negative and cognitive features, and risk genes converge on glutamate signalling, supporting upstream glutamate dysfunction.",
+        "evidence": "moderate",
+        "sourceIds": ["howes-kapur-2009", "schema-paper"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "transmitter": "GABA",
+      "alteration": "Parvalbumin interneuron deficits with reduced inhibitory tone",
+      "where": [
+        { "atlasLabels": ["Middle frontal gyrus", "Hippocampus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "scz-nc-gaba",
+        "text": "Post-mortem studies report reduced markers of fast-spiking parvalbumin interneurons, which would disinhibit pyramidal output and desynchronize cortical gamma rhythms.",
+        "evidence": "moderate",
+        "sourceIds": ["howes-kapur-2009"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "transmitter": "acetylcholine",
+      "alteration": "Muscarinic M1/M4 signaling as a non-dopaminergic lever",
+      "where": [
+        { "atlasLabels": ["Hippocampus", "Caudate nucleus", "Putamen"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "scz-nc-musc",
+        "text": "Selective M1/M4 muscarinic agonism treats psychosis without dopamine blockade, as validated by the 2024 approval of xanomeline-trospium.",
+        "evidence": "moderate",
+        "sourceIds": ["fda-cobenfy-2024"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "transmitter": "serotonin",
+      "alteration": "5-HT2A modulation shaping second-generation drug profiles",
+      "where": [
+        { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" }
+      ],
+      "claim": {
+        "id": "scz-nc-5ht",
+        "text": "Cortical 5-HT2A blockade distinguishes second- from first-generation antipsychotics and contributes to their broader tolerability profile.",
+        "evidence": "moderate",
+        "sourceIds": ["ips-cpg"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "transmitter": "immune",
+      "alteration": "Complement-mediated excessive synaptic pruning during development",
+      "where": [],
+      "claim": {
+        "id": "scz-nc-c4",
+        "text": "Structural variation increasing C4A expression raises schizophrenia risk, mechanistically linking immune complement activity to adolescent synaptic pruning.",
+        "evidence": "moderate",
+        "sourceIds": ["sekar-2016-c4"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": ["C4A", "GRIN2A", "GRIA3", "SETD1A", "DEL22Q11"],
+    "architecture": [
+      {
+        "id": "scz-gen-arch1",
+        "text": "Risk is highly polygenic: genome-wide association implicates a large number of common loci of individually small effect, enriched in synaptic genes.",
+        "evidence": "strong",
+        "sourceIds": ["pgc3-2022"],
+        "lastReviewed": "2026-09-28"
+      },
+      {
+        "id": "scz-gen-arch2",
+        "text": "On top of polygenic background, rare coding variants and copy-number deletions carry individually large effects, with exome studies converging on glutamatergic and chromatin genes.",
+        "evidence": "strong",
+        "sourceIds": ["schema-paper", "schema-browser"],
+        "lastReviewed": "2026-09-28"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Blood inflammatory ratios (NLR/PLR/SII)",
+      "finding": {
+        "id": "scz-bm-inflam",
+        "text": "Meta-analyses report elevated neutrophil-based inflammatory ratios in psychosis at group level, but heterogeneity is high and no cutoff has diagnostic value.",
+        "evidence": "emerging",
+        "sourceIds": ["misiak-2021-inflammation"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "name": "Pro-inflammatory cytokines (IL-6 and related)",
+      "finding": {
+        "id": "scz-bm-cyto",
+        "text": "Circulating IL-6 and related cytokines are elevated on average in psychosis, supporting an inflammatory component without yielding a clinical test.",
+        "evidence": "moderate",
+        "sourceIds": ["misiak-2021-inflammation"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "treatments": ["tx-risperidone", "tx-olanzapine", "tx-aripiprazole", "tx-quetiapine", "tx-haloperidol", "tx-clozapine-trs", "tx-xanomeline", "tx-lai", "tx-ect-catatonia", "tx-rtms-avh", "tx-rtms-neg", "tx-tdcs", "tx-cbtp", "tx-family", "tx-crt", "tx-csc"],
+  "pathway": [
+    {
+      "step": "First episode: antipsychotic monotherapy + coordinated care",
+      "options": ["tx-risperidone", "tx-olanzapine", "tx-aripiprazole", "tx-quetiapine", "tx-csc"],
+      "claim": {
+        "id": "scz-pw-1",
+        "text": "Guidelines recommend starting one second-generation antipsychotic at the lowest effective dose within coordinated specialty or early-intervention care, with baseline metabolic monitoring.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "step": "Partial response: optimize, switch, consider long-acting injectable",
+      "options": ["tx-haloperidol", "tx-lai", "tx-family", "tx-cbtp"],
+      "claim": {
+        "id": "scz-pw-2",
+        "text": "After an adequate dose and duration without response, guidelines advise switching to a different antipsychotic and considering long-acting injectables where adherence is in doubt.",
+        "evidence": "established",
+        "sourceIds": ["ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "step": "Treatment resistance: clozapine pathway",
+      "options": ["tx-clozapine-trs"],
+      "claim": {
+        "id": "scz-pw-3",
+        "text": "Resistance is defined by two failed adequate antipsychotic trials; clozapine is then mandatory, with compulsory blood monitoring, not optional.",
+        "evidence": "established",
+        "sourceIds": ["trrip-2017", "ips-cpg", "nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "step": "Persistent symptoms: targeted adjuncts",
+      "options": ["tx-ect-catatonia", "tx-rtms-avh", "tx-rtms-neg", "tx-tdcs", "tx-cbtp", "tx-crt"],
+      "claim": {
+        "id": "scz-pw-4",
+        "text": "Catatonia mandates benzodiazepines or ECT; persistent voices may be offered temporoparietal rTMS and negative symptoms prefrontal rTMS or tDCS as adjuncts with modest expected gains, alongside CBT for psychosis and cognitive remediation.",
+        "evidence": "moderate",
+        "sourceIds": ["nice-cg178", "lefaucheur-2020-rtms", "fregni-2021-tdcs"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "step": "Maintenance and physical health",
+      "options": ["tx-family", "tx-lai"],
+      "claim": {
+        "id": "scz-pw-5",
+        "text": "Maintenance focuses on relapse prevention, family involvement, employment support and systematic cardiometabolic monitoring, since cardiovascular disease drives excess mortality.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178", "ips-cpg"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · Risk is written in genes",
+      "text": "Schizophrenia is among the most heritable psychiatric disorders: hundreds of common variants plus rare large-effect mutations. No single gene causes it.",
+      "lens": "gene",
+      "lensTarget": "C4A",
+      "camera": "home"
+    },
+    {
+      "title": "2 · Dopamine runs hot in the striatum",
+      "text": "Molecular imaging shows excess presynaptic dopamine in the caudate, putamen and accumbens — the final common pathway of psychosis.",
+      "lens": "neurochemistry",
+      "lensTarget": "dopamine-mesolimbic",
+      "camera": "front",
+      "focusAtlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"]
+    },
+    {
+      "title": "3 · The salience circuit misfires",
+      "text": "Excess striatal dopamine makes neutral events feel significant; the cortex invents delusions to explain them. Watch the mesolimbic loop.",
+      "lens": "circuit",
+      "lensTarget": "scz-mesolimbic",
+      "camera": "side"
+    },
+    {
+      "title": "4 · Cortex thins and disconnects",
+      "text": "Frontal and temporal cortex thin out while white-matter integrity falls across commissural and association fibres.",
+      "lens": "pathology",
+      "camera": "top"
+    },
+    {
+      "title": "5 · Symptoms map to systems",
+      "text": "Voices track auditory-language cortex, paranoia tracks threat circuits, apathy tracks prefrontal drive. Pick a domain to light its circuit.",
+      "lens": "symptom",
+      "lensTarget": "positive",
+      "camera": "home"
+    },
+    {
+      "title": "6 · Drugs work at receptors",
+      "text": "Every antipsychotic touches D2; the newer ones add serotonin, muscarinic or partial-agonist actions. Adverse effects map to the same receptors.",
+      "lens": "drug",
+      "lensTarget": "clozapine",
+      "camera": "front"
+    },
+    {
+      "title": "7 · The guideline pathway",
+      "text": "One antipsychotic plus coordinated care first; switch on failure; clozapine for resistance; targeted adjuncts for what remains.",
+      "lens": "drug",
+      "lensTarget": "clozapine",
+      "camera": "home"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "scz-q1",
+      "topic": "Classification",
+      "question": "What are the ICD-11 and DSM-5-TR codes for schizophrenia?",
+      "choices": ["6A20 and 295.90", "6A70 and 296.33", "6A60 and 296.44", "6B20 and 300.3"],
+      "answer": 0,
+      "explanation": "ICD-11 lists schizophrenia under 6A20 and DSM-5-TR under 295.90; the other pairs belong to depression, bipolar disorder and OCD.",
+      "sourceIds": ["icd11-browser", "dsm5tr-overview"]
+    },
+    {
+      "id": "scz-q2",
+      "topic": "Psychopathology",
+      "question": "Which of these is a negative symptom rather than a positive symptom?",
+      "choices": ["Persecutory delusion", "Avolition", "Auditory hallucination", "Disorganized speech"],
+      "answer": 1,
+      "explanation": "Avolition (loss of drive) is a core negative symptom; the rest are positive symptoms reflecting added experiences.",
+      "sourceIds": ["ips-cpg"]
+    },
+    {
+      "id": "scz-q3",
+      "topic": "Psychopathology",
+      "question": "A patient improves on antidepressants and sleep, and the 'negative symptoms' resolve. What were they most likely?",
+      "choices": ["Primary negative symptoms", "Secondary negative symptoms", "Catatonia", "Formal thought disorder"],
+      "answer": 1,
+      "explanation": "Secondary negative symptoms stem from depression, medication or deprivation and remit when the cause is treated; primary ones reflect the illness itself.",
+      "sourceIds": ["ips-cpg"]
+    },
+    {
+      "id": "scz-q4",
+      "topic": "Neurochemistry",
+      "question": "According to the revised dopamine hypothesis, which pattern holds in schizophrenia?",
+      "choices": ["Striatal excess with prefrontal deficit", "Global dopamine excess everywhere", "Global dopamine deficit everywhere", "Normal dopamine with pure glutamate excess"],
+      "answer": 0,
+      "explanation": "Version III of the hypothesis pairs mesolimbic hyperdopaminergia (psychosis) with mesocortical hypodopaminergia (negative/cognitive symptoms).",
+      "sourceIds": ["howes-kapur-2009"]
+    },
+    {
+      "id": "scz-q5",
+      "topic": "Brain pathology",
+      "question": "The ENIGMA cortical meta-analysis found which pattern in schizophrenia?",
+      "choices": ["Widespread cortical thinning, largest frontotemporal", "Isolated occipital thickening", "Cerebellar enlargement only", "No replicable structural differences"],
+      "answer": 0,
+      "explanation": "Across 4474 patients, thinning was widespread with the largest effects in frontal and temporal cortex.",
+      "sourceIds": ["enigma-cortical-2018"]
+    },
+    {
+      "id": "scz-q6",
+      "topic": "Brain pathology",
+      "question": "Which subcortical finding is most replicated in ENIGMA schizophrenia data?",
+      "choices": ["Hippocampal volume reduction", "Amygdala enlargement", "Caudate hypertrophy", "Pineal calcification"],
+      "answer": 0,
+      "explanation": "Hippocampal (plus amygdala and thalamic) volume reductions are among the most replicated subcortical findings.",
+      "sourceIds": ["enigma-subcort-2016"]
+    },
+    {
+      "id": "scz-q7",
+      "topic": "Brain pathology",
+      "question": "What did the ENIGMA-DTI study report in schizophrenia?",
+      "choices": ["Widespread lower fractional anisotropy", "Focally increased anisotropy only", "Larger corpus callosum volume", "Normal white matter throughout"],
+      "answer": 0,
+      "explanation": "Across 4322 individuals, white-matter integrity was lower across commissural, association and projection fibres.",
+      "sourceIds": ["enigma-dti-2018"]
+    },
+    {
+      "id": "scz-q8",
+      "topic": "Genetics",
+      "question": "What does the C4A finding imply about schizophrenia biology?",
+      "choices": ["Excess complement-driven synaptic pruning", "Mitochondrial DNA inheritance", "Single-gene Mendelian cause", "Purely environmental origin"],
+      "answer": 0,
+      "explanation": "C4A structural variation increasing expression implicates overactive complement-mediated pruning during development.",
+      "sourceIds": ["sekar-2016-c4"]
+    },
+    {
+      "id": "scz-q9",
+      "topic": "Genetics",
+      "question": "Which statement best describes schizophrenia genetic architecture?",
+      "choices": ["Polygenic common variants plus rare large-effect variants", "One dominant gene", "Exclusively copy-number variants", "No heritable component"],
+      "answer": 0,
+      "explanation": "Hundreds of common loci of small effect combine with rare coding variants and CNVs such as 22q11.2 of large effect.",
+      "sourceIds": ["pgc3-2022", "schema-paper"]
+    },
+    {
+      "id": "scz-q10",
+      "topic": "Pharmacology",
+      "question": "What striatal D2 occupancy pattern is associated with response versus motor side effects?",
+      "choices": ["Response at substantial blockade, EPS/prolactin as blockade climbs higher", "Response needs near-total blockade", "Occupancy is unrelated to either", "Higher occupancy always means better response"],
+      "answer": 0,
+      "explanation": "Response tracks substantial D2 blockade while pushing occupancy higher buys mainly extrapyramidal symptoms and prolactin rise.",
+      "sourceIds": ["nord-farde-2011"]
+    },
+    {
+      "id": "scz-q11",
+      "topic": "Pharmacology",
+      "question": "When is clozapine indicated?",
+      "choices": ["After two failed adequate antipsychotic trials", "As routine first-line for every patient", "Only after ECT has failed", "Never, it is obsolete"],
+      "answer": 0,
+      "explanation": "TRRIP criteria define resistance as two failed adequate trials, at which point clozapine with blood monitoring is mandatory, not optional.",
+      "sourceIds": ["trrip-2017", "ips-cpg"]
+    },
+    {
+      "id": "scz-q12",
+      "topic": "Pharmacology",
+      "question": "What is distinctive about xanomeline-trospium (Cobenfy)?",
+      "choices": ["Treats psychosis via muscarinic agonism without D2 blockade", "It is a D2 partial agonist", "It is a benzodiazepine", "It requires weekly blood monitoring"],
+      "answer": 0,
+      "explanation": "FDA-approved in September 2024, it stimulates central M1/M4 receptors while trospium blocks peripheral muscarinic effects — the first non-dopaminergic mechanism.",
+      "sourceIds": ["fda-cobenfy-2024"]
+    },
+    {
+      "id": "scz-q13",
+      "topic": "Pharmacology",
+      "question": "Ulotaront (TAAR1 agonist) development status is best described as:",
+      "choices": ["Failed both Phase 3 DIAMOND trials", "FDA-approved first-line", "Withdrawn for agranulocytosis", "Never tested in humans"],
+      "answer": 0,
+      "explanation": "Both DIAMOND 1 and 2 missed their primary endpoints, a reminder that novel mechanisms must survive late-stage trials.",
+      "sourceIds": ["otsuka-diamond-2023", "achtyes-2023-taar1"]
+    },
+    {
+      "id": "scz-q14",
+      "topic": "Treatments",
+      "question": "Which neuromodulation is definitive for catatonia in psychosis?",
+      "choices": ["ECT (or benzodiazepines)", "rTMS to visual cortex", "tDCS at home unsupervised", "Vagal nerve stimulation"],
+      "answer": 0,
+      "explanation": "Guidelines position benzodiazepines and ECT as the definitive catatonia treatments; antipsychotics alone may worsen it.",
+      "sourceIds": ["nice-cg178"]
+    },
+    {
+      "id": "scz-q15",
+      "topic": "Treatments",
+      "question": "Which psychosocial interventions do guidelines recommend for all patients with psychosis?",
+      "choices": ["CBT for psychosis and family interventions", "Psychoanalysis alone", "No psychosocial care is recommended", "Hypnotherapy"],
+      "answer": 0,
+      "explanation": "NICE recommends offering CBTp and family interventions alongside medication, plus coordinated early-intervention care.",
+      "sourceIds": ["nice-cg178"]
+    },
+    {
+      "id": "scz-q16",
+      "topic": "Biomarkers",
+      "question": "What is the current status of inflammatory blood ratios (NLR/PLR) in schizophrenia?",
+      "choices": ["Group-level elevation with no diagnostic cutoff", "Validated diagnostic test", "Proven to predict clozapine response", "Shown to be completely normal"],
+      "answer": 0,
+      "explanation": "Meta-analyses show average elevations in psychosis, but heterogeneity is high and nothing has diagnostic validity — an emerging signal, not a test.",
+      "sourceIds": ["misiak-2021-inflammation"]
+    }
+  ],
+  "related": []
+}

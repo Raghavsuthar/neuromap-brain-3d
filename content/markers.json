@@ -1,0 +1,27 @@
+{
+  "$schema": "../schema/disorder.schema.json#markers-note",
+  "description": "Schematic markers for nuclei the 437-structure atlas cannot resolve (no VTA, raphe or locus coeruleus meshes). Positions are small offsets from the centroid of an anchor mesh, in model world units — approximate teaching placements only, always rendered with a 'schematic' badge and this explanation.",
+  "markers": [
+    {
+      "id": "vta",
+      "label": "VTA (schematic)",
+      "anchorAtlasLabel": "Substantia nigra",
+      "offset": [0.0, 0.008, 0.004],
+      "note": "Ventral tegmental area lies just medial and slightly superior to the substantia nigra; shown as a marker because no VTA mesh exists."
+    },
+    {
+      "id": "raphe-drn",
+      "label": "Dorsal raphe (schematic)",
+      "anchorAtlasLabel": "Midbrain",
+      "offset": [0.0, -0.006, -0.01],
+      "note": "Dorsal raphe sits on the midline at the midbrain–pons junction, dorsal to the cerebral aqueduct region; approximate marker."
+    },
+    {
+      "id": "lc",
+      "label": "Locus coeruleus (schematic)",
+      "anchorAtlasLabel": "Pons",
+      "offset": [0.0, 0.006, -0.008],
+      "note": "Locus coeruleus is a tiny nucleus in the dorsal rostral pontine tegmentum; approximate marker."
+    }
+  ]
+}

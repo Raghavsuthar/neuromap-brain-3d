@@ -1,0 +1,295 @@
+{
+  "treatments": [
+    {
+      "id": "tx-risperidone",
+      "kind": "drug",
+      "drugId": "risperidone",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-risp-mol",
+          "text": "Blocks D2 and 5-HT2A receptors, rebalancing striatal dopamine signalling.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "cellular": {
+          "id": "tx-risp-cell",
+          "text": "Dampens medium spiny neuron output driven by excess phasic dopamine release.",
+          "evidence": "strong",
+          "sourceIds": ["nord-farde-2011"],
+          "lastReviewed": "2026-09-28"
+        },
+        "circuit": {
+          "id": "tx-risp-circ",
+          "text": "Normalizes mesolimbic salience signaling that misattributes meaning to neutral stimuli.",
+          "evidence": "moderate",
+          "sourceIds": ["howes-kapur-2009"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+    },
+    {
+      "id": "tx-olanzapine",
+      "kind": "drug",
+      "drugId": "olanzapine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-olan-mol",
+          "text": "Broad D2, 5-HT2A, histamine and muscarinic blockade with strong overall efficacy.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "circuit": {
+          "id": "tx-olan-circ",
+          "text": "Quiets hyperdopaminergic mesolimbic drive underlying delusions and hallucinations.",
+          "evidence": "moderate",
+          "sourceIds": ["howes-kapur-2009"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "affective"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+    },
+    {
+      "id": "tx-aripiprazole",
+      "kind": "drug",
+      "drugId": "aripiprazole",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-ari-mol",
+          "text": "D2 partial agonism stabilizes dopamine tone instead of fully blocking it.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "circuit": {
+          "id": "tx-ari-circ",
+          "text": "Balances mesolimbic excess against mesocortical deficit within one molecule.",
+          "evidence": "moderate",
+          "sourceIds": ["howes-kapur-2009"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "negative"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+    },
+    {
+      "id": "tx-quetiapine",
+      "kind": "drug",
+      "drugId": "quetiapine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-quet-mol",
+          "text": "Fast-dissociating D2 blockade with 5-HT2A antagonism across a wide dose range.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "affective"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+    },
+    {
+      "id": "tx-haloperidol",
+      "kind": "drug",
+      "drugId": "haloperidol",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-hal-mol",
+          "text": "High-potency sustained D2 blockade with minimal serotonergic action.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "psychomotor"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["ips-cpg"] }
+    },
+    {
+      "id": "tx-clozapine-trs",
+      "kind": "drug",
+      "drugId": "clozapine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-cloz-mol",
+          "text": "Broad multi-receptor action with low D2 occupancy rescues response where pure D2 blockade failed.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg", "trrip-2017"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "negative"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "refractory", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+    },
+    {
+      "id": "tx-xanomeline",
+      "kind": "drug",
+      "drugId": "xanomeline-trospium",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "tx-xan-mol",
+          "text": "Central M1/M4 muscarinic agonism treats psychosis without any dopamine blockade.",
+          "evidence": "strong",
+          "sourceIds": ["fda-cobenfy-2024"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "cognitive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "2nd", "evidence": "moderate", "guidelineSourceIds": [] }
+    },
+    {
+      "id": "tx-lai",
+      "kind": "drug",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-lai-circ",
+          "text": "Continuous delivery prevents the plasma gaps that precede most relapses.",
+          "evidence": "established",
+          "sourceIds": ["nice-cg178"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+    },
+    {
+      "id": "tx-ect-catatonia",
+      "kind": "neuromodulation",
+      "neuromodulation": { "modality": "ECT", "targetNote": "Generalized seizure; no focal target" },
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-ect-circ",
+          "text": "Generalized seizure activity resets locked motor and affective circuits in catatonia.",
+          "evidence": "moderate",
+          "sourceIds": ["nice-cg178"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["psychomotor", "affective"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "2nd", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+    },
+    {
+      "id": "tx-rtms-avh",
+      "kind": "neuromodulation",
+      "neuromodulation": {
+        "modality": "rTMS",
+        "target": { "atlasLabels": ["Superior temporal gyrus (Lateral part)", "Supramarginal gyrus"], "precision": "proxy" },
+        "montageOrCoil": "Figure-8 coil over the left temporoparietal junction"
+      },
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-rtms-avh-circ",
+          "text": "Low-frequency stimulation dampens hyperactive auditory-language cortex driving voices.",
+          "evidence": "moderate",
+          "sourceIds": ["lefaucheur-2020-rtms"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": [] }
+    },
+    {
+      "id": "tx-rtms-neg",
+      "kind": "neuromodulation",
+      "neuromodulation": {
+        "modality": "rTMS",
+        "target": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        "montageOrCoil": "Figure-8 coil over the left dorsolateral prefrontal cortex"
+      },
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-rtms-neg-circ",
+          "text": "High-frequency prefrontal stimulation aims to lift hypofrontal drive behind negative symptoms.",
+          "evidence": "moderate",
+          "sourceIds": ["lefaucheur-2020-rtms"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["negative", "cognitive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": [] }
+    },
+    {
+      "id": "tx-tdcs",
+      "kind": "neuromodulation",
+      "neuromodulation": {
+        "modality": "tDCS",
+        "target": { "atlasLabels": ["Middle frontal gyrus"], "precision": "proxy" },
+        "montageOrCoil": "Anode over left dorsolateral prefrontal cortex with temporoparietal cathode"
+      },
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-tdcs-circ",
+          "text": "Weak direct currents bias cortical excitability across frontotemporal networks.",
+          "evidence": "emerging",
+          "sourceIds": ["fregni-2021-tdcs"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "negative"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "investigational", "evidence": "emerging", "guidelineSourceIds": [] }
+    },
+    {
+      "id": "tx-cbtp",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-cbtp-circ",
+          "text": "Cognitive restructuring and reality-testing practice strengthen prefrontal regulation of threat appraisals.",
+          "evidence": "moderate",
+          "sourceIds": ["nice-cg178"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "insight"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+    },
+    {
+      "id": "tx-family",
+      "kind": "psychosocial",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-fam-circ",
+          "text": "Lowering expressed emotion and stress at home reduces relapse triggers acting on sensitized circuits.",
+          "evidence": "moderate",
+          "sourceIds": ["nice-cg178"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "insight"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+    },
+    {
+      "id": "tx-crt",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-crt-circ",
+          "text": "Repeated cognitive exercise with strategy coaching improves processing speed, memory and executive function.",
+          "evidence": "moderate",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["cognitive"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "moderate", "guidelineSourceIds": ["ips-cpg"] }
+    },
+    {
+      "id": "tx-csc",
+      "kind": "psychosocial",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "tx-csc-circ",
+          "text": "Coordinated early care combining medication, therapy, family work and employment support improves course after first episode.",
+          "evidence": "strong",
+          "sourceIds": ["nice-cg178"],
+          "lastReviewed": "2026-09-28"
+        },
+        "symptomDomains": ["positive", "negative", "cognitive", "insight"]
+      },
+      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+    }
+  ]
+}

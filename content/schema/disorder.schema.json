@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raghavsuthar.github.io/neuromap-brain-3d/content/schema/disorder.schema.json",
+  "title": "NeuroMap disorder content file (schizophrenia is the reference implementation)",
+  "description": "Machine-readable contract for one disorder. The runtime validator scripts/validate-disorders.mjs enforces everything here PLUS cross-file reference resolution, which JSON Schema cannot express.",
+  "type": "object",
+  "required": ["id", "name", "icd11", "block", "overview", "symptomDomains", "brainFindings",
+    "circuits", "neurochemistry", "genetics", "biomarkers", "treatments", "pathway", "quiz", "related"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "icd11": {
+      "type": "object",
+      "required": ["code", "url"],
+      "properties": {
+        "code": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "dsm5tr": {
+      "type": "object",
+      "required": ["code"],
+      "properties": { "code": { "type": "string" }, "url": { "type": "string", "format": "uri" } }
+    },
+    "block": { "type": "string", "description": "ICD-11 grouping, e.g. Schizophrenia and other primary psychotic disorders" },
+    "overview": { "$ref": "#/$defs/claimList" },
+    "symptomDomains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "circuitIds", "brainFindingIds"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "$ref": "#/$defs/claim" },
+          "circuitIds": { "type": "array", "items": { "type": "string" } },
+          "brainFindingIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "brainFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "where", "finding", "claim"],
+        "properties": {
+          "id": { "type": "string" },
+          "where": { "$ref": "#/$defs/atlasRef" },
+          "finding": { "enum": ["hyperactivity", "hypoactivity", "volume-reduction", "volume-increase",
+            "thickness-reduction", "dysconnectivity", "altered-receptor", "altered-metabolism", "other"] },
+          "stage": { "enum": ["at-risk", "prodrome", "first-episode", "chronic", "any"] },
+          "effectSize": {
+            "type": "object",
+            "required": ["metric", "value", "sourceId"],
+            "properties": {
+              "metric": { "enum": ["cohens_d", "SMD", "other"] },
+              "value": { "type": "number" },
+              "ci": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+              "sourceId": { "type": "string" }
+            }
+          },
+          "claim": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "circuits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "nodes", "edges", "function"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "nodes": { "type": "array", "items": { "$ref": "#/$defs/atlasRef" } },
+          "tractLabels": { "type": "array", "items": { "type": "string" } },
+          "edges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["from", "to", "type"],
+              "properties": {
+                "from": { "type": "string" },
+                "to": { "type": "string" },
+                "type": { "enum": ["excitatory", "inhibitory", "modulatory"] },
+                "transmitter": { "type": "string" }
+              }
+            }
+          },
+          "function": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "neurochemistry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["transmitter", "alteration", "where", "claim"],
+        "properties": {
+          "transmitter": { "type": "string" },
+          "alteration": { "type": "string" },
+          "where": { "type": "array", "items": { "$ref": "#/$defs/atlasRef" } },
+          "claim": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "genetics": {
+      "type": "object",
+      "required": ["geneSymbols", "architecture"],
+      "properties": {
+        "geneSymbols": { "type": "array", "items": { "type": "string" } },
+        "architecture": { "$ref": "#/$defs/claimList" }
+      }
+    },
+    "biomarkers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "finding"],
+        "properties": {
+          "name": { "type": "string" },
+          "finding": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "treatments": { "type": "array", "items": { "type": "string" } },
+    "pathway": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "options", "claim"],
+        "properties": {
+          "step": { "type": "string" },
+          "options": { "type": "array", "items": { "type": "string" } },
+          "claim": { "$ref": "#/$defs/claim" }
+        }
+      }
+    },
+    "tour": {
+      "type": "array",
+      "description": "Guided story-mode steps",
+      "items": {
+        "type": "object",
+        "required": ["title", "text"],
+        "properties": {
+          "title": { "type": "string" },
+          "text": { "type": "string" },
+          "lens": { "type": "string" },
+          "lensTarget": { "type": "string" },
+          "camera": { "enum": ["front", "side", "top", "home"] },
+          "focusAtlasLabels": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "topic", "question", "choices", "answer", "explanation", "sourceIds"],
+        "properties": {
+          "id": { "type": "string" },
+          "topic": { "type": "string" },
+          "question": { "type": "string" },
+          "choices": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+          "answer": { "type": "integer", "minimum": 0 },
+          "explanation": { "type": "string" },
+          "sourceIds": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        }
+      }
+    },
+    "related": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "treatment": {
+      "title": "Shared treatment registry entry (content/registries/treatments.json)",
+      "type": "object",
+      "required": ["id", "kind"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["drug", "neuromodulation", "psychological", "psychosocial", "other"] },
+        "drugId": { "type": "string" },
+        "neuromodulation": {
+          "type": "object",
+          "required": ["modality"],
+          "properties": {
+            "modality": { "type": "string" },
+            "target": { "$ref": "#/$defs/atlasRef" },
+            "targetNote": {
+              "type": "string",
+              "description": "Use instead of target when stimulation is non-focal (e.g. ECT generalized seizure)"
+            },
+            "montageOrCoil": { "type": "string" },
+            "parametersClaim": { "$ref": "#/$defs/claim" }
+          },
+          "anyOf": [{ "required": ["target"] }, { "required": ["targetNote"] }]
+        },
+        "mechanismLevels": {
+          "type": "object",
+          "properties": {
+            "molecular": { "$ref": "#/$defs/claim" },
+            "cellular": { "$ref": "#/$defs/claim" },
+            "circuit": { "$ref": "#/$defs/claim" },
+            "symptomDomains": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "indication": {
+          "type": "object",
+          "properties": {
+            "disorderId": { "type": "string" },
+            "line": { "enum": ["1st", "2nd", "augmentation", "refractory", "adjunct", "investigational"] },
+            "evidence": { "$ref": "#/$defs/evidenceLevel" },
+            "guidelineSourceIds": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "evidenceLevel": {
+      "enum": ["established", "strong", "moderate", "emerging", "hypothesis", "unsourced"]
+    },
+    "claim": {
+      "type": "object",
+      "required": ["id", "text", "evidence", "sourceIds", "lastReviewed"],
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string", "minLength": 1 },
+        "evidence": { "$ref": "#/$defs/evidenceLevel" },
+        "sourceIds": { "type": "array", "items": { "type": "string" } },
+        "lastReviewed": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+      }
+    },
+    "claimList": { "type": "array", "items": { "$ref": "#/$defs/claim" } },
+    "atlasRef": {
+      "type": "object",
+      "required": ["precision"],
+      "properties": {
+        "atlasLabels": { "type": "array", "items": { "type": "string" } },
+        "markerId": { "type": "string" },
+        "precision": { "enum": ["exact", "proxy", "schematic"] }
+      }
+    }
+  }
+}

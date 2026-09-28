@@ -1,0 +1,65 @@
+{
+  "genes": [
+    {
+      "symbol": "C4A",
+      "name": "Complement component 4A",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "c4a-function",
+        "text": "C4A encodes a complement immune protein expressed by neurons that tags synapses for microglial pruning during development; greater C4A expression is associated with schizophrenia risk.",
+        "evidence": "strong",
+        "sourceIds": ["sekar-2016-c4"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "symbol": "GRIN2A",
+      "name": "Glutamate ionotropic receptor NMDA type subunit 2A",
+      "variantClass": "rare-coding",
+      "function": {
+        "id": "grin2a-function",
+        "text": "GRIN2A encodes the GluN2A NMDA-receptor subunit; rare protein-disrupting variants confer substantial schizophrenia risk, directly implicating glutamate signalling.",
+        "evidence": "strong",
+        "sourceIds": ["schema-browser", "schema-paper"],
+        "lastReviewed": "2026-09-28"
+      },
+      "linkedReceptorIds": ["GRIN2A"]
+    },
+    {
+      "symbol": "GRIA3",
+      "name": "Glutamate ionotropic receptor AMPA type subunit 3",
+      "variantClass": "rare-coding",
+      "function": {
+        "id": "gria3-function",
+        "text": "GRIA3 encodes the GluA3 AMPA-receptor subunit that mediates fast excitatory transmission; rare coding variants are enriched in schizophrenia.",
+        "evidence": "strong",
+        "sourceIds": ["schema-browser", "schema-paper"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "symbol": "SETD1A",
+      "name": "SET domain containing 1A (histone methyltransferase)",
+      "variantClass": "rare-coding",
+      "function": {
+        "id": "setd1a-function",
+        "text": "SETD1A encodes a chromatin-modifying enzyme; rare loss-of-function variants carry large schizophrenia risk, pointing to neurodevelopmental gene regulation.",
+        "evidence": "strong",
+        "sourceIds": ["schema-browser", "schema-paper"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "symbol": "DEL22Q11",
+      "name": "22q11.2 deletion (DiGeorge/velocardiofacial region)",
+      "variantClass": "CNV",
+      "function": {
+        "id": "del22q11-function",
+        "text": "Deletion of the 22q11.2 region is among the largest known genetic risk factors for schizophrenia, also affecting cardiac, immune and cognitive development.",
+        "evidence": "strong",
+        "sourceIds": ["enigma-consortium"],
+        "lastReviewed": "2026-09-28"
+      }
+    }
+  ]
+}

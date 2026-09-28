@@ -1,0 +1,449 @@
+{
+  "drugs": [
+    {
+      "id": "risperidone",
+      "generic": "Risperidone",
+      "brand": ["Risperdal"],
+      "classes": ["Second-generation antipsychotic"],
+      "atc": "N05AX08",
+      "mechanism": [
+        {
+          "id": "risp-mech",
+          "text": "Risperidone blocks dopamine D2 and serotonin 5-HT2A receptors, easing positive symptoms at D2 occupancies that rise steeply with dose.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg", "nord-farde-2011"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "antagonist",
+          "relevance": "both",
+          "effect": {
+            "id": "risp-d2",
+            "text": "Striatal D2 blockade drives antipsychotic response and, at higher occupancy, extrapyramidal symptoms and prolactin elevation.",
+            "evidence": "established",
+            "sourceIds": ["nord-farde-2011", "ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "receptorId": "HTR2A",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "risp-2a",
+            "text": "Cortical 5-HT2A blockade contributes to efficacy and may modestly soften motor side effects versus pure D2 blockade.",
+            "evidence": "moderate",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "occupancy": {
+        "receptorId": "DRD2",
+        "claim": {
+          "id": "risp-occ",
+          "text": "Response generally tracks substantial striatal D2 blockade, while blockade pushed higher brings extrapyramidal symptoms and prolactin rise.",
+          "evidence": "strong",
+          "sourceIds": ["nord-farde-2011"],
+          "lastReviewed": "2026-09-28"
+        }
+      },
+      "adverseEffects": [
+        {
+          "effect": "Extrapyramidal symptoms",
+          "receptorIds": ["DRD2"],
+          "mechanism": {
+            "id": "risp-eps",
+            "text": "High nigrostriatal D2 blockade produces parkinsonism, akathisia and dystonia, especially at higher doses.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "effect": "Hyperprolactinaemia",
+          "receptorIds": ["DRD2"],
+          "mechanism": {
+            "id": "risp-prl",
+            "text": "Tuberoinfundibular D2 blockade removes dopamine's brake on prolactin, raising levels more than most second-generation agents.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "risp-mon",
+        "text": "Monitor weight, glucose, lipids and prolactin-related symptoms alongside movement scales.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "olanzapine",
+      "generic": "Olanzapine",
+      "brand": ["Zyprexa"],
+      "classes": ["Second-generation antipsychotic"],
+      "atc": "N05AH03",
+      "mechanism": [
+        {
+          "id": "olan-mech",
+          "text": "Olanzapine combines D2 and 5-HT2A blockade with strong antihistamine and anticholinergic actions, giving broad efficacy with heavy metabolic cost.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "olan-d2",
+            "text": "Mesolimbic D2 blockade controls positive symptoms with somewhat lower motor liability than risperidone at usual doses.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "receptorId": "HTR2A",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "olan-2a",
+            "text": "Cortical 5-HT2A blockade complements D2 antagonism in the second-generation profile.",
+            "evidence": "moderate",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Weight gain and metabolic syndrome",
+          "receptorIds": ["HTR2A"],
+          "mechanism": {
+            "id": "olan-met",
+            "text": "Histamine and serotonin blockade plus orexigenic effects drive the largest weight gain in class, with diabetes and lipid risk.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "effect": "Sedation",
+          "receptorIds": ["HTR2A"],
+          "mechanism": {
+            "id": "olan-sed",
+            "text": "Antihistamine activity causes prominent early sedation that partly wears off with continued treatment.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "olan-mon",
+        "text": "Baseline and ongoing weight, waist, glucose, lipids and blood pressure are mandatory given the metabolic liability.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "aripiprazole",
+      "generic": "Aripiprazole",
+      "brand": ["Abilify"],
+      "classes": ["Third-generation antipsychotic", "D2 partial agonist"],
+      "atc": "N05AX12",
+      "mechanism": [
+        {
+          "id": "ari-mech",
+          "text": "Aripiprazole is a D2 partial agonist that dampens dopamine signalling where it is excessive and supports it where it is deficient.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "partial-agonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "ari-d2",
+            "text": "Partial agonism stabilizes dopamine tone, giving antipsychotic efficacy with low prolactin elevation and modest metabolic effects.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Akathisia and nausea",
+          "receptorIds": ["DRD2"],
+          "mechanism": {
+            "id": "ari-aka",
+            "text": "Intrinsic dopaminergic activity commonly causes early restlessness and nausea, usually manageable by slow titration.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "ari-mon",
+        "text": "Monitor for akathisia, impulse-control symptoms and standard metabolic parameters.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "quetiapine",
+      "generic": "Quetiapine",
+      "brand": ["Seroquel"],
+      "classes": ["Second-generation antipsychotic"],
+      "atc": "N05AH04",
+      "mechanism": [
+        {
+          "id": "quet-mech",
+          "text": "Quetiapine's fast-dissociating D2 blockade plus histamine antagonism gives dose-dependent effects from sedation at low doses to full antipsychotic action at high doses.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "quet-d2",
+            "text": "Transient D2 occupancy controls psychosis with comparatively low motor and prolactin burden.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "receptorId": "HTR2A",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "quet-2a",
+            "text": "5-HT2A blockade contributes to the second-generation profile including mood-stabilizing effects.",
+            "evidence": "moderate",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Sedation and orthostatic hypotension",
+          "receptorIds": ["HTR2A"],
+          "mechanism": {
+            "id": "quet-sed",
+            "text": "Histamine blockade sedates while alpha-adrenergic blockade drops standing pressure, worst during titration.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "quet-mon",
+        "text": "Monitor sedation, postural vitals, weight, glucose and lipids, plus QT risk at high doses.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "clozapine",
+      "generic": "Clozapine",
+      "brand": ["Clozaril"],
+      "classes": ["Second-generation antipsychotic"],
+      "atc": "N05AH02",
+      "mechanism": [
+        {
+          "id": "cloz-mech",
+          "text": "Clozapine binds broadly across dopamine, serotonin, adrenergic, histamine and muscarinic receptors with relatively low D2 occupancy, an unmatched profile in treatment resistance.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg", "trrip-2017"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "cloz-d2",
+            "text": "Low striatal D2 occupancy with efficacy driven substantially through non-dopaminergic actions.",
+            "evidence": "strong",
+            "sourceIds": ["nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "receptorId": "CHRM1",
+          "action": "antagonist",
+          "relevance": "adverse",
+          "effect": {
+            "id": "cloz-m1",
+            "text": "Muscarinic blockade contributes to hypersalivation, constipation and tachycardia rather than benefit.",
+            "evidence": "moderate",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Agranulocytosis",
+          "receptorIds": ["DRD2"],
+          "mechanism": {
+            "id": "cloz-agr",
+            "text": "Idiosyncratic neutrophil loss in roughly one percent mandates compulsory blood monitoring; stop immediately on threshold breach.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "effect": "Myocarditis and severe constipation",
+          "receptorIds": ["CHRM1"],
+          "mechanism": {
+            "id": "cloz-car",
+            "text": "Cardiac inflammation clusters in the first months while anticholinergic gut slowing can progress to ileus without monitoring.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "cloz-mon",
+        "text": "Mandatory absolute neutrophil monitoring, plus cardiac, metabolic, bowel and seizure vigilance.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178", "ips-cpg"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "haloperidol",
+      "generic": "Haloperidol",
+      "brand": ["Haldol"],
+      "classes": ["First-generation antipsychotic"],
+      "atc": "N05AD01",
+      "mechanism": [
+        {
+          "id": "hal-mech",
+          "text": "Haloperidol is a high-potency D2 antagonist with tight slow-dissociating binding and minimal serotonergic activity.",
+          "evidence": "established",
+          "sourceIds": ["ips-cpg", "wfsbp-longterm-2012"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "DRD2",
+          "action": "antagonist",
+          "relevance": "both",
+          "effect": {
+            "id": "hal-d2",
+            "text": "Potent striatal blockade gives reliable antipsychotic effect with the highest motor and prolactin burden in class.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Dystonia, parkinsonism and tardive dyskinesia",
+          "receptorIds": ["DRD2"],
+          "mechanism": {
+            "id": "hal-eps",
+            "text": "Near-complete nigrostriatal blockade produces acute and tardive movement disorders, especially with chronic use.",
+            "evidence": "established",
+            "sourceIds": ["ips-cpg"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "hal-mon",
+        "text": "Movement scales, ECG for QT, and prolactin symptoms; use the lowest effective dose.",
+        "evidence": "established",
+        "sourceIds": ["nice-cg178"],
+        "lastReviewed": "2026-09-28"
+      }
+    },
+    {
+      "id": "xanomeline-trospium",
+      "generic": "Xanomeline-trospium",
+      "brand": ["Cobenfy"],
+      "classes": ["Muscarinic agonist antipsychotic"],
+      "mechanism": [
+        {
+          "id": "xan-mech",
+          "text": "Xanomeline stimulates central M1 and M4 muscarinic receptors without direct dopamine blockade, while trospium blocks peripheral muscarinic effects.",
+          "evidence": "strong",
+          "sourceIds": ["fda-cobenfy-2024"],
+          "lastReviewed": "2026-09-28"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "CHRM1",
+          "action": "agonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "xan-m1",
+            "text": "Central M1 activation is pursued for psychotic and cognitive symptoms through a non-dopaminergic route.",
+            "evidence": "moderate",
+            "sourceIds": ["fda-cobenfy-2024"],
+            "lastReviewed": "2026-09-28"
+          }
+        },
+        {
+          "receptorId": "CHRM4",
+          "action": "agonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "xan-m4",
+            "text": "Central M4 activation restrains striatal dopamine release without D2 blockade.",
+            "evidence": "moderate",
+            "sourceIds": ["fda-cobenfy-2024"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Nausea, vomiting and dyspepsia",
+          "receptorIds": ["CHRM1", "CHRM4"],
+          "mechanism": {
+            "id": "xan-gi",
+            "text": "Central and residual peripheral muscarinic stimulation causes prominent early gastrointestinal effects.",
+            "evidence": "moderate",
+            "sourceIds": ["fda-cobenfy-2024"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "receptors": [
+    {
+      "id": "DRD2",
+      "name": "Dopamine D2 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "drd2-sig",
+        "text": "The D2 receptor couples to Gi/o proteins, inhibiting adenylyl cyclase and reducing neuronal excitability and dopamine release at terminals.",
+        "evidence": "strong",
+        "sourceIds": ["iuphar"],
+        "lastReviewed": "2026-09-28"
+      },
+      "principalSites": [
+        {
+          "where": { "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"], "precision": "exact" },
+          "claim": {
+            "id": "drd2-striatum",
+            "text": "D2 receptors are densely expressed in the dorsal and ventral striatum, where antipsychotic blockade produces both therapeutic response and extrapyramidal or prolactin effects.",
+            "evidence": "strong",
+            "sourceIds": ["iuphar", "nord-farde-2011"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ]
+    },
+    {
+      "id": "HTR2A",
+      "name": "Serotonin 5-HT2A receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "htr2a-sig",
+        "text": "The 5-HT2A receptor couples to Gq/11, activating phospholipase C and increasing cortical pyramidal excitability.",
+        "evidence": "strong",
+        "sourceIds": ["iuphar"],
+        "lastReviewed": "2026-09-28"
+      },
+      "principalSites": [
+        {
+          "where": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+          "claim": {
+            "id": "htr2a-pfc",
+            "text": "5-HT2A receptors are richly expressed across prefrontal cortex, where second-generation antipsychotics block them alongside D2.",
+            "evidence": "strong",
+            "sourceIds": ["iuphar", "hansen-2022"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ],
+      "cortexDensity": {
+        "source": "hansen2022",
+        "annotation": "5-HT2A (Cimbi-36) cortical density map, Desikan–Killiany parcellation",
+        "parcellated": "dk68",
+        "file": "hansen_5HT2A_dk68.json"
+      }
+    },
+    {
+      "id": "CHRM1",
+      "name": "Muscarinic M1 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "chrm1-sig",
+        "text": "The M1 receptor couples to Gq/11 and is concentrated postsynaptically in cortex and hippocampus, supporting memory and cognition.",
+        "evidence": "strong",
+        "sourceIds": ["iuphar"],
+        "lastReviewed": "2026-09-28"
+      },
+      "principalSites": [
+        {
+          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "claim": {
+            "id": "chrm1-sites",
+            "text": "M1 receptors predominate in cortex and hippocampus; selective M1 activation is pursued for cognitive symptoms with fewer peripheral effects.",
+            "evidence": "moderate",
+            "sourceIds": ["iuphar", "fda-cobenfy-2024"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CHRM4",
+      "name": "Muscarinic M4 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "chrm4-sig",
+        "text": "The M4 receptor couples to Gi/o and acts largely as an inhibitory autoreceptor and striatal modulator of dopamine release.",
+        "evidence": "strong",
+        "sourceIds": ["iuphar"],
+        "lastReviewed": "2026-09-28"
+      },
+      "principalSites": [
+        {
+          "where": { "atlasLabels": ["Caudate nucleus", "Putamen"], "precision": "exact" },
+          "claim": {
+            "id": "chrm4-striatum",
+            "text": "M4 receptors in the striatum restrain dopamine release, which is the rationale for M4-preferring agonism in psychosis.",
+            "evidence": "moderate",
+            "sourceIds": ["iuphar", "fda-cobenfy-2024"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GRIN2A",
+      "name": "NMDA receptor subunit epsilon-1 (GluN2A)",
+      "family": "ion-channel",
+      "signalling": {
+        "id": "grin2a-sig",
+        "text": "GluN2A is a regulatory subunit of the NMDA glutamate receptor, a calcium-permeable coincidence detector central to synaptic plasticity.",
+        "evidence": "strong",
+        "sourceIds": ["iuphar"],
+        "lastReviewed": "2026-09-28"
+      },
+      "principalSites": [
+        {
+          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "claim": {
+            "id": "grin2a-sites",
+            "text": "GluN2A-containing NMDA receptors are prominent in hippocampus and cortex, including on parvalbumin interneurons implicated in the glutamate model of psychosis.",
+            "evidence": "moderate",
+            "sourceIds": ["iuphar", "howes-kapur-2009"],
+            "lastReviewed": "2026-09-28"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "sources": [
+    {
+      "id": "icd11-browser",
+      "type": "classification",
+      "title": "ICD-11 for Mortality and Morbidity Statistics — official browser",
+      "authors": "World Health Organization",
+      "url": "https://icd.who.int/browse11/l-m/en"
+    },
+    {
+      "id": "dsm5tr-overview",
+      "type": "classification",
+      "title": "Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR) — official overview",
+      "authors": "American Psychiatric Association",
+      "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+    },
+    {
+      "id": "ips-cpg",
+      "type": "guideline",
+      "title": "Indian Psychiatric Society Clinical Practice Guidelines — full archive",
+      "authors": "Indian Psychiatric Society",
+      "url": "https://indianpsychiatricsociety.org/ips-guidelines/"
+    },
+    {
+      "id": "ips-cpg-2025",
+      "type": "guideline",
+      "title": "Indian Psychiatric Society Clinical Practice Guidelines 2025 update (schizophrenia, bipolar disorder, depression, OCD)",
+      "authors": "Indian Psychiatric Society",
+      "year": 2025,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12900045"
+    },
+    {
+      "id": "nice-cg178",
+      "type": "guideline",
+      "title": "Psychosis and schizophrenia in adults: prevention and management (CG178)",
+      "authors": "National Institute for Health and Care Excellence",
+      "year": 2014,
+      "url": "https://www.nice.org.uk/guidance/cg178"
+    },
+    {
+      "id": "wfsbp-guidelines",
+      "type": "guideline",
+      "title": "WFSBP treatment guidelines and consensus papers",
+      "authors": "World Federation of Societies of Biological Psychiatry",
+      "url": "https://www.wfsbp.org/educational-activities/treatment-guidelines-and-consensus-papers"
+    },
+    {
+      "id": "wfsbp-longterm-2012",
+      "type": "guideline",
+      "title": "WFSBP guidelines for biological treatment of schizophrenia, part 2: update 2012 on the long-term treatment of schizophrenia and management of antipsychotic-induced side effects",
+      "authors": "Hasan A et al.",
+      "year": 2013,
+      "pmid": "23216388",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23216388/"
+    },
+    {
+      "id": "enigma-subcort-2016",
+      "type": "meta-analysis",
+      "title": "Subcortical brain volume abnormalities in 2028 individuals with schizophrenia and 2540 healthy controls via the ENIGMA consortium",
+      "authors": "van Erp TGM et al., ENIGMA Schizophrenia Working Group",
+      "year": 2016,
+      "pmid": "26033243",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26033243/"
+    },
+    {
+      "id": "enigma-cortical-2018",
+      "type": "meta-analysis",
+      "title": "Cortical brain abnormalities in 4474 individuals with schizophrenia and 5098 control subjects via the ENIGMA consortium",
+      "authors": "van Erp TGM et al., ENIGMA Schizophrenia Working Group",
+      "year": 2018,
+      "pmid": "29960671",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6177304/"
+    },
+    {
+      "id": "enigma-dti-2018",
+      "type": "meta-analysis",
+      "title": "Widespread white matter microstructural differences in schizophrenia across 4322 individuals: results from the ENIGMA Schizophrenia DTI Working Group",
+      "authors": "Kelly S et al., ENIGMA Schizophrenia DTI Working Group",
+      "year": 2018,
+      "pmid": "29038599",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29038599/"
+    },
+    {
+      "id": "howes-kapur-2009",
+      "type": "review",
+      "title": "The dopamine hypothesis of schizophrenia: version III — the final common pathway",
+      "authors": "Howes OD, Kapur S",
+      "year": 2009,
+      "doi": "10.1093/schbul/sbp006",
+      "pmid": "19325164",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2669582/"
+    },
+    {
+      "id": "nord-farde-2011",
+      "type": "review",
+      "title": "Antipsychotic occupancy of dopamine receptors in schizophrenia",
+      "authors": "Nord M, Farde L",
+      "year": 2011,
+      "doi": "10.1111/j.1755-5949.2010.00222.x",
+      "pmid": "21143431",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6493889/"
+    },
+    {
+      "id": "sekar-2016-c4",
+      "type": "primary",
+      "title": "Schizophrenia risk from complex variation of complement component 4",
+      "authors": "Sekar A et al.",
+      "year": 2016,
+      "pmid": "26814963",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26814963/"
+    },
+    {
+      "id": "pgc3-2022",
+      "type": "gwas",
+      "title": "Mapping genomic loci implicates genes and synaptic biology in schizophrenia",
+      "authors": "Trubetskoy V et al., Schizophrenia Working Group of the Psychiatric Genomics Consortium",
+      "year": 2022,
+      "doi": "10.1038/s41586-022-04434-5",
+      "pmid": "35396580",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9392466/"
+    },
+    {
+      "id": "schema-browser",
+      "type": "database",
+      "title": "SCHEMA: Schizophrenia exome meta-analysis browser (rare coding variants in ten genes)",
+      "authors": "Broad Institute / SCHEMA consortium",
+      "url": "https://schema.broadinstitute.org"
+    },
+    {
+      "id": "schema-paper",
+      "type": "meta-analysis",
+      "title": "Rare coding variants in ten genes confer substantial risk for schizophrenia",
+      "authors": "Singh T et al., SCHEMA consortium",
+      "year": 2022,
+      "doi": "10.1038/s41586-022-04556-w",
+      "url": "https://doi.org/10.1038/s41586-022-04556-w"
+    },
+    {
+      "id": "trrip-2017",
+      "type": "review",
+      "title": "Treatment-Resistant Schizophrenia: Treatment Response and Resistance in Psychosis (TRRIP) Working Group Consensus Guidelines on Diagnosis and Terminology",
+      "authors": "Howes OD et al., TRRIP Working Group",
+      "year": 2017,
+      "doi": "10.1176/appi.ajp.2016.16050503",
+      "pmid": "27919182",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6231547/"
+    },
+    {
+      "id": "lefaucheur-2020-rtms",
+      "type": "review",
+      "title": "Evidence-based guidelines on the therapeutic use of repetitive transcranial magnetic stimulation (rTMS): an update (2014–2018)",
+      "authors": "Lefaucheur JP et al.",
+      "year": 2020,
+      "doi": "10.1016/j.clinph.2019.11.002",
+      "pmid": "31901449",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31901449/"
+    },
+    {
+      "id": "fregni-2021-tdcs",
+      "type": "meta-analysis",
+      "title": "Evidence-based guidelines and secondary meta-analysis for the use of transcranial direct current stimulation in neurological and psychiatric disorders",
+      "authors": "Fregni F et al., Neuromodulation Center Working Group",
+      "year": 2021,
+      "doi": "10.1093/ijnp/pyaa051",
+      "pmid": "32710772",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8059493/"
+    },
+    {
+      "id": "fda-cobenfy-2024",
+      "type": "announcement",
+      "title": "FDA approves drug with new mechanism of action for treatment of schizophrenia (Cobenfy, xanomeline and trospium chloride; 26 September 2024)",
+      "authors": "U.S. Food and Drug Administration",
+      "year": 2024,
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-drug-new-mechanism-action-treatment-schizophrenia"
+    },
+    {
+      "id": "achtyes-2023-taar1",
+      "type": "review",
+      "title": "Ulotaront: review of preliminary evidence for the efficacy and safety of a TAAR1 agonist in schizophrenia",
+      "authors": "Achtyes ED et al.",
+      "year": 2023,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10465394/"
+    },
+    {
+      "id": "otsuka-diamond-2023",
+      "type": "announcement",
+      "title": "Topline results from Phase 3 DIAMOND 1 and DIAMOND 2 studies of ulotaront in schizophrenia (did not meet primary endpoints)",
+      "authors": "Sumitomo Pharma / Otsuka",
+      "year": 2023,
+      "url": "https://otsuka-us.com/news/sumitomo-pharma-and-otsuka-announce-topline-results-phase-3-diamond-1-and-diamond-2-clinical"
+    },
+    {
+      "id": "misiak-2021-inflammation",
+      "type": "meta-analysis",
+      "title": "Immune-inflammatory markers and psychosis risk: a systematic review and meta-analysis",
+      "authors": "Misiak B et al.",
+      "year": 2021,
+      "doi": "10.1016/j.psyneuen.2021.105200",
+      "pmid": "33740587",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33740587/"
+    },
+    {
+      "id": "hansen-2022",
+      "type": "database",
+      "title": "hansen_receptors: PET receptor/transporter density maps (19 targets, cortical)",
+      "authors": "Hansen JY et al.; Nature Neuroscience 2022;25:1569–1581",
+      "year": 2022,
+      "url": "https://github.com/netneurolab/hansen_receptors"
+    },
+    {
+      "id": "enigma-toolbox",
+      "type": "database",
+      "title": "ENIGMA Toolbox: case-control brain maps and Allen Human Brain Atlas expression tools",
+      "authors": "ENIGMA consortium / MICA-MNI",
+      "url": "https://enigma-toolbox.readthedocs.io/"
+    },
+    {
+      "id": "enigma-consortium",
+      "type": "database",
+      "title": "ENIGMA consortium (incl. 22q11.2 Deletion Syndrome Working Group)",
+      "authors": "ENIGMA consortium",
+      "url": "https://enigma.ini.usc.edu/"
+    },
+    {
+      "id": "pdsp",
+      "type": "database",
+      "title": "PDSP Ki database: public-domain receptor binding affinities",
+      "authors": "NIMH Psychoactive Drug Screening Program, University of North Carolina",
+      "url": "https://pdspdb.unc.edu/databases/kidb.php"
+    },
+    {
+      "id": "iuphar",
+      "type": "database",
+      "title": "IUPHAR/BPS Guide to Pharmacology: curated receptor, signalling and distribution data",
+      "authors": "International Union of Basic and Clinical Pharmacology / British Pharmacological Society",
+      "url": "https://www.guidetopharmacology.org/"
+    }
+  ]
+}
