@@ -9,11 +9,45 @@
       content="A realistic, browser-based interactive 3D brain rendered from real sourced anatomy. Orbit, fade the cortex, and inspect 437 named structures."
     />
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/disorder.css" />
   </head>
   <body>
     <div id="scene" aria-label="Interactive 3D brain viewport"></div>
     <div id="vignette" aria-hidden="true"></div>
     <div id="sr-status" class="sr-only" role="status" aria-live="polite"></div>
+
+    <div id="disorderPicker" hidden>
+      <div class="picker-box" role="dialog" aria-label="Pick a disorder">
+        <h2>Pick a disorder</h2>
+        <input id="disorderSearch" type="search" placeholder="Search disorders…" autocomplete="off" />
+        <div id="disorderList"></div>
+        <button id="pickerClose" type="button">Close</button>
+      </div>
+    </div>
+
+    <aside id="disorderPanel" aria-label="Disorder learning panel" hidden>
+      <div class="dp-head">
+        <div>
+          <h2 id="dpName"></h2>
+          <p id="dpCodes" class="meta"></p>
+        </div>
+        <button id="dpClose" type="button" aria-label="Exit disorder mode">×</button>
+      </div>
+      <div id="lensBar" aria-label="3D lens switcher"></div>
+      <div id="dpTabs" role="tablist" aria-label="Disorder topics"></div>
+      <div id="dpBody"></div>
+    </aside>
+
+    <div id="tourCard" hidden>
+      <b id="tourTitle"></b>
+      <p id="tourText"></p>
+      <div class="tour-btns">
+        <button id="tourBack" type="button">Back</button>
+        <span id="tourPos"></span>
+        <button id="tourNext" type="button">Next</button>
+        <button id="tourExit" type="button">Exit tour</button>
+      </div>
+    </div>
 
     <div id="loader" role="status">
       <div class="loader-box">
@@ -30,6 +64,7 @@
 
     <nav id="viewtabs" aria-label="Content views">
       <button type="button" data-view="brain" class="on">3D Brain</button>
+      <button type="button" data-view="disorders">Disorders</button>
       <button type="button" data-view="circuits">Circuits</button>
       <button type="button" data-view="transmitters">Transmitters</button>
       <button type="button" data-view="syndromes">Syndromes</button>

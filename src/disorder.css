@@ -1,0 +1,360 @@
+#disorderPicker {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#disorderPicker[hidden] {
+  display: none;
+}
+
+.picker-box {
+  width: min(420px, calc(100vw - 48px));
+  max-height: 70vh;
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.picker-box h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.picker-box input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+#disorderList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+#disorderPanel {
+  position: fixed;
+  top: 64px;
+  right: 14px;
+  z-index: 10;
+  width: min(400px, calc(100vw - 28px));
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+
+#disorderPanel[hidden] {
+  display: none;
+}
+
+.dp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 14px 6px;
+}
+
+.dp-head h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.dp-head .meta {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+.dp-head .meta a {
+  color: var(--accent);
+}
+
+#dpClose {
+  border: none;
+  background: none;
+  font-size: 20px;
+  padding: 0 4px;
+}
+
+#lensBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  padding: 0 14px 6px;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+#lensBar button {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+#lensBar button.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#dpTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0 14px 8px;
+}
+
+#dpTabs button {
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+#dpTabs button.on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#dpBody {
+  overflow: auto;
+  padding: 0 14px 14px;
+}
+
+#dpBody h3 {
+  margin: 12px 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+}
+
+#dpBody p {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+#dpBody .cred {
+  font-size: 11px;
+  color: var(--dim);
+}
+
+#dpBody .cred a {
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1px 8px;
+  margin-right: 4px;
+  color: var(--dim);
+}
+
+.badge.ev-established { border-color: #34D399; color: #34D399; }
+.badge.ev-strong { border-color: #2DD4BF; color: #2DD4BF; }
+.badge.ev-moderate { border-color: #FBBF24; color: #FBBF24; }
+.badge.ev-emerging { border-color: #FB923C; color: #FB923C; }
+.badge.ev-hypothesis { border-color: #F472B6; color: #F472B6; }
+.badge.ev-unsourced { border-color: #EF4444; color: #EF4444; }
+.badge.prec-exact { border-color: #34D399; color: #34D399; }
+.badge.prec-proxy { border-color: #FBBF24; color: #FBBF24; }
+.badge.prec-schematic { border-color: #F472B6; color: #F472B6; }
+
+.lab {
+  display: inline-block;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 7px;
+  margin: 0 4px 4px 0;
+}
+
+.acc {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.acc summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#dpBody table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+#dpBody th,
+#dpBody td {
+  text-align: left;
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+.fp-row {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 9px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.fp-row small {
+  color: var(--dim);
+  display: block;
+  margin-top: 2px;
+}
+
+#dpBody textarea {
+  width: 100%;
+  min-height: 90px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+#dpBody select {
+  background: #1a2230;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.steps {
+  padding-left: 20px;
+}
+
+.steps li {
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.q {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.qchoice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.qchoice.q-right {
+  border-color: #34D399;
+  color: #34D399;
+}
+
+.qchoice.q-wrong {
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+.qexp {
+  font-size: 12px;
+}
+
+#tourCard {
+  position: fixed;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: min(440px, calc(100vw - 32px));
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 16px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+
+#tourCard[hidden] {
+  display: none;
+}
+
+#tourCard p {
+  margin: 6px 0 10px;
+  line-height: 1.5;
+}
+
+.tour-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tour-btns span {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+@media (max-width: 720px) {
+  #disorderPanel {
+    top: auto;
+    bottom: 64px;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-height: 52vh;
+  }
+}
+
+@media print {
+  #scene, .panel, #viewtabs, #clinic, #lensBar, #dpTabs, .tour-btns,
+  #tourCard, footer.credit, #vignette, #loader, #circuitBar {
+    display: none !important;
+  }
+
+  body {
+    overflow: visible;
+    background: #fff;
+    color: #000;
+  }
+
+  #disorderPanel {
+    position: static;
+    width: auto;
+    max-height: none;
+    border: none;
+  }
+}

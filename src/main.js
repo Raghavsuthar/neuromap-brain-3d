@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import './clinical.js';
+import './disorder.js';
 
 const BASE = import.meta.env.BASE_URL;
 const MODEL_URL = `${BASE}brain-atlas/models/brain.glb`;
@@ -512,6 +513,17 @@ function makeMarkerSprite(text, colorHex) {
   return sp;
 }
 
+function disposeMarkerGroup() {
+  while (markerGroup.children.length) {
+    const s = markerGroup.children.pop();
+    if (s.material) {
+      if (s.material.map) s.material.map.dispose();
+      s.material.dispose();
+    }
+    if (s.geometry) s.geometry.dispose();
+  }
+}
+
 window.__neuroMap = Object.assign(window.__neuroMap || {}, {
   showCircuit(id) {
     setActiveCircuit(id);
@@ -548,6 +560,40 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
     controls.target.copy(center);
     camera.position.copy(center).addScaledVector(dir, Math.max(size * 2.2, 0.12));
   },
+  centroidOfLabels(labels) {
+    const meshes = meshesForLabels(labels);
+    if (!meshes.length) return null;
+    const box = new THREE.Box3();
+    for (const m of meshes) box.expandByObject(m);
+    const c = box.getCenter(new THREE.Vector3());
+    return [c.x, c.y, c.z];
+  },
+  // Generic schematic tubes (e.g. disorder circuit edges). Points are
+  // world-space [x,y,z] triples from centroidOfLabels/markerPositions.
+  drawTube({ centers, color, closed, radius }) {
+    if (!centers || centers.length < 2) return null;
+    const pts = centers.map((p) => new THREE.Vector3(p[0], p[1], p[2]));
+    const curve = new THREE.CatmullRomCurve3(pts, !!closed, 'centripetal', 0.6);
+    const mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(color || '#F59E0B'),
+      transparent: true,
+      opacity: 0.85,
+    });
+    mat._owned = true;
+    const mesh = new THREE.Mesh(
+      new THREE.TubeGeometry(curve, 48, radius || modelSize * 0.004, 8, !!closed),
+      mat,
+    );
+    markerGroup.add(mesh);
+    return mesh;
+  },
+  markerPositions() {
+    const out = {};
+    for (const s of markerGroup.children) {
+      if (s.userData.markerId) out[s.userData.markerId] = [s.position.x, s.position.y, s.position.z];
+    }
+    return out;
+  },
   // Schematic markers for nuclei the atlas cannot resolve (VTA, raphe, LC).
   // defs: [{ id, label, anchorAtlasLabel, offset:[x,y,z], color }]
   showMarkers(defs) {
@@ -565,18 +611,12 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
     }
   },
   clearMarkers() {
-    while (markerGroup.children.length) {
-      const s = markerGroup.children.pop();
-      if (s.material) {
-        if (s.material.map) s.material.map.dispose();
-        s.material.dispose();
-      }
-    }
+    disposeMarkerGroup();
   },
   clear() {
     hlTint.clear();
     matchSet = null;
-    while (markerGroup.children.length) markerGroup.children.pop();
+    disposeMarkerGroup();
     refreshMeshMaterials();
     updateVisibility();
   },

@@ -1,0 +1,18 @@
+name: Content lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/validate-disorders.mjs --strict
+      - run: node --check src/main.js && node --check src/clinical.js && node --check src/disorder.js && node --check scripts/validate-disorders.mjs
