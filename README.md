@@ -209,6 +209,41 @@ See `content/disorders/TEMPLATE.json` for the full field structure. Key rules:
 - **Content (registries, disorders):** CC BY-SA 4.0 (share-alike per model license)
 - **See `DATA_LICENSES.md` for full breakdown**
 
+## Disorders available
+
+Five disorders are built end to end, each with all ten tabs populated, a guided
+tour, and 16 sourced quiz items:
+
+| Disorder | ICD-11 | DSM-5-TR | Highlights |
+|---|---|---|---|
+| Schizophrenia | 6A20 | 295.90 | ENIGMA cortical/subcortical/DTI, dopamine hypothesis v.III, TRRIP clozapine pathway, failed TAAR1 trials |
+| Major depressive disorder | 6A70 / 6A71 | 296.14-296.32 | ENIGMA hippocampal effect size d = -0.14, adolescent vs adult divergence, 102 GWAS loci, mixed VNS trial result |
+| Bipolar type I | 6A60 | 296.44-296.64 | 6503-individual cortical study, mania count predicts prefrontal thinning, AKAP11 odds ratio ~7 |
+| Bipolar type II | 6A61 | 296.89 | Depression-dominant course, antidepressant switching risk, shared-subtype findings labelled as such |
+| Obsessive-compulsive disorder | 6B20 | 300.3 | Cortico-striato-thalamo-cortical loop, neurocircuit taxonomy, neuroablation vs DBS meta-analysis |
+
+Every effect size, odds ratio and trial result is taken from a cited source
+record; nothing is estimated or illustrative. Where a large study pooled
+bipolar subtypes, the UI says so rather than implying a subtype-specific
+effect.
+
+## Verification
+
+| Gate | Command | Result |
+|---|---|---|
+| Content lint (release) | `npm run lint:content:strict` | 0 errors, 0 warnings |
+| Data to 3D mapping | `npm run test:mapping` | 2038 assertions, 303 claims |
+| Build | `npm run build` | lints, bundles, copies `content/` to `dist/` |
+| CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check |
+
+`scripts/test-mapping.mjs` is the important one: it mirrors the viewer's
+`meshesForLabels()` and fails if any atlas label, circuit node,
+neuromodulation target, guided-tour lens target, pathway option or treatment
+reference does not resolve to real renderable geometry or a declared marker.
+It also fails if a registry treatment indicated for a disorder is missing from
+that disorder's file, so the Treatments tab cannot silently omit a guideline
+option.
+
 ---
 
-*Generated as part of Phase 1 (schizophrenia). Next: Phase 2 — MDD, Bipolar I/II, OCD.*
+*Phase 2 complete (schizophrenia, MDD, bipolar I/II, OCD). Next: Phase 3 — GAD, panic disorder, social anxiety, PTSD, ADHD, autism spectrum.*
