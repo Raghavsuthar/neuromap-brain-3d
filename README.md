@@ -241,18 +241,22 @@ Every topic tab drives the 3D brain as that topic's circuit diagram
 (`viewer.animateCircuit`, generic — new disorders/drugs never touch it):
 
 - **Isolation with ghost context** — members at full opacity with a slow ~2s
-  emissive pulse; everything else fades to 0.08 opacity (eased ~450ms
+  emissive pulse; everything else fades to a faint 4% opacity (eased ~450ms
   wall-clock tween, never a hard cut), so the whole-brain silhouette remains.
+  A live **Context** slider in the circuit bar sets that ghost opacity from 0%
+  (no context at all) to 35% (heavy context) — transparency is a user decision,
+  not a hard-coded constant, and it applies while the animation runs.
 - **Directed edges** — one 3D path per circuit edge with flow pulses at a
   ~3s cadence (adjustable 1.5–6s); excitatory = warm + arrowhead, inhibitory =
   cool + blunt disc, modulatory = diamond. Reciprocal pairs render as two
   offset arcs. Drug/gene lenses animate receptor sites with no edges rather
   than inventing connectivity.
-- **Controls** — pause/play, speed, smooth recenter (manual orbit cancels it),
-  simple mode, and a reduced-motion path (static highlight + explicit opt-in).
-  Sustained low fps degrades to static glow automatically. Edge tubes have fat
-  invisible hit-proxies; clicking a connection shows the pathway, clicking a
-  node still opens structure detail (ghost tissue never steals clicks).
+- **Controls** — pause/play, speed, context (ghost) opacity, smooth recenter
+  (manual orbit cancels it), simple mode, and a reduced-motion path (static
+  highlight + explicit opt-in). Sustained low fps degrades to static glow
+  automatically. Edge tubes have fat invisible hit-proxies; clicking a
+  connection shows the pathway, clicking a node still opens structure detail
+  (ghost tissue never steals clicks).
 - **Learning layer** — synaptic zoom-in schematics from drug fingerprints;
   quick/detailed claim toggle (remembered); auto-playing story-mode tour;
   colorblind-safe pathology palette; a "Showing:" structure list as the
@@ -272,7 +276,7 @@ Every topic tab drives the 3D brain as that topic's circuit diagram
 | Data to 3D mapping | `npm run test:mapping` | 3767 assertions, 552 claims |
 | Build | `npm run build` | lints, bundles, copies `content/` to `dist/` |
 | CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check |
-| Browser: animation + learning | `pwtest/verify_anim.cjs` | 27 checks, 0 page errors |
+| Browser: animation + learning | `pwtest/verify_anim.cjs` | 32 checks, 0 page errors |
 | Browser: edge cases | `pwtest/verify_edge_cases.cjs` | 11 checks incl. reduced-motion, 0 page errors |
 | Browser: disorders | `pwtest/verify_disorder.cjs` | 33 checks, 0 page errors |
 | Browser: clinical regression | `pwtest/verify_clinical.cjs` | 15 checks, 0 page errors |

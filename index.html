@@ -184,6 +184,11 @@
         <label class="cb-speed">Speed
           <input id="animSpeed" type="range" min="1.5" max="6" step="0.5" value="3" title="Seconds per traversal" />
         </label>
+        <label class="cb-speed" title="How faint the non-circuit brain is while a circuit animates: 0% hides it, 35% keeps full context">
+          Context
+          <input id="animGhost" type="range" min="0" max="35" step="1" value="4" />
+          <span id="animGhostVal" class="cb-val">4%</span>
+        </label>
         <button id="animRecenter" type="button" title="Smoothly frame the active circuit">Recenter</button>
         <button id="animSimple" type="button" title="Static glow only, no moving particles">Simple: off</button>
         <button id="animOptIn" type="button" hidden title="Enable motion">Motion: off</button>

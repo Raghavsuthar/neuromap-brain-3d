@@ -583,6 +583,7 @@ let circuitAnim = null; // {members, nodeMat, ghostMats, edgeObjs, name, fn}
 let animBlend = 0; // eased 0..1 isolation amount (wall-clock tween, not frame-counted)
 let blendTween = null; // {from, to, t0, dur} — survives 1fps software rendering
 let animTarget = 0;
+let animGhostOp = 0.04; // ghost opacity at full isolation (faint but present)
 let animPlaying = true;
 let animLoopSec = 3; // seconds per full traversal; slider range 1.5–6
 let animSimple = false; // static glow: tubes + markers, no moving particles
@@ -881,6 +882,11 @@ function updateAnimControls() {
   }
   const simple = $('animSimple');
   if (simple) simple.textContent = `Simple: ${animSimple ? 'on' : 'off'}`;
+  const ghost = $('animGhost');
+  if (ghost) {
+    ghost.value = String(Math.round(animGhostOp * 100));
+    $('animGhostVal').textContent = `${Math.round(animGhostOp * 100)}%`;
+  }
   const opt = $('animOptIn');
   if (opt) opt.hidden = !REDUCED_MOTION;
   if (opt) opt.textContent = animOptIn ? 'Motion: on' : 'Motion: off';
@@ -1019,6 +1025,16 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
     animLoopSec = Math.min(6, Math.max(1.5, Number(sec) || 3));
     updateAnimControls();
   },
+  // Ghost/context opacity while a circuit is active: 0 = context hidden
+  // entirely, 0.35 = heavy context. Applied on the next frame, so it is live.
+  setCircuitGhost(op) {
+    const n = Number(op);
+    animGhostOp = Math.min(0.35, Math.max(0, Number.isFinite(n) ? n : 0.04));
+    updateAnimControls();
+  },
+  circuitGhostOpacity() {
+    return animGhostOp;
+  },
   setCircuitSimple(on) {
     animSimple = !!on;
     if (animSimple) animPlaying = false;
@@ -1044,6 +1060,7 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
       playing: animPlaying,
       simple: animSimple,
       loopSec: animLoopSec,
+      ghostOp: animGhostOp,
       reducedMotion: REDUCED_MOTION,
     };
   },
@@ -1227,6 +1244,11 @@ function wireCircuitBar() {
   $('animRecenter').addEventListener('click', () => {
     const v = window.__neuroMap;
     if (v && v.recenterCircuit) v.recenterCircuit();
+  });
+  // Live ghost opacity: 0 = no context at all, 35% = full context weight.
+  $('animGhost').addEventListener('input', (e) => {
+    const v = window.__neuroMap;
+    if (v && v.setCircuitGhost) v.setCircuitGhost(Number(e.target.value) / 100);
   });
   $('animSimple').addEventListener('click', () => {
     animSimple = !animSimple;
@@ -1585,7 +1607,10 @@ renderer.setAnimationLoop(() => {
     }
     if (circuitAnim) {
       const ease = animBlend * animBlend * (3 - 2 * animBlend);
-      const op = 1 + (0.08 - 1) * ease;
+      // Ghost target comes from the user-facing slider (default 0.04, range
+      // 0 = fully hidden context, 0.35 = heavy context), never a hard-coded
+      // 0.08, so "how transparent" is a live decision rather than a constant.
+      const op = 1 + (animGhostOp - 1) * ease;
       for (const m of Object.values(circuitAnim.ghostMats)) {
         m.opacity = op;
         m.depthWrite = op > 0.5;

@@ -510,6 +510,17 @@ body.focus-mode #circuitBar #circuitClear {
   width: 90px;
 }
 
+.cb-speed {
+  white-space: nowrap;
+}
+
+.cb-val {
+  min-width: 30px;
+  text-align: right;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 720px) {
   #synapseCard {
     top: auto;
