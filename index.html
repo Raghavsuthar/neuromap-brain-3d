@@ -32,12 +32,29 @@
           <h2 id="dpName"></h2>
           <p id="dpCodes" class="meta"></p>
         </div>
-        <button id="dpClose" type="button" aria-label="Exit disorder mode">×</button>
+        <div class="dp-actions">
+          <button id="dpFocus" type="button" title="Hide all panels for presenting (Esc to exit)">⛶ Focus</button>
+          <button id="dpShare" type="button" title="Copy a link to this exact view">Copy view link</button>
+          <button id="dpClose" type="button" aria-label="Exit disorder mode">×</button>
+        </div>
       </div>
       <div id="lensBar" aria-label="3D lens switcher"></div>
+      <div id="hlList" aria-live="polite"></div>
       <div id="dpTabs" role="tablist" aria-label="Disorder topics"></div>
       <div id="dpBody"></div>
     </aside>
+
+    <div id="focusCap" hidden>
+      <span id="focusText"></span>
+      <button id="focusExit" type="button">Exit focus (Esc)</button>
+    </div>
+
+    <div id="synapseCard" hidden role="dialog" aria-label="Synaptic schematic">
+      <button id="synapseClose" type="button" aria-label="Close synaptic schematic">×</button>
+      <h3 id="synapseTitle"></h3>
+      <div id="synapseSvg"></div>
+      <p id="synapseCap" class="meta"></p>
+    </div>
 
     <div id="tourCard" hidden>
       <b id="tourTitle"></b>
@@ -45,6 +62,7 @@
       <div class="tour-btns">
         <button id="tourBack" type="button">Back</button>
         <span id="tourPos"></span>
+        <button id="tourPlay" type="button" title="Auto-advance through the tour">▶ Auto</button>
         <button id="tourNext" type="button">Next</button>
         <button id="tourExit" type="button">Exit tour</button>
       </div>
@@ -161,6 +179,15 @@
     <div id="circuitBar" hidden>
       <b id="circuitName"></b>
       <span id="circuitInfo"></span>
+      <span class="cb-controls" role="group" aria-label="Circuit animation controls">
+        <button id="animPlay" type="button" title="Pause or resume the flow animation">⏸ Pause</button>
+        <label class="cb-speed">Speed
+          <input id="animSpeed" type="range" min="1.5" max="6" step="0.5" value="3" title="Seconds per traversal" />
+        </label>
+        <button id="animRecenter" type="button" title="Smoothly frame the active circuit">Recenter</button>
+        <button id="animSimple" type="button" title="Static glow only, no moving particles">Simple: off</button>
+        <button id="animOptIn" type="button" hidden title="Enable motion">Motion: off</button>
+      </span>
       <button id="circuitClear" type="button">Clear</button>
     </div>
 

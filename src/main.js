@@ -98,6 +98,7 @@ let spinWanted = true;
 let idleTimer = null;
 controls.addEventListener('start', () => {
   controls.autoRotate = false;
+  camTween = null; // manual input always cancels a scripted camera move
   if (idleTimer) clearTimeout(idleTimer);
 });
 controls.addEventListener('end', () => {
@@ -227,8 +228,8 @@ function highlightMaterial(colorHex) {
 }
 
 // Single place that decides what every mesh looks like. All highlight,
-// selection, hover and lobe state flows through here — no disorder-specific
-// code paths in the viewer.
+// selection, hover, lobe and animated-circuit state flows through here —
+// no disorder-specific code paths in the viewer.
 function materialFor(mesh) {
   const cat = mesh.userData.anat.cat;
   if (mesh === selected) {
@@ -238,6 +239,15 @@ function materialFor(mesh) {
   if (mesh === hovered) {
     ensureVariants(cat);
     return hoverMats[cat];
+  }
+  // Animated circuit mode wins over plain highlight tints while active:
+  // members get the pulsing node material, everything else a faint ghost of
+  // its own tissue material (never fully hidden, so spatial orientation
+  // survives). animBlend drives ghost *opacity* in the render loop, not
+  // material selection — materials are assigned once per circuit change.
+  if (circuitAnim) {
+    if (circuitAnim.members.has(mesh)) return circuitAnim.nodeMat;
+    return ghostMatFor(mesh);
   }
   if (hlTint.has(mesh)) return hlTint.get(mesh);
   return baseMaterialFor(mesh);
@@ -362,11 +372,18 @@ const pointer = new THREE.Vector2();
 let downX = 0;
 let downY = 0;
 
+function pickTargets() {
+  // During animated circuit mode the ghost is context, not content: only
+  // participating members (and edge tubes, handled at the call site) are
+  // pickable, so faint background tissue never steals clicks from them.
+  return circuitAnim ? [...circuitAnim.members] : anatomyMeshes;
+}
+
 function pickAt(clientX, clientY) {
   pointer.x = (clientX / window.innerWidth) * 2 - 1;
   pointer.y = -(clientY / window.innerHeight) * 2 + 1;
   raycaster.setFromCamera(pointer, camera);
-  const hits = raycaster.intersectObjects(anatomyMeshes, false);
+  const hits = raycaster.intersectObjects(pickTargets(), false);
   return hits.length ? hits[0].object : null;
 }
 
@@ -376,6 +393,27 @@ renderer.domElement.addEventListener('pointerdown', (e) => {
 });
 renderer.domElement.addEventListener('pointerup', (e) => {
   if (Math.hypot(e.clientX - downX, e.clientY - downY) > 6) return; // was a drag
+  // In animated circuit mode, edge tubes are pickable too: nearest hit wins,
+  // so clicking a connection shows the pathway while nodes still select.
+  // Ghosted non-members are excluded from picking (see pickTargets).
+  if (circuitAnim && circuitAnim.edgeObjs.length) {
+    pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    raycaster.setFromCamera(pointer, camera);
+    const tubes = [];
+    for (const eo of circuitAnim.edgeObjs) tubes.push(...eo.group.children);
+    const edgeHits = raycaster.intersectObjects(tubes, false);
+    const anatHits = raycaster.intersectObjects(pickTargets(), false);
+    const edgeD = edgeHits.length ? edgeHits[0].distance : Infinity;
+    const anatD = anatHits.length ? anatHits[0].distance : Infinity;
+    if (edgeD <= anatD && edgeHits.length && edgeHits[0].object.userData.edge) {
+      const ed = edgeHits[0].object.userData.edge;
+      const label = `${ed.from} → ${ed.to} · ${ed.type || 'modulatory'}${ed.transmitter ? ` · ${ed.transmitter}` : ''}`;
+      $('circuitInfo').textContent = label;
+      $('sr-status').textContent = `${circuitAnim.name}: ${label}. ${circuitAnim.fn}`;
+      return;
+    }
+  }
   const hit = pickAt(e.clientX, e.clientY);
   select(hit);
 });
@@ -393,8 +431,11 @@ function focusOn(mesh) {
 function updateVisibility() {
   for (const m of anatomyMeshes) {
     const a = m.userData.anat;
-    // Active circuit overrides category toggles for its members (focus mode).
-    const catOn = activeCircuit ? circuitMembers.has(m) : catState[a.cat] !== false;
+    // Animated circuit mode keeps every mesh rendered — non-participants
+    // fade to a ghost via materials, never via visibility, so the faint
+    // silhouette of the whole brain stays on screen. Legacy circuit focus
+    // (no animation object) still isolates members outright.
+    const catOn = circuitAnim ? true : activeCircuit ? circuitMembers.has(m) : catState[a.cat] !== false;
     const sideOn = hemi === 'both' || a.side === 'median' || a.side === hemi;
     m.visible = catOn && sideOn && (!matchSet || matchSet.has(m));
     const sp = m.userData.sprite;
@@ -435,42 +476,46 @@ function setActiveCircuit(id) {
     b.classList.toggle('on', !!activeCircuit && b.dataset.circuit === activeCircuit.id),
   );
   if (!activeCircuit) {
-    $('circuitBar').hidden = true;
+    clearCircuitAnimation({ instant: true });
     updateVisibility();
     return;
   }
   const groups = resolveCircuitMembers(activeCircuit);
   for (const g of groups) for (const m of g.meshes) circuitMembers.add(m);
-  // Tube path through group centroids (closed loop), in circuit color.
+  // Convert label-match groups to exact label lists, then run the same
+  // animated-circuit engine as the disorder lenses: ghosted context, pulsing
+  // nodes, directed edges chained in node order (closed loop, modulatory —
+  // the same connectivity claim the old overlay tube already made).
+  const nodes = [];
   const centers = [];
   for (const g of groups) {
     if (!g.meshes.length) continue;
+    const labels = [...new Set(g.meshes.map((m) => m.userData.anat.label))];
+    nodes.push({ atlasLabels: labels, precision: 'exact' });
     const box = new THREE.Box3();
     for (const m of g.meshes) box.expandByObject(m);
-    centers.push(box.getCenter(new THREE.Vector3()));
+    centers.push(box.getCenter(new THREE.Vector3()).toArray());
   }
-  if (centers.length >= 2) {
-    const curve = new THREE.CatmullRomCurve3(centers, true, 'centripetal', 0.6);
-    const mat = new THREE.MeshBasicMaterial({
-      color: new THREE.Color(activeCircuit.color || '#38BDF8'),
-      transparent: true,
-      opacity: 0.85,
-    });
-    mat._owned = true;
-    circuitGroup.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 72, modelSize * 0.004, 8, true), mat));
-    for (let i = 0; i < 2; i++) {
-      const pmat = new THREE.MeshBasicMaterial({ color: 0xffffff });
-      pmat._owned = true;
-      const p = new THREE.Mesh(new THREE.SphereGeometry(modelSize * 0.007, 12, 10), pmat);
-      circuitGroup.add(p);
-      circuitPulses.push({ mesh: p, curve, t: i / 2 });
-    }
-  }
-  $('circuitName').textContent = activeCircuit.name;
-  $('circuitInfo').textContent = `${activeCircuit.tierCode || ''} · ${activeCircuit.function || ''}`;
-  $('circuitBar').hidden = false;
-  if (selected && !circuitMembers.has(selected)) clearSelection();
-  updateVisibility();
+  const edges = centers.length >= 2
+    ? centers.map((c, i) => ({
+      a: c,
+      b: centers[(i + 1) % centers.length],
+      from: groups[i].key,
+      to: groups[(i + 1) % groups.length].key,
+      type: 'modulatory',
+    }))
+    : [];
+  startCircuitAnimation(
+    {
+      name: activeCircuit.name,
+      function: `${activeCircuit.tierCode || ''} · ${activeCircuit.function || ''}`.replace(/^ · /, ''),
+      color: activeCircuit.color || '#38BDF8',
+      nodes,
+      edges,
+    },
+    { fly: true },
+  );
+  if (selected && circuitAnim && !circuitAnim.members.has(selected)) clearSelection();
 }
 
 // Called from the clinical tab ("Show on 3D brain") and the disorder module.
@@ -522,6 +567,344 @@ function disposeMarkerGroup() {
     }
     if (s.geometry) s.geometry.dispose();
   }
+}
+
+// ---------- animated circuit mode (generic; driven entirely by data) ----------
+// Any caller — disorder lens, legacy circuit list, future compare mode —
+// describes {nodes, edges} and the viewer turns the brain into that topic's
+// circuit diagram: members at full opacity with a slow emissive pulse,
+// everything else a faint ghost, edges as directed 3D paths with flow.
+const EDGE_STYLE = {
+  excitatory: { color: '#FB923C' }, // warm
+  inhibitory: { color: '#38BDF8' }, // cool
+  modulatory: { color: '#C084FC' },
+};
+let circuitAnim = null; // {members, nodeMat, ghostMats, edgeObjs, name, fn}
+let animBlend = 0; // eased 0..1 isolation amount (wall-clock tween, not frame-counted)
+let blendTween = null; // {from, to, t0, dur} — survives 1fps software rendering
+let animTarget = 0;
+let animPlaying = true;
+let animLoopSec = 3; // seconds per full traversal; slider range 1.5–6
+let animSimple = false; // static glow: tubes + markers, no moving particles
+const REDUCED_MOTION =
+  typeof window.matchMedia === 'function' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let animOptIn = false; // explicit opt-in to motion when reduced-motion is set
+let camTween = null;
+let fpsEMA = 60;
+let fpsLowSince = 0;
+
+// Ghost material per category: the mesh's own tissue look (lobe mode
+// honored at build time), transparent, opacity driven by animBlend.
+function ghostMatFor(mesh) {
+  const cat = mesh.userData.anat.cat;
+  const g = circuitAnim.ghostMats;
+  if (!g[cat]) {
+    const m = baseMaterialFor(mesh).clone();
+    m.transparent = true;
+    m.depthWrite = false;
+    m.clippingPlanes = [slicePlane];
+    g[cat] = m;
+  }
+  return g[cat];
+}
+
+function motionAllowed() {
+  return !REDUCED_MOTION || animOptIn;
+}
+
+// Resolve an edge endpoint name to a world position: schematic marker
+// (by marker id or marker label) first, else the centroid of the named
+// atlas label(s). Explicit [x,y,z] points bypass resolution (legacy loops).
+function edgePoint(name) {
+  if (Array.isArray(name)) return new THREE.Vector3(name[0], name[1], name[2]);
+  const key = String(name || '');
+  for (const s of markerGroup.children) {
+    if (!s.userData.markerId) continue;
+    if (s.userData.markerId === key || s.userData.markerLabel === key) {
+      return s.position.clone();
+    }
+  }
+  const meshes = meshesForLabels([key]);
+  if (!meshes.length) return null;
+  const box = new THREE.Box3();
+  for (const m of meshes) box.expandByObject(m);
+  return box.getCenter(new THREE.Vector3());
+}
+
+function disposeCircuitAnim() {
+  if (!circuitAnim) return;
+  for (const e of circuitAnim.edgeObjs) {
+    scene.remove(e.group);
+    e.group.traverse((o) => {
+      if (o.isMesh) {
+        o.geometry.dispose();
+        o.material.dispose();
+      }
+    });
+  }
+  circuitAnim.nodeMat.dispose();
+  for (const m of Object.values(circuitAnim.ghostMats)) m.dispose();
+  circuitAnim = null;
+}
+
+function finishClearCircuit() {
+  disposeCircuitAnim();
+  animBlend = 0;
+  animTarget = 0;
+  blendTween = null;
+  camTween = null;
+  refreshMeshMaterials();
+  updateVisibility();
+  $('circuitBar').hidden = true;
+  $('sr-status').textContent = '';
+}
+
+function tweenBlendTo(to, durSec = 0.45) {
+  blendTween = { from: animBlend, to, t0: performance.now(), dur: durSec * 1000 };
+}
+
+function clearCircuitAnimation(opts = {}) {
+  if (!circuitAnim) return;
+  animTarget = 0;
+  if (opts.instant) finishClearCircuit();
+  else tweenBlendTo(0);
+  // Otherwise the render loop eases animBlend down and calls
+  // finishClearCircuit() when the tween completes.
+}
+
+// Build one directed 3D path per edge. Reciprocal pairs (A->B plus B->A)
+// become two parallel arcs offset in opposite directions, each animating
+// its own way — never a single bidirectional line.
+function buildEdgeObjects(edges, color) {
+  const objs = [];
+  const pairCount = {};
+  for (const e of edges || []) {
+    const k = [String(e.from), String(e.to)].sort().join('||');
+    pairCount[k] = (pairCount[k] || 0) + 1;
+  }
+  const pairSeen = {};
+  const toVec = (p) => new THREE.Vector3(p[0], p[1], p[2]);
+  for (const e of edges || []) {
+    // Explicit world-space endpoints (legacy loops) bypass name resolution.
+    const a = e.a ? toVec(e.a) : edgePoint(e.from);
+    const b = e.b ? toVec(e.b) : edgePoint(e.to);
+    if (!a || !b || a.distanceToSquared(b) < 1e-10) continue;
+    const style = EDGE_STYLE[e.type] || EDGE_STYLE.modulatory;
+    const k = [String(e.from), String(e.to)].sort().join('||');
+    const idx = pairSeen[k] || 0;
+    pairSeen[k] = idx + 1;
+    const dir = b.clone().sub(a);
+    const len = Math.max(dir.length(), 1e-6);
+    dir.normalize();
+    // Perpendicular in the horizontal plane (fall back to X when vertical).
+    let perp = new THREE.Vector3().crossVectors(dir, new THREE.Vector3(0, 1, 0));
+    if (perp.lengthSq() < 1e-6) perp.set(1, 0, 0);
+    perp.normalize();
+    const off = pairCount[k] > 1
+      ? (idx === 0 ? 1 : -1) * modelSize * 0.009
+      : modelSize * 0.004;
+    const mid = a.clone().add(b).multiplyScalar(0.5).addScaledVector(perp, off);
+    mid.y += modelSize * 0.004;
+    const curve = new THREE.CatmullRomCurve3([a, mid, b], false, 'centripetal', 0.5);
+    const group = new THREE.Group();
+    const tubeMat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(style.color),
+      transparent: true,
+      opacity: 0.32,
+      depthWrite: false,
+    });
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 40, modelSize * 0.0032, 8, false), tubeMat);
+    tube.userData.edge = e;
+    group.add(tube);
+    // Invisible fat hit-proxy: thin tubes are nearly unclickable, so
+    // raycasts test this instead. colorWrite off = renders nothing.
+    const proxy = new THREE.Mesh(
+      new THREE.TubeGeometry(curve, 12, modelSize * 0.011, 6, false),
+      new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false, depthTest: false }),
+    );
+    proxy.userData.edge = e;
+    proxy.renderOrder = -1;
+    group.add(proxy);
+    // Direction + type encoding at the target end: arrowhead for
+    // excitatory, blunt disc for inhibitory, diamond for modulatory.
+    const end = curve.getPointAt(1);
+    const tan = curve.getTangentAt(1).normalize();
+    let tip;
+    if (e.type === 'inhibitory') {
+      tip = new THREE.Mesh(
+        new THREE.CylinderGeometry(modelSize * 0.006, modelSize * 0.006, modelSize * 0.0025, 16),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(style.color) }),
+      );
+      tip.position.copy(end);
+      tip.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tan);
+    } else if (e.type === 'excitatory') {
+      tip = new THREE.Mesh(
+        new THREE.ConeGeometry(modelSize * 0.005, modelSize * 0.013, 12),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(style.color) }),
+      );
+      tip.position.copy(end).addScaledVector(tan, modelSize * 0.004);
+      tip.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), tan);
+    } else {
+      tip = new THREE.Mesh(
+        new THREE.OctahedronGeometry(modelSize * 0.005),
+        new THREE.MeshBasicMaterial({ color: new THREE.Color(style.color) }),
+      );
+      tip.position.copy(end);
+    }
+    tip.userData.edge = e;
+    group.add(tip);
+    const pulses = [];
+    if (motionAllowed() && !animSimple) {
+      for (let i = 0; i < 2; i++) {
+        const p = new THREE.Mesh(
+          new THREE.SphereGeometry(modelSize * 0.0045, 10, 8),
+          new THREE.MeshBasicMaterial({ color: new THREE.Color(style.color) }),
+        );
+        p.userData.edge = e;
+        group.add(p);
+        pulses.push({ mesh: p, t: i / 2 });
+      }
+    }
+    scene.add(group);
+    objs.push({ curve, group, pulses, edge: e });
+  }
+  return objs;
+}
+
+function describeAnimForSR() {
+  if (!circuitAnim) return '';
+  const names = circuitAnim.memberNames.slice(0, 12).join(', ');
+  const more = circuitAnim.memberNames.length > 12 ? ` and ${circuitAnim.memberNames.length - 12} more` : '';
+  return `${circuitAnim.name || 'Circuit'}: ${circuitAnim.edgeObjs.length} connection${circuitAnim.edgeObjs.length === 1 ? '' : 's'} across ${circuitAnim.memberNames.length} structures (${names}${more}).`;
+}
+
+function startCircuitAnimation(input, opts = {}) {
+  clearCircuitAnimation({ instant: true });
+  const members = new Set();
+  const memberNames = [];
+  for (const n of input.nodes || []) {
+    for (const m of meshesForLabels(n.atlasLabels || [])) {
+      if (!members.has(m)) {
+        members.add(m);
+        memberNames.push(m.userData.anat.label);
+      }
+    }
+  }
+  for (const m of meshesForLabels(input.extraLabels || [])) {
+    if (!members.has(m)) {
+      members.add(m);
+      memberNames.push(m.userData.anat.label);
+    }
+  }
+  if (!members.size) return false;
+  const color = new THREE.Color(input.color || '#F59E0B');
+  const nodeMat = new THREE.MeshStandardMaterial({
+    color: color.clone(),
+    emissive: color.clone(),
+    emissiveIntensity: 0.5,
+    roughness: 0.45,
+    metalness: 0.0,
+    side: THREE.DoubleSide,
+    clippingPlanes: [slicePlane],
+  });
+  circuitAnim = {
+    members,
+    memberNames: [...new Set(memberNames)].sort(),
+    nodeMat,
+    ghostMats: {},
+    edgeObjs: [],
+    name: input.name || 'Circuit',
+    fn: input.function || '',
+    _input: input,
+  };
+  circuitAnim.edgeObjs = buildEdgeObjects(input.edges || [], color);
+  animTarget = 1;
+  // Reduced-motion users get the static highlighted state immediately;
+  // motion only runs after explicit opt-in.
+  if (motionAllowed() && !animSimple) {
+    animBlend = 0;
+    tweenBlendTo(1);
+  } else {
+    animBlend = 1;
+    blendTween = null;
+  }
+  animPlaying = motionAllowed() && !animSimple;
+  fpsEMA = 60;
+  fpsLowSince = 0;
+  updateAnimControls();
+  $('circuitName').textContent = circuitAnim.name;
+  $('circuitInfo').textContent = circuitAnim.fn || `${circuitAnim.edgeObjs.length} connections`;
+  $('circuitBar').hidden = false;
+  if (selected && !members.has(selected)) clearSelection();
+  updateVisibility();
+  refreshMeshMaterials();
+  $('sr-status').textContent = describeAnimForSR();
+  if (opts.fly !== false) {
+    const v = window.__neuroMap;
+    if (v && v.flyToMeshes) v.flyToMeshes([...members]);
+  }
+  return true;
+}
+
+// Rebuild edge objects in place (tubes + tips + pulses) when the motion
+// regime changes — simple-mode toggle or reduced-motion opt-in — without
+// touching members, ghost materials, or camera. The ghost is already fully
+// blended in, so no fade is replayed.
+function rebuildAnimEdges() {
+  if (!circuitAnim) return;
+  for (const e of circuitAnim.edgeObjs) {
+    scene.remove(e.group);
+    e.group.traverse((o) => {
+      if (o.isMesh) {
+        o.geometry.dispose();
+        o.material.dispose();
+      }
+    });
+  }
+  const color = `#${circuitAnim.nodeMat.color.getHexString()}`;
+  circuitAnim.edgeObjs = buildEdgeObjects(circuitAnim._input.edges || [], color);
+  animBlend = 1;
+  blendTween = null;
+}
+
+function updateAnimControls() {
+  const play = $('animPlay');
+  if (play) {
+    play.textContent = animPlaying ? '⏸ Pause' : '▶ Play';
+    play.disabled = !motionAllowed() || animSimple;
+  }
+  const speed = $('animSpeed');
+  if (speed) {
+    speed.value = String(animLoopSec);
+    speed.disabled = !motionAllowed() || animSimple;
+  }
+  const simple = $('animSimple');
+  if (simple) simple.textContent = `Simple: ${animSimple ? 'on' : 'off'}`;
+  const opt = $('animOptIn');
+  if (opt) opt.hidden = !REDUCED_MOTION;
+  if (opt) opt.textContent = animOptIn ? 'Motion: on' : 'Motion: off';
+}
+
+// Smooth recenter that never locks the user out: any manual orbit/zoom
+// input cancels the tween via the controls 'start' listener below.
+function smoothRecenter() {
+  if (!circuitAnim || !circuitAnim.members.size) return;
+  const box = new THREE.Box3();
+  for (const m of circuitAnim.members) box.expandByObject(m);
+  const center = box.getCenter(new THREE.Vector3());
+  const size = Math.max(box.getSize(new THREE.Vector3()).length(), 0.02);
+  const dir = camera.position.clone().sub(controls.target);
+  if (dir.lengthSq() < 1e-6) dir.set(0.55, 0.32, 1);
+  dir.normalize();
+  camTween = {
+    p0: camera.position.clone(),
+    t0: controls.target.clone(),
+    p1: center.clone().addScaledVector(dir, Math.max(size * 2.4, 0.12)),
+    t1: center,
+    s: 0,
+    dur: 0.6,
+  };
 }
 
 window.__neuroMap = Object.assign(window.__neuroMap || {}, {
@@ -607,15 +990,84 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
       const sp = makeMarkerSprite(d.label || d.id, d.color || '#F59E0B');
       sp.position.set(c.x + o[0], c.y + o[1], c.z + o[2]);
       sp.userData.markerId = d.id;
+      sp.userData.markerLabel = d.label || d.id;
       markerGroup.add(sp);
     }
   },
   clearMarkers() {
     disposeMarkerGroup();
   },
+  // Animated circuit mode. circuit: {name?, function?, color?,
+  // nodes:[{atlasLabels?, markerId?, precision?}], edges:[{from,to,
+  // type?:'excitatory'|'inhibitory'|'modulatory', transmitter?} or
+  // {a:[x,y,z], b:[x,y,z], type?}], extraLabels?[]}.
+  // opts: {speed? (loop seconds, default 3), fly? (default true)}.
+  animateCircuit(circuit, opts) {
+    return startCircuitAnimation(circuit || {}, opts || {});
+  },
+  clearCircuitAnimation(opts) {
+    clearCircuitAnimation(opts || {});
+  },
+  circuitPlaying() {
+    return animPlaying;
+  },
+  setCircuitPlaying(on) {
+    animPlaying = !!on && motionAllowed() && !animSimple;
+    updateAnimControls();
+  },
+  setCircuitSpeed(sec) {
+    animLoopSec = Math.min(6, Math.max(1.5, Number(sec) || 3));
+    updateAnimControls();
+  },
+  setCircuitSimple(on) {
+    animSimple = !!on;
+    if (animSimple) animPlaying = false;
+    else animPlaying = motionAllowed();
+    rebuildAnimEdges();
+    updateAnimControls();
+  },
+  recenterCircuit() {
+    smoothRecenter();
+  },
+  highlightedNames() {
+    return circuitAnim ? circuitAnim.memberNames.slice() : [];
+  },
+  // Introspection for automated checks and future compare mode: counts and
+  // state only, no scene internals leak.
+  circuitDebug() {
+    if (!circuitAnim) return null;
+    return {
+      members: circuitAnim.members.size,
+      edges: circuitAnim.edgeObjs.length,
+      pulses: circuitAnim.edgeObjs.reduce((n, e) => n + e.pulses.length, 0),
+      blend: Math.round(animBlend * 100) / 100,
+      playing: animPlaying,
+      simple: animSimple,
+      loopSec: animLoopSec,
+      reducedMotion: REDUCED_MOTION,
+    };
+  },
+  cameraState() {
+    const r = (v) => Math.round(v * 1000) / 1000;
+    return {
+      pos: [r(camera.position.x), r(camera.position.y), r(camera.position.z)],
+      tgt: [r(controls.target.x), r(controls.target.y), r(controls.target.z)],
+    };
+  },
+  restoreCamera(pos, tgt) {
+    camTween = {
+      p0: camera.position.clone(),
+      t0: controls.target.clone(),
+      p1: new THREE.Vector3(pos[0], pos[1], pos[2]),
+      t1: new THREE.Vector3(tgt[0], tgt[1], tgt[2]),
+      s: 0,
+      dur: 0.6,
+    };
+  },
   clear() {
     hlTint.clear();
     matchSet = null;
+    clearCircuitAnimation({ instant: true });
     disposeMarkerGroup();
     refreshMeshMaterials();
     updateVisibility();
@@ -754,7 +1206,49 @@ function buildCircuitList() {
     });
     list.appendChild(b);
   }
-  $('circuitClear').addEventListener('click', () => setActiveCircuit(null));
+}
+
+// Unified clear for the circuit bar: works for legacy circuits and for
+// disorder-lens animations alike.
+function wireCircuitBar() {
+  $('circuitClear').addEventListener('click', () => {
+    activeCircuit = null;
+    document.querySelectorAll('#circuitlist .circuit-btn').forEach((b) => b.classList.remove('on'));
+    clearCircuitAnimation();
+  });
+  $('animPlay').addEventListener('click', () => {
+    const v = window.__neuroMap;
+    if (v && v.circuitPlaying) v.setCircuitPlaying(!v.circuitPlaying());
+  });
+  $('animSpeed').addEventListener('input', (e) => {
+    const v = window.__neuroMap;
+    if (v && v.setCircuitSpeed) v.setCircuitSpeed(e.target.value);
+  });
+  $('animRecenter').addEventListener('click', () => {
+    const v = window.__neuroMap;
+    if (v && v.recenterCircuit) v.recenterCircuit();
+  });
+  $('animSimple').addEventListener('click', () => {
+    animSimple = !animSimple;
+    if (animSimple) animPlaying = false;
+    else animPlaying = motionAllowed();
+    const v = window.__neuroMap;
+    if (v && v.setCircuitSimple && circuitAnim) {
+      // Rebuild through the public setter so edge pulses appear/disappear.
+      v.setCircuitSimple(animSimple);
+    } else {
+      updateAnimControls();
+    }
+  });
+  $('animOptIn').addEventListener('click', () => {
+    animOptIn = !animOptIn;
+    if (animOptIn && !animSimple) animPlaying = true;
+    rebuildAnimEdges();
+    updateAnimControls();
+    $('sr-status').textContent = animOptIn
+      ? 'Motion enabled for circuit animation.'
+      : 'Motion off. Static highlighted circuit.';
+  });
 }
 
 function wireViewerUI() {
@@ -1045,6 +1539,7 @@ async function init() {
   wireViewerUI();
   applyCortexOpacity(1);
   buildCircuitList();
+  wireCircuitBar();
 
   // Deep link: #s=<manifest id> reopens an exact shared view.
   const deep = /^#s=(\d+)$/.exec(window.location.hash || '');
@@ -1072,10 +1567,71 @@ window.addEventListener('resize', () => {
 });
 
 renderer.setAnimationLoop(() => {
-  const dt = Math.min(animClock.getDelta(), 0.05);
-  for (const p of circuitPulses) {
-    p.t = (p.t + dt * 0.15) % 1;
-    p.mesh.position.copy(p.curve.getPointAt(p.t));
+  const rawDt = animClock.getDelta();
+  const dt = Math.min(rawDt, 0.05);
+  if (circuitAnim) {
+    // Eased isolation in both directions (~450ms wall-clock, so even a
+    // 1fps software renderer completes the transition instead of stalling
+    // on frame-counted easing). Finishing a clear restores full-brain
+    // materials only once the fade completes.
+    if (blendTween) {
+      const p = Math.min((performance.now() - blendTween.t0) / blendTween.dur, 1);
+      const e = p * p * (3 - 2 * p);
+      animBlend = blendTween.from + (blendTween.to - blendTween.from) * e;
+      if (p >= 1) {
+        blendTween = null;
+        if (animTarget === 0) finishClearCircuit();
+      }
+    }
+    if (circuitAnim) {
+      const ease = animBlend * animBlend * (3 - 2 * animBlend);
+      const op = 1 + (0.08 - 1) * ease;
+      for (const m of Object.values(circuitAnim.ghostMats)) {
+        m.opacity = op;
+        m.depthWrite = op > 0.5;
+      }
+      const moving = animPlaying && motionAllowed() && !animSimple;
+      // Slow readable pulse (~2s period), never strobing.
+      circuitAnim.nodeMat.emissiveIntensity = moving
+        ? 0.5 + 0.28 * Math.sin((performance.now() / 1000) * Math.PI)
+        : 0.5;
+      for (const eo of circuitAnim.edgeObjs) {
+        if (moving) {
+          for (const p of eo.pulses) {
+            p.t = (p.t + dt / animLoopSec) % 1;
+            p.mesh.position.copy(eo.curve.getPointAt(p.t));
+          }
+        } else if (!animSimple && eo.pulses.length) {
+          for (const p of eo.pulses) p.mesh.position.copy(eo.curve.getPointAt(p.t));
+        }
+      }
+      // Automatic degradation: sustained low fps drops to static glow.
+      // Wall-clock accounting (skipped after a hidden tab or hitch) so a
+      // slow software renderer degrades honestly instead of flapping.
+      if (rawDt < 1) {
+        fpsEMA = fpsEMA * 0.95 + (1 / Math.max(rawDt, 1e-3)) * 0.05;
+        if (moving && fpsEMA < 15) {
+          fpsLowSince += rawDt;
+          if (fpsLowSince > 5 && !animSimple) {
+            animSimple = true;
+            animPlaying = false;
+            updateAnimControls();
+            $('circuitInfo').textContent += ' · simple mode (low fps)';
+            $('sr-status').textContent = 'Simple mode enabled automatically: static glow, animation off.';
+          }
+        } else {
+          fpsLowSince = 0;
+        }
+      }
+    }
+  }
+  if (camTween) {
+    camTween.s += dt / camTween.dur;
+    const s = Math.min(camTween.s, 1);
+    const e = s < 0.5 ? 2 * s * s : 1 - Math.pow(-2 * s + 2, 2) / 2;
+    camera.position.lerpVectors(camTween.p0, camTween.p1, e);
+    controls.target.lerpVectors(camTween.t0, camTween.t1, e);
+    if (s >= 1) camTween = null;
   }
   controls.update();
   renderer.render(scene, camera);

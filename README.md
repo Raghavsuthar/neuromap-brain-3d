@@ -100,12 +100,10 @@ The app is a **single-page data-driven platform**. The 3D viewer and UI are gene
 
 | Module | Responsibility |
 |--------|----------------|
-| `src/main.js` | 3D viewer core: Three.js scene, model loading, clipping, materials, picking, camera, lenses |
-| `src/clinical.js` | Clinical reference UI (4 layers: circuits, transmitters, syndromes, drugs) |
-| `src/disorder.js` | Disorder engine: picker, tabs, lenses, entity cards, quiz, tour, deep links |
-| `src/disorder.css` | Disorder panel styles (picker, tabs, cards, quiz, tour) |
+| `src/main.js` | 3D viewer core: scene, model loading, clipping, materials, picking, camera, animated circuit engine (`animateCircuit` / `clearCircuitAnimation`) |
 | `src/clinical.js` | Clinical reference UI (search, detail sheets, cross-layer links) |
-| `src/main.js` | 3D viewer + generic lens API (`highlight`, `flyTo`, `showMarkers`, `drawTube`, `isolateMeshes`, `clear`) |
+| `src/disorder.js` | Disorder engine: picker, tabs, lenses, entity cards, quiz, tour, deep links, learning features (synaptic zoom, dual-depth, focus mode, progress, share links, shortcuts) |
+| `src/disorder.css` | Disorder panel styles (picker, tabs, cards, quiz, tour, overlays) |
 
 ### Data flow
 
@@ -237,6 +235,35 @@ record; nothing is estimated or illustrative. Two deliberate honesty choices:
   imaging study, so no effect size is claimed for them. Their pathology tab
   shows the shared circuit model, labelled as a model, graded `emerging`.
 
+## Animated circuit mode + learning features
+
+Every topic tab drives the 3D brain as that topic's circuit diagram
+(`viewer.animateCircuit`, generic — new disorders/drugs never touch it):
+
+- **Isolation with ghost context** — members at full opacity with a slow ~2s
+  emissive pulse; everything else fades to 0.08 opacity (eased ~450ms
+  wall-clock tween, never a hard cut), so the whole-brain silhouette remains.
+- **Directed edges** — one 3D path per circuit edge with flow pulses at a
+  ~3s cadence (adjustable 1.5–6s); excitatory = warm + arrowhead, inhibitory =
+  cool + blunt disc, modulatory = diamond. Reciprocal pairs render as two
+  offset arcs. Drug/gene lenses animate receptor sites with no edges rather
+  than inventing connectivity.
+- **Controls** — pause/play, speed, smooth recenter (manual orbit cancels it),
+  simple mode, and a reduced-motion path (static highlight + explicit opt-in).
+  Sustained low fps degrades to static glow automatically. Edge tubes have fat
+  invisible hit-proxies; clicking a connection shows the pathway, clicking a
+  node still opens structure detail (ghost tissue never steals clicks).
+- **Learning layer** — synaptic zoom-in schematics from drug fingerprints;
+  quick/detailed claim toggle (remembered); auto-playing story-mode tour;
+  colorblind-safe pathology palette; a "Showing:" structure list as the
+  screen-reader alternative to every highlight; focus/presentation mode;
+  `localStorage` progress with Anki-style due-for-review list; shareable
+  exact-state links (`#d=&tab=&lens=&id=&ent=&cam=&tgt=`); keyboard shortcuts
+  (arrows = tour, `/` = search, `Esc` = unwind).
+- **Scaffolded, not shipped** — compare mode, vignettes, speech narration,
+  PWA, translations live behind `FEATURES` flags in `src/disorder.js`; UI
+  strings already sit in one `STRINGS` object for a future Hindi/Gujarati pass.
+
 ## Verification
 
 | Gate | Command | Result |
@@ -245,6 +272,10 @@ record; nothing is estimated or illustrative. Two deliberate honesty choices:
 | Data to 3D mapping | `npm run test:mapping` | 3767 assertions, 552 claims |
 | Build | `npm run build` | lints, bundles, copies `content/` to `dist/` |
 | CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check |
+| Browser: animation + learning | `pwtest/verify_anim.cjs` | 27 checks, 0 page errors |
+| Browser: edge cases | `pwtest/verify_edge_cases.cjs` | 11 checks incl. reduced-motion, 0 page errors |
+| Browser: disorders | `pwtest/verify_disorder.cjs` | 33 checks, 0 page errors |
+| Browser: clinical regression | `pwtest/verify_clinical.cjs` | 15 checks, 0 page errors |
 
 `scripts/test-mapping.mjs` is the important one: it mirrors the viewer's
 `meshesForLabels()` and fails if any atlas label, circuit node,

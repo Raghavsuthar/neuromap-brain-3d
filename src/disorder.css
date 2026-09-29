@@ -358,3 +358,161 @@
     border: none;
   }
 }
+
+/* ---------- animated circuit mode + learning features ---------- */
+.dp-actions {
+  display: flex;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.dp-actions button {
+  font-size: 11px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+#hlList {
+  padding: 0 14px 6px;
+  font-size: 11px;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+#hlList:empty {
+  display: none;
+}
+
+/* Dual-depth explanations: quick (first sentence) vs detailed. */
+.claim[data-depth='quick'] .d { display: none; }
+.claim[data-depth='detailed'] .q { display: none; }
+
+.depthBtn {
+  font-size: 10px;
+  padding: 1px 8px;
+  margin-left: 6px;
+}
+
+/* Synaptic zoom-in schematic overlay. */
+#synapseCard {
+  position: fixed;
+  top: 64px;
+  left: 14px;
+  z-index: 30;
+  width: min(380px, calc(100vw - 28px));
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 12px 14px;
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+}
+
+#synapseCard[hidden] { display: none; }
+
+#synapseCard h3 {
+  margin: 0 28px 8px 0;
+  font-size: 14px;
+}
+
+#synapseClose {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  padding: 0 4px;
+}
+
+#synapseSvg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.synBtn {
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Focus / presentation mode: only the 3D view plus a caption. */
+body.focus-mode .panel,
+body.focus-mode #viewtabs,
+body.focus-mode #clinic,
+body.focus-mode #disorderPanel,
+body.focus-mode #card,
+body.focus-mode .brand,
+body.focus-mode footer.credit,
+body.focus-mode #tourCard,
+body.focus-mode #circuitBar .cb-controls,
+body.focus-mode #circuitBar #circuitClear {
+  display: none !important;
+}
+
+#focusCap {
+  position: fixed;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 8px 6px 16px;
+  font-size: 12px;
+  backdrop-filter: blur(8px);
+  max-width: calc(100vw - 32px);
+}
+
+#focusCap[hidden] { display: none; }
+
+/* Circuit animation controls live inside the existing circuit bar. */
+#circuitBar {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cb-controls {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cb-controls button,
+.cb-controls label {
+  font-size: 11px;
+}
+
+.cb-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.cb-speed {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--dim);
+}
+
+.cb-speed input {
+  width: 90px;
+}
+
+@media (max-width: 720px) {
+  #synapseCard {
+    top: auto;
+    bottom: 64px;
+  }
+}

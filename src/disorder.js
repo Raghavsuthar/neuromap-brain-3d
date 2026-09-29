@@ -54,7 +54,33 @@ function srcLinks(ids) {
     .join('')}</div>`;
 }
 function claimHtml(c, showDate = true) {
-  return `<p>${esc(c.text)}</p><p class="cred">${evBadge(c.evidence)}${showDate ? ` <span>reviewed ${esc(c.lastReviewed)}</span>` : ''}</p>`;
+  // Dual-depth explanations: quick (first sentence, recall-level) and
+  // detailed (full text with citation). Standing preference in localStorage.
+  const depth = localStorage.getItem('nmdepth') || 'detailed';
+  const first = String(c.text).split(/(?<=[.!?])\s+/)[0] || String(c.text);
+  const needs = first.trim().length < String(c.text).trim().length;
+  return `<div class="claim" data-depth="${depth}"><p class="q">${esc(first)}${needs ? '…' : ''}</p>`
+    + `<p class="d">${esc(c.text)}</p>`
+    + `<p class="cred">${evBadge(c.evidence)}${showDate ? ` <span>reviewed ${esc(c.lastReviewed)}</span>` : ''}`
+    + `${needs ? ` <button type="button" class="depthBtn" title="Toggle quick/detailed explanation">${depth === 'quick' ? 'Detailed' : 'Quick'}</button>` : ''}</p></div>`;
+}
+
+// One delegated listener per render covers every claim on the page.
+function wireDepthToggle(root) {
+  root.querySelectorAll('.depthBtn').forEach((b) => {
+    if (b.dataset.wired) return;
+    b.dataset.wired = '1';
+    b.addEventListener('click', () => {
+      const box = b.closest('.claim');
+      const next = (box ? box.dataset.depth : 'detailed') === 'quick' ? 'detailed' : 'quick';
+      localStorage.setItem('nmdepth', next);
+      document.querySelectorAll('#dpBody .claim').forEach((el) => {
+        el.dataset.depth = next;
+        const btn = el.querySelector('.depthBtn');
+        if (btn) btn.textContent = next === 'quick' ? 'Detailed' : 'Quick';
+      });
+    });
+  });
 }
 function atlasChips(ref) {
   const labels = (ref && ref.atlasLabels) || [];
@@ -93,13 +119,12 @@ async function loadAll(id) {
 function clearLens() {
   V().clearHighlight && V().clearHighlight();
   V().clearMarkers && V().clearMarkers();
+  V().clearCircuitAnimation && V().clearCircuitAnimation({ instant: true });
   S.lens = null;
   S.lensTarget = null;
+  S._hl = { labels: [], markers: [] };
   renderLensBar();
-}
-
-function findingMeshes(f) {
-  return (V().meshesForLabels ? V().meshesForLabels(f.where.atlasLabels || []) : []) || [];
+  renderHlList();
 }
 
 function applyLens(lens, target) {
@@ -108,78 +133,124 @@ function applyLens(lens, target) {
   const v = V();
   v.clearHighlight && v.clearHighlight();
   v.clearMarkers && v.clearMarkers();
+  v.clearCircuitAnimation && v.clearCircuitAnimation({ instant: true });
   v.isolateMeshes && v.isolateMeshes(null);
   const d = S.disorder;
-  if (!lens) { renderLensBar(); return; }
+  // Highlighted-set bookkeeping for the screen-reader list ({labels, markers}).
+  S._hl = { labels: [], markers: [] };
+  if (!lens) { renderLensBar(); renderHlList(); return; }
+
+  const showRefsMarkers = (refs) => {
+    const defs = collectMarkers(refs);
+    if (defs.length && v.showMarkers) v.showMarkers(defs);
+    return defs.map((m) => m.label || m.id);
+  };
+  // Data-driven circuit animation: nodes light up and animate, everything
+  // else fades to a ghost. No disorder-specific code — just JSON in/out.
+  const animate = (input) => v.animateCircuit && v.animateCircuit(input);
 
   if (lens === 'pathology') {
+    const pal = cbPalette();
     const list = target && target !== 'all'
       ? d.brainFindings.filter((f) => f.id === target)
       : d.brainFindings.filter((f) => !stageFilter || f.stage === stageFilter || f.stage === 'any' || !f.stage);
     v.highlight && v.highlight(list.map((f) => ({
       labels: f.where.atlasLabels || [],
-      color: FINDING_COLORS[f.finding] || '#9CA3AF',
+      color: pal[f.finding] || '#9CA3AF',
     })));
-    const markers = collectMarkers(list.flatMap((f) => [f.where]));
-    if (markers.length) v.showMarkers && v.showMarkers(markers);
+    const markerNames = showRefsMarkers(list.flatMap((f) => [f.where]));
+    S._hl = {
+      labels: [...new Set(list.flatMap((f) => f.where.atlasLabels || []))],
+      markers: markerNames,
+    };
   } else if (lens === 'circuit') {
     const c = d.circuits.find((x) => x.id === (target || d.circuits[0]?.id));
     if (c) {
-      v.highlight && v.highlight(c.nodes.map(() => ({ labels: c.nodes.flatMap((n) => n.atlasLabels || []), color: '#F59E0B' })));
-      const markers = collectMarkers(c.nodes);
-      if (markers.length) v.showMarkers && v.showMarkers(markers);
-      drawCircuitEdges(c);
-      const all = c.nodes.flatMap((n) => n.atlasLabels || []);
-      v.flyToMeshes && v.flyToMeshes(v.meshesForLabels(all));
+      showRefsMarkers(c.nodes);
+      animate({ name: c.name, function: c.function.text, color: '#F59E0B', nodes: c.nodes, edges: c.edges });
+      S._hl = {
+        labels: [...new Set(c.nodes.flatMap((n) => n.atlasLabels || []))],
+        markers: (c.nodes || []).filter((n) => n.markerId).map((n) => n.markerId),
+      };
     }
   } else if (lens === 'chemistry') {
     const n = d.neurochemistry.find((x) => x.transmitter === (target || d.neurochemistry[0]?.transmitter)) || d.neurochemistry[0];
     if (n) {
-      const labels = n.where.flatMap((w) => w.atlasLabels || []);
-      v.highlight && v.highlight([{ labels, color: '#2DD4BF' }]);
-      const markers = collectMarkers(n.where);
-      if (markers.length) v.showMarkers && v.showMarkers(markers);
-      v.flyToMeshes && v.flyToMeshes(v.meshesForLabels(labels));
+      showRefsMarkers(n.where);
+      animate({ name: `${n.transmitter} pathway`, function: n.alteration, color: '#2DD4BF', nodes: n.where, edges: [] });
+      S._hl = {
+        labels: [...new Set(n.where.flatMap((w) => w.atlasLabels || []))],
+        markers: (n.where || []).filter((w) => w.markerId).map((w) => w.markerId),
+      };
     }
   } else if (lens === 'receptor') {
     const r = S.reg.receptors[target] || Object.values(S.reg.receptors)[0];
     if (r) {
-      const labels = (r.principalSites || []).flatMap((p) => p.where.atlasLabels || []);
-      v.highlight && v.highlight([{ labels, color: '#A855F7' }]);
-      v.flyToMeshes && v.flyToMeshes(v.meshesForLabels(labels));
+      animate({ name: r.name, function: r.signalling.text, color: '#A855F7', nodes: (r.principalSites || []).map((p) => p.where), edges: [] });
+      S._hl = {
+        labels: [...new Set((r.principalSites || []).flatMap((p) => p.where.atlasLabels || []))],
+        markers: [],
+      };
     }
   } else if (lens === 'drug') {
     const t = Object.values(S.reg.treatments).find((x) => x.drugId === target && x.indication?.disorderId === d.id)
       || d.treatments.map((id) => S.reg.treatments[id]).find((x) => x && x.drugId);
     const drug = t && t.drugId ? S.reg.drugs[t.drugId] : null;
-    const recIds = drug ? drug.receptorProfile.map((r) => r.receptorId) : [];
-    const labels = recIds.flatMap((id) => (S.reg.receptors[id]?.principalSites || []).flatMap((p) => p.where.atlasLabels || []));
-    v.highlight && v.highlight([{ labels, color: '#34D399' }]);
-    v.flyToMeshes && v.flyToMeshes(v.meshesForLabels(labels));
+    if (drug) {
+      const recIds = drug.receptorProfile.map((r) => r.receptorId);
+      const nodes = recIds.flatMap((id) => (S.reg.receptors[id]?.principalSites || []).map((p) => p.where));
+      animate({ name: `${drug.generic} receptor sites`, function: (drug.mechanism[0] || {}).text || '', color: '#34D399', nodes, edges: [] });
+      S._hl = {
+        labels: [...new Set(nodes.flatMap((w) => w.atlasLabels || []))],
+        markers: [],
+      };
+    }
   } else if (lens === 'symptom') {
     const s = d.symptomDomains.find((x) => x.id === (target || d.symptomDomains[0]?.id)) || d.symptomDomains[0];
     if (s) {
       const circs = (s.circuitIds || []).map((id) => d.circuits.find((c) => c.id === id)).filter(Boolean);
-      const labels = circs.flatMap((c) => c.nodes.flatMap((n) => n.atlasLabels || []));
+      const first = circs[0];
       const finds = (s.brainFindingIds || []).map((id) => d.brainFindings.find((f) => f.id === id)).filter(Boolean);
       const flabels = finds.flatMap((f) => f.where.atlasLabels || []);
-      v.highlight && v.highlight([{ labels: [...new Set([...labels, ...flabels])], color: '#F472B6' }]);
+      if (first) {
+        showRefsMarkers(first.nodes);
+        animate({
+          name: `${s.name}: ${first.name}`, function: first.function.text, color: '#F472B6',
+          nodes: first.nodes, edges: first.edges, extraLabels: flabels,
+        });
+        S._hl = {
+          labels: [...new Set([...first.nodes.flatMap((n) => n.atlasLabels || []), ...flabels])],
+          markers: (first.nodes || []).filter((n) => n.markerId).map((n) => n.markerId),
+        };
+      } else {
+        v.highlight && v.highlight([{ labels: flabels, color: '#F472B6' }]);
+        S._hl = { labels: [...new Set(flabels)], markers: [] };
+      }
     }
   } else if (lens === 'neuromod' || lens === 'neuromodulation') {
     const t = S.reg.treatments[target] || Object.values(S.reg.treatments).find((x) => x.kind === 'neuromodulation' && x.indication?.disorderId === d.id);
     if (t?.neuromodulation?.target) {
-      v.highlight && v.highlight([{ labels: t.neuromodulation.target.atlasLabels || [], color: '#FBBF24' }]);
-      v.flyToMeshes && v.flyToMeshes(v.meshesForLabels(t.neuromodulation.target.atlasLabels || []));
+      const tg = t.neuromodulation.target;
+      animate({
+        name: `${t.neuromodulation.modality} target`, function: t.neuromodulation.montageOrCoil || '',
+        color: '#FBBF24', nodes: [tg], edges: [],
+      });
+      S._hl = { labels: [...(tg.atlasLabels || [])], markers: [] };
     }
   } else if (lens === 'gene') {
     const g = S.reg.genes[target] || S.reg.genes[d.genetics.geneSymbols[0]];
     if (g) {
-      const labels = (g.linkedReceptorIds || []).flatMap((id) => (S.reg.receptors[id]?.principalSites || []).flatMap((p) => p.where.atlasLabels || []));
-      const expr = (g.brainExpression || []).flatMap((b) => b.where.atlasLabels || []);
-      v.highlight && v.highlight([{ labels: [...new Set([...labels, ...expr])], color: '#38BDF8' }]);
+      const siteWheres = (g.linkedReceptorIds || []).flatMap((id) => (S.reg.receptors[id]?.principalSites || []).map((p) => p.where));
+      const exprWheres = (g.brainExpression || []).map((b) => b.where);
+      animate({ name: g.symbol, function: g.function.text, color: '#38BDF8', nodes: [...siteWheres, ...exprWheres], edges: [] });
+      S._hl = {
+        labels: [...new Set([...siteWheres, ...exprWheres].flatMap((w) => w.atlasLabels || []))],
+        markers: [],
+      };
     }
   }
   renderLensBar();
+  renderHlList();
 }
 
 function collectMarkers(refs) {
@@ -188,21 +259,35 @@ function collectMarkers(refs) {
   return S.markers.filter((m) => ids.has(m.id));
 }
 
-function drawCircuitEdges(circuit) {
-  const v = V();
-  if (!v.drawTube) return;
-  const pos = v.markerPositions ? v.markerPositions() : {};
-  const pointFor = (s) => {
-    for (const [id, p] of Object.entries(pos)) {
-      const m = S.markers.find((x) => x.id === id);
-      if (id === s || (m && m.label === s)) return p;
-    }
-    return v.centroidOfLabels ? v.centroidOfLabels([s]) : null;
-  };
-  for (const e of circuit.edges || []) {
-    const a = pointFor(e.from);
-    const b = pointFor(e.to);
-    if (a && b) v.drawTube({ centers: [a, b], color: '#F59E0B', closed: false });
+// Colorblind-safe diverging palette for the pathology lens (Okabe–Ito
+// inspired). Toggled from the Brain pathology tab; remembered in localStorage.
+const FINDING_COLORS_CB = {
+  'volume-reduction': '#0072B2', 'volume-increase': '#E69F00', 'thickness-reduction': '#0072B2',
+  hyperactivity: '#D55E00', hypoactivity: '#56B4E9', dysconnectivity: '#CC79A7',
+  'altered-receptor': '#F0E442', 'altered-metabolism': '#F0E442', other: '#999999',
+};
+function cbPalette() {
+  return localStorage.getItem('nmcb') === 'on' ? FINDING_COLORS_CB : FINDING_COLORS;
+}
+
+// Screen-reader (and sighted) text alternative for every visual highlight:
+// the exact structures currently lit, kept in sync by applyLens.
+function renderHlList() {
+  const el = $('hlList');
+  if (!el) return;
+  const hl = S._hl || { labels: [], markers: [] };
+  const labels = hl.labels || [];
+  const markers = hl.markers || [];
+  if (!S.lens || (!labels.length && !markers.length)) {
+    el.innerHTML = '';
+    return;
+  }
+  const shown = labels.slice(0, 14);
+  const more = labels.length > shown.length ? ` and ${labels.length - shown.length} more` : '';
+  el.innerHTML = `<b>Showing:</b> ${shown.map(esc).join(', ')}${more}`
+    + (markers.length ? ` <span class="badge prec-schematic">markers: ${markers.map(esc).join(', ')}</span>` : '');
+  if (!V().highlightedNames) {
+    $('sr-status').textContent = `Showing ${labels.length} structures${markers.length ? ` plus schematic markers ${markers.join(', ')}` : ''}.`;
   }
 }
 
@@ -291,7 +376,7 @@ function entityCard(kind, id) {
       const rec = S.reg.receptors[r.receptorId];
       const a = ACTION_COLORS[r.action] || '#9CA3AF';
       const rel = RELEVANCE_COLORS[r.relevance] || '#9CA3AF';
-      return `<div class="fp-row"><b>${esc(rec ? rec.name : r.receptorId)}</b>
+      return `<div class="fp-row"><b><button type="button" class="synBtn" data-syn="${esc(r.receptorId)}" title="Zoom to this receptor's principal site with a synaptic schematic">${esc(rec ? rec.name : r.receptorId)} 🔬</button></b>
         <span class="badge" style="border-color:${a};color:${a}">${esc(r.action)}</span>
         <span class="badge" style="border-color:${rel};color:${rel}">${esc(r.relevance)}</span>
         <small>${r.kiNm != null ? `Ki ${esc(r.kiNm)} nM (sourced)` : 'Ki not sourced &mdash; omitted'}</small>
@@ -355,13 +440,71 @@ function wireLensGo(root) {
   );
 }
 
+// ---------- synaptic zoom-in ----------
+// Clicking a receptor in a drug fingerprint flies the camera to its principal
+// site and overlays a simple 2D schematic (receptor + drug + action type).
+// Schematic only: no molecular geometry is implied.
+function synapseSVG(recName, drugName, action) {
+  const act = {
+    antagonist: 'blocks the receptor',
+    'partial-agonist': 'partly activates the receptor',
+    'inverse-agonist': 'drives the receptor below baseline',
+    agonist: 'activates the receptor',
+    PAM: 'boosts the natural signal',
+    'reuptake-inhibitor': 'blocks reuptake at the transporter',
+    other: 'modulates the target',
+  }[action] || 'acts at the target';
+  return `<svg viewBox="0 0 340 190" role="img" aria-label="Schematic of ${esc(drugName)} ${act} at the ${esc(recName)}">
+    <rect x="8" y="30" width="120" height="130" rx="10" fill="none" stroke="#60A5FA" stroke-width="2"/>
+    <text x="68" y="20" text-anchor="middle" fill="#9CA3AF" font-size="11">presynaptic terminal</text>
+    <circle cx="45" cy="80" r="7" fill="#60A5FA"/><circle cx="75" cy="105" r="7" fill="#60A5FA"/><circle cx="55" cy="130" r="7" fill="#60A5FA"/>
+    <text x="68" y="178" text-anchor="middle" fill="#9CA3AF" font-size="11">signalling molecule</text>
+    <rect x="212" y="30" width="120" height="130" rx="10" fill="none" stroke="#34D399" stroke-width="2"/>
+    <text x="272" y="20" text-anchor="middle" fill="#9CA3AF" font-size="11">postsynaptic membrane</text>
+    <path d="M232 95 L244 70 L256 95 L268 70 L280 95 L292 70 L304 95" fill="none" stroke="#34D399" stroke-width="3"/>
+    <text x="272" y="120" text-anchor="middle" fill="#E5E7EB" font-size="11">${esc(recName.length > 18 ? recName.slice(0, 17) + '…' : recName)}</text>
+    <polygon points="170,78 182,86 182,102 170,110 158,102 158,86" fill="none" stroke="#F59E0B" stroke-width="2.5"/>
+    <text x="170" y="130" text-anchor="middle" fill="#F59E0B" font-size="11">${esc(drugName.length > 16 ? drugName.slice(0, 15) + '…' : drugName)}</text>
+    <text x="170" y="145" text-anchor="middle" fill="#9CA3AF" font-size="10">${esc(action)}</text>
+    <text x="170" y="55" text-anchor="middle" fill="#9CA3AF" font-size="11">synaptic cleft</text>
+  </svg>`;
+}
+
+function openSynapse(receptorId) {
+  const rec = S.reg.receptors[receptorId];
+  if (!rec) return;
+  // Find the drug context: prefer the entity card already open, else the
+  // disorder's first drug using this receptor.
+  let drug = null;
+  if (entityView && entityView.kind === 'drug') drug = S.reg.drugs[entityView.id];
+  if (!drug) {
+    const t = (S.disorder.treatments || []).map((id) => S.reg.treatments[id])
+      .find((x) => x && x.drugId && ((S.reg.drugs[x.drugId] || {}).receptorProfile || []).some((r) => r.receptorId === receptorId));
+    if (t) drug = S.reg.drugs[t.drugId];
+  }
+  const prof = drug ? (drug.receptorProfile || []).find((r) => r.receptorId === receptorId) : null;
+  applyLens('receptor', receptorId);
+  $('synapseTitle').textContent = `${drug ? drug.generic : 'Drug'} × ${rec.name}`;
+  $('synapseSvg').innerHTML = synapseSVG(rec.name, drug ? drug.generic : 'drug', prof ? prof.action : 'other');
+  $('synapseCap').textContent = `Schematic — not to scale, not a molecular model. Action: ${prof ? prof.action : 'see fingerprint'}. Principal sites: ${((rec.principalSites || []).flatMap((p) => p.where.atlasLabels || []).join(', ') || 'see card')}.`;
+  $('synapseCard').hidden = false;
+}
+
+function wireSynapse(root) {
+  root.querySelectorAll('[data-syn]').forEach((b) => {
+    if (b.dataset.wired) return;
+    b.dataset.wired = '1';
+    b.addEventListener('click', () => openSynapse(b.dataset.syn));
+  });
+}
+
 // ---------- tabs and body ----------
 function renderTabs() {
   $('dpTabs').innerHTML = TAB_ORDER.map((t) =>
     `<button type="button" role="tab" data-tab="${t}" class="${t === activeTab ? 'on' : ''}">${esc(STRINGS.tabs[t])}</button>`,
   ).join('');
   $('dpTabs').querySelectorAll('button').forEach((b) =>
-    b.addEventListener('click', () => { activeTab = b.dataset.tab; entityView = null; renderBody(); applyTabLens(); }),
+    b.addEventListener('click', () => { activeTab = b.dataset.tab; entityView = null; renderBody(); applyTabLens(); recordReview(b.dataset.tab); }),
   );
 }
 
@@ -404,6 +547,8 @@ function renderBody() {
     $('entBack').addEventListener('click', () => { entityView = null; renderBody(); });
     wireEntityChips(body);
     wireLensGo(body);
+    wireDepthToggle(body);
+    wireSynapse(body);
     return;
   }
   if (activeTab === 'overview') {
@@ -443,6 +588,7 @@ function renderBody() {
         <option value="">all</option>
         ${stages.map((s) => `<option value="${esc(s)}" ${stageFilter === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}
       </select></label>
+      <button id="cbToggle" type="button" title="Colorblind-safe diverging palette">${localStorage.getItem('nmcb') === 'on' ? 'Standard palette' : 'Colorblind-safe palette'}</button>
       ${visible.map((f) => `
       <details class="acc" open><summary><b>${esc(f.id)}</b> <span class="code">${esc(f.finding)}${f.stage ? ` &middot; ${esc(f.stage)}` : ''}</span></summary>
       <p>${atlasChips(f.where)}</p>${claimHtml(f.claim)}
@@ -450,6 +596,11 @@ function renderBody() {
       <div class="btn-row"><button type="button" data-lensgo="pathology:${esc(f.id)}">${esc(STRINGS.showOnBrain)}</button></div>
       </details>`).join('') || '<p>No findings at this stage.</p>'}`;
     $('stageSel').addEventListener('change', (e) => { stageFilter = e.target.value; applyLens('pathology', 'all'); renderBody(); });
+    $('cbToggle').addEventListener('click', () => {
+      localStorage.setItem('nmcb', localStorage.getItem('nmcb') === 'on' ? 'off' : 'on');
+      applyLens('pathology', 'all');
+      renderBody();
+    });
     wireLensGo(body);
   } else if (activeTab === 'neurochemistry') {
     body.innerHTML = (d.neurochemistry || []).map((n, i) => `
@@ -491,6 +642,8 @@ function renderBody() {
   } else if (activeTab === 'quiz') {
     renderQuiz(body);
   }
+  wireDepthToggle(body);
+  wireSynapse(body);
 }
 
 // ---------- quiz ----------
@@ -536,12 +689,24 @@ function renderQuiz(body) {
       const s = quizState();
       s.answers[b.dataset.q] = Number(b.dataset.c);
       saveQuizState(s);
+      const d = S.disorder;
+      const score = Object.keys(s.answers).filter((id) => {
+        const q = d.quiz.find((x) => x.id === id);
+        return q && q.answer === s.answers[id];
+      }).length;
+      recordQuizScore(score, d.quiz.length);
       renderBody();
     }),
   );
 }
 
-// ---------- guided tour ----------
+// ---------- guided tour (story mode: drives animateCircuit + camera) ----------
+let tourTimer = null;
+function stopTourAuto() {
+  if (tourTimer) { clearInterval(tourTimer); tourTimer = null; }
+  const b = $('tourPlay');
+  if (b) b.textContent = '▶ Auto';
+}
 function startTour() {
   S.tourIdx = 0;
   renderTour();
@@ -549,8 +714,10 @@ function startTour() {
 function renderTour() {
   const steps = S.disorder.tour || [];
   if (S.tourIdx < 0 || S.tourIdx >= steps.length) {
+    stopTourAuto();
     $('tourCard').hidden = true;
     S.tourIdx = -1;
+    recordReview('overview');
     return;
   }
   const st = steps[S.tourIdx];
@@ -568,10 +735,102 @@ function renderTour() {
   }
 }
 
+// ---------- focus / presentation mode ----------
+// Hides every panel except the 3D view plus a minimal caption, for showing
+// a circuit during a case presentation without study-UI clutter.
+function setFocusMode(on) {
+  document.body.classList.toggle('focus-mode', on);
+  $('focusCap').hidden = !on;
+  if (on) {
+    $('focusText').textContent = S.disorder
+      ? `${S.disorder.name} · ${STRINGS.tabs[activeTab] || activeTab}${S.lens ? ` · ${STRINGS.lenses[S.lens] || S.lens}` : ''}`
+      : 'NeuroMap 3D Brain';
+    if (S.tourIdx >= 0) { stopTourAuto(); S.tourIdx = -1; $('tourCard').hidden = true; }
+  }
+}
+
+// ---------- shareable exact-state links ----------
+// Encodes topic + lens + selected id + entity + camera, so a specific circuit
+// state reopens exactly as seen. Extends the existing #d= scheme.
+function stateLink() {
+  let cam = '';
+  if (V().cameraState) {
+    const s = V().cameraState();
+    if (s) cam = `&cam=${s.pos.join(',')}&tgt=${s.tgt.join(',')}`;
+  }
+  const tab = activeTab && activeTab !== 'overview' ? `&tab=${activeTab}` : '';
+  const lens = S.lens ? `&lens=${S.lens}` : '';
+  const id = S.lensTarget ? `&id=${encodeURIComponent(S.lensTarget)}` : '';
+  const ent = entityView ? `&ent=${entityView.kind}:${encodeURIComponent(entityView.id)}` : '';
+  return `${window.location.origin}${window.location.pathname}#d=${S.disorder.id}${tab}${lens}${id}${ent}${cam}`;
+}
+
+async function copyStateLink(btn) {
+  const url = stateLink();
+  try {
+    await navigator.clipboard.writeText(url);
+    btn.textContent = 'Copied!';
+  } catch {
+    btn.textContent = url;
+  }
+  setTimeout(() => { btn.textContent = 'Copy view link'; }, 2000);
+}
+
+// ---------- progress tracking + spaced review (localStorage, no backend) ----------
+function loadProg(id) {
+  try {
+    return JSON.parse(localStorage.getItem(`nmprog-${id || (S.disorder && S.disorder.id)}`) || '{"topics":{}}');
+  } catch {
+    return { topics: {} };
+  }
+}
+function saveProg(id, p) {
+  localStorage.setItem(`nmprog-${id}`, JSON.stringify(p));
+}
+function recordReview(tab) {
+  if (!S.disorder) return;
+  const p = loadProg();
+  const t = p.topics[tab] || {};
+  t.last = Date.now();
+  t.n = (t.n || 0) + 1;
+  p.topics[tab] = t;
+  saveProg(S.disorder.id, p);
+}
+function recordQuizScore(score, total) {
+  if (!S.disorder || !total) return;
+  const p = loadProg();
+  const t = p.topics.quiz || {};
+  t.last = Date.now();
+  t.n = (t.n || 0) + 1;
+  t.best = Math.max(t.best || 0, score / total);
+  p.topics.quiz = t;
+  saveProg(S.disorder.id, p);
+}
+// Due-for-review list, Anki-style spacing without a backend: interval comes
+// from the best quiz score (>=80% → 14d, >=50% → 7d, else 3d), unreviewed
+// topics are always due.
+function dueFor(id) {
+  let p;
+  try {
+    p = JSON.parse(localStorage.getItem(`nmprog-${id}`) || '{"topics":{}}');
+  } catch {
+    p = { topics: {} };
+  }
+  const due = [];
+  for (const t of TAB_ORDER) {
+    const e = (p.topics || {})[t];
+    if (!e || !e.last) { due.push(t); continue; }
+    const days = (Date.now() - e.last) / 864e5;
+    const interval = e.best != null ? (e.best >= 0.8 ? 14 : e.best >= 0.5 ? 7 : 3) : 7;
+    if (days >= interval) due.push(t);
+  }
+  return due.slice(0, 4);
+}
+
 // ---------- picker, mode and deep links ----------
-async function openDisorder(id) {
+async function openDisorder(id, opts = {}) {
   if (entityView) entityView = null;
-  if (S.tourIdx >= 0) { S.tourIdx = -1; $('tourCard').hidden = true; }
+  if (S.tourIdx >= 0) { stopTourAuto(); S.tourIdx = -1; $('tourCard').hidden = true; }
   await loadAll(id);
   stageFilter = '';
   document.querySelectorAll('.panel').forEach((p) => { p.hidden = true; });
@@ -587,11 +846,13 @@ async function openDisorder(id) {
   activeTab = 'overview';
   renderBody();
   applyTabLens();
-  history.replaceState(null, '', `#d=${id}`);
+  recordReview('overview');
+  if (!opts.keepHash) history.replaceState(null, '', `#d=${id}`);
 }
 
 function exitDisorder() {
   S.disorder = null;
+  stopTourAuto();
   S.tourIdx = -1;
   $('tourCard').hidden = true;
   $('disorderPanel').hidden = true;
@@ -601,14 +862,44 @@ function exitDisorder() {
   if (brainTab) brainTab.click();
 }
 
-// Deep link: #d=<id>&lens=<lens>&id=<target> (existing #c= and #s= links untouched)
-const DEEP_RE = /^#d=([\w-]+)(?:&lens=([\w-]+))?(?:&id=(.+))?$/;
+// Deep link: #d=<id>[&tab=<tab>][&lens=<lens>][&id=<target>][&ent=<kind:id>]
+// [&cam=x,y,z][&tgt=x,y,z]. Parsed manually so parameters can be extended
+// without breaking existing #d=, #c= or #s= links.
+function parseDisorderHash() {
+  const h = window.location.hash || '';
+  if (!h.startsWith('#d=')) return null;
+  const out = {};
+  for (const part of h.slice(1).split('&')) {
+    const i = part.indexOf('=');
+    if (i < 0) continue;
+    out[part.slice(0, i)] = decodeURIComponent(part.slice(i + 1));
+  }
+  return out.d ? out : null;
+}
 
 async function handleDisorderHash() {
-  const m = DEEP_RE.exec(window.location.hash || '');
-  if (!m) return;
-  if (!S.disorder || S.disorder.id !== m[1]) await openDisorder(m[1]);
-  if (m[2]) applyLens(m[2], m[3] ? decodeURIComponent(m[3]) : null);
+  const q = parseDisorderHash();
+  if (!q) return;
+  if (!S.disorder || S.disorder.id !== q.d) await openDisorder(q.d, { keepHash: true });
+  if (q.tab && TAB_ORDER.includes(q.tab) && q.tab !== activeTab) {
+    activeTab = q.tab;
+    entityView = null;
+    renderBody();
+    recordReview(q.tab);
+  }
+  if (q.ent) {
+    const parts = q.ent.split(':');
+    entityView = { kind: parts[0], id: parts.slice(1).join(':') };
+    renderBody();
+  }
+  if (q.lens) applyLens(q.lens, q.id || null);
+  else if (!q.ent) clearLens();
+  if ((q.cam || q.tgt) && V().restoreCamera) {
+    const nums = (s) => (s || '').split(',').map(Number).filter((n) => Number.isFinite(n));
+    const cam = nums(q.cam);
+    const tgt = nums(q.tgt);
+    if (cam.length === 3 && tgt.length === 3) V().restoreCamera(cam, tgt);
+  }
 }
 
 async function bootDisorder() {
@@ -631,7 +922,9 @@ async function bootDisorder() {
       b.className = 'clinic-item';
       b.innerHTML = '<b></b><small></small>';
       b.querySelector('b').textContent = d.name;
-      b.querySelector('small').textContent = d.block || '';
+      const due = dueFor(d.id);
+      b.querySelector('small').textContent = (d.block || '')
+        + (due.length ? ` · Due: ${due.map((t) => STRINGS.tabs[t] || t).join(', ')}` : '');
       b.addEventListener('click', () => openDisorder(d.id));
       list.appendChild(b);
     }
@@ -642,12 +935,76 @@ async function bootDisorder() {
   if (disordersTab) disordersTab.addEventListener('click', () => { $('disorderPicker').hidden = false; });
   $('pickerClose').addEventListener('click', () => { $('disorderPicker').hidden = true; });
   $('dpClose').addEventListener('click', exitDisorder);
-  $('tourBack').addEventListener('click', () => { S.tourIdx -= 1; renderTour(); });
-  $('tourNext').addEventListener('click', () => { S.tourIdx += 1; renderTour(); });
-  $('tourExit').addEventListener('click', () => { S.tourIdx = -1; renderTour(); });
+  $('dpFocus').addEventListener('click', () => setFocusMode(true));
+  $('focusExit').addEventListener('click', () => setFocusMode(false));
+  $('dpShare').addEventListener('click', (e) => copyStateLink(e.currentTarget));
+  $('synapseClose').addEventListener('click', () => { $('synapseCard').hidden = true; });
+  $('tourBack').addEventListener('click', () => { stopTourAuto(); S.tourIdx -= 1; renderTour(); });
+  $('tourNext').addEventListener('click', () => { stopTourAuto(); S.tourIdx += 1; renderTour(); });
+  $('tourExit').addEventListener('click', () => { stopTourAuto(); S.tourIdx = -1; renderTour(); });
+  $('tourPlay').addEventListener('click', () => {
+    if (tourTimer) { stopTourAuto(); return; }
+    if (S.tourIdx < 0) S.tourIdx = 0;
+    $('tourPlay').textContent = '⏸ Auto';
+    renderTour();
+    tourTimer = setInterval(() => {
+      S.tourIdx += 1;
+      renderTour();
+      if (S.tourIdx < 0) stopTourAuto();
+    }, 6000);
+  });
   // Back/forward and pasted #d= links must work without a page reload.
   window.addEventListener('hashchange', () => { handleDisorderHash(); });
+  // Keyboard shortcuts: arrows step the tour, / focuses search, Esc unwinds
+  // (focus mode → picker/synapse → circuit animation). Never fires in inputs.
+  window.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement
+      || e.target instanceof HTMLTextAreaElement
+      || e.target instanceof HTMLSelectElement) return;
+    if (e.key === 'Escape') {
+      if (document.body.classList.contains('focus-mode')) setFocusMode(false);
+      else if (!$('synapseCard').hidden) $('synapseCard').hidden = true;
+      else if (!$('disorderPicker').hidden) $('disorderPicker').hidden = true;
+      else if (S.lens) { stopTourAuto(); clearLens(); }
+      return;
+    }
+    if (e.key === '/') {
+      e.preventDefault();
+      if (!$('clinic') || !$('clinic').hidden) $('clinicSearch').focus();
+      else if (!$('disorderPicker').hidden) $('disorderSearch').focus();
+      else $('search').focus();
+      return;
+    }
+    if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && S.tourIdx >= 0 && S.disorder) {
+      e.preventDefault();
+      stopTourAuto();
+      S.tourIdx += e.key === 'ArrowRight' ? 1 : -1;
+      renderTour();
+    }
+  });
   await handleDisorderHash();
 }
 
 bootDisorder();
+
+// ---------- Section 3 scaffolds (behind flags; architecture only) ----------
+// Compare mode (two animated circuits side by side), clinical vignettes,
+// on-device narration, offline PWA and future translations are designed in
+// but not shipped: enabling any flag must not break the current build.
+const FEATURES = { compare: false, vignette: false, narration: false, pwa: false, i18n: false };
+// UI text already lives in STRINGS above, so a future Hindi/Gujarati pass
+// touches only that object (FEATURES.i18n), never component code.
+function startCompareMode() { // eslint-disable-line no-unused-vars
+  if (!FEATURES.compare) return;
+  // Two viewer instances, one animateCircuit call each — same data contract.
+}
+function startVignette() { // eslint-disable-line no-unused-vars
+  if (!FEATURES.vignette) return;
+  // Case stem → mechanism choice → animateCircuit explains either way.
+}
+function speakQuick() {
+  if (!FEATURES.narration || !('speechSynthesis' in window) || !S.disorder) return;
+  const first = ((S.disorder.overview || [])[0] || {}).text || '';
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(new SpeechSynthesisUtterance(first.split(/(?<=[.!?])\s+/)[0]));
+}
