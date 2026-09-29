@@ -1,0 +1,964 @@
+{
+  "id": "sad",
+  "name": "Social anxiety disorder",
+  "icd11": {
+    "code": "6B04",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "300.23",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Anxiety or fear-related disorders",
+  "overview": [
+    {
+      "id": "sad-ov-1",
+      "text": "Social anxiety disorder is characterised by marked fear or anxiety in one or more social situations, driven by concern about being negatively evaluated, with consistent avoidance or intense distress. ICD-11 renamed social phobia as social anxiety disorder and made negative evaluation, rather than fear of scrutiny in general, the central criterion.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview",
+        "wfsbp-anxiety-2023"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "sad-ov-2",
+      "text": "This is the best-imaged of the anxiety disorders. Meta-analysis confirms hyperactivation of the amygdala, insula, anterior cingulate and prefrontal fear circuit, and adds hyperactivation of medial parietal and occipital regions with reduced connectivity between parietal and limbic regions, which the authors propose as a disconnected medial parietal hub.",
+      "evidence": "strong",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "sad-ov-3",
+      "text": "Guidelines converge on SSRIs as first-line medication and cognitive behavioural therapy with exposure as first-line psychotherapy, with beta blockade reserved for performance and somatic-predominant presentations.",
+      "evidence": "strong",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg159"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "social-fear",
+      "name": "Fear of negative evaluation",
+      "description": {
+        "id": "sad-sym-eval",
+        "text": "Fear of being watched, judged, embarrassed or found embarrassing, and of revealing unflattering information about oneself. This evaluative focus, rather than fear of the situation itself, is the defining criterion in the current classification.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-fear-circuit",
+        "sad-self-focused-attention"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "avoidance",
+      "name": "Avoidance and safety behaviour",
+      "description": {
+        "id": "sad-sym-avoid",
+        "text": "Enduring feared situations with intense distress, or avoiding them entirely: declining invitations, not speaking, not eating in public, avoiding phones and meetings. Costing nothing in the short term, this avoidance is what makes the disorder persistent.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-fear-circuit"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "self-criticism",
+      "name": "Self-focused attention",
+      "description": {
+        "id": "sad-sym-self",
+        "text": "Sustained self-monitoring during social interaction, treating the self as the object of scrutiny. A meta-analysis found hyperactivation in medial parietal and occipital regions, which fits a self-referential processing account better than a simple fear account.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-parietal-hub"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "somatic-symptoms",
+      "name": "Physical and performance symptoms",
+      "description": {
+        "id": "sad-sym-som",
+        "text": "Blushing, sweating, tremor, palpitations, nausea and voice and hand tremor, often experienced as visible to others. Blushing in particular is a common driver of avoidance, and the subjective visibility of these signs far exceeds their actual observability.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-fear-circuit"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "performance-fear",
+      "name": "Performance anxiety",
+      "description": {
+        "id": "sad-sym-perf",
+        "text": "Fear specifically of performing before an audience, which is a recognised presentation of this disorder and the one most often treated with a single beta-blocking dose before an anticipated event.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-fear-circuit"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "comorbidity",
+      "name": "Comorbidity and course",
+      "description": {
+        "id": "sad-sym-comorb",
+        "text": "Social anxiety disorder typically emerges in adolescence, is one of the most persistent anxiety disorders, and carries high rates of depression, generalised anxiety and substance use. Early intervention matters more here than in most anxiety disorders because the course is so chronic.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "sad-fear-circuit"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "sad-fear-hyper",
+      "where": {
+        "atlasLabels": [
+          "Basolateral complex",
+          "Central nucleus",
+          "Lateral nucleus",
+          "Corticomedial group",
+          "Insula (Subcentral gyrus and ant. and post. sulci)",
+          "Cingulate gyrus and sulcus (Middle anterior part)",
+          "Middle frontal gyrus",
+          "Superior frontal gyrus"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "hyperactivity",
+      "stage": "any",
+      "claim": {
+        "id": "sad-fear-c",
+        "text": "Meta-analysis of neuroimaging studies in this disorder confirmed hyperactivation of the fear circuit formed by amygdala, insula, anterior cingulate and prefrontal cortex, which the authors interpret as the neurobiological signature of the disorder.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "sad-parietal",
+      "where": {
+        "atlasLabels": [
+          "Precuneus",
+          "Cuneus",
+          "Cingulate gyrus and sulcus (Middle posterior part)",
+          "Medial occipitotemporal gyrus (Parahippocampal)"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "hyperactivity",
+      "stage": "any",
+      "claim": {
+        "id": "sad-parietal-c",
+        "text": "The same meta-analysis found hyperactivation of medial parietal and occipital regions including the posterior cingulate, precuneus and cuneus in task studies, and reduced connectivity between parietal and limbic and executive regions, which the authors propose as a disconnected medial parietal hub.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "sad-connectivity",
+      "where": {
+        "atlasLabels": [
+          "Superior longitudinal fasciculus II",
+          "Superior longitudinal fasciculus III",
+          "Uncinate fasciculus",
+          "Inferior fronto-occipital fasciculus",
+          "Frontal aslant tract"
+        ],
+        "precision": "exact"
+      },
+      "finding": "dysconnectivity",
+      "stage": "any",
+      "claim": {
+        "id": "sad-conn-c",
+        "text": "Reduced connectivity between parietal and limbic and executive network regions is the network-level finding. The association tracts linking the parietal hub to these networks are mapped here to show the white-matter substrate, and this is a network finding rather than a focal tract lesion.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "sad-fear-circuit",
+      "name": "Fear circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Central nucleus",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Insula (Subcentral gyrus and ant. and post. sulci)"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Cingulate gyrus (Posteroventral part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus",
+            "Orbital gyri"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Basolateral complex",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        },
+        {
+          "from": "Basolateral complex",
+          "to": "Cingulate gyrus and sulcus (Middle anterior part)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "sad-fear-f",
+        "text": "Social cues are overvalued as threatening in the amygdala, the insula amplifies the visceral response, and prefrontal control that should downgrade the appraisal is weak. The subjectively visible bodily signs then become new social cues, which is why the disorder self-amplifies.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "sad-self-focused-attention",
+      "name": "Self-referential processing circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Medial occipitotemporal gyrus (Parahippocampal)"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle posterior part)",
+            "Cingulate sulcus (Marginal part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Precuneus",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Precuneus",
+          "to": "Medial occipitotemporal gyrus (Parahippocampal)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Precuneus",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        }
+      ],
+      "function": {
+        "id": "sad-self-f",
+        "text": "Monitoring one's own appearance and performance recruits the default mode and precuneus regions, which is the neural signature of the self-focused attention that defines this disorder rather than simple fear of others.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "sad-parietal-hub",
+      "name": "Disconnected medial parietal hub",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Precuneus",
+            "Cuneus",
+            "Superior parietal lobule"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Medial occipitotemporal gyrus (Parahippocampal)",
+            "Basolateral complex"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Precuneus",
+          "to": "Middle frontal gyrus",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        },
+        {
+          "from": "Medial occipitotemporal gyrus (Parahippocampal)",
+          "to": "Basolateral complex",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "sad-hub-f",
+        "text": "The proposed disruption is of the parietal hub's connections to limbic and executive networks rather than of any single region, which is why no single target appears on this page. It also predicts that therapies working on attention and self-monitoring should matter, not only exposure.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Reduced serotonergic modulation of social threat",
+      "where": [
+        {
+          "markerId": "raphe-medial",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Orbital gyri"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "sad-nc-5ht",
+        "text": "SSRIs are first-line medication and also treat the depression and generalised anxiety that usually accompany this disorder, and 5-HT1A partial agonism is an option where dependence is a concern.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Adrenergic surge driving visible performance symptoms",
+      "where": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        }
+      ],
+      "claim": {
+        "id": "sad-nc-na",
+        "text": "Beta blockade blunts the palpitations, tremor and shaking voice of performance situations without changing the fear itself, which is why it is a targeted option rather than a treatment for the disorder.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "dopamine",
+      "alteration": "Reward and salience of social evaluation",
+      "where": [
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Nucleus accumbens",
+            "Caudate nucleus",
+            "Putamen"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "claim": {
+        "id": "sad-nc-da",
+        "text": "The striatal reward system assigns salience to social evaluation, and its modulation is implicated in why avoidance reduces the anxious person to a narrow social world.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "GABA",
+      "alteration": "GABAergic inhibition targeted by benzodiazepines",
+      "where": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "sad-nc-gaba",
+        "text": "Benzodiazepines are effective but limited to short periods such as an examination or a performance, because tolerance and dependence develop within weeks and they do not alter avoidance.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "SLC6A4"
+    ],
+    "architecture": [
+      {
+        "id": "sad-gen-1",
+        "text": "This disorder is substantially heritable and runs in families, with heritability estimates that sit among the higher ones for any psychiatric condition. The architecture is polygenic and no susceptibility gene is established.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "sad-gen-2",
+        "text": "The gene listed here encodes the pharmacological target of first-line treatment rather than a susceptibility gene. No genetic test has clinical use in this disorder, and none is recommended.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Fear circuit activation",
+      "finding": {
+        "id": "sad-bm-fear",
+        "text": "Task-based hyperactivation of the amygdala, insula, anterior cingulate and prefrontal cortex is the most reproducible neuroimaging finding, but it is a group-level result from meta-analysis and cannot diagnose an individual.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Medial parietal connectivity",
+      "finding": {
+        "id": "sad-bm-parietal",
+        "text": "The proposed disconnection of the medial parietal hub from limbic and executive networks is the most distinctive and least replicated idea in this area, and the source presents it explicitly as a model for future research.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Genetic prediction",
+      "finding": {
+        "id": "sad-bm-gen",
+        "text": "Heritability is high but no susceptibility gene is established and there is no validated genetic or biomarker test for diagnosis or for predicting treatment response.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-ssri-sad",
+    "tx-propranolol-sad",
+    "tx-benzo-sad",
+    "tx-cbt-sad"
+  ],
+  "pathway": [
+    {
+      "step": "First line: SSRI and cognitive behavioural therapy with exposure",
+      "options": [
+        "tx-ssri-sad",
+        "tx-cbt-sad"
+      ],
+      "claim": {
+        "id": "sad-pw-1",
+        "text": "Guidelines recommend an SSRI and cognitive behavioural therapy including exposure to feared social situations as first line, offered individually or in a group, and they can be combined when the disorder is more severe.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Performance and somatic-predominant presentations",
+      "options": [
+        "tx-propranolol-sad"
+      ],
+      "claim": {
+        "id": "sad-pw-2",
+        "text": "A beta blocker is an option when the presentation is dominated by palpitations, tremor and shaking, including as a single dose before an anticipated performance, because it acts on the physical symptoms rather than the fear.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Short-term use only",
+      "options": [
+        "tx-benzo-sad"
+      ],
+      "claim": {
+        "id": "sad-pw-3",
+        "text": "Benzodiazepines can be useful for brief periods of examination or performance anxiety but are not recommended long term, because of dependence, cognitive impairment and of the fact that they do not reduce avoidance.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Treat comorbidity actively",
+      "options": [
+        "tx-ssri-sad",
+        "tx-cbt-sad"
+      ],
+      "claim": {
+        "id": "sad-pw-4",
+        "text": "Depression, generalised anxiety and alcohol or drug use are common and should be treated in their own right rather than assumed to lift when the social anxiety improves.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Plan for a long course",
+      "options": [
+        "tx-cbt-sad",
+        "tx-ssri-sad"
+      ],
+      "claim": {
+        "id": "sad-pw-5",
+        "text": "This is one of the most persistent anxiety disorders and it typically begins in adolescence, so treatment should be planned over years rather than weeks, with continued exposure work after symptoms improve to prevent relapse into avoidance.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · It is about being judged",
+      "text": "The central criterion in current classification is concern about negative evaluation, not fear of the situation itself. That reframing changes what treatment targets.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · The fear circuit, confirmed",
+      "text": "Meta-analysis confirms hyperactivation of amygdala, insula, anterior cingulate and prefrontal cortex in this disorder, making it the best-imaged of the anxiety disorders.",
+      "lens": "pathology",
+      "camera": "front",
+      "lensTarget": "sad-fear-hyper"
+    },
+    {
+      "title": "3 · The body becomes a cue",
+      "text": "Blushing, tremor and palpitations are experienced as visible to others, so the physical response itself becomes a new social cue and the disorder amplifies itself.",
+      "lens": "circuit",
+      "camera": "side",
+      "lensTarget": "sad-fear-circuit"
+    },
+    {
+      "title": "4 · Self-focused attention",
+      "text": "Hyperactivation in the precuneus, posterior cingulate and cuneus fits a self-referential processing account better than a simple fear account.",
+      "lens": "circuit",
+      "camera": "top",
+      "lensTarget": "sad-self-focused-attention"
+    },
+    {
+      "title": "5 · The disconnected parietal hub",
+      "text": "The most distinctive idea here is a network one: reduced connectivity between a medial parietal hub and limbic and executive networks, presented as a model rather than a settled finding.",
+      "lens": "pathology",
+      "camera": "front",
+      "lensTarget": "sad-parietal"
+    },
+    {
+      "title": "6 · Treatment with a long horizon",
+      "text": "SSRIs and exposure-based therapy first, beta blockade for performance presentations, benzodiazepines only briefly, and a plan measured in years.",
+      "lens": "drug",
+      "camera": "home",
+      "lensTarget": "sertraline"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "sad-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers social anxiety disorder?",
+      "choices": [
+        "6B01",
+        "6B03",
+        "6B04",
+        "6B00"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6B04 is social anxiety disorder, renamed from social phobia, with the central criterion being concern about negative evaluation.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q2",
+      "topic": "Psychopathology",
+      "question": "What is the central criterion in the current classification?",
+      "choices": [
+        "Fear of specific animals or heights",
+        "Concern about acting or appearing in a way that would be negatively evaluated by others",
+        "Unrealistic fear of illness",
+        "Fear of crowds only"
+      ],
+      "answer": 1,
+      "explanation": "Current classification makes concern about negative evaluation the central criterion, which is a change from the earlier framing of fear of scrutiny in general and matters for treatment targets.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q3",
+      "topic": "Psychopathology",
+      "question": "Why does this disorder often persist for years?",
+      "choices": [
+        "Treatment is unavailable",
+        "It typically begins in adolescence, avoidance narrows life progressively, and safety behaviours prevent the corrective learning that would reduce it",
+        "Symptoms are always severe",
+        "It is not a recognised diagnosis"
+      ],
+      "answer": 1,
+      "explanation": "Early adolescent onset plus self-reinforcing avoidance and safety behaviours make this one of the most chronic anxiety disorders, which is why treatment should be planned over a long horizon.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg159"
+      ]
+    },
+    {
+      "id": "sad-q4",
+      "topic": "Psychopathology",
+      "question": "What maintains the cycle of this disorder?",
+      "choices": [
+        "The physical response becoming a new social cue",
+        "Poor eyesight",
+        "Sleep loss alone",
+        "Lack of intelligence"
+      ],
+      "answer": 0,
+      "explanation": "Blushing, sweating and shaking are experienced as visible to others, so the bodily response itself becomes a threat cue, which drives further avoidance and reinforces the whole loop.",
+      "sourceIds": [
+        "sad-neuroimaging-2014",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q5",
+      "topic": "Brain pathology",
+      "question": "Which brain regions are confirmed as hyperactive by meta-analysis in this disorder?",
+      "choices": [
+        "Amygdala, insula, anterior cingulate and prefrontal cortex",
+        "Cerebellum and brainstem only",
+        "Occipital visual cortex",
+        "Hippocampus only"
+      ],
+      "answer": 0,
+      "explanation": "Meta-analysis confirmed hyperactivation of the amygdala, insula, anterior cingulate and prefrontal fear circuit, which is the neurobiological signature of the disorder.",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ]
+    },
+    {
+      "id": "sad-q6",
+      "topic": "Brain pathology",
+      "question": "What is the medial parietal hub proposal?",
+      "choices": [
+        "That the parietal cortex is enlarged",
+        "That reduced connectivity between medial parietal and limbic and executive regions drives the disorder, presented as a model for future research",
+        "That parietal damage causes the disorder",
+        "That the parietal cortex is silent in this disorder"
+      ],
+      "answer": 1,
+      "explanation": "Task studies also found medial parietal and occipital hyperactivation with reduced parietal-limbic and parietal-executive connectivity, and the authors present this as a network model for future research rather than a settled mechanism.",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ]
+    },
+    {
+      "id": "sad-q7",
+      "topic": "Brain pathology",
+      "question": "Why are precuneus and cuneus regions included on this page?",
+      "choices": [
+        "Because they show gross atrophy",
+        "Because task studies found medial parietal and occipital hyperactivation consistent with self-referential processing",
+        "Because they are the largest cortical regions",
+        "Because they are absent in this disorder"
+      ],
+      "answer": 1,
+      "explanation": "Hyperactivation of the precuneus, posterior cingulate and cuneus fits a self-focused attention account, which matches the clinical phenomenology of monitoring one's own performance.",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ]
+    },
+    {
+      "id": "sad-q8",
+      "topic": "Neurochemistry",
+      "question": "What is first-line pharmacological treatment?",
+      "choices": [
+        "A beta blocker alone",
+        "An SSRI, which also treats the depression and generalized anxiety that usually accompany it",
+        "A benzodiazepine",
+        "An antipsychotic"
+      ],
+      "answer": 1,
+      "explanation": "SSRIs are first line and have the practical advantage of addressing the common depressive and generalised anxiety comorbidity in the same drug.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg159"
+      ]
+    },
+    {
+      "id": "sad-q9",
+      "topic": "Pharmacology",
+      "question": "When is a beta blocker the right choice?",
+      "choices": [
+        "As long-term treatment for avoidance",
+        "For performance and somatic-predominant presentations, including a single dose before an anticipated event",
+        "For depression",
+        "As a substitute for exposure therapy"
+      ],
+      "answer": 1,
+      "explanation": "Beta blockade reduces palpitations, tremor and shaking without touching the fear, so it suits performance-predominant presentations and is not a treatment for avoidance or for the disorder itself.",
+      "sourceIds": [
+        "nice-cg159",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q10",
+      "topic": "Pharmacology",
+      "question": "What limits the use of benzodiazepines here?",
+      "choices": [
+        "They are ineffective in social anxiety",
+        "Dependence, cognitive impairment and the fact that they do not reduce avoidance",
+        "They cause hypertension",
+        "They interact with beta blockers"
+      ],
+      "answer": 1,
+      "explanation": "They can be useful briefly for an examination or performance but tolerance and dependence develop quickly and they leave the avoidance that maintains the disorder untouched.",
+      "sourceIds": [
+        "nice-cg159",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q11",
+      "topic": "Treatments",
+      "question": "Which psychotherapy is first line and why?",
+      "choices": [
+        "Supportive counselling, for reassurance",
+        "Cognitive behavioural therapy with exposure, because it reduces avoidance and safety behaviours",
+        "Psychoanalysis",
+        "Art therapy"
+      ],
+      "answer": 1,
+      "explanation": "Cognitive behavioural therapy with exposure directly targets the avoidance and safety behaviours that maintain the disorder, and can be delivered individually or in a group.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg159"
+      ]
+    },
+    {
+      "id": "sad-q12",
+      "topic": "Treatments",
+      "question": "What should happen after symptoms improve?",
+      "choices": [
+        "Stop all treatment immediately",
+        "Continue exposure work to prevent relapse into avoidance",
+        "Start a benzodiazepine",
+        "Avoid social contact to consolidate gains"
+      ],
+      "answer": 1,
+      "explanation": "Because avoidance is what sustains the disorder, continued graded exposure after symptoms improve is what prevents relapse into a narrower social world.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q13",
+      "topic": "Genetics",
+      "question": "What is the genetic picture of this disorder?",
+      "choices": [
+        "A single Mendelian gene",
+        "Substantially heritable with a polygenic architecture and no established susceptibility gene",
+        "No heritable component",
+        "Only rare recessive variants"
+      ],
+      "answer": 1,
+      "explanation": "Heritability is among the higher ones for any psychiatric condition, but the architecture is polygenic and no susceptibility gene is established, so no genetic test is recommended.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q14",
+      "topic": "Biomarkers",
+      "question": "Is there a validated diagnostic test?",
+      "choices": [
+        "Yes, a brain scan threshold",
+        "No; the neuroimaging findings are group-level meta-analytic results and no test discriminates individuals",
+        "Yes, a blood serotonin test",
+        "Yes, a skin conductance test"
+      ],
+      "answer": 1,
+      "explanation": "The most reproducible imaging findings are group-level task activations from meta-analysis, and no biomarker is validated for diagnosing an individual or choosing treatment.",
+      "sourceIds": [
+        "sad-neuroimaging-2014",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "sad-q15",
+      "topic": "Biomarkers",
+      "question": "How reliable is the medial parietal hub model?",
+      "choices": [
+        "Established and replicated many times",
+        "The most distinctive but least replicated idea in this area, presented as a model for future research",
+        "Rejected by meta-analysis",
+        "Supported only by structural imaging"
+      ],
+      "answer": 1,
+      "explanation": "It is a network hypothesis generated from meta-analysis rather than an established mechanism, and it is labelled that way here because overstating it would misrepresent the evidence.",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ]
+    },
+    {
+      "id": "sad-q16",
+      "topic": "Pathway",
+      "question": "How long should treatment be planned for in this disorder?",
+      "choices": [
+        "Two to four weeks",
+        "Over years, with continued exposure after improvement, because the course is typically chronic",
+        "Only during examinations",
+        "Until symptoms stop entirely"
+      ],
+      "answer": 1,
+      "explanation": "Chronic adolescent-onset course with progressive narrowing of life means treatment should be planned over years, with maintenance exposure work to prevent relapse.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg159"
+      ]
+    }
+  ],
+  "related": [
+    "gad",
+    "panic",
+    "mdd",
+    "asd"
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "id": "asd",
+  "name": "Autism spectrum disorder",
+  "icd11": {
+    "code": "6A02",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "318.00",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Neurodevelopmental disorders",
+  "overview": [
+    {
+      "id": "asd-ov-1",
+      "text": "Autism spectrum disorder is defined by deficits in social communication and interaction together with restricted, repetitive patterns of behaviour, interest or activity, present from early development. ICD-11 removed the separate subcategories of childhood autism, atypical autism and Asperger syndrome in favour of a single spectrum diagnosis with specifiers of ability and functional language.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview",
+        "nice-cg128"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "asd-ov-2",
+      "text": "The largest lifespan morphometry study, covering 1571 autistic and 1651 control individuals aged 2 to 64 from 49 sites, found smaller pallidum, putamen, amygdala and nucleus accumbens, with increased cortical thickness in frontal cortex and decreased thickness in temporal cortex, and the largest cortical differences around adolescence.",
+      "evidence": "strong",
+      "sourceIds": [
+        "enigma-asd-2018"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "asd-ov-3",
+      "text": "Autism is markedly more often diagnosed in males, but a large study of 47061 autistic individuals found that autosomal rare and damaging coding variants confer similar liability in females and males. The sex difference in diagnosis is therefore not explained by a difference in the effect size of these variants, and this is an active area of research rather than a settled question.",
+      "evidence": "strong",
+      "sourceIds": [
+        "asd-sex-2025"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "social-communication",
+      "name": "Social communication and interaction",
+      "description": {
+        "id": "asd-sym-social",
+        "text": "Deficits in social-emotional reciprocity, in nonverbal communicative behaviours such as eye contact and gesture, and in developing and maintaining relationships. Difficulties reading others and being read are the core of this domain, not a lack of motivation to relate.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-social-circuits"
+      ],
+      "brainFindingIds": [
+        "asd-frontal-thickening",
+        "asd-temporal-thinning"
+      ]
+    },
+    {
+      "id": "restricted-behaviour",
+      "name": "Restricted and repetitive behaviour",
+      "description": {
+        "id": "asd-sym-rbr",
+        "text": "Repetitive or restricted movements, insistence on sameness, rigid routines, and highly circumscribed interests. These are not simply harmless quirks: the inflexibility they impose is a major driver of distress, of the need for environmental adaptation, and of functional impairment.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-executive-circuits"
+      ],
+      "brainFindingIds": [
+        "asd-limbic-volumes"
+      ]
+    },
+    {
+      "id": "sensory-distress",
+      "name": "Sensory hyper- and hypo-reactivity",
+      "description": {
+        "id": "asd-sym-sensory",
+        "text": "Distress or fascination in response to sensory features that others find neutral, such as noise, light, texture or smell. Sensory distress is a major and modifiable contributor to anxiety, aggression and meltdown, and is often under-recognised.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-executive-circuits"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "communication-early",
+      "name": "Developmental trajectory and language",
+      "description": {
+        "id": "asd-sym-dev",
+        "text": "Symptoms must be present in early childhood, though later recognition is common. Functional language level is a key specifier, and children who speak fluently are frequently missed because the social difficulties are attributed to shyness or anxiety.",
+        "evidence": "strong",
+        "sourceIds": [
+          "icd11-browser",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-social-circuits"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "epilepsy-anxiety",
+      "name": "Epilepsy, anxiety and sleep",
+      "description": {
+        "id": "asd-sym-comorb",
+        "text": "Epilepsy, intellectual disability, gastrointestinal problems and profound sleep disturbance are common, and anxiety and depression are under-diagnosed because they present as irritability or behaviour rather than as distress. Sleep problems in particular amplify everything else.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-executive-circuits"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "camouflaging",
+      "name": "Camouflaging and burnout",
+      "description": {
+        "id": "asd-sym-camouflage",
+        "text": "Masking autistic traits to appear neurotypical, which carries a real cost: it is associated with exhaustion, anxiety, depression and identity disruption, and is linked to delayed or missed diagnosis, particularly in females and in people from minority backgrounds.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "asd-sex-2025",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "asd-social-circuits"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "asd-frontal-thickening",
+      "where": {
+        "atlasLabels": [
+          "Superior frontal gyrus",
+          "Middle frontal gyrus",
+          "Orbital gyri"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "thickness-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "asd-frontal-c",
+        "text": "The largest lifespan morphometry study found increased cortical thickness in frontal cortex, with effect sizes across the subcortical and cortical findings ranging from minus 0.21 to 0.20. Thicker rather than thinner frontal cortex in childhood is the opposite direction to the pattern seen in the other large developmental studies, which is why developmental trajectory matters.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": 0.2,
+        "sourceId": "enigma-asd-2018"
+      }
+    },
+    {
+      "id": "asd-temporal-thinning",
+      "where": {
+        "atlasLabels": [
+          "Superior temporal gyrus (Lateral part)",
+          "Middle temporal gyrus",
+          "Inferior temporal gyrus",
+          "Medial occipitotemporal gyrus (Parahippocampal)"
+        ],
+        "precision": "exact"
+      },
+      "finding": "thickness-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "asd-temporal-c",
+        "text": "The same study found decreased cortical thickness in temporal cortex, and a separate coordinate-based meta-analysis of 26 studies located both thicker clusters in superior and middle temporal and anterior cingulate regions and thinner clusters in parahippocampal, precentral and left middle frontal cortex.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "asd-cort-meta-2024"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.21,
+        "sourceId": "enigma-asd-2018"
+      }
+    },
+    {
+      "id": "asd-limbic-volumes",
+      "where": {
+        "atlasLabels": [
+          "Basolateral complex",
+          "Central nucleus",
+          "Lateral nucleus",
+          "Corticomedial group",
+          "Nucleus accumbens"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "asd-limbic-c",
+        "text": "Subcortical volumes of the pallidum, putamen, amygdala and nucleus accumbens were all smaller, with reported effect sizes between 0.13 and minus 0.13. The amygdala is reported as a whole structure, so it is applied across the four resolved sub-meshes and flagged as a proxy.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.13,
+        "sourceId": "enigma-asd-2018"
+      }
+    },
+    {
+      "id": "asd-pallidum",
+      "where": {
+        "atlasLabels": [
+          "Globus pallidus external",
+          "Globus pallidus internal"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "asd-pallidum-c",
+        "text": "The pallidum was among the smaller structures in the largest study, which is notable because the attention deficit hyperactivity disorder study found no pallidal difference at all. Comparing the two disorders directly is more informative than either result alone.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.13,
+        "sourceId": "enigma-asd-2018"
+      }
+    },
+    {
+      "id": "asd-accumbens",
+      "where": {
+        "atlasLabels": [
+          "Nucleus accumbens"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "asd-accumbens-c",
+        "text": "The nucleus accumbens was smaller, linking the largest structural study of this disorder to the social motivation and reward circuits where reduced ventral striatal volume has been most consistently reported.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.13,
+        "sourceId": "enigma-asd-2018"
+      }
+    },
+    {
+      "id": "asd-development",
+      "where": {
+        "atlasLabels": [
+          "Superior frontal gyrus",
+          "Medial occipitotemporal gyrus (Parahippocampal)",
+          "Pulvinar"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "other",
+      "stage": "any",
+      "claim": {
+        "id": "asd-dev-c",
+        "text": "The largest study modelled development across the lifespan and found cortical development altered, with the largest differences around adolescence, and no age-by-disorder interaction in the subcortical partitions. The developmental peak rather than a fixed difference is the finding that matters clinically.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "asd-social-circuits",
+      "name": "Social perception and reciprocity circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Superior temporal gyrus (Lateral part)",
+            "Middle temporal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Straight gyrus (Gyrus rectus)",
+            "Orbital gyri",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Anterior nuclei of thalamus",
+            "Pulvinar"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Basolateral complex",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        },
+        {
+          "from": "Pulvinar",
+          "to": "Superior temporal gyrus (Lateral part)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "asd-social-f",
+        "text": "Reading faces, tone of voice and gaze relies on superior temporal and orbitofrontal regions working together with the amygdala, and reduced ventral striatal volume links into the reward value of social interaction. This is the circuit behind both the social difficulty and the reduced social motivation.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "asd-executive-circuits",
+      "name": "Executive and predictive-processing circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus",
+            "Precentral gyrus",
+            "Medial occipitotemporal gyrus (Parahippocampal)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Cingulate gyrus and sulcus (Middle anterior part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Caudate nucleus",
+            "Putamen"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Caudate nucleus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Caudate nucleus",
+          "to": "Cingulate gyrus and sulcus (Middle anterior part)",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        }
+      ],
+      "function": {
+        "id": "asd-exec-f",
+        "text": "Insistence on sameness and resistance to change is a failure of flexible updating rather than a lack of motivation, and it maps onto the frontostriatal and cingulate regions where this study found altered development. Structure and environment adapted to reduce the need for flexible updating reduces distress more effectively than trying to change the person.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "asd-cort-meta-2024",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "asd-psychosis-bridge",
+      "name": "Overlap with the psychotic disorders",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Central nucleus",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Middle frontal gyrus",
+            "Superior temporal gyrus (Lateral part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        }
+      ],
+      "edges": [
+        {
+          "from": "VTA (schematic)",
+          "to": "Basolateral complex",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        }
+      ],
+      "function": {
+        "id": "asd-bridge-f",
+        "text": "The largest exome study of this disorder found that genes with the strongest autism evidence overlapped schizophrenia-associated genes, and an independent cross-disorder imaging analysis found autism brain patterns largely independent of the psychotic disorders. Similar genetics with different phenomenology is the key teaching point of this page.",
+        "evidence": "strong",
+        "sourceIds": [
+          "asd-rare-2022",
+          "enigma-cross-disorder-2020"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Serotonergic modulation of social and repetitive behaviour",
+      "where": [
+        {
+          "markerId": "raphe-medial",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Superior temporal gyrus (Lateral part)",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "asd-nc-5ht",
+        "text": "Serotonin has been studied extensively in this population because of the link to repetitive behaviour and to sleep, and several agents have been trialled. No drug has proven effective for the core social-communication features, which is the central pharmacological fact about this disorder.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "iuphar",
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "dopamine",
+      "alteration": "Dopaminergic modulation of social reward and novelty",
+      "where": [
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Nucleus accumbens",
+            "Caudate nucleus",
+            "Putamen"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "claim": {
+        "id": "asd-nc-da",
+        "text": "Reduced ventral striatal volume is the most consistent subcortical finding, and the neurocircuit account links it to the reduced social reward value that underlies diminished social motivation. This is also where the genetic overlap with the psychotic disorders converges.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "asd-rare-2022"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "GABA",
+      "alteration": "GABAergic excitation-inhibition imbalance",
+      "where": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "asd-nc-gaba",
+        "text": "An imbalance between excitatory and inhibitory signalling is a recurring explanatory proposal, and the largest exome study found genes implicated by rare variants were enriched in both excitatory and inhibitory neuronal transcriptomes compared with genes implicated by common variants.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "asd-rare-2022"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Excitatory transmission and synaptic development",
+      "where": [
+        {
+          "atlasLabels": [
+            "Hippocampus",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "asd-nc-glu",
+        "text": "Glutamatergic signalling, including NMDA and AMPA receptors, is a recurrent candidate pathway and is relevant to the overlap with schizophrenia found at the level of risk genes. It is a research direction rather than an established treatment target.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "asd-rare-2022",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "CHD8"
+    ],
+    "architecture": [
+      {
+        "id": "asd-gen-1",
+        "text": "An exome study of 63237 individuals found 72 genes associated with this disorder at a false discovery rate of 0.001, or 185 at 0.05, with de novo protein-truncating variants, damaging missense variants and copy number variants contributing different proportions of the evidence, and copy number variants conferring the greatest relative risk.",
+        "evidence": "strong",
+        "sourceIds": [
+          "asd-rare-2022"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "asd-gen-2",
+        "text": "Meta-analysis with developmental delay cohorts yielded 373 genes at the stricter threshold, and genes with the strongest autism evidence were enriched in maturing neurons and overlapped schizophrenia-associated genes, while developmental delay genes were enriched in progenitor and immature neuronal transcriptomes. That is direct evidence of partly shared rare-variant biology with a different clinical outcome.",
+        "evidence": "strong",
+        "sourceIds": [
+          "asd-rare-2022",
+          "enigma-cross-disorder-2020"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "asd-gen-3",
+        "text": "The gene listed here is listed as a representative of that overlap rather than as an established autism gene, because the cited study reports gene counts without enumerating them on this page. Rare and polygenic loads are inversely correlated and greater in females, consistent with a liability threshold that differs by sex.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "asd-rare-2022",
+          "asd-sex-2025"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Cortical thickness trajectory",
+      "finding": {
+        "id": "asd-bm-cort",
+        "text": "Increased frontal and decreased temporal cortical thickness, with the largest differences around adolescence and complex developmental trajectories by region. This is a group-level developmental pattern, not a diagnostic marker.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018",
+          "asd-cort-meta-2024"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Subcortical volumes",
+      "finding": {
+        "id": "asd-bm-subcort",
+        "text": "Smaller pallidum, putamen, amygdala and nucleus accumbens with effects between 0.13 and minus 0.13, and no age-by-disorder interaction in the subcortical partitions, meaning these differences are present across the lifespan.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-asd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Genetic risk load",
+      "finding": {
+        "id": "asd-bm-gen",
+        "text": "Rare variant burden and polygenic scores both contribute, are inversely correlated within individuals, and differ by sex. These can characterise a group but cannot diagnose an individual and are not used in clinical practice.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "asd-rare-2022",
+          "asd-sex-2025"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Sex difference",
+      "finding": {
+        "id": "asd-bm-sex",
+        "text": "Autism is about four times more prevalent in males, but rare and damaging coding variants confer similar liability in both sexes, so the diagnostic sex difference is not explained by variant effect size. This is an open research question, not a resolved one.",
+        "evidence": "strong",
+        "sourceIds": [
+          "asd-sex-2025"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-rip-asd",
+    "tx-cbt-asd",
+    "tx-med-asd",
+    "tx-sleep-asd",
+    "tx-support-asd"
+  ],
+  "pathway": [
+    {
+      "step": "Environmental adaptation first",
+      "options": [
+        "tx-support-asd"
+      ],
+      "claim": {
+        "id": "asd-pw-1",
+        "text": "Adaptation of the environment, including visual schedules, predictable routines, and reducing unpredictable sensory and social demands, is the first-line approach and is more effective than trying to alter the individual. It targets the inflexibility and sensory distress that generate most of the impairment.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Speech, language and occupational therapy",
+      "options": [
+        "tx-support-asd",
+        "tx-rip-asd"
+      ],
+      "claim": {
+        "id": "asd-pw-2",
+        "text": "Support to build functional language and to develop social reciprocity is recommended, and the goal is functional communication and reduced distress in daily situations rather than normalisation.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Target the comorbidity, not the autism",
+      "options": [
+        "tx-cbt-asd"
+      ],
+      "claim": {
+        "id": "asd-pw-3",
+        "text": "Anxiety, depression, anger and sleep problems are treated actively with psychologically informed approaches adapted to autistic presentation, because they usually present as behaviour or irritability and are often mistaken for core autistic features. The therapy itself should not add to camouflaging demands.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Medication only for specific targets",
+      "options": [
+        "tx-med-asd",
+        "tx-sleep-asd"
+      ],
+      "claim": {
+        "id": "asd-pw-4",
+        "text": "No medication treats the core features. Medication is used for specific targets such as severe irritability and aggression, where weight and metabolic monitoring is mandatory, and for sleep disturbance, where melatonin is often used alongside a structured sleep routine.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Monitor across the lifespan",
+      "options": [
+        "tx-support-asd",
+        "tx-cbt-asd"
+      ],
+      "claim": {
+        "id": "asd-pw-5",
+        "text": "Sleep, epilepsy, gastrointestinal problems, mental health and the cumulative cost of camouflaging all need active surveillance into adulthood, because difficulties are often reported as behaviour rather than as distress and are therefore missed.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · Two domains, one spectrum",
+      "text": "Social communication and interaction, plus restricted and repetitive behaviour, present from early development. The old subcategories were collapsed into one spectrum diagnosis.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · Thicker frontal, thinner temporal",
+      "text": "The largest lifespan study found increased frontal and decreased temporal cortical thickness, with the largest differences around adolescence rather than a fixed pattern.",
+      "lens": "pathology",
+      "camera": "front",
+      "lensTarget": "asd-frontal-thickening"
+    },
+    {
+      "title": "3 · Smaller pallidum, putamen, amygdala, accumbens",
+      "text": "Effects of 0.13 to minus 0.13, present across the lifespan with no age interaction in the subcortical partitions. Note the pallidum, which showed no difference in the ADHD study.",
+      "lens": "pathology",
+      "camera": "side",
+      "lensTarget": "asd-limbic-volumes"
+    },
+    {
+      "title": "4 · The social circuit",
+      "text": "Superior temporal and orbitofrontal regions read faces and tone, and the amygdala and ventral striatum supply their social value. Reduced striatal volume links the social difficulty to reduced social motivation.",
+      "lens": "circuit",
+      "camera": "top",
+      "lensTarget": "asd-social-circuits"
+    },
+    {
+      "title": "5 · Inflexibility, not laziness",
+      "text": "Resistance to change maps onto the frontostriatal and cingulate regions with altered development, and adapting the environment beats trying to change the person.",
+      "lens": "circuit",
+      "camera": "front",
+      "lensTarget": "asd-executive-circuits"
+    },
+    {
+      "title": "6 · Shared genes, different minds",
+      "text": "The largest exome study found 72 associated genes, enriched in maturing neurons and overlapping schizophrenia genes, while imaging patterns stay largely independent of the psychotic disorders.",
+      "lens": "gene",
+      "camera": "home",
+      "lensTarget": "CHD8"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "asd-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers autism spectrum disorder?",
+      "choices": [
+        "6A02",
+        "6A04",
+        "6A05",
+        "6A00"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6A02 is autism spectrum disorder, within the neurodevelopmental disorders block, replacing the separate childhood autism, atypical autism and Asperger subcategories.",
+      "sourceIds": [
+        "icd11-browser",
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q2",
+      "topic": "Classification",
+      "question": "What did ICD-11 change about the previous autism subcategories?",
+      "choices": [
+        "Split them further",
+        "Collapsed them into a single spectrum diagnosis with specifiers of ability and functional language",
+        "Removed the social communication domain",
+        "Made them child-only diagnoses"
+      ],
+      "answer": 1,
+      "explanation": "The distinct subcategories were replaced by one spectrum diagnosis, with functional language as a key specifier, which changed how the disorder is described but not what it is.",
+      "sourceIds": [
+        "icd11-browser",
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q3",
+      "topic": "Psychopathology",
+      "question": "What are the two required core domains?",
+      "choices": [
+        "Anxiety and repetitive behaviour",
+        "Deficits in social communication and interaction, plus restricted and repetitive patterns of behaviour, interest or activity",
+        "Language delay and intellectual disability",
+        "Sensory reactivity and sleep disturbance"
+      ],
+      "answer": 1,
+      "explanation": "Both domains are required for diagnosis, with severity specified separately, and language delay, intellectual disability and sensory issues are specifiers or comorbidity rather than core criteria.",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview"
+      ]
+    },
+    {
+      "id": "asd-q4",
+      "topic": "Psychopathology",
+      "question": "Why are autistic people with fluent speech frequently missed?",
+      "choices": [
+        "Because they are not autistic",
+        "Because social difficulties are attributed to shyness or anxiety when language is not an obvious clue",
+        "Because diagnosis is adult-only",
+        "Because they lack restricted interests"
+      ],
+      "answer": 1,
+      "explanation": "Functional language masks the disorder from casual observation, and the social and sensory difficulties get attributed to shyness, anxiety or behaviour, which is a major route to delayed or missed diagnosis.",
+      "sourceIds": [
+        "icd11-browser",
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q5",
+      "topic": "Psychopathology",
+      "question": "What is camouflaging and why does it matter clinically?",
+      "choices": [
+        "A screening instrument",
+        "Masking autistic traits to appear neurotypical, which is associated with exhaustion, anxiety, depression and identity disruption, and with delayed diagnosis",
+        "A form of cognitive behavioural therapy",
+        "A genetic test"
+      ],
+      "answer": 1,
+      "explanation": "Camouflaging carries a real mental health cost and is associated with delayed or missed diagnosis, particularly in females and people from minority backgrounds, so it should be actively asked about rather than inferred.",
+      "sourceIds": [
+        "asd-sex-2025",
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q6",
+      "topic": "Brain pathology",
+      "question": "What did the largest lifespan study find about cortical direction of change?",
+      "choices": [
+        "Global cortical thinning",
+        "Increased thickness in frontal cortex and decreased thickness in temporal cortex",
+        "No differences anywhere",
+        "Increased thickness everywhere"
+      ],
+      "answer": 1,
+      "explanation": "The largest study of 1571 autistic and 1651 control individuals found increased frontal and decreased temporal cortical thickness, with the largest differences around adolescence.",
+      "sourceIds": [
+        "enigma-asd-2018"
+      ]
+    },
+    {
+      "id": "asd-q7",
+      "topic": "Brain pathology",
+      "question": "Which subcortical structures were smaller in that study?",
+      "choices": [
+        "Thalamus and hippocampus",
+        "Pallidum, putamen, amygdala and nucleus accumbens",
+        "Cerebellum only",
+        "Caudate and thalamus"
+      ],
+      "answer": 1,
+      "explanation": "Pallidum, putamen, amygdala and nucleus accumbens were all smaller, with effects between 0.13 and minus 0.13, and no age-by-disorder interaction in the subcortical partitions.",
+      "sourceIds": [
+        "enigma-asd-2018"
+      ]
+    },
+    {
+      "id": "asd-q8",
+      "topic": "Brain pathology",
+      "question": "Why is comparing this disorder with attention deficit hyperactivity disorder useful?",
+      "choices": [
+        "They are the same condition",
+        "The ADHD study found no pallidal difference, so a pallidal difference here is relatively specific rather than a nonspecific developmental effect",
+        "They share all imaging findings",
+        "Neither has imaging studies"
+      ],
+      "answer": 1,
+      "explanation": "Contrast is informative: the attention deficit hyperactivity disorder mega-analysis found no difference in pallidum or thalamus, so finding a pallidal difference in autism suggests disorder-specific biology rather than a general developmental reduction.",
+      "sourceIds": [
+        "enigma-asd-2018",
+        "hoogman-adhd-sub-2017"
+      ]
+    },
+    {
+      "id": "asd-q9",
+      "topic": "Brain pathology",
+      "question": "Where was the largest developmental difference found?",
+      "choices": [
+        "In infancy",
+        "Around adolescence",
+        "Only in old age",
+        "In the cerebellum"
+      ],
+      "answer": 1,
+      "explanation": "Development was modelled across the lifespan and cortical development was altered with the largest differences around adolescence, which is why a single scan at one age can mislead.",
+      "sourceIds": [
+        "enigma-asd-2018"
+      ]
+    },
+    {
+      "id": "asd-q10",
+      "topic": "Genetics",
+      "question": "How many autism-associated genes did the largest exome study report at the stricter threshold?",
+      "choices": [
+        "72",
+        "7",
+        "185 only at the loosest threshold with none at the stricter one",
+        "Over 2000"
+      ],
+      "answer": 0,
+      "explanation": "The study of 63237 individuals found 72 genes at a false discovery rate of 0.001, and 185 at the looser threshold of 0.05.",
+      "sourceIds": [
+        "asd-rare-2022"
+      ]
+    },
+    {
+      "id": "asd-q11",
+      "topic": "Genetics",
+      "question": "What did that study find about overlap with schizophrenia?",
+      "choices": [
+        "None at all",
+        "Genes with the strongest autism evidence were enriched in maturing neurons and overlapped schizophrenia-associated genes",
+        "Complete identity of the gene lists",
+        "Only in females"
+      ],
+      "answer": 1,
+      "explanation": "Autism-associated genes with the strongest evidence overlapped schizophrenia genes and were enriched in maturing neuronal transcriptomes, while developmental delay genes were enriched in progenitor cells, which is direct evidence of shared rare-variant biology.",
+      "sourceIds": [
+        "asd-rare-2022",
+        "enigma-cross-disorder-2020"
+      ]
+    },
+    {
+      "id": "asd-q12",
+      "topic": "Genetics",
+      "question": "Do rare variants explain the male predominance?",
+      "choices": [
+        "Yes, they have a much larger effect in males",
+        "No; a study of 47061 autistic individuals found rare and damaging coding variants confer similar liability in females and males",
+        "Partly, in some ancestries",
+        "The question is settled"
+      ],
+      "answer": 1,
+      "explanation": "Despite autism being about four times more prevalent in males, autosomal rare and damaging coding variants confer similar liability in both sexes, so the diagnostic sex difference is not explained by variant effect size and remains an open question.",
+      "sourceIds": [
+        "asd-sex-2025"
+      ]
+    },
+    {
+      "id": "asd-q13",
+      "topic": "Pharmacology",
+      "question": "Is there any drug that treats the core features of autism?",
+      "choices": [
+        "Yes, a selective serotonin reuptake inhibitor",
+        "No; medication is used only for specific targets such as severe irritability, aggression or sleep disturbance",
+        "Yes, a dopamine agonist",
+        "Yes, a muscarinic agonist"
+      ],
+      "answer": 1,
+      "explanation": "No medication treats the core social-communication or restricted-behaviour features, which is the central pharmacological fact about this disorder, and medication is used only for specific comorbid targets.",
+      "sourceIds": [
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q14",
+      "topic": "Treatments",
+      "question": "What is the first-line approach?",
+      "choices": [
+        "Medication",
+        "Environmental adaptation including visual schedules, predictable routines and reduced unpredictable demands",
+        "Psychodynamic therapy",
+        "Withholding demands until the child complies"
+      ],
+      "answer": 1,
+      "explanation": "Adapting the environment to reduce the need for flexible updating and to limit sensory overload is more effective than attempting to change the individual, and it targets the drivers of most impairment.",
+      "sourceIds": [
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q15",
+      "topic": "Treatments",
+      "question": "Why should psychological therapy be adapted for autistic people?",
+      "choices": [
+        "Because standard therapy is ineffective",
+        "Because anxiety and depression present as irritability or behaviour, and unadapted therapy can add to camouflaging demands and be experienced as threatening",
+        "Because it is not permitted",
+        "Because it must be delivered only by parents"
+      ],
+      "answer": 1,
+      "explanation": "Comorbidity often appears as behaviour rather than distress, and therapy that does not account for autistic presentation can itself become a source of threat and of extra masking burden.",
+      "sourceIds": [
+        "nice-cg128"
+      ]
+    },
+    {
+      "id": "asd-q16",
+      "topic": "Biomarkers",
+      "question": "Can brain imaging diagnose autism in an individual?",
+      "choices": [
+        "Yes, using the frontal thickening pattern",
+        "No; the findings are group-level developmental patterns and imaging has no diagnostic role",
+        "Yes, with PET imaging",
+        "Yes, in children under five only"
+      ],
+      "answer": 1,
+      "explanation": "The cortical and subcortical findings are group means with a developmental trajectory that shifts across the lifespan, so they inform mechanism and cannot classify an individual.",
+      "sourceIds": [
+        "enigma-asd-2018",
+        "asd-cort-meta-2024"
+      ]
+    }
+  ],
+  "related": [
+    "adhd",
+    "mdd",
+    "sad",
+    "ptsd"
+  ]
+}

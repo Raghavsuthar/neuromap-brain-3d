@@ -1,0 +1,1021 @@
+{
+  "id": "ptsd",
+  "name": "Post-traumatic stress disorder",
+  "icd11": {
+    "code": "6B40",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "309.81",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Disorders specifically associated with stress",
+  "overview": [
+    {
+      "id": "ptsd-ov-1",
+      "text": "Post-traumatic stress disorder may follow exposure to an extremely threatening or horrific event and requires all three core elements: re-experiencing the event in the present, deliberate avoidance of reminders, and persistent perceptions of heightened current threat. ICD-11 requires only these three elements, which is a parsimonious simplification of the previous criteria set.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "sadt-icd11-2022",
+        "dsm5tr-overview"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "ptsd-ov-2",
+      "text": "Guideline evidence is unusually strong and unusually clear about treatment order. The 2023 US Veterans Affairs and Department of Defense guideline makes specific manualised psychotherapies, namely prolonged exposure, cognitive processing therapy and eye movement desensitisation and reprocessing, the first-line treatment, ahead of medication, and recommends against benzodiazepines and cannabis products.",
+      "evidence": "strong",
+      "sourceIds": [
+        "vadod-ptsd-2023"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "ptsd-ov-3",
+      "text": "Imaging evidence is comparatively solid. In the largest coordinated study of 1868 people with 794 post-traumatic stress disorder cases, hippocampi were smaller with a standardised difference of minus 0.17, and amygdalae were smaller at minus 0.11 but that finding did not survive correction for multiple comparisons.",
+      "evidence": "strong",
+      "sourceIds": [
+        "logue-ptsd-2018"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "re-experiencing",
+      "name": "Re-experiencing",
+      "description": {
+        "id": "ptsd-sym-reexp",
+        "text": "Intrusive memories or images, flashbacks and trauma-related nightmares in which the event is experienced as occurring again in the present rather than remembered as past. ICD-11 is explicit that reflecting on the event or ruminating about it does not meet this requirement.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "sadt-icd11-2022"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-hippocampal-context",
+        "ptsd-fear-conditioning"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "avoidance",
+      "name": "Avoidance",
+      "description": {
+        "id": "ptsd-sym-avoid",
+        "text": "Deliberate avoidance of thoughts, memories, people, places or activities likely to evoke the event, which sometimes extends to changing jobs or moving home. The wide scope of this criterion is why PTSD can reshape a person's entire life geography.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-fear-conditioning"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "hypervigilance",
+      "name": "Hypervigilance and threat perception",
+      "description": {
+        "id": "ptsd-sym-vigil",
+        "text": "Persistent scanning for danger, an enhanced startle response to unexpected noise, and safety behaviours such as sitting with one's back to the door. In complex post-traumatic stress disorder the startle response may instead be diminished, which is one of the features that distinguishes it.",
+        "evidence": "established",
+        "sourceIds": [
+          "icd11-browser",
+          "sadt-icd11-2022"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-fear-conditioning"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "negative-beliefs",
+      "name": "Negative beliefs and mood",
+      "description": {
+        "id": "ptsd-sym-beliefs",
+        "text": "Persistent beliefs that the world is unsafe and that blame lies with the survivor, together with guilt, shame, detachment and dysphoria. Cognitive processing therapy exists specifically to target this domain, which is why it performs particularly well in the long term.",
+        "evidence": "strong",
+        "sourceIds": [
+          "ptsd-psych-nma-2023",
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-prefrontal-context"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "nightmares",
+      "name": "Nightmares and sleep disturbance",
+      "description": {
+        "id": "ptsd-sym-night",
+        "text": "Trauma-related nightmares and disturbed sleep, which are among the most distressing and most treatment-responsive symptoms. They are a distinct target: an alpha-1 blocker is used for nightmares specifically rather than for the disorder as a whole.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-fear-conditioning"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "complex-ptsd",
+      "name": "Complex post-traumatic stress disorder",
+      "description": {
+        "id": "ptsd-sym-complex",
+        "text": "ICD-11 recognises a distinct diagnosis at a separate code, requiring in addition severe affect dysregulation, persistent beliefs of being diminished or worthless with shame and guilt, and persistent difficulty sustaining relationships. It follows prolonged or repeated trauma such as torture or repeated childhood abuse, and is more common in women.",
+        "evidence": "established",
+        "sourceIds": [
+          "sadt-icd11-2022",
+          "icd11-browser"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "ptsd-prefrontal-context"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "ptsd-hippocampal",
+      "where": {
+        "atlasLabels": [
+          "Hippocampus"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "ptsd-hipp-c",
+        "text": "In the largest coordinated study of this disorder, involving 1868 subjects of whom 794 had post-traumatic stress disorder across 16 cohorts, hippocampi were significantly smaller than in trauma-exposed controls at a standardised difference of minus 0.17.",
+        "evidence": "strong",
+        "sourceIds": [
+          "logue-ptsd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.17,
+        "sourceId": "logue-ptsd-2018",
+        "ci": [
+          -0.29,
+          -0.05
+        ]
+      }
+    },
+    {
+      "id": "ptsd-amygdala",
+      "where": {
+        "atlasLabels": [
+          "Basolateral complex",
+          "Central nucleus",
+          "Lateral nucleus",
+          "Corticomedial group"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "ptsd-amyg-c",
+        "text": "The same study found smaller amygdalae at a standardised difference of minus 0.11, but this finding did not survive correction for multiple subcortical comparisons. It is shown here with that limitation stated rather than presented as an established result.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "logue-ptsd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.11,
+        "sourceId": "logue-ptsd-2018"
+      }
+    },
+    {
+      "id": "ptsd-context-network",
+      "where": {
+        "atlasLabels": [
+          "Hippocampal commissure",
+          "Fornix",
+          "Anterior thalamic radiation",
+          "Superior longitudinal fasciculus I",
+          "Corpus callosum",
+          "Uncinate fasciculus"
+        ],
+        "precision": "exact"
+      },
+      "finding": "dysconnectivity",
+      "stage": "any",
+      "claim": {
+        "id": "ptsd-conn-c",
+        "text": "Contextualisation of a memory depends on hippocampal connections to medial prefrontal cortex through the fornix and anterior thalamic radiation. The hippocampal volume finding above is consistent with weaker contextual discrimination of threat, which is the circuit account of why safe reminders trigger full re-experiencing.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "logue-ptsd-2018",
+          "ptsd-psych-nma-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "ptsd-hippocampal-context",
+      "name": "Hippocampal contextualisation circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Hippocampus"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Fornix",
+            "Hippocampal commissure",
+            "Anterior thalamic radiation"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Straight gyrus (Gyrus rectus)",
+            "Orbital gyri",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Hippocampus",
+          "to": "Straight gyrus (Gyrus rectus)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Anterior nuclei of thalamus",
+          "to": "Hippocampus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "ptsd-hippocampal-f",
+        "text": "The hippocampus supplies the context that distinguishes a dangerous situation from a safe one that merely resembles it. Smaller hippocampi are consistent with over-generalised fear, so that a loud noise in a safe street is experienced as the trauma itself rather than as a sound.",
+        "evidence": "strong",
+        "sourceIds": [
+          "logue-ptsd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "ptsd-fear-conditioning",
+      "name": "Fear conditioning and extinction circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Central nucleus",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Insula (Subcentral gyrus and ant. and post. sulci)"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Inferior longitudinal fasciculus",
+            "Uncinate fasciculus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Basolateral complex",
+          "to": "Central nucleus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Basolateral complex",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        }
+      ],
+      "function": {
+        "id": "ptsd-conditioning-f",
+        "text": "Fear is learned quickly and extinguished slowly, and exposure-based therapies work by providing repeated non-avoidant contact with safe reminders so that extinction can occur. The same circuitry explains why avoidance is the single most powerful maintainer of this disorder.",
+        "evidence": "strong",
+        "sourceIds": [
+          "ptsd-psych-nma-2023",
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "ptsd-prefrontal-context",
+      "name": "Medial prefrontal appraisal and belief circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Straight gyrus (Gyrus rectus)",
+            "Orbital gyri",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Cingulate gyrus (Posteroventral part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Mediodorsal nucleus",
+            "Anterior nuclei of thalamus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Mediodorsal nucleus",
+          "to": "Middle frontal gyrus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Cingulate gyrus and sulcus (Middle anterior part)",
+          "to": "Orbital gyri",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        }
+      ],
+      "function": {
+        "id": "ptsd-prefrontal-f",
+        "text": "Beliefs that the world is unsafe and that blame is self-inflicted are maintained by this circuit, and cognitive processing therapy targets them directly. This is why it had the strongest long-term effect in network meta-analysis and a high rate of loss of the diagnosis.",
+        "evidence": "strong",
+        "sourceIds": [
+          "ptsd-psych-nma-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "ptsd-hyperarousal",
+      "name": "Noradrenergic hyperarousal circuit",
+      "nodes": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Medulla oblongata",
+            "Pons",
+            "Insula (Subcentral gyrus and ant. and post. sulci)"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Locus coeruleus (schematic)",
+          "to": "Insula (Subcentral gyrus and ant. and post. sulci)",
+          "type": "modulatory",
+          "transmitter": "noradrenaline"
+        }
+      ],
+      "function": {
+        "id": "ptsd-hyperarousal-f",
+        "text": "Persistent elevation in locus coeruleus activity underlies the startle response, scanning and sleep disruption. The nucleus itself is not resolved by the atlas and appears as a calibrated marker, and the adrenergic blocker used for nightmares acts on this circuit.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Reduced serotonergic modulation of the threat circuit",
+      "where": [
+        {
+          "markerId": "raphe-drn",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "ptsd-nc-5ht",
+        "text": "Sertraline, paroxetine and venlafaxine are the three guideline-recommended medications, and in a network meta-analysis sertraline gave a standardised mean difference near minus 0.23 against placebo on clinician-rated symptoms.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-drug-nma-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Adrenergic hyperarousal",
+      "where": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        }
+      ],
+      "claim": {
+        "id": "ptsd-nc-na",
+        "text": "Alpha-1 blockade is used specifically for trauma-related nightmares by reducing noradrenergic arousal during sleep, and is not a treatment for the core symptoms of the disorder.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Excitatory transmission in the fear and contextualisation circuits",
+      "where": [
+        {
+          "atlasLabels": [
+            "Hippocampus",
+            "Basolateral complex",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "ptsd-nc-glu",
+        "text": "Glutamatergic transmission carries both the over-generalised fear signal and the contextual discrimination that should limit it, which is the synaptic level at which exposure-based therapies are understood to produce extinction learning.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "ptsd-psych-nma-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "dopamine",
+      "alteration": "Dopaminergic tone implicated by the largest genetic study",
+      "where": [
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Caudate nucleus",
+            "Putamen",
+            "Nucleus accumbens"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "claim": {
+        "id": "ptsd-nc-da",
+        "text": "The largest genome-wide study of this disorder named a Parkinson's disease gene involved in dopamine regulation as associated with post-traumatic stress disorder, which is the one specific genetic link to a neurotransmitter system that the genetic literature provides.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "PARK2"
+    ],
+    "architecture": [
+      {
+        "id": "ptsd-gen-1",
+        "text": "An international meta-analysis covering more than 30000 cases and 170000 controls across ancestries estimated single nucleotide polymorphism heritability between 5 and 20 percent, varying by sex, and identified three genome-wide significant loci, two in European and one in African ancestry analyses.",
+        "evidence": "strong",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "ptsd-gen-2",
+        "text": "Sex-stratified analysis identified three further loci in men, and a separate large study found genetic overlap with schizophrenia together with sex differences in heritability. Polygenic risk for this disorder predicted re-experiencing symptoms in an independent veteran cohort, although the individual loci did not replicate.",
+        "evidence": "strong",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019",
+          "nievergelt-ptsd-gwas-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "ptsd-gen-3",
+        "text": "The one specific gene named in the largest study is a Parkinson's disease gene involved in dopamine regulation, which is listed here. Overall architecture is polygenic and highly ancestry-dependent, and no genetic test is available for clinical use.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Hippocampal volume",
+      "finding": {
+        "id": "ptsd-bm-hipp",
+        "text": "Smaller hippocampi are the most replicated structural finding in this disorder, at a standardised difference of about minus 0.17 against trauma-exposed controls. This is a group mean and cannot identify an individual case.",
+        "evidence": "strong",
+        "sourceIds": [
+          "logue-ptsd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Amygdala volume",
+      "finding": {
+        "id": "ptsd-bm-amyg",
+        "text": "Amygdala reduction at minus 0.11 did not survive correction for multiple comparisons, so it is graded moderate here rather than presented as an established result.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "logue-ptsd-2018"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Polygenic risk",
+      "finding": {
+        "id": "ptsd-bm-pgs",
+        "text": "Polygenic risk predicted re-experiencing symptoms in a large independent veteran cohort, but the effect is far too small and too ancestry-dependent for individual prediction, and the specific loci did not replicate.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019",
+          "nievergelt-ptsd-gwas-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-cpt",
+    "tx-pe",
+    "tx-emdr",
+    "tx-ssri-ptsd",
+    "tx-prazosin-ptsd",
+    "tx-benzo-ptsd"
+  ],
+  "pathway": [
+    {
+      "step": "First line: a manualised trauma-focused psychotherapy",
+      "options": [
+        "tx-cpt",
+        "tx-pe",
+        "tx-emdr"
+      ],
+      "claim": {
+        "id": "ptsd-pw-1",
+        "text": "The 2023 US guideline makes specific manualised psychotherapies, namely prolonged exposure, cognitive processing therapy and eye movement desensitisation and reprocessing, the preferred first-line treatment ahead of medication, with six treatment recommendations rated as strong.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Choosing between the psychotherapies",
+      "options": [
+        "tx-cpt",
+        "tx-emdr",
+        "tx-pe"
+      ],
+      "claim": {
+        "id": "ptsd-pw-2",
+        "text": "Network meta-analysis of 98 randomised trials found eye movement desensitisation and reprocessing had the strongest short-term effect and cognitive processing therapy the strongest long-term effect, with both producing a high rate of loss of the diagnosis. Choice should follow preference and clinician expertise rather than a single ranking.",
+        "evidence": "strong",
+        "sourceIds": [
+          "ptsd-psych-nma-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Medication when preferred or needed",
+      "options": [
+        "tx-ssri-ptsd"
+      ],
+      "claim": {
+        "id": "ptsd-pw-3",
+        "text": "When medication is used, the recommended agents are paroxetine, sertraline or venlafaxine, and a network meta-analysis found paroxetine, venlafaxine and quetiapine ranked first. Guidelines nonetheless place psychotherapy ahead of medication in treatment order.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-drug-nma-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Targeted symptom treatment",
+      "options": [
+        "tx-prazosin-ptsd"
+      ],
+      "claim": {
+        "id": "ptsd-pw-4",
+        "text": "Trauma-related nightmares are treated as a specific target with alpha-1 blockade, begun at a low dose at night and titrated slowly, with postural blood pressure monitored. This treats the nightmares, not the disorder.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Explicitly avoid",
+      "options": [
+        "tx-benzo-ptsd"
+      ],
+      "claim": {
+        "id": "ptsd-pw-5",
+        "text": "The 2023 guideline recommends against benzodiazepines, and against cannabis and cannabis-derived products, because of dependence and safety concerns. A reassuring, non-specific response that avoids the trauma material is also not a treatment.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · Three required elements",
+      "text": "Re-experiencing in the present, deliberate avoidance, and persistent heightened threat. ICD-11 requires only these three, and a history of trauma alone is not a diagnosis.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · Smaller hippocampi",
+      "text": "The largest coordinated study found hippocampi smaller by a standardised difference near 0.17, and amygdala differences that did not survive correction for multiple comparisons.",
+      "lens": "pathology",
+      "camera": "side",
+      "lensTarget": "ptsd-hippocampal",
+      "focusAtlasLabels": [
+        "Hippocampus"
+      ]
+    },
+    {
+      "title": "3 · The fear loop",
+      "text": "Fear is learned fast and extinguished slowly. Exposure-based therapy works by giving the circuit repeated non-avoidant contact with safe reminders.",
+      "lens": "circuit",
+      "camera": "front",
+      "lensTarget": "ptsd-fear-conditioning"
+    },
+    {
+      "title": "4 · Beliefs, not just fear",
+      "text": "The world is unsafe and blame is self-inflicted. Cognitive processing therapy targets that circuit and had the strongest long-term effect in meta-analysis.",
+      "lens": "circuit",
+      "camera": "top",
+      "lensTarget": "ptsd-prefrontal-context"
+    },
+    {
+      "title": "5 · Hyperarousal and nightmares",
+      "text": "Locus coeruleus activity underlies startle, scanning and sleep disruption. It is not resolved by the atlas and appears as a marker; alpha-1 blockade targets it for nightmares.",
+      "lens": "chemistry",
+      "camera": "side",
+      "lensTarget": "noradrenaline"
+    },
+    {
+      "title": "6 · Psychotherapy first",
+      "text": "Three manualised therapies are guideline first line, ahead of medication, and benzodiazepines and cannabis products are explicitly recommended against.",
+      "lens": "drug",
+      "camera": "home",
+      "lensTarget": "sertraline"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "ptsd-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers post-traumatic stress disorder, and which code is complex PTSD?",
+      "choices": [
+        "6B40 and 6B41",
+        "6B00 and 6B01",
+        "6B04 and 6B03",
+        "6A02 and 6A05"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6B40 is post-traumatic stress disorder and 6B41 is complex post-traumatic stress disorder, which adds affect dysregulation, negative self-beliefs and relational difficulty.",
+      "sourceIds": [
+        "icd11-browser",
+        "sadt-icd11-2022"
+      ]
+    },
+    {
+      "id": "ptsd-q2",
+      "topic": "Psychopathology",
+      "question": "Which three elements does ICD-11 require for this diagnosis?",
+      "choices": [
+        "Re-experiencing, avoidance and heightened threat perception",
+        "Rumination, guilt and low mood",
+        "Nightmares, insomnia and irritability",
+        "Dissociation, numbing and amnesia"
+      ],
+      "answer": 0,
+      "explanation": "All three core elements are required, which is a parsimonious simplification compared with the previous criteria set, and reflecting on the event or ruminating about it does not count as re-experiencing.",
+      "sourceIds": [
+        "icd11-browser",
+        "sadt-icd11-2022"
+      ]
+    },
+    {
+      "id": "ptsd-q3",
+      "topic": "Psychopathology",
+      "question": "How does ICD-11 distinguish this disorder from complex PTSD?",
+      "choices": [
+        "By duration of illness",
+        "Complex PTSD adds severe affect dysregulation, persistent beliefs of being worthless with shame, and difficulty sustaining relationships",
+        "By presence of nightmares",
+        "By age of onset"
+      ],
+      "answer": 1,
+      "explanation": "Complex PTSD is a separate diagnosis requiring three additional features beyond the core post-traumatic stress disorder elements, and it follows prolonged or repeated trauma.",
+      "sourceIds": [
+        "sadt-icd11-2022",
+        "icd11-browser"
+      ]
+    },
+    {
+      "id": "ptsd-q4",
+      "topic": "Psychopathology",
+      "question": "What counts as re-experiencing rather than remembering?",
+      "choices": [
+        "Thinking about the event in detail",
+        "Experiencing it as occurring again in the present, as in a flashback or trauma-related nightmare",
+        "Describing the event to a therapist",
+        "Dreaming about similar events"
+      ],
+      "answer": 1,
+      "explanation": "The event must be experienced as happening now rather than recalled as past, and rumination or detailed reflection specifically does not meet the requirement.",
+      "sourceIds": [
+        "icd11-browser"
+      ]
+    },
+    {
+      "id": "ptsd-q5",
+      "topic": "Brain pathology",
+      "question": "What did the largest coordinated imaging study find for hippocampi?",
+      "choices": [
+        "Significantly smaller, at a standardised difference of about minus 0.17",
+        "Significantly larger",
+        "Unchanged",
+        "Reported only in children"
+      ],
+      "answer": 0,
+      "explanation": "In 1868 subjects of whom 794 were cases, hippocampi were significantly smaller than trauma-exposed controls, with a standardised difference of minus 0.17.",
+      "sourceIds": [
+        "logue-ptsd-2018"
+      ]
+    },
+    {
+      "id": "ptsd-q6",
+      "topic": "Brain pathology",
+      "question": "What is the honest status of the amygdala finding in that same study?",
+      "choices": [
+        "Robustly established",
+        "Smaller at minus 0.11 but it did not survive correction for multiple subcortical comparisons",
+        "Larger than controls",
+        "Unrelated to illness duration"
+      ],
+      "answer": 1,
+      "explanation": "The amygdala effect was small and did not survive the multiple-comparison threshold, so it is reported as a qualified finding rather than an established one.",
+      "sourceIds": [
+        "logue-ptsd-2018"
+      ]
+    },
+    {
+      "id": "ptsd-q7",
+      "topic": "Brain pathology",
+      "question": "Why is the hippocampus central to the circuit account of this disorder?",
+      "choices": [
+        "It produces the fear response",
+        "It supplies the context that distinguishes a genuinely dangerous situation from a safe one that resembles it",
+        "It generates nightmares",
+        "It controls the startle reflex"
+      ],
+      "answer": 1,
+      "explanation": "Contextualisation through hippocampal connections to medial prefrontal cortex is what allows safe reminders to be recognised as safe, so weaker contextual discrimination explains over-generalised fear.",
+      "sourceIds": [
+        "logue-ptsd-2018",
+        "ptsd-psych-nma-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q8",
+      "topic": "Neurochemistry",
+      "question": "Which three medications does the 2023 US guideline recommend?",
+      "choices": [
+        "Citalopram, sertraline and fluoxetine",
+        "Paroxetine, sertraline and venlafaxine",
+        "Olanzapine, quetiapine and risperidone",
+        "Diazepam, zopiclone and pregabalin"
+      ],
+      "answer": 1,
+      "explanation": "The guideline recommends paroxetine, sertraline or venlafaxine, and places these behind manualised psychotherapies in treatment order.",
+      "sourceIds": [
+        "vadod-ptsd-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q9",
+      "topic": "Pharmacology",
+      "question": "What effect size did sertraline show against placebo in a network meta-analysis?",
+      "choices": [
+        "A standardised mean difference near minus 0.23",
+        "A standardised mean difference near minus 2.0",
+        "No measurable effect",
+        "An improvement in symptoms only at high dose"
+      ],
+      "answer": 0,
+      "explanation": "Sertraline gave a standardised mean difference of about minus 0.23 on clinician-rated post-traumatic stress disorder scales, which is a modest but real effect that does not substitute for psychotherapy.",
+      "sourceIds": [
+        "ptsd-drug-nma-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q10",
+      "topic": "Pharmacology",
+      "question": "What is alpha-1 blockade used for, and what is it not used for?",
+      "choices": [
+        "For core PTSD symptoms",
+        "For trauma-related nightmares specifically, not for the disorder as a whole",
+        "For prevention",
+        "For depression"
+      ],
+      "answer": 1,
+      "explanation": "Prazosin reduces noradrenergic arousal during sleep and targets nightmares, so it is a symptom-targeted treatment rather than a treatment for the core syndrome.",
+      "sourceIds": [
+        "vadod-ptsd-2023",
+        "iuphar"
+      ]
+    },
+    {
+      "id": "ptsd-q11",
+      "topic": "Treatments",
+      "question": "Which psychotherapies are guideline first line, and how do they rank?",
+      "choices": [
+        "Only cognitive processing therapy",
+        "Prolonged exposure, cognitive processing therapy and eye movement desensitisation and reprocessing, with the latter strongest short term and cognitive processing therapy strongest long term",
+        "Supportive counselling and group therapy",
+        "Medication plus supportive therapy"
+      ],
+      "answer": 1,
+      "explanation": "Network meta-analysis of 98 randomised trials found eye movement desensitisation and reprocessing had the strongest short-term effect and cognitive processing therapy the strongest long-term effect, and both produced a high rate of loss of the diagnosis.",
+      "sourceIds": [
+        "ptsd-psych-nma-2023",
+        "vadod-ptsd-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q12",
+      "topic": "Treatments",
+      "question": "Why does cognitive processing therapy perform well in the long term?",
+      "choices": [
+        "It is more intensive",
+        "It targets the beliefs that the world is unsafe and blame is self-inflicted, which maintain avoidance",
+        "It involves the family",
+        "It is drug-assisted"
+      ],
+      "answer": 1,
+      "explanation": "By working directly on the appraisal system rather than only on the fear habit, cognitive processing therapy changes the beliefs that generate hypervigilance and avoidance, which is why its advantage appears at later follow-up.",
+      "sourceIds": [
+        "ptsd-psych-nma-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q13",
+      "topic": "Treatments",
+      "question": "What does the 2023 guideline recommend against?",
+      "choices": [
+        "Trauma-focused psychotherapy",
+        "Benzodiazepines, and cannabis and cannabis-derived products",
+        "Sertraline",
+        "Occupational therapy"
+      ],
+      "answer": 1,
+      "explanation": "Benzodiazepines and cannabis products are explicitly recommended against, reflecting dependence and safety concerns, while manualised psychotherapies and three specific antidepressants are recommended.",
+      "sourceIds": [
+        "vadod-ptsd-2023"
+      ]
+    },
+    {
+      "id": "ptsd-q14",
+      "topic": "Genetics",
+      "question": "What were the heritability estimates in the international meta-analysis?",
+      "choices": [
+        "Between 5 and 20 percent, varying by sex",
+        "Around 80 percent",
+        "Under 1 percent",
+        "Identical across sexes"
+      ],
+      "answer": 0,
+      "explanation": "Single nucleotide polymorphism heritability was estimated at between 5 and 20 percent and varied by sex, with three genome-wide significant loci across two ancestries.",
+      "sourceIds": [
+        "duncan-ptsd-gwas-2019"
+      ]
+    },
+    {
+      "id": "ptsd-q15",
+      "topic": "Genetics",
+      "question": "What was notable about the specific gene named in the largest genetic study?",
+      "choices": [
+        "It was a serotonin transporter gene",
+        "It was a Parkinson's disease gene involved in dopamine regulation",
+        "It was a brain-derived neurotrophic factor gene",
+        "It was a muscarinic receptor gene"
+      ],
+      "answer": 1,
+      "explanation": "Alongside other novel genes and non-coding regions, a Parkinson's disease gene involved in dopamine regulation was associated with the disorder, and it is the one specific gene listed on this page.",
+      "sourceIds": [
+        "duncan-ptsd-gwas-2019"
+      ]
+    },
+    {
+      "id": "ptsd-q16",
+      "topic": "Biomarkers",
+      "question": "Can polygenic risk be used to identify an individual with this disorder?",
+      "choices": [
+        "Yes, reliably",
+        "No; it predicted re-experiencing symptoms at group level, individual loci did not replicate, and effects are ancestry-dependent",
+        "Yes, in European ancestry only",
+        "Yes, with brain imaging combined"
+      ],
+      "answer": 1,
+      "explanation": "Polygenic risk predicted re-experiencing symptoms in a large independent veteran cohort, but the specific loci did not replicate and the estimate is far too small and ancestry-dependent for individual prediction.",
+      "sourceIds": [
+        "duncan-ptsd-gwas-2019",
+        "nievergelt-ptsd-gwas-2019"
+      ]
+    }
+  ],
+  "related": [
+    "ptsd",
+    "gad",
+    "panic",
+    "mdd"
+  ]
+}

@@ -9,26 +9,42 @@
           "id": "tx-risp-mol",
           "text": "Blocks D2 and 5-HT2A receptors, rebalancing striatal dopamine signalling.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
         "cellular": {
           "id": "tx-risp-cell",
           "text": "Dampens medium spiny neuron output driven by excess phasic dopamine release.",
           "evidence": "strong",
-          "sourceIds": ["nord-farde-2011"],
+          "sourceIds": [
+            "nord-farde-2011"
+          ],
           "lastReviewed": "2026-09-28"
         },
         "circuit": {
           "id": "tx-risp-circ",
           "text": "Normalizes mesolimbic salience signaling that misattributes meaning to neutral stimuli.",
           "evidence": "moderate",
-          "sourceIds": ["howes-kapur-2009"],
+          "sourceIds": [
+            "howes-kapur-2009"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive"]
+        "symptomDomains": [
+          "positive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "ips-cpg",
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-olanzapine",
@@ -39,19 +55,34 @@
           "id": "tx-olan-mol",
           "text": "Broad D2, 5-HT2A, histamine and muscarinic blockade with strong overall efficacy.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
         "circuit": {
           "id": "tx-olan-circ",
           "text": "Quiets hyperdopaminergic mesolimbic drive underlying delusions and hallucinations.",
           "evidence": "moderate",
-          "sourceIds": ["howes-kapur-2009"],
+          "sourceIds": [
+            "howes-kapur-2009"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "affective"]
+        "symptomDomains": [
+          "positive",
+          "affective"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "ips-cpg",
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-aripiprazole",
@@ -62,19 +93,34 @@
           "id": "tx-ari-mol",
           "text": "D2 partial agonism stabilizes dopamine tone instead of fully blocking it.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
         "circuit": {
           "id": "tx-ari-circ",
           "text": "Balances mesolimbic excess against mesocortical deficit within one molecule.",
           "evidence": "moderate",
-          "sourceIds": ["howes-kapur-2009"],
+          "sourceIds": [
+            "howes-kapur-2009"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "negative"]
+        "symptomDomains": [
+          "positive",
+          "negative"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "ips-cpg",
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-quetiapine",
@@ -85,12 +131,25 @@
           "id": "tx-quet-mol",
           "text": "Fast-dissociating D2 blockade with 5-HT2A antagonism across a wide dose range.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "affective"]
+        "symptomDomains": [
+          "positive",
+          "affective"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "ips-cpg",
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-haloperidol",
@@ -101,12 +160,24 @@
           "id": "tx-hal-mol",
           "text": "High-potency sustained D2 blockade with minimal serotonergic action.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "psychomotor"]
+        "symptomDomains": [
+          "positive",
+          "psychomotor"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["ips-cpg"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-clozapine-trs",
@@ -117,12 +188,26 @@
           "id": "tx-cloz-mol",
           "text": "Broad multi-receptor action with low D2 occupancy rescues response where pure D2 blockade failed.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg", "trrip-2017"],
+          "sourceIds": [
+            "ips-cpg",
+            "trrip-2017"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "negative"]
+        "symptomDomains": [
+          "positive",
+          "negative"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "refractory", "evidence": "established", "guidelineSourceIds": ["ips-cpg", "nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "refractory",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "ips-cpg",
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-xanomeline",
@@ -133,12 +218,22 @@
           "id": "tx-xan-mol",
           "text": "Central M1/M4 muscarinic agonism treats psychosis without any dopamine blockade.",
           "evidence": "strong",
-          "sourceIds": ["fda-cobenfy-2024"],
+          "sourceIds": [
+            "fda-cobenfy-2024"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "cognitive"]
+        "symptomDomains": [
+          "positive",
+          "cognitive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "2nd", "evidence": "moderate", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "2nd",
+        "evidence": "moderate",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-lai",
@@ -148,35 +243,67 @@
           "id": "tx-lai-circ",
           "text": "Continuous delivery prevents the plasma gaps that precede most relapses.",
           "evidence": "established",
-          "sourceIds": ["nice-cg178"],
+          "sourceIds": [
+            "nice-cg178"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive"]
+        "symptomDomains": [
+          "positive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "adjunct",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-ect-catatonia",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "ECT", "targetNote": "Generalized seizure; no focal target" },
+      "neuromodulation": {
+        "modality": "ECT",
+        "targetNote": "Generalized seizure; no focal target"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-ect-circ",
           "text": "Generalized seizure activity resets locked motor and affective circuits in catatonia.",
           "evidence": "moderate",
-          "sourceIds": ["nice-cg178"],
+          "sourceIds": [
+            "nice-cg178"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["psychomotor", "affective"]
+        "symptomDomains": [
+          "psychomotor",
+          "affective"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "2nd", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "2nd",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-rtms-avh",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "rTMS",
-        "target": { "atlasLabels": ["Superior temporal gyrus (Lateral part)", "Supramarginal gyrus"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Superior temporal gyrus (Lateral part)",
+            "Supramarginal gyrus"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Figure-8 coil over the left temporoparietal junction"
       },
       "mechanismLevels": {
@@ -184,19 +311,34 @@
           "id": "tx-rtms-avh-circ",
           "text": "Low-frequency stimulation dampens hyperactive auditory-language cortex driving voices.",
           "evidence": "moderate",
-          "sourceIds": ["lefaucheur-2020-rtms"],
+          "sourceIds": [
+            "lefaucheur-2020-rtms"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive"]
+        "symptomDomains": [
+          "positive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "augmentation",
+        "evidence": "moderate",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-rtms-neg",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "rTMS",
-        "target": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Figure-8 coil over the left dorsolateral prefrontal cortex"
       },
       "mechanismLevels": {
@@ -204,19 +346,34 @@
           "id": "tx-rtms-neg-circ",
           "text": "High-frequency prefrontal stimulation aims to lift hypofrontal drive behind negative symptoms.",
           "evidence": "moderate",
-          "sourceIds": ["lefaucheur-2020-rtms"],
+          "sourceIds": [
+            "lefaucheur-2020-rtms"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["negative", "cognitive"]
+        "symptomDomains": [
+          "negative",
+          "cognitive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "augmentation",
+        "evidence": "moderate",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-tdcs",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "tDCS",
-        "target": { "atlasLabels": ["Middle frontal gyrus"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Anode over left dorsolateral prefrontal cortex with temporoparietal cathode"
       },
       "mechanismLevels": {
@@ -224,12 +381,22 @@
           "id": "tx-tdcs-circ",
           "text": "Weak direct currents bias cortical excitability across frontotemporal networks.",
           "evidence": "emerging",
-          "sourceIds": ["fregni-2021-tdcs"],
+          "sourceIds": [
+            "fregni-2021-tdcs"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "negative"]
+        "symptomDomains": [
+          "positive",
+          "negative"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "investigational", "evidence": "emerging", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "investigational",
+        "evidence": "emerging",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-cbtp",
@@ -239,12 +406,24 @@
           "id": "tx-cbtp-circ",
           "text": "Cognitive restructuring and reality-testing practice strengthen prefrontal regulation of threat appraisals.",
           "evidence": "moderate",
-          "sourceIds": ["nice-cg178"],
+          "sourceIds": [
+            "nice-cg178"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "insight"]
+        "symptomDomains": [
+          "positive",
+          "insight"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "adjunct",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-family",
@@ -254,12 +433,24 @@
           "id": "tx-fam-circ",
           "text": "Lowering expressed emotion and stress at home reduces relapse triggers acting on sensitized circuits.",
           "evidence": "moderate",
-          "sourceIds": ["nice-cg178"],
+          "sourceIds": [
+            "nice-cg178"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "insight"]
+        "symptomDomains": [
+          "positive",
+          "insight"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "adjunct",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-crt",
@@ -269,12 +460,23 @@
           "id": "tx-crt-circ",
           "text": "Repeated cognitive exercise with strategy coaching improves processing speed, memory and executive function.",
           "evidence": "moderate",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["cognitive"]
+        "symptomDomains": [
+          "cognitive"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "adjunct", "evidence": "moderate", "guidelineSourceIds": ["ips-cpg"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-csc",
@@ -284,12 +486,26 @@
           "id": "tx-csc-circ",
           "text": "Coordinated early care combining medication, therapy, family work and employment support improves course after first episode.",
           "evidence": "strong",
-          "sourceIds": ["nice-cg178"],
+          "sourceIds": [
+            "nice-cg178"
+          ],
           "lastReviewed": "2026-09-28"
         },
-        "symptomDomains": ["positive", "negative", "cognitive", "insight"]
+        "symptomDomains": [
+          "positive",
+          "negative",
+          "cognitive",
+          "insight"
+        ]
       },
-      "indication": { "disorderId": "schizophrenia", "line": "1st", "evidence": "established", "guidelineSourceIds": ["nice-cg178"] }
+      "indication": {
+        "disorderId": "schizophrenia",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg178"
+        ]
+      }
     },
     {
       "id": "tx-ssri",
@@ -300,19 +516,37 @@
           "id": "tx-ssri-mol",
           "text": "Blocks the serotonin transporter, raising serotonergic tone.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
         "circuit": {
           "id": "tx-ssri-circ",
           "text": "Lifts low serotonergic drive from midbrain raphe projections to prefrontal and limbic cortex, easing low mood and anhedonia.",
           "evidence": "strong",
-          "sourceIds": ["canmat-depression-2023", "iuphar"],
+          "sourceIds": [
+            "canmat-depression-2023",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia", "anxiety"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia",
+          "anxiety"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-depression-2023", "ips-cpg"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-depression-2023",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-ssri-sertraline",
@@ -323,12 +557,26 @@
           "id": "tx-ser-mol",
           "text": "Selective serotonin reuptake inhibition with low interaction burden.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia", "anxiety"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia",
+          "anxiety"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-ssri-escitalopram",
@@ -339,12 +587,26 @@
           "id": "tx-esc-mol",
           "text": "Highly selective serotonin reuptake inhibition at low milligram doses.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia", "anxiety"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia",
+          "anxiety"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-snri",
@@ -355,19 +617,36 @@
           "id": "tx-snri-mol",
           "text": "Blocks serotonin and noradrenaline reuptake, shifting from serotonergic to noradrenergic as dose rises.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
         "circuit": {
           "id": "tx-snri-circ",
           "text": "Raises both serotonergic and noradrenergic drive, which helps when a single serotonergic agent has given partial relief.",
           "evidence": "strong",
-          "sourceIds": ["canmat-depression-2023"],
+          "sourceIds": [
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia", "fatigue"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia",
+          "fatigue"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-depression-2023", "ips-cpg"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-depression-2023",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-mirtazapine",
@@ -378,12 +657,27 @@
           "id": "tx-mir-mol",
           "text": "Antagonises alpha-2A autoreceptors and 5-HT2A, 5-HT2C, 5-HT3 and H1 receptors, raising monoamines while promoting sleep and appetite.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia", "insomnia", "poor-appetite"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia",
+          "insomnia",
+          "poor-appetite"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-bupropion",
@@ -394,12 +688,26 @@
           "id": "tx-bup-mol",
           "text": "Inhibits noradrenaline and dopamine reuptake with minimal serotonergic action.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "fatigue", "low-libido"]
+        "symptomDomains": [
+          "depressed-mood",
+          "fatigue",
+          "low-libido"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-tca",
@@ -410,12 +718,26 @@
           "id": "tx-tca-mol",
           "text": "Dual serotonin and noradrenaline reuptake inhibition with muscarinic, alpha-1 and histamine antagonism.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "insomnia", "neuropathic-pain"]
+        "symptomDomains": [
+          "depressed-mood",
+          "insomnia",
+          "neuropathic-pain"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-esketamine",
@@ -426,42 +748,80 @@
           "id": "tx-esk-mol",
           "text": "NMDA receptor antagonism producing rapid downstream glutamate and plasticity signalling rather than reuptake inhibition.",
           "evidence": "strong",
-          "sourceIds": ["ketamine-dep-2026", "iuphar"],
+          "sourceIds": [
+            "ketamine-dep-2026",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
         "circuit": {
           "id": "tx-esk-circ",
           "text": "Plasticity-driven restoration of synaptic efficacy in prefrontal and hippocampal circuits produces improvement within hours, which suits urgent need including suicidality.",
           "evidence": "moderate",
-          "sourceIds": ["ketamine-dep-2026"],
+          "sourceIds": [
+            "ketamine-dep-2026"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "suicidal-ideation"]
+        "symptomDomains": [
+          "depressed-mood",
+          "suicidal-ideation"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-ect-depression",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "ECT", "targetNote": "Generalized seizure; no focal target" },
+      "neuromodulation": {
+        "modality": "ECT",
+        "targetNote": "Generalized seizure; no focal target"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-ect-dep-circ",
           "text": "Generalized seizure activity resets mood and drive circuits, the most reliably effective treatment for severe or suicidal depression.",
           "evidence": "established",
-          "sourceIds": ["canmat-depression-2023", "ips-cpg"],
+          "sourceIds": [
+            "canmat-depression-2023",
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "suicidal-ideation", "catatonia"]
+        "symptomDomains": [
+          "depressed-mood",
+          "suicidal-ideation",
+          "catatonia"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "2nd", "evidence": "established", "guidelineSourceIds": ["canmat-depression-2023"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "2nd",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-depression-2023"
+        ]
+      }
     },
     {
       "id": "tx-rtms-depression",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "rTMS",
-        "target": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Figure-8 coil over the left dorsolateral prefrontal cortex"
       },
       "mechanismLevels": {
@@ -469,28 +829,54 @@
           "id": "tx-rtms-dep-circ",
           "text": "High-frequency left prefrontal stimulation aims to raise hypofrontal activity that underlies cognitive and mood symptoms.",
           "evidence": "strong",
-          "sourceIds": ["lefaucheur-2020-rtms", "canmat-depression-2023"],
+          "sourceIds": [
+            "lefaucheur-2020-rtms",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "cognitive"]
+        "symptomDomains": [
+          "depressed-mood",
+          "cognitive"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["canmat-depression-2023", "lefaucheur-2020-rtms"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-depression-2023",
+          "lefaucheur-2020-rtms"
+        ]
+      }
     },
     {
       "id": "tx-vns-depression",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "VNS", "targetNote": "Left cervical vagus nerve in the neck; no intracranial target" },
+      "neuromodulation": {
+        "modality": "VNS",
+        "targetNote": "Left cervical vagus nerve in the neck; no intracranial target"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-vns-dep-circ",
           "text": "Vagal afferent stimulation modulates nucleus tractus solitius and connected limbic circuits; in the RECOVER trial the prespecified primary endpoint did not separate from sham, though several secondary measures favoured active stimulation.",
           "evidence": "moderate",
-          "sourceIds": ["recover-vns-2026"],
+          "sourceIds": [
+            "recover-vns-2026"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood"]
+        "symptomDomains": [
+          "depressed-mood"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "refractory", "evidence": "emerging", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "refractory",
+        "evidence": "emerging",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-psych-depression",
@@ -500,12 +886,26 @@
           "id": "tx-psych-dep-circ",
           "text": "Cognitive behavioural therapy and interpersonal therapy modify negative automatic thoughts and interpersonal patterns that sustain low mood.",
           "evidence": "strong",
-          "sourceIds": ["canmat-depression-2023", "nice-ng222"],
+          "sourceIds": [
+            "canmat-depression-2023",
+            "nice-ng222"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["depressed-mood", "anhedonia"]
+        "symptomDomains": [
+          "depressed-mood",
+          "anhedonia"
+        ]
       },
-      "indication": { "disorderId": "mdd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-depression-2023", "nice-ng222"] }
+      "indication": {
+        "disorderId": "mdd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-depression-2023",
+          "nice-ng222"
+        ]
+      }
     },
     {
       "id": "tx-lithium-bipolar",
@@ -516,19 +916,37 @@
           "id": "tx-li-mol",
           "text": "Mood-stabilising action with GSK3B among the hypothesised cellular targets and a narrow therapeutic index.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "bipolar-exome-akap11-2022"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "bipolar-exome-akap11-2022"
+          ],
           "lastReviewed": "2026-09-29"
         },
         "circuit": {
           "id": "tx-li-circ",
           "text": "Dampens destabilising network activity that underlies mania and protects against recurrence of both poles.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "canmat-bipolar-recommendations-2021"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "bipolar-depression", "mixed-episodes"]
+        "symptomDomains": [
+          "mania",
+          "bipolar-depression",
+          "mixed-episodes"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-lithium-bipolar2",
@@ -539,12 +957,25 @@
           "id": "tx-li2-mol",
           "text": "Mood-stabilising action with GSK3B among the hypothesised cellular targets.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["hypomania", "bipolar-depression"]
+        "symptomDomains": [
+          "hypomania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-valproate-bipolar",
@@ -555,12 +986,26 @@
           "id": "tx-val-mol",
           "text": "GABAergic potentiation and sodium-channel blockade reduce circuit excitability.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "mixed-episodes"]
+        "symptomDomains": [
+          "mania",
+          "mixed-episodes"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-quetiapine-bipolar",
@@ -571,12 +1016,24 @@
           "id": "tx-quet-bip-mol",
           "text": "D2 and 5-HT2A antagonism with fast dissociation across a wide dose range.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "bipolar-depression"]
+        "symptomDomains": [
+          "mania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-quetiapine-bipolar2",
@@ -587,12 +1044,24 @@
           "id": "tx-quet-bip2-mol",
           "text": "D2 and 5-HT2A antagonism with fast dissociation across a wide dose range.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression", "hypomania"]
+        "symptomDomains": [
+          "bipolar-depression",
+          "hypomania"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-aripiprazole-bipolar",
@@ -603,12 +1072,23 @@
           "id": "tx-ari-bip-mol",
           "text": "D2 partial agonism stabilises dopamine tone rather than blocking it.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania"]
+        "symptomDomains": [
+          "mania"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-lamotrigine-bipolar",
@@ -619,12 +1099,23 @@
           "id": "tx-lam-bip-mol",
           "text": "Sodium-channel blockade and reduced glutamate release, with utility concentrated in depressive relapse prevention.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression"]
+        "symptomDomains": [
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-lamotrigine-bipolar2",
@@ -635,12 +1126,23 @@
           "id": "tx-lam-bip2-mol",
           "text": "Sodium-channel blockade and reduced glutamate release, with utility concentrated in depressive relapse prevention.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression"]
+        "symptomDomains": [
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-lurasidone-bipolar",
@@ -651,12 +1153,24 @@
           "id": "tx-lur-bip-mol",
           "text": "D2 and 5-HT2A antagonism with additional 5-HT7 antagonism, low metabolic burden.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression"]
+        "symptomDomains": [
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-lurasidone-bipolar2",
@@ -667,35 +1181,68 @@
           "id": "tx-lur-bip2-mol",
           "text": "D2 and 5-HT2A antagonism with additional 5-HT7 antagonism, low metabolic burden.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression"]
+        "symptomDomains": [
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "1st", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-ect-bipolar",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "ECT", "targetNote": "Generalized seizure; no focal target" },
+      "neuromodulation": {
+        "modality": "ECT",
+        "targetNote": "Generalized seizure; no focal target"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-ect-bip-circ",
           "text": "Most rapid and effective acute treatment for severe mania or severe bipolar depression, including when medication has failed.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "bipolar-depression"]
+        "symptomDomains": [
+          "mania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-rtms-bipolar",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "rTMS",
-        "target": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Figure-8 coil over the left dorsolateral prefrontal cortex"
       },
       "mechanismLevels": {
@@ -703,12 +1250,25 @@
           "id": "tx-rtms-bip-circ",
           "text": "Prefrontal stimulation can reduce manic and depressive symptoms as an adjunct, with the strongest support in acute mania.",
           "evidence": "moderate",
-          "sourceIds": ["lefaucheur-2020-rtms", "canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "lefaucheur-2020-rtms",
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "bipolar-depression"]
+        "symptomDomains": [
+          "mania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": ["lefaucheur-2020-rtms"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "augmentation",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "lefaucheur-2020-rtms"
+        ]
+      }
     },
     {
       "id": "tx-psychoeducation-bipolar",
@@ -718,12 +1278,27 @@
           "id": "tx-pe-bip-circ",
           "text": "Recognising early warning signs, regularising sleep and using a written relapse plan reduces the destabilising triggers that drive episodes.",
           "evidence": "established",
-          "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mixed-episodes", "mania", "bipolar-depression"]
+        "symptomDomains": [
+          "mixed-episodes",
+          "mania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-cbt-bipolar",
@@ -733,12 +1308,24 @@
           "id": "tx-cbt-bip-circ",
           "text": "CBT for bipolar disorder targets medication non-adherence, dysfunctional attributions of mood change and interpersonal stressors.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression", "mixed-episodes"]
+        "symptomDomains": [
+          "bipolar-depression",
+          "mixed-episodes"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "adjunct", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "adjunct",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-family-bipolar",
@@ -748,12 +1335,26 @@
           "id": "tx-fam-bip-circ",
           "text": "Lower expressed emotion in the family reduces the interpersonal stress that commonly triggers relapse.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["mania", "bipolar-depression"]
+        "symptomDomains": [
+          "mania",
+          "bipolar-depression"
+        ]
       },
-      "indication": { "disorderId": "bipolar-1", "line": "adjunct", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-1",
+        "line": "adjunct",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-erp-ocd",
@@ -761,14 +1362,29 @@
       "mechanismLevels": {
         "circuit": {
           "id": "tx-erp-ocd-circ",
-            "text": "Exposure with response prevention is the first-line evidence-based psychotherapy, working by teaching the cortico-striatal loop to tolerate obsession without performing the compulsion.",
+          "text": "Exposure with response prevention is the first-line evidence-based psychotherapy, working by teaching the cortico-striatal loop to tolerate obsession without performing the compulsion.",
           "evidence": "strong",
-          "sourceIds": ["cbt-ocd-meta-2015", "wfsbp-ocd-2023"],
+          "sourceIds": [
+            "cbt-ocd-meta-2015",
+            "wfsbp-ocd-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["wfsbp-ocd-2023", "cbt-ocd-meta-2015", "nice-cg31"] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-ocd-2023",
+          "cbt-ocd-meta-2015",
+          "nice-cg31"
+        ]
+      }
     },
     {
       "id": "tx-ssri-ocd",
@@ -779,19 +1395,36 @@
           "id": "tx-flv-ocd-mol",
           "text": "Serotonin reuptake blockade, with higher doses typically required for obsessive-compulsive disorder than for depression.",
           "evidence": "strong",
-          "sourceIds": ["wfsbp-ocd-2023", "iuphar"],
+          "sourceIds": [
+            "wfsbp-ocd-2023",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
         "circuit": {
           "id": "tx-flv-ocd-circ",
           "text": "Raised serotonergic tone reduces obsessional drive in the cortico-striatal loop, though the relationship to striatal dopamine is indirect.",
           "evidence": "strong",
-          "sourceIds": ["wfsbp-ocd-2023", "ocd-neurocircuit-taxonomy-2021"],
+          "sourceIds": [
+            "wfsbp-ocd-2023",
+            "ocd-neurocircuit-taxonomy-2021"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "1st", "evidence": "established", "guidelineSourceIds": ["wfsbp-ocd-2023", "nice-cg31"] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-ocd-2023",
+          "nice-cg31"
+        ]
+      }
     },
     {
       "id": "tx-clomipramine-ocd",
@@ -802,12 +1435,26 @@
           "id": "tx-clo-ocd-mol",
           "text": "Potent serotonin reuptake inhibition plus muscarinic, alpha-1 and histamine antagonism, with specific anti-obsessional efficacy.",
           "evidence": "strong",
-          "sourceIds": ["wfsbp-ocd-2023", "iuphar"],
+          "sourceIds": [
+            "wfsbp-ocd-2023",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["wfsbp-ocd-2023", "nice-cg31"] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "wfsbp-ocd-2023",
+          "nice-cg31"
+        ]
+      }
     },
     {
       "id": "tx-risperidone-ocd",
@@ -818,19 +1465,38 @@
           "id": "tx-ris-ocd-mol",
           "text": "D2 and 5-HT2A antagonism, used as an augmentation agent when serotonin-based treatment is insufficient.",
           "evidence": "moderate",
-          "sourceIds": ["wfsbp-ocd-2023"],
+          "sourceIds": [
+            "wfsbp-ocd-2023"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "augmentation", "evidence": "moderate", "guidelineSourceIds": ["wfsbp-ocd-2023"] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "augmentation",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-ocd-2023"
+        ]
+      }
     },
     {
       "id": "tx-rtms-ocd",
       "kind": "neuromodulation",
       "neuromodulation": {
         "modality": "rTMS",
-        "target": { "atlasLabels": ["Middle frontal gyrus", "Orbital gyri", "Straight gyrus (Gyrus rectus)"], "precision": "proxy" },
+        "target": {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Orbital gyri",
+            "Straight gyrus (Gyrus rectus)"
+          ],
+          "precision": "proxy"
+        },
         "montageOrCoil": "Figure-8 coil over the orbitofrontal or anterior cingulate cortex"
       },
       "mechanismLevels": {
@@ -838,12 +1504,23 @@
           "id": "tx-rtms-ocd-circ",
           "text": "Stimulating the orbitofrontal component of the cortico-striatal loop may reduce the overvaluation driving obsessions.",
           "evidence": "moderate",
-          "sourceIds": ["ocd-neurocircuit-taxonomy-2021", "lefaucheur-2020-rtms"],
+          "sourceIds": [
+            "ocd-neurocircuit-taxonomy-2021",
+            "lefaucheur-2020-rtms"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "investigational", "evidence": "emerging", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "investigational",
+        "evidence": "emerging",
+        "guidelineSourceIds": []
+      }
     },
     {
       "id": "tx-psychoeducation-bipolar2",
@@ -853,12 +1530,27 @@
           "id": "tx-pe-bip2-circ",
           "text": "Because type II spends most time in depression, recognising the early hypomanic signature that precedes a switch, and regularising sleep, are the main levers on relapse.",
           "evidence": "established",
-          "sourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression", "hypomania", "mixed-episodes"]
+        "symptomDomains": [
+          "bipolar-depression",
+          "hypomania",
+          "mixed-episodes"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "1st", "evidence": "established", "guidelineSourceIds": ["canmat-bipolar-2018-summary", "ips-cpg"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary",
+          "ips-cpg"
+        ]
+      }
     },
     {
       "id": "tx-cbt-bipolar2",
@@ -868,44 +1560,1048 @@
           "id": "tx-cbt-bip2-circ",
           "text": "Cognitive behavioural therapy for bipolar disorder targets the tendency to read depressive symptoms as permanent and to attribute medication benefit to feeling well, which drives premature discontinuation.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression", "hypomania"]
+        "symptomDomains": [
+          "bipolar-depression",
+          "hypomania"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "adjunct", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "adjunct",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-ect-bipolar2",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "ECT", "targetNote": "Generalized seizure; no focal target" },
+      "neuromodulation": {
+        "modality": "ECT",
+        "targetNote": "Generalized seizure; no focal target"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-ect-bip2-circ",
           "text": "Reserved for severe depression, catatonia or rapid cycling in type II when medication has failed, since most episodes in this subtype are depressive rather than manic.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["bipolar-depression", "mixed-episodes"]
+        "symptomDomains": [
+          "bipolar-depression",
+          "mixed-episodes"
+        ]
       },
-      "indication": { "disorderId": "bipolar-2", "line": "2nd", "evidence": "strong", "guidelineSourceIds": ["canmat-bipolar-2018-summary"] }
+      "indication": {
+        "disorderId": "bipolar-2",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "canmat-bipolar-2018-summary"
+        ]
+      }
     },
     {
       "id": "tx-dbs-ocd",
       "kind": "neuromodulation",
-      "neuromodulation": { "modality": "DBS", "targetNote": "Anterior limb of the internal capsule or ventral striatum; the atlas does not resolve the internal capsule as a single mesh, so no target is drawn" },
+      "neuromodulation": {
+        "modality": "DBS",
+        "targetNote": "Anterior limb of the internal capsule or ventral striatum; the atlas does not resolve the internal capsule as a single mesh, so no target is drawn"
+      },
       "mechanismLevels": {
         "circuit": {
           "id": "tx-dbs-ocd-circ",
           "text": "Direct stimulation of the cortico-striatal white matter is reserved for severe refractory cases; a meta-analysis found slightly greater symptom reduction for neuroablation than for deep brain stimulation but more adverse events with stimulation.",
           "evidence": "moderate",
-          "sourceIds": ["ocd-neuroablation-dbs-2019", "ocd-neurocircuit-taxonomy-2021"],
+          "sourceIds": [
+            "ocd-neuroablation-dbs-2019",
+            "ocd-neurocircuit-taxonomy-2021"
+          ],
           "lastReviewed": "2026-09-29"
         },
-        "symptomDomains": ["obsessions", "compulsions"]
+        "symptomDomains": [
+          "obsessions",
+          "compulsions"
+        ]
       },
-      "indication": { "disorderId": "ocd", "line": "refractory", "evidence": "emerging", "guidelineSourceIds": [] }
+      "indication": {
+        "disorderId": "ocd",
+        "line": "refractory",
+        "evidence": "emerging",
+        "guidelineSourceIds": []
+      }
+    },
+    {
+      "id": "tx-ssri-gad",
+      "kind": "drug",
+      "drugId": "sertraline",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-ssri-mol",
+          "text": "Serotonin transporter inhibition; SSRIs and SNRIs are the guideline first-line medications for generalised anxiety disorder.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "circuit": {
+          "id": "gad-ssri-circ",
+          "text": "Lifts free-floating anxiety by raising serotonergic tone in raphe projections to prefrontal and limbic cortex without the dependence of benzodiazepines.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry",
+          "physical-anxiety",
+          "insomnia"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-snri-gad",
+      "kind": "drug",
+      "drugId": "venlafaxine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-snri-mol",
+          "text": "Blocks serotonin and noradrenaline reuptake, giving an anxiolytic effect through both monoamines.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry",
+          "physical-anxiety"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-buspirone-gad",
+      "kind": "drug",
+      "drugId": "buspirone",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-bus-mol",
+          "text": "Partial 5-HT1A agonism gives anxiolysis without dependence, making it a preferred option where there is alcohol or substance misuse.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-pregabalin-gad",
+      "kind": "drug",
+      "drugId": "pregabalin",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-pre-mol",
+          "text": "Calcium-channel alpha-2-delta binding reduces excitatory release; a guideline option when SSRIs are unsuitable, not a first choice.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "2nd",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-hydroxyzine-gad",
+      "kind": "drug",
+      "drugId": "hydroxyzine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-hyd-mol",
+          "text": "Histamine H1 antagonism with antimuscarinic activity gives short-term anxiolysis and sedation.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry",
+          "insomnia"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "2nd",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-cbt-gad",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "gad-cbt-circ",
+          "text": "Cognitive behavioural therapy is the first-line psychotherapy for anxiety disorders and reduces worry and safety behaviour rather than only suppressing symptoms.",
+          "evidence": "established",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry",
+          "physical-anxiety"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-benzo-gad",
+      "kind": "drug",
+      "drugId": "diazepam",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "gad-benzo-mol",
+          "text": "GABA-A positive allosteric modulation works within hours but produces tolerance and dependence within weeks, so it is restricted to short-term use.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "free-floating-worry"
+        ]
+      },
+      "indication": {
+        "disorderId": "gad",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-ssri-panic",
+      "kind": "drug",
+      "drugId": "sertraline",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "pan-ssri-mol",
+          "text": "SSRIs and SNRIs are first-line for panic disorder; an SSRI that helped the patient before is preferred over switching class.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "circuit": {
+          "id": "pan-ssri-circ",
+          "text": "Reduces the catastrophic misinterpretation of bodily sensations by lowering the serotonergic gain of the interoceptive signal that drives the attack.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "panic-attacks",
+          "anticipatory-anxiety",
+          "avoidance"
+        ]
+      },
+      "indication": {
+        "disorderId": "panic",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-buspirone-panic",
+      "kind": "drug",
+      "drugId": "buspirone",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "pan-bus-mol",
+          "text": "5-HT1A partial agonism is an option when dependence is the main concern.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "panic-attacks"
+        ]
+      },
+      "indication": {
+        "disorderId": "panic",
+        "line": "1st",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-benzo-panic",
+      "kind": "drug",
+      "drugId": "diazepam",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "pan-benzo-mol",
+          "text": "Benzodiazepines abort panic attacks quickly but must be limited to short-term crisis use because of dependence and of cognitive impairment.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "panic-attacks"
+        ]
+      },
+      "indication": {
+        "disorderId": "panic",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-cbt-panic",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "pan-cbt-circ",
+          "text": "Cognitive behavioural therapy teaches that the sensations are survivable, which breaks the feed from bodily arousal to catastrophic belief and avoidance.",
+          "evidence": "established",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg113"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "panic-attacks",
+          "catastrophic-thoughts",
+          "avoidance"
+        ]
+      },
+      "indication": {
+        "disorderId": "panic",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ]
+      }
+    },
+    {
+      "id": "tx-ssri-sad",
+      "kind": "drug",
+      "drugId": "sertraline",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "sad-ssri-mol",
+          "text": "SSRIs are first-line for social anxiety disorder and also treat the depression and generalised anxiety that usually accompany it.",
+          "evidence": "strong",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg159"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "circuit": {
+          "id": "sad-ssri-circ",
+          "text": "Lowers the hyperactive fear circuit and the negative self-focused attention that drives anticipation of negative evaluation.",
+          "evidence": "strong",
+          "sourceIds": [
+            "sad-neuroimaging-2014",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "social-fear",
+          "avoidance",
+          "self-criticism"
+        ]
+      },
+      "indication": {
+        "disorderId": "sad",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ]
+      }
+    },
+    {
+      "id": "tx-propranolol-sad",
+      "kind": "drug",
+      "drugId": "propranolol",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "sad-pro-mol",
+          "text": "Beta blockade dampens the adrenergic surge of the physical symptoms without touching the fear itself, so it suits performance and somatic-predominant presentations.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-cg159",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "somatic-symptoms",
+          "performance-fear"
+        ]
+      },
+      "indication": {
+        "disorderId": "sad",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-benzo-sad",
+      "kind": "drug",
+      "drugId": "diazepam",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "sad-benzo-mol",
+          "text": "Benzodiazepines can be useful for short periods of examination or performance anxiety but are not recommended for long-term use because of dependence.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-cg159",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "performance-fear"
+        ]
+      },
+      "indication": {
+        "disorderId": "sad",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "nice-cg159",
+          "wfsbp-anxiety-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-cbt-sad",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "sad-cbt-circ",
+          "text": "Individual or group cognitive behavioural therapy with exposure to feared social situations is first-line and addresses the safety behaviours that maintain avoidance.",
+          "evidence": "established",
+          "sourceIds": [
+            "wfsbp-anxiety-2023",
+            "nice-cg159"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "social-fear",
+          "avoidance"
+        ]
+      },
+      "indication": {
+        "disorderId": "sad",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg159"
+        ]
+      }
+    },
+    {
+      "id": "tx-cpt",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "ptsd-cpt-circ",
+          "text": "Cognitive processing therapy targets the beliefs that the world is unsafe and that blame lies with the survivor, which drive avoidance and hypervigilance. In a network meta-analysis it had the strongest long-term effect and produced a high rate of loss of the PTSD diagnosis.",
+          "evidence": "strong",
+          "sourceIds": [
+            "ptsd-psych-nma-2023",
+            "vadod-ptsd-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "re-experiencing",
+          "avoidance",
+          "hypervigilance",
+          "negative-beliefs"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-psych-nma-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-pe",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "ptsd-pe-circ",
+          "text": "Prolonged exposure works by extinguishing the learned fear response through repeated non-avoidant contact with trauma memories and safe reminders, which reduces the reactivity of the fear circuit.",
+          "evidence": "strong",
+          "sourceIds": [
+            "ptsd-psych-nma-2023",
+            "vadod-ptsd-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "re-experiencing",
+          "avoidance",
+          "hypervigilance"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-psych-nma-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-emdr",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "ptsd-emdr-circ",
+          "text": "Eye movement desensitisation and reprocessing pairs bilateral stimulation with trauma recall; in network meta-analysis it had the strongest short-term effect of the psychotherapies compared.",
+          "evidence": "strong",
+          "sourceIds": [
+            "ptsd-psych-nma-2023",
+            "vadod-ptsd-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "re-experiencing",
+          "nightmares",
+          "hypervigilance"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-psych-nma-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-ssri-ptsd",
+      "kind": "drug",
+      "drugId": "sertraline",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "ptsd-ssri-mol",
+          "text": "Sertraline, paroxetine and venlafaxine are the three recommended medications, and in a network meta-analysis sertraline gave a standardised mean difference near minus 0.23 against placebo.",
+          "evidence": "strong",
+          "sourceIds": [
+            "vadod-ptsd-2023",
+            "ptsd-drug-nma-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "re-experiencing",
+          "avoidance",
+          "mood-symptoms"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "2nd",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023",
+          "ptsd-drug-nma-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-prazosin-ptsd",
+      "kind": "drug",
+      "drugId": "prazosin",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "ptsd-pra-mol",
+          "text": "Alpha-1 blockade reduces noradrenergic hyperarousal during sleep and is used specifically for trauma-related nightmares rather than for core symptoms.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "vadod-ptsd-2023",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "nightmares"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-benzo-ptsd",
+      "kind": "drug",
+      "drugId": "diazepam",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "ptsd-benzo-mol",
+          "text": "Benzodiazepines are explicitly recommended against for post-traumatic stress disorder because of dependence risk and of evidence of worse outcomes.",
+          "evidence": "strong",
+          "sourceIds": [
+            "vadod-ptsd-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "hyperarousal"
+        ]
+      },
+      "indication": {
+        "disorderId": "ptsd",
+        "line": "adjunct",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "vadod-ptsd-2023"
+        ]
+      }
+    },
+    {
+      "id": "tx-methylphenidate",
+      "kind": "drug",
+      "drugId": "methylphenidate",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "adhd-met-mol",
+          "text": "Dopamine transporter blockade raises catecholamine availability in prefrontal and striatal circuits; this is the first-line pharmacological treatment.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-ng87",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "circuit": {
+          "id": "adhd-met-circ",
+          "text": "Improves the signal-to-noise of attention and impulse control in frontostriatal circuits, which is why it treats hyperactivity and inattention together.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-ng87",
+            "hoogman-adhd-cort-2019"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "inattention",
+          "hyperactivity",
+          "impulsivity"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-lisdexamfetamine",
+      "kind": "drug",
+      "drugId": "lisdexamfetamine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "adhd-lis-mol",
+          "text": "Amphetamine prodrug with sustained release, for people needing longer coverage than immediate-release methylphenidate.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-ng87",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "inattention",
+          "hyperactivity",
+          "impulsivity"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-atomoxetine",
+      "kind": "drug",
+      "drugId": "atomoxetine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "adhd-ato-mol",
+          "text": "Selective noradrenaline transporter inhibition, with a build over weeks, for people who cannot take a stimulant or in whom diversion is a concern.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-ng87",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "inattention",
+          "impulsivity"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-guanfacine",
+      "kind": "drug",
+      "drugId": "guanfacine",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "adhd-gua-mol",
+          "text": "Alpha-2A agonism reduces noradrenergic outflow, and can be added when stimulants are poorly tolerated or contraindicated.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "nice-ng87",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "hyperactivity",
+          "impulsivity"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "2nd",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-parenting-adhd",
+      "kind": "psychosocial",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "adhd-par-circ",
+          "text": "Parent training teaches consistent reinforcement and structure, which supports the executive skills that medication alone does not install, and reduces conflict in the household.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "hyperactivity",
+          "impulsivity",
+          "family-conflict"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-cbt-adhd",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "adhd-cbt-circ",
+          "text": "Organisational skills training and CBT address time management, planning and emotional regulation, which are the impairments that persist most in adults.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "inattention",
+          "organisation"
+        ]
+      },
+      "indication": {
+        "disorderId": "adhd",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "nice-ng87"
+        ]
+      }
+    },
+    {
+      "id": "tx-rip-asd",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "asd-rip-circ",
+          "text": "Repetitive and interaction-focused developmental psychotherapy targets social reciprocity, which is one of the two core autistic domains and the one most limiting in daily life.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "nice-cg128"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "social-communication",
+          "restricted-behaviour"
+        ]
+      },
+      "indication": {
+        "disorderId": "asd",
+        "line": "1st",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "nice-cg128"
+        ]
+      }
+    },
+    {
+      "id": "tx-cbt-asd",
+      "kind": "psychological",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "asd-cbt-circ",
+          "text": "Cognitive behavioural therapy adapted for autistic people targets anxiety, anger and distress caused by environmental demands rather than by the autism itself, and must be adapted to reduce camouflaging.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "nice-cg128"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "anxiety-comorbidity",
+          "emotional-regulation",
+          "social-communication"
+        ]
+      },
+      "indication": {
+        "disorderId": "asd",
+        "line": "1st",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-cg128"
+        ]
+      }
+    },
+    {
+      "id": "tx-med-asd",
+      "kind": "drug",
+      "drugId": "risperidone",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "asd-med-mol",
+          "text": "No drug treats the core features of autism. Antipsychotics are used only for severe irritability or aggression, and weight and metabolic monitoring is mandatory.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-cg128"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "irritability",
+          "aggression"
+        ]
+      },
+      "indication": {
+        "disorderId": "asd",
+        "line": "adjunct",
+        "evidence": "strong",
+        "guidelineSourceIds": [
+          "nice-cg128"
+        ]
+      }
+    },
+    {
+      "id": "tx-sleep-asd",
+      "kind": "drug",
+      "drugId": "melatonin",
+      "mechanismLevels": {
+        "molecular": {
+          "id": "asd-sleep-mol",
+          "text": "Melatonin shortens sleep onset latency in a population where sleep problems are near universal and drive much of the daytime dysregulation.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "nice-cg128",
+            "iuphar"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "sleep",
+          "irritability"
+        ]
+      },
+      "indication": {
+        "disorderId": "asd",
+        "line": "adjunct",
+        "evidence": "moderate",
+        "guidelineSourceIds": [
+          "nice-cg128"
+        ]
+      }
+    },
+    {
+      "id": "tx-support-asd",
+      "kind": "psychosocial",
+      "mechanismLevels": {
+        "circuit": {
+          "id": "asd-support-circ",
+          "text": "Environmental adaptation, structured visual schedules, and reducing unpredictable demands act directly on the sensory and predictability difficulties that drive autistic distress.",
+          "evidence": "strong",
+          "sourceIds": [
+            "nice-cg128"
+          ],
+          "lastReviewed": "2026-09-29"
+        },
+        "symptomDomains": [
+          "sensory-distress",
+          "social-communication",
+          "restricted-behaviour"
+        ]
+      },
+      "indication": {
+        "disorderId": "asd",
+        "line": "1st",
+        "evidence": "established",
+        "guidelineSourceIds": [
+          "nice-cg128"
+        ]
+      }
     }
   ]
 }

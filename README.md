@@ -211,28 +211,38 @@ See `content/disorders/TEMPLATE.json` for the full field structure. Key rules:
 
 ## Disorders available
 
-Five disorders are built end to end, each with all ten tabs populated, a guided
+Eleven disorders are built end to end, each with all ten tabs populated, a guided
 tour, and 16 sourced quiz items:
 
 | Disorder | ICD-11 | DSM-5-TR | Highlights |
 |---|---|---|---|
 | Schizophrenia | 6A20 | 295.90 | ENIGMA cortical/subcortical/DTI, dopamine hypothesis v.III, TRRIP clozapine pathway, failed TAAR1 trials |
-| Major depressive disorder | 6A70 / 6A71 | 296.14-296.32 | ENIGMA hippocampal effect size d = -0.14, adolescent vs adult divergence, 102 GWAS loci, mixed VNS trial result |
+| Major depressive disorder | 6A70 / 6A71 | 296.14-296.32 | ENIGMA hippocampal d = -0.14, adolescent vs adult divergence, 102 GWAS loci, mixed VNS trial result |
 | Bipolar type I | 6A60 | 296.44-296.64 | 6503-individual cortical study, mania count predicts prefrontal thinning, AKAP11 odds ratio ~7 |
 | Bipolar type II | 6A61 | 296.89 | Depression-dominant course, antidepressant switching risk, shared-subtype findings labelled as such |
+| Generalized anxiety disorder | 6B00 | 300.22 | Guideline first-line set, plus an explicit statement that no coordinated structural study exists |
+| Panic disorder | 6B01 | 300.01 | Interoceptive misreading model, polygenic discrimination ceiling of ~0.60 |
+| Social anxiety disorder | 6B04 | 300.23 | Meta-analytic fear-circuit hyperactivation, self-referential attention, disconnected medial parietal hub |
+| Post-traumatic stress disorder | 6B40 | 309.81 | ENIGMA-PGC hippocampal d = -0.17, psychotherapy ahead of medication, benzodiazepines and cannabis recommended against |
 | Obsessive-compulsive disorder | 6B20 | 300.3 | Cortico-striato-thalamo-cortical loop, neurocircuit taxonomy, neuroablation vs DBS meta-analysis |
+| Attention deficit hyperactivity disorder | 6A05 | 314.00 | ENIGMA subcortical d = -0.11 to -0.19, surface area d = -0.21 in children only, sibling endophenotype |
+| Autism spectrum disorder | 6A02 | 318.00 | 1571 vs 1651 lifespan morphometry, 72 exome-associated genes, sex-difference null finding |
 
 Every effect size, odds ratio and trial result is taken from a cited source
-record; nothing is estimated or illustrative. Where a large study pooled
-bipolar subtypes, the UI says so rather than implying a subtype-specific
-effect.
+record; nothing is estimated or illustrative. Two deliberate honesty choices:
+
+- Where a study pooled bipolar subtypes, the page says so instead of implying a
+  subtype-specific effect.
+- Generalized anxiety disorder and panic disorder have **no** large structural
+  imaging study, so no effect size is claimed for them. Their pathology tab
+  shows the shared circuit model, labelled as a model, graded `emerging`.
 
 ## Verification
 
 | Gate | Command | Result |
 |---|---|---|
 | Content lint (release) | `npm run lint:content:strict` | 0 errors, 0 warnings |
-| Data to 3D mapping | `npm run test:mapping` | 2038 assertions, 303 claims |
+| Data to 3D mapping | `npm run test:mapping` | 3767 assertions, 552 claims |
 | Build | `npm run build` | lints, bundles, copies `content/` to `dist/` |
 | CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check |
 
@@ -246,4 +256,7 @@ option.
 
 ---
 
-*Phase 2 complete (schizophrenia, MDD, bipolar I/II, OCD). Next: Phase 3 — GAD, panic disorder, social anxiety, PTSD, ADHD, autism spectrum.*
+*Phases 1-3 complete (11 disorders: psychotic, mood, anxiety and fear-related,
+stress-related, obsessive-compulsive, and neurodevelopmental). Next: Phase 4 —
+substance use disorders, neurocognitive disorders, eating disorders, personality
+disorders.*

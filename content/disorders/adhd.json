@@ -1,0 +1,1090 @@
+{
+  "id": "adhd",
+  "name": "Attention deficit hyperactivity disorder",
+  "icd11": {
+    "code": "6A05",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "314.00 combined presentation",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Neurodevelopmental disorders",
+  "overview": [
+    {
+      "id": "adhd-ov-1",
+      "text": "Attention deficit hyperactivity disorder is a neurodevelopmental condition with a persistent pattern of inattention and or hyperactivity and impulsivity that impairs academic, occupational or social function, with symptoms present before age twelve in most people. ICD-11 now includes adults explicitly and uses the DSM-5 presentations rather than the older hyperkinetic categories.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview",
+        "nice-ng87"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "adhd-ov-2",
+      "text": "The imaging picture is developmental rather than static. The largest subcortical study found smaller accumbens, amygdala, caudate, hippocampus and putamen, with effects largest in children and no significant case-control differences in adults. The largest cortical study found lower surface area in children and no differences in adolescents or adults, and effects that also appeared in unaffected siblings.",
+      "evidence": "strong",
+      "sourceIds": [
+        "hoogman-adhd-sub-2017",
+        "hoogman-adhd-cort-2019"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "adhd-ov-3",
+      "text": "The cross-disorder ENIGMA analysis found that the brain structural pattern in this disorder is largely independent of those in the other five major disorders studied, which makes it one of the more neurodevelopmentally specific findings in psychiatry rather than a nonspecific marker of illness.",
+      "evidence": "strong",
+      "sourceIds": [
+        "enigma-cross-disorder-2020"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "inattention",
+      "name": "Inattention",
+      "description": {
+        "id": "adhd-sym-inatt",
+        "text": "Difficulty sustaining attention on tasks that lack stimulation or frequent reward, distractibility, and problems with organisation. Attention is not globally absent but is poorly sustained and poorly directed, which is why tasks that are intrinsically rewarding are often completed normally.",
+        "evidence": "established",
+        "sourceIds": [
+          "nice-ng87",
+          "dsm5tr-overview"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-frontostriatal"
+      ],
+      "brainFindingIds": [
+        "adhd-cortical-surface",
+        "adhd-accumbens"
+      ]
+    },
+    {
+      "id": "hyperactivity",
+      "name": "Hyperactivity",
+      "description": {
+        "id": "adhd-sym-hyper",
+        "text": "Excessive motor activity and difficulty remaining still, most evident in structured situations requiring behavioural self-control. It typically declines with age, which is one reason adult presentations are predominantly inattentive.",
+        "evidence": "established",
+        "sourceIds": [
+          "nice-ng87",
+          "icd11-browser"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-frontostriatal"
+      ],
+      "brainFindingIds": [
+        "adhd-amygdala",
+        "adhd-accumbens"
+      ]
+    },
+    {
+      "id": "impulsivity",
+      "name": "Impulsivity",
+      "description": {
+        "id": "adhd-sym-imp",
+        "text": "Acting on immediate stimuli without deliberation or consideration of consequences, most visible in adolescence and young adulthood. It is the domain most associated with risk-taking, substance use and legal difficulty, and it is the one most responsive to medication.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87",
+          "icd11-browser"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-frontostriatal"
+      ],
+      "brainFindingIds": [
+        "adhd-accumbens"
+      ]
+    },
+    {
+      "id": "executive-function",
+      "name": "Executive function and organisation",
+      "description": {
+        "id": "adhd-sym-exec",
+        "text": "Planning, time management, working memory and inhibition difficulties that often persist after core symptoms improve and are the main obstacle to adult occupational functioning. Organisational skills training and cognitive behavioural therapy target this domain directly.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-prefrontal-control"
+      ],
+      "brainFindingIds": [
+        "adhd-cortical-surface"
+      ]
+    },
+    {
+      "id": "developmental-course",
+      "name": "Developmental course",
+      "description": {
+        "id": "adhd-sym-course",
+        "text": "Symptoms must be present before age twelve in most cases, and many people are first identified in adulthood. Brain imaging differences are largest in childhood and are not detectable in adult groups, which is a caution against expecting adult scans to look abnormal.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017",
+          "hoogman-adhd-cort-2019",
+          "icd11-browser"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-frontostriatal"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "comorbidity",
+      "name": "Comorbidity",
+      "description": {
+        "id": "adhd-sym-comorb",
+        "text": "Conduct and oppositional disorders in childhood, and anxiety, depression, substance use and emotional dysregulation in adults. Co-occurring conditions often drive the referral rather than the attention symptoms themselves and need separate treatment.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "adhd-frontostriatal"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "adhd-accumbens",
+      "where": {
+        "atlasLabels": [
+          "Nucleus accumbens"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-accumbens-c",
+        "text": "The largest subcortical mega-analysis, covering 1713 participants with the disorder and 1529 controls from 23 sites, found the nucleus accumbens smaller at a standardised difference of minus 0.15, with the effect larger in children than in adults.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.15,
+        "sourceId": "hoogman-adhd-sub-2017"
+      }
+    },
+    {
+      "id": "adhd-amygdala",
+      "where": {
+        "atlasLabels": [
+          "Basolateral complex",
+          "Central nucleus",
+          "Lateral nucleus",
+          "Corticomedial group"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-amygdala-c",
+        "text": "The amygdala showed one of the larger effects in the same study at minus 0.19, and the source reports the whole amygdala, so it is applied across all four resolved sub-meshes and flagged as a proxy.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.19,
+        "sourceId": "hoogman-adhd-sub-2017"
+      }
+    },
+    {
+      "id": "adhd-putamen",
+      "where": {
+        "atlasLabels": [
+          "Putamen"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-putamen-c",
+        "text": "The putamen was smaller at minus 0.14, while the pallidum and thalamus showed no significant difference at all. This selectivity matters, because it argues against a nonspecific global reduction in brain size.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.14,
+        "sourceId": "hoogman-adhd-sub-2017"
+      }
+    },
+    {
+      "id": "adhd-hippocampus",
+      "where": {
+        "atlasLabels": [
+          "Hippocampus"
+        ],
+        "precision": "exact"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-hippocampal-c",
+        "text": "The hippocampus was smaller at minus 0.11, again with larger effects in children than in adults.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.11,
+        "sourceId": "hoogman-adhd-sub-2017"
+      }
+    },
+    {
+      "id": "adhd-cortical-surface",
+      "where": {
+        "atlasLabels": [
+          "Middle frontal gyrus",
+          "Superior frontal gyrus",
+          "Cingulate gyrus and sulcus (Middle anterior part)",
+          "Cingulate gyrus and sulcus (Middle posterior part)",
+          "Superior temporal gyrus (Lateral part)",
+          "Middle temporal gyrus",
+          "Inferior temporal gyrus",
+          "Temporal pole"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-cortical-c",
+        "text": "The largest cortical study, with 2246 cases and 1934 controls across 36 centres, found lower cortical surface area in children in frontal, cingulate and temporal regions, with the largest single effect for total surface area at minus 0.21. Fusiform and temporal pole thickness was also lower. No surface area or thickness differences were found in adolescents or adults.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-cort-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "effectSize": {
+        "metric": "cohens_d",
+        "value": -0.21,
+        "sourceId": "hoogman-adhd-cort-2019"
+      }
+    },
+    {
+      "id": "adhd-endophenotype",
+      "where": {
+        "atlasLabels": [
+          "Middle frontal gyrus",
+          "Superior temporal gyrus (Lateral part)",
+          "Superior parietal lobule"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "volume-reduction",
+      "stage": "any",
+      "claim": {
+        "id": "adhd-endophenotype-c",
+        "text": "In the same study, unaffected siblings of cases showed similar surface area differences, and surface area rather than thickness was associated with attention problems in a large general population sample. This is why the disorder is taught as a continuous trait rather than a categorical one.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-cort-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "adhd-frontostriatal",
+      "name": "Frontostriatal control circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Caudate nucleus",
+            "Putamen",
+            "Nucleus accumbens"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus",
+            "Opercular part of inferior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Globus pallidus external",
+            "Globus pallidus internal"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Caudate nucleus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Caudate nucleus",
+          "to": "Globus pallidus external",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        }
+      ],
+      "function": {
+        "id": "adhd-frontostriatal-f",
+        "text": "Prefrontal cortex sets goals and inhibits competing responses while the striatum signals their reward value, and the smaller striatal structures found here are consistent with weaker signal-to-noise in that loop. This is the circuit on which every first-line drug acts.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "adhd-prefrontal-control",
+      "name": "Prefrontal executive control circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus",
+            "Anterior nuclei of thalamus"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Frontal aslant tract",
+            "Superior longitudinal fasciculus III",
+            "Inferior fronto-occipital fasciculus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Anterior nuclei of thalamus",
+          "to": "Middle frontal gyrus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "adhd-pfc-f",
+        "text": "Working memory, inhibition and planning depend on this circuit, and the frontal and cingulate surface-area reductions in children map onto them. The persistence of executive difficulty after core symptoms improve is what keeps these adults functionally impaired.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-cort-2019",
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "adhd-reward",
+      "name": "Reward and salience circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Nucleus accumbens",
+            "Caudate nucleus",
+            "Putamen"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Medial occipitotemporal gyrus (Parahippocampal)",
+            "Hippocampus"
+          ],
+          "precision": "exact"
+        },
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        }
+      ],
+      "edges": [
+        {
+          "from": "VTA (schematic)",
+          "to": "Nucleus accumbens",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        }
+      ],
+      "function": {
+        "id": "adhd-reward-f",
+        "text": "Rewards that are immediate and frequent sustain attention, which is why a task lacking feedback is abandoned. The ventral striatal reduction found in the largest study is consistent with a shifted reward valuation, and dopamine transporter blockade is the treatment mechanism.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "adhd-arousal",
+      "name": "Noradrenergic arousal modulation",
+      "nodes": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Pons"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Locus coeruleus (schematic)",
+          "to": "Middle frontal gyrus",
+          "type": "modulatory",
+          "transmitter": "noradrenaline"
+        }
+      ],
+      "function": {
+        "id": "adhd-arousal-f",
+        "text": "Both non-stimulant first-line drugs act on noradrenergic transmission, whether by blocking reuptake or by stimulating alpha-2A autoreceptors. The nucleus itself is not resolved by the atlas and appears as a calibrated marker.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "dopamine",
+      "alteration": "Altered dopaminergic signalling in frontostriatal circuits",
+      "where": [
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Caudate nucleus",
+            "Putamen",
+            "Nucleus accumbens",
+            "Middle frontal gyrus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "claim": {
+        "id": "adhd-nc-da",
+        "text": "Dopamine transporter blockade is the mechanism of stimulant treatment and the density of that transporter is highest in striatum. A large registry study also found that reduced burden of dopamine-related protein-truncating variants was associated with stimulant discontinuation, which is a weak signal but points the same way.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "adhd-stimulant-genetics-2026"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Noradrenergic control of attention and inhibition",
+      "where": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "adhd-nc-na",
+        "text": "Noradrenaline transporter inhibition and alpha-2A agonism are the two non-stimulant mechanisms, one raising and one reducing noradrenergic tone, and both are guideline options when stimulants are unsuitable.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "serotonin",
+      "alteration": "Serotonergic modulation of impulsivity",
+      "where": [
+        {
+          "markerId": "raphe-medial",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "adhd-nc-5ht",
+        "text": "Serotonin is not the primary treatment target in this disorder, but serotonergic modulation is implicated in impulsivity and aggression, and it is relevant to the frequent co-occurrence of mood and anxiety symptoms.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "iuphar",
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "histamine",
+      "alteration": "Histaminergic contribution to arousal and sleep",
+      "where": [
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "adhd-nc-h1",
+        "text": "Histamine contributes to wakefulness, which is one rationale for the newer wake-promoting agents, and it is the same receptor whose blockade causes sedation in other psychiatric drugs used alongside.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "SLC5A12"
+    ],
+    "architecture": [
+      {
+        "id": "adhd-gen-1",
+        "text": "Attention deficit hyperactivity disorder is highly heritable and polygenic, and the ENIGMA cross-disorder analysis found its brain structural pattern largely independent of the other five major psychiatric disorders studied, which argues for a relatively specific neurodevelopmental basis rather than a nonspecific effect of illness.",
+        "evidence": "strong",
+        "sourceIds": [
+          "enigma-cross-disorder-2020",
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "adhd-gen-2",
+        "text": "The gene listed here is a locus for stimulant discontinuation rather than for the disorder itself. In 18362 people starting stimulants, 39 percent had discontinued within a year, single nucleotide polymorphism heritability of discontinuation was only 0.06, and no locus reached genome-wide significance overall, with a chromosome 11 locus significant in children only.",
+        "evidence": "strong",
+        "sourceIds": [
+          "adhd-stimulant-genetics-2026"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "adhd-gen-3",
+        "text": "That result is instructive rather than disappointing: treatment continuation is partly but only weakly genetic, so early side-effect management and formulation choice matter more than any predicted genetic profile, and no genetic test should guide prescribing here.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "adhd-stimulant-genetics-2026"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Cortical surface area",
+      "finding": {
+        "id": "adhd-bm-surface",
+        "text": "Lower total cortical surface area in children, with the largest single effect at minus 0.21 and no differences in adults. Because the adult finding is null, this cannot be used to investigate or support an adult diagnosis.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-cort-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Subcortical volumes",
+      "finding": {
+        "id": "adhd-bm-subcort",
+        "text": "Smaller accumbens, amygdala, caudate, hippocampus and putamen with effects of minus 0.11 to minus 0.19, but no difference in pallidum or thalamus. That selectivity argues against a nonspecific global reduction and is a useful teaching point.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Medication effect on the brain",
+      "finding": {
+        "id": "adhd-bm-medication",
+        "text": "Psychostimulant use did not influence the volume findings, which the source explicitly describes as refuting the medication effects on brain volume suggested by earlier smaller meta-analyses.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-sub-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Continuous trait",
+      "finding": {
+        "id": "adhd-bm-trait",
+        "text": "Unaffected siblings show similar surface area differences and population attention scores track with surface area, which supports treating this as a dimensional trait distributed through the population rather than a sharply bounded illness.",
+        "evidence": "strong",
+        "sourceIds": [
+          "hoogman-adhd-cort-2019"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-methylphenidate",
+    "tx-lisdexamfetamine",
+    "tx-atomoxetine",
+    "tx-guanfacine",
+    "tx-parenting-adhd",
+    "tx-cbt-adhd"
+  ],
+  "pathway": [
+    {
+      "step": "Environmental adaptations first",
+      "options": [
+        "tx-parenting-adhd"
+      ],
+      "claim": {
+        "id": "adhd-pw-1",
+        "text": "Guidelines recommend environmental modifications to improve predictability and reduce distractibility as the first step, including advice to parents and teachers, and these should be in place before or alongside any medication decision.",
+        "evidence": "established",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "First-line medication",
+      "options": [
+        "tx-methylphenidate",
+        "tx-lisdexamfetamine"
+      ],
+      "claim": {
+        "id": "adhd-pw-2",
+        "text": "A stimulant is first-line pharmacological treatment in both children and adults, with methylphenidate and an amphetamine prodrug the usual choices. Stimulants should be titrated in small increments, monitored for growth, appetite, sleep and cardiovascular effects, and stopped if they are not clearly helping.",
+        "evidence": "established",
+        "sourceIds": [
+          "nice-ng87",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "When stimulants are unsuitable",
+      "options": [
+        "tx-atomoxetine",
+        "tx-guanfacine"
+      ],
+      "claim": {
+        "id": "adhd-pw-3",
+        "text": "A noradrenaline reuptake inhibitor or an alpha-2A agonist is used when a stimulant is contraindicated, not tolerated, or where diversion is a concern, and when a stimulant is only partly effective. Alpha-2A agonists must be titrated slowly and never stopped abruptly because of rebound hypertension.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Behavioural and skills work alongside",
+      "options": [
+        "tx-parenting-adhd",
+        "tx-cbt-adhd"
+      ],
+      "claim": {
+        "id": "adhd-pw-4",
+        "text": "Parent training and organisational skills or cognitive behavioural therapy are added rather than substituted, because they install the executive and environmental skills that medication alone does not, and they matter most for the impairments that persist in adults.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Treat comorbidity and review the diagnosis",
+      "options": [
+        "tx-atomoxetine",
+        "tx-cbt-adhd"
+      ],
+      "claim": {
+        "id": "adhd-pw-5",
+        "text": "Co-occurring anxiety, depression, substance use and emotional dysregulation need active treatment in their own right, and the diagnosis should be reviewed against developmental history, since adult referrals are often driven by a co-occurring condition rather than by attention symptoms.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · A developmental, dimensional condition",
+      "text": "Symptoms before age twelve in most cases, adults included explicitly in ICD-11, and brain differences that are dimensional and distributed through the population rather than sharply bounded.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · Smaller striatal structures",
+      "text": "Accumbens minus 0.15, amygdala minus 0.19, putamen minus 0.14, hippocampus minus 0.11, with no difference in pallidum or thalamus. That selectivity matters.",
+      "lens": "pathology",
+      "camera": "front",
+      "lensTarget": "adhd-amygdala"
+    },
+    {
+      "title": "3 · Cortical surface area, children only",
+      "text": "Total surface area minus 0.21 in frontal, cingulate and temporal regions, with no differences in adolescents or adults, so an adult scan should not be expected to look abnormal.",
+      "lens": "pathology",
+      "camera": "top",
+      "lensTarget": "adhd-cortical-surface"
+    },
+    {
+      "title": "4 · It behaves like an endophenotype",
+      "text": "Unaffected siblings show similar surface area differences and population attention scores track with surface area, which is why this is taught as a continuous trait.",
+      "lens": "pathology",
+      "camera": "side",
+      "lensTarget": "adhd-endophenotype"
+    },
+    {
+      "title": "5 · The frontostriatal loop",
+      "text": "Prefrontal goal and inhibition meets striatal reward value. Every first-line drug acts on this loop, and the ventral tegmental area appears as a schematic marker.",
+      "lens": "circuit",
+      "camera": "front",
+      "lensTarget": "adhd-reward"
+    },
+    {
+      "title": "6 · Mediation, not genes, drives treatment",
+      "text": "Only 39 percent of people were still on stimulants after a year and heritability of discontinuation was 0.06, so side-effect management matters more than any genetic prediction.",
+      "lens": "drug",
+      "camera": "home",
+      "lensTarget": "methylphenidate"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "adhd-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers attention deficit hyperactivity disorder?",
+      "choices": [
+        "6A02",
+        "6A04",
+        "6A05",
+        "6A06"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6A05 is attention deficit hyperactivity disorder, within the neurodevelopmental disorders block, and it now includes adults explicitly with inattentive, hyperactive-impulsive and combined presentations.",
+      "sourceIds": [
+        "icd11-browser",
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q2",
+      "topic": "Psychopathology",
+      "question": "Why can someone with this disorder complete a highly rewarding task but not a boring one?",
+      "choices": [
+        "The disorder fluctuates hourly",
+        "Attention is poorly sustained rather than absent, and immediate frequent reward sustains it",
+        "Boredom is a symptom",
+        "It only affects complex tasks"
+      ],
+      "answer": 1,
+      "explanation": "Attention is not globally absent but is poorly sustained and poorly directed on tasks lacking stimulation or frequent reward, which is a defining feature rather than an inconsistency.",
+      "sourceIds": [
+        "nice-ng87",
+        "icd11-browser"
+      ]
+    },
+    {
+      "id": "adhd-q3",
+      "topic": "Psychopathology",
+      "question": "Which symptom domain most drives adult occupational impairment?",
+      "choices": [
+        "Hyperactivity",
+        "Executive function and organisation difficulties that persist after core symptoms improve",
+        "Nightmares",
+        "Tics"
+      ],
+      "answer": 1,
+      "explanation": "Planning, time management and working memory difficulties often persist after core symptoms settle, and they are the main obstacle to adult occupational functioning.",
+      "sourceIds": [
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q4",
+      "topic": "Psychopathology",
+      "question": "Why does the adult presentation tend to be predominantly inattentive?",
+      "choices": [
+        "Hyperactivity symptoms are misdiagnosed",
+        "Hyperactivity typically declines with age",
+        "Adults are better at masking",
+        "It changes to a different disorder"
+      ],
+      "answer": 1,
+      "explanation": "Hyperactivity declines with age while inattention and executive difficulty persist, which is why adult referrals are often inattentive rather than hyperactive.",
+      "sourceIds": [
+        "icd11-browser",
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q5",
+      "topic": "Brain pathology",
+      "question": "Which subcortical structures showed NO significant difference in the largest study?",
+      "choices": [
+        "Nucleus accumbens and putamen",
+        "Pallidum and thalamus",
+        "Amygdala and hippocampus",
+        "Caudate and putamen"
+      ],
+      "answer": 1,
+      "explanation": "Accumbens, amygdala, caudate, hippocampus and putamen were all smaller, but the pallidum and thalamus showed no significant difference, which argues against a nonspecific global reduction in brain size.",
+      "sourceIds": [
+        "hoogman-adhd-sub-2017"
+      ]
+    },
+    {
+      "id": "adhd-q6",
+      "topic": "Brain pathology",
+      "question": "What was the largest single cortical effect, and in which group?",
+      "choices": [
+        "A thickness effect in adults",
+        "A total surface area effect of minus 0.21 in children",
+        "A temporal pole effect in adolescents",
+        "A cingulate effect in adults"
+      ],
+      "answer": 1,
+      "explanation": "The largest cortical study found lower surface area in children, with the largest single effect for total surface area at minus 0.21, and no surface area or thickness differences in adolescents or adults.",
+      "sourceIds": [
+        "hoogman-adhd-cort-2019"
+      ]
+    },
+    {
+      "id": "adhd-q7",
+      "topic": "Brain pathology",
+      "question": "What did that cortical study find about unaffected siblings?",
+      "choices": [
+        "No differences at all",
+        "Similar surface area differences, suggesting an endophenotype-like trait",
+        "Increased thickness",
+        "Reduced caudate volume only"
+      ],
+      "answer": 1,
+      "explanation": "Unaffected siblings showed similar regional surface area differences, and surface area rather than thickness tracked with attention problems in a large population sample, supporting a dimensional trait model.",
+      "sourceIds": [
+        "hoogman-adhd-cort-2019"
+      ]
+    },
+    {
+      "id": "adhd-q8",
+      "topic": "Brain pathology",
+      "question": "What is the practical implication of the null adult imaging findings?",
+      "choices": [
+        "Adults cannot be diagnosed by imaging",
+        "An adult brain scan should not be expected to show the childhood differences, so imaging has no investigative role in adults",
+        "Adults have enlarged structures",
+        "Only medication-naive adults are studied"
+      ],
+      "answer": 1,
+      "explanation": "Because effects were largest in children and absent in adults, imaging cannot be used to support or exclude an adult diagnosis, and requesting it for that purpose is not justified.",
+      "sourceIds": [
+        "hoogman-adhd-sub-2017",
+        "hoogman-adhd-cort-2019"
+      ]
+    },
+    {
+      "id": "adhd-q9",
+      "topic": "Neurochemistry",
+      "question": "What is the mechanism of stimulant treatment?",
+      "choices": [
+        "Serotonin transporter inhibition",
+        "Dopamine transporter blockade, raising catecholamines in prefrontal and striatal circuits",
+        "Muscarinic agonism",
+        "Alpha-2A antagonism"
+      ],
+      "answer": 1,
+      "explanation": "Methylphenidate and amphetamine block the dopamine transporter, and transporter density is highest in striatum, which is the direct pharmacological target.",
+      "sourceIds": [
+        "iuphar",
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q10",
+      "topic": "Pharmacology",
+      "question": "Which two non-stimulant mechanisms are guideline options?",
+      "choices": [
+        "Dopamine and serotonin reuptake inhibition",
+        "Noradrenaline reuptake inhibition and alpha-2A adrenergic agonism",
+        "Beta blockade and calcium-channel blockade",
+        "Histamine antagonism and cholinergic blockade"
+      ],
+      "answer": 1,
+      "explanation": "Atomoxetine blocks the noradrenaline transporter and guanfacine stimulates alpha-2A autoreceptors, one raising and one reducing noradrenergic tone, and both are options when stimulants are unsuitable.",
+      "sourceIds": [
+        "nice-ng87",
+        "iuphar"
+      ]
+    },
+    {
+      "id": "adhd-q11",
+      "topic": "Pharmacology",
+      "question": "What specific danger accompanies stopping an alpha-2A agonist abruptly?",
+      "choices": [
+        "Rebound hypertension",
+        "Withdrawal seizures",
+        "Acute psychosis",
+        "Serotonin syndrome"
+      ],
+      "answer": 0,
+      "explanation": "Guanfacine must be tapered rather than stopped abruptly because of rebound hypertension, and it is titrated on a slow fixed schedule for the same reason.",
+      "sourceIds": [
+        "iuphar",
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q12",
+      "topic": "Pharmacology",
+      "question": "What must be monitored on stimulant treatment in children?",
+      "choices": [
+        "Only heart rate",
+        "Height, weight, appetite, sleep, heart rate and blood pressure",
+        "Only sleep",
+        "Nothing after initiation"
+      ],
+      "answer": 1,
+      "explanation": "Guidelines require monitoring of growth, weight, appetite, sleep and cardiovascular parameters, because these are the effects that most often limit or stop treatment.",
+      "sourceIds": [
+        "nice-ng87"
+      ]
+    },
+    {
+      "id": "adhd-q13",
+      "topic": "Genetics",
+      "question": "How much of stimulant discontinuation is explained by genetics?",
+      "choices": [
+        "About 80 percent",
+        "Little: single nucleotide polymorphism heritability was 0.06, with no genome-wide significant locus overall",
+        "Almost all of it",
+        "None, and it is purely environmental"
+      ],
+      "answer": 1,
+      "explanation": "In 18362 people starting stimulants, heritability of discontinuation was only 0.06 and no locus reached genome-wide significance overall, so treatment continuation is not strongly genetically determined.",
+      "sourceIds": [
+        "adhd-stimulant-genetics-2026"
+      ]
+    },
+    {
+      "id": "adhd-q14",
+      "topic": "Genetics",
+      "question": "What did the cross-disorder ENIGMA analysis find for this disorder specifically?",
+      "choices": [
+        "Its pattern is identical to depression",
+        "Its brain structural pattern is largely independent of the other five major disorders studied",
+        "It shares a single latent factor with all others",
+        "It has no structural differences"
+      ],
+      "answer": 1,
+      "explanation": "The shared latent factor explained much of the variance in the mood and psychotic disorders but not in this one, where disorder-specific morphometric abnormalities were observed, supporting a relatively specific basis.",
+      "sourceIds": [
+        "enigma-cross-disorder-2020"
+      ]
+    },
+    {
+      "id": "adhd-q15",
+      "topic": "Biomarkers",
+      "question": "Did stimulant use influence the brain volume findings?",
+      "choices": [
+        "Yes, users had larger volumes",
+        "No, and the source explicitly describes this as refuting earlier medication-effect claims",
+        "Only in adults",
+        "Only for amphetamines"
+      ],
+      "answer": 1,
+      "explanation": "Psychostimulant use did not influence the results, and the authors state this refutes the medication effects on brain volume suggested by earlier smaller meta-analyses.",
+      "sourceIds": [
+        "hoogman-adhd-sub-2017"
+      ]
+    },
+    {
+      "id": "adhd-q16",
+      "topic": "Pathway",
+      "question": "What is the first step in guideline management?",
+      "choices": [
+        "Start a stimulant immediately",
+        "Environmental modifications and advice to parents and teachers, before or alongside any medication decision",
+        "Order a brain scan",
+        "Refer for psychological assessment only"
+      ],
+      "answer": 1,
+      "explanation": "Guidelines recommend environmental modifications to improve predictability and reduce distractibility as the first step, in place before or alongside any medication decision.",
+      "sourceIds": [
+        "nice-ng87"
+      ]
+    }
+  ],
+  "related": [
+    "asd",
+    "mdd",
+    "ocd",
+    "ptsd"
+  ]
+}

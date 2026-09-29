@@ -21,9 +21,39 @@
       "block": "Mood (affective) disorders"
     },
     {
+      "id": "gad",
+      "name": "Generalized anxiety disorder",
+      "block": "Anxiety or fear-related disorders"
+    },
+    {
+      "id": "panic",
+      "name": "Panic disorder",
+      "block": "Anxiety or fear-related disorders"
+    },
+    {
+      "id": "sad",
+      "name": "Social anxiety disorder",
+      "block": "Anxiety or fear-related disorders"
+    },
+    {
+      "id": "ptsd",
+      "name": "Post-traumatic stress disorder",
+      "block": "Disorders specifically associated with stress"
+    },
+    {
       "id": "ocd",
       "name": "Obsessive-compulsive disorder",
       "block": "Obsessive-compulsive or related disorders"
+    },
+    {
+      "id": "adhd",
+      "name": "Attention deficit hyperactivity disorder",
+      "block": "Neurodevelopmental disorders"
+    },
+    {
+      "id": "asd",
+      "name": "Autism spectrum disorder",
+      "block": "Neurodevelopmental disorders"
     }
   ]
 }

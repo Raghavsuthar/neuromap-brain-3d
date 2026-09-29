@@ -1,0 +1,926 @@
+{
+  "id": "panic",
+  "name": "Panic disorder",
+  "icd11": {
+    "code": "6B01",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "300.01",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Anxiety or fear-related disorders",
+  "overview": [
+    {
+      "id": "pan-ov-1",
+      "text": "Panic disorder is characterised by recurrent unexpected panic attacks that are not restricted to a particular situation, together with persistent concern or behaviour change for at least a month afterwards. ICD-11 now separates panic disorder from agoraphobia as two distinct diagnoses that can be assigned together, rather than the two being alternatives.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview",
+        "wfsbp-anxiety-2023"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "pan-ov-2",
+      "text": "The defining psychological mechanism is not excessive fear but a misreading of bodily sensation, so treatment targets the catastrophic interpretation and the avoidance that follows, and an SSRI that worked before is preferred over switching drug class.",
+      "evidence": "strong",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "pan-ov-3",
+      "text": "Panic disorder is modestly heritable. Polygenic scores discriminate affected people from controls only weakly, with the best area under the curve around 0.60 in the largest study, so genetics has no diagnostic role at present.",
+      "evidence": "strong",
+      "sourceIds": [
+        "panic-pgs-2024"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "panic-attacks",
+      "name": "Panic attacks",
+      "description": {
+        "id": "pan-sym-attack",
+        "text": "Abrupt surges of intense fear with palpitations, sweating, tremor, breathlessness, choking sensation, chest pain, nausea and derealisation, peaking within minutes. The attack is experienced as arriving from out of the blue, which is what distinguishes the disorder from fear in a specific situation.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "icd11-browser"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-interoceptive"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "catastrophic-thoughts",
+      "name": "Catastrophic misinterpretation",
+      "description": {
+        "id": "pan-sym-catast",
+        "text": "The sense of imminent death, losing control or going mad, and the resulting conviction that the sensation means something grave. This appraisal, not the bodily sensation itself, is the treatment target and the reason CBT outperforms reassurance.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-interoceptive"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "anticipatory-anxiety",
+      "name": "Anticipatory anxiety",
+      "description": {
+        "id": "pan-sym-antic",
+        "text": "Persistent fear of the next attack, which itself raises baseline arousal and makes the next attack more likely. It is what converts attacks from isolated events into a chronic disorder.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-interoceptive",
+        "pan-avoidance"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "avoidance",
+      "name": "Avoidance and safety behaviour",
+      "description": {
+        "id": "pan-sym-avoid",
+        "text": "Withdrawal from situations where an attack would be embarrassing or unwitnessed, such as public transport, crowds or being alone, along with reassurance-seeking and escaping early. Maintaining this avoidance is the main obstacle to recovery.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-avoidance"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "health-anxiety",
+      "name": "Health anxiety and medical seeking",
+      "description": {
+        "id": "pan-sym-health",
+        "text": "Repeated presentation with physical complaints and requests for investigations, and conversely, over-reliance on home monitoring devices. Unnecessary medical investigation is a recognised harm of this presentation.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-interoceptive"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "depressive-comorbidity",
+      "name": "Depressive and substance comorbidity",
+      "description": {
+        "id": "pan-sym-comorb",
+        "text": "Depressive disorder frequently co-occurs, and alcohol or sedative self-medication is common and then becomes its own problem. Guidelines advise treating both rather than treating the panic attacks alone.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "pan-avoidance"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "pan-interoceptive-find",
+      "where": {
+        "atlasLabels": [
+          "Insula (Subcentral gyrus and ant. and post. sulci)",
+          "Cingulate gyrus and sulcus (Middle anterior part)",
+          "Basolateral complex",
+          "Central nucleus"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "other",
+      "stage": "any",
+      "claim": {
+        "id": "pan-insula-c",
+        "text": "The interoceptive network formed by the insula, anterior cingulate and amygdala represents internal bodily state, and in panic disorder the signal from that network is amplified and misread as danger. The fear-circuit model confirmed in social anxiety disorder is applied here as a shared model rather than as a measured finding in this disorder.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "pan-brainstem-find",
+      "where": {
+        "atlasLabels": [
+          "Medulla oblongata",
+          "Pons",
+          "Midbrain"
+        ],
+        "precision": "exact"
+      },
+      "finding": "other",
+      "stage": "any",
+      "claim": {
+        "id": "pan-brainstem-c",
+        "text": "Brainstem nuclei generate the cardiorespiratory and ventilatory components of a panic attack, and hyperventilation lowers carbon dioxide which further amplifies the sensation of threat. These structures are resolved in the atlas, unlike the deeper nuclei that are not.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "pan-interoceptive",
+      "name": "Interoceptive amplification circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Insula (Subcentral gyrus and ant. and post. sulci)"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Cingulate gyrus (Posteroventral part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Central nucleus",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Orbital gyri"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Insula (Subcentral gyrus and ant. and post. sulci)",
+          "to": "Cingulate gyrus and sulcus (Middle anterior part)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Basolateral complex",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        }
+      ],
+      "function": {
+        "id": "pan-interoceptive-f",
+        "text": "A normal bodily change such as a heart rate increase is amplified in the insula, assigned a threatening meaning in the anterior cingulate and orbitofrontal cortex, and confirmed by the amygdala. Breaking the appraisal rather than the sensation is why cognitive behavioural therapy is first line.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "pan-avoidance",
+      "name": "Hippocampal context and avoidance circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Hippocampus"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Medial occipitotemporal gyrus (Parahippocampal)"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Nucleus accumbens",
+            "Caudate nucleus",
+            "Putamen"
+          ],
+          "precision": "exact"
+        },
+        {
+          "markerId": "vta",
+          "precision": "schematic"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Hippocampus",
+          "to": "Medial occipitotemporal gyrus (Parahippocampal)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        },
+        {
+          "from": "VTA (schematic)",
+          "to": "Nucleus accumbens",
+          "type": "modulatory",
+          "transmitter": "dopamine"
+        }
+      ],
+      "function": {
+        "id": "pan-avoidance-f",
+        "text": "Avoidance is learned: contexts paired with an attack acquire negative value, and the dopamine-modulated striatal loop that encodes this cost is why the patient progressively narrows their world. Re-approaching those contexts is what reverses it.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "pan-arousal",
+      "name": "Serotonergic and noradrenergic arousal circuit",
+      "nodes": [
+        {
+          "markerId": "raphe-drn",
+          "precision": "schematic"
+        },
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Hippocampus",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Locus coeruleus (schematic)",
+          "to": "Hippocampus",
+          "type": "modulatory",
+          "transmitter": "noradrenaline"
+        },
+        {
+          "from": "Raphe (schematic)",
+          "to": "Middle frontal gyrus",
+          "type": "modulatory",
+          "transmitter": "serotonin"
+        }
+      ],
+      "function": {
+        "id": "pan-arousal-f",
+        "text": "The two brainstem systems that every first-line drug acts on are not resolved by this atlas and appear as calibrated markers. Hyperventilation and the resulting fall in carbon dioxide add to the adrenergic surge, which is why breathing and pacing skills form part of treatment.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Reduced serotonergic modulation of the interoceptive signal",
+      "where": [
+        {
+          "markerId": "raphe-drn",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "pan-nc-5ht",
+        "text": "SSRIs are first line and the preferred choice is a drug that previously helped the individual, with 5-HT1A partial agonism available where dependence is the concern.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Adrenergic surge amplifying cardiac and tremor symptoms",
+      "where": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        }
+      ],
+      "claim": {
+        "id": "pan-nc-na",
+        "text": "The adrenergic surge during an attack is what supplies the palpitations and tremor that the patient then misreads, which is the loop that cognitive work and noradrenergic drugs both target.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "carbon-dioxide",
+      "alteration": "Carbon dioxide and ventilation sensitivity",
+      "where": [
+        {
+          "atlasLabels": [
+            "Medulla oblongata",
+            "Pons"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "pan-nc-co2",
+        "text": "Panic attacks can be provoked by raising carbon dioxide, and hyperventilation during an attack lowers it and amplifies the sensation, so ventilation is both a symptom and a maintaining mechanism.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Excitatory transmission within the appraisal loop",
+      "where": [
+        {
+          "atlasLabels": [
+            "Insula (Subcentral gyrus and ant. and post. sulci)",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "pan-nc-glu",
+        "text": "Excitatory transmission between insula, cingulate and orbitofrontal cortex carries the misread signal, and calcium-channel ligands that reduce excitatory release are an option when first-line drugs are unsuitable.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "SLC6A4"
+    ],
+    "architecture": [
+      {
+        "id": "pan-gen-1",
+        "text": "Panic disorder is modestly heritable and polygenic. In the largest study of polygenic discrimination, combining scores improved classification but the best area under the curve was only about 0.60, which the authors themselves describe as modest.",
+        "evidence": "strong",
+        "sourceIds": [
+          "panic-pgs-2024"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "pan-gen-2",
+        "text": "The gene listed here encodes the pharmacological target of first-line treatment rather than a susceptibility gene, because no susceptibility gene has been established for this disorder. No genetic test has clinical use.",
+        "evidence": "strong",
+        "sourceIds": [
+          "panic-pgs-2024",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Polygenic discrimination",
+      "finding": {
+        "id": "pan-bm-pgs",
+        "text": "Polygenic scores distinguish affected people from controls with an area under the curve of roughly 0.60 at best, which is far too weak for diagnosis. This is an honest ceiling on current genetic prediction for this disorder.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "panic-pgs-2024"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Fear circuit activity",
+      "finding": {
+        "id": "pan-bm-circuit",
+        "text": "The insula, anterior cingulate and amygdala form the interoceptive circuit whose amplification is the accepted model, confirmed as a shared fear-circuit model in social anxiety disorder rather than measured directly in this disorder.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Carbon dioxide sensitivity",
+      "finding": {
+        "id": "pan-bm-co2",
+        "text": "Raised carbon dioxide provokes attacks in susceptible people and is studied as an experimental challenge, but it has no role as a routine clinical test.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-ssri-panic",
+    "tx-buspirone-panic",
+    "tx-benzo-panic",
+    "tx-cbt-panic"
+  ],
+  "pathway": [
+    {
+      "step": "First line: SSRI and cognitive behavioural therapy",
+      "options": [
+        "tx-ssri-panic",
+        "tx-cbt-panic"
+      ],
+      "claim": {
+        "id": "pan-pw-1",
+        "text": "Guidelines recommend an SSRI or SNRI and cognitive behavioural therapy as first line, and a previous good response to a particular drug is the strongest guide to which to use. Full-dose treatment may be needed earlier than for depression because the target is avoidance.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Where dependence is the concern",
+      "options": [
+        "tx-buspirone-panic"
+      ],
+      "claim": {
+        "id": "pan-pw-2",
+        "text": "A 5-HT1A partial agonist is preferred where there is a history of substance misuse or benzodiazepine dependence, because it gives anxiolysis without a withdrawal syndrome.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Short-term crisis use only",
+      "options": [
+        "tx-benzo-panic"
+      ],
+      "claim": {
+        "id": "pan-pw-3",
+        "text": "Benzodiazepines abort attacks quickly but are limited to short-term crisis use because tolerance and dependence develop within weeks, and they do not treat the avoidance that maintains the disorder.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Treat comorbidity and complications",
+      "options": [
+        "tx-cbt-panic",
+        "tx-ssri-panic"
+      ],
+      "claim": {
+        "id": "pan-pw-4",
+        "text": "Depression and alcohol or sedative self-medication are treated actively, and unnecessary medical investigation arising from health anxiety is itself a harm to be avoided by explaining the mechanism clearly.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Rebuild function",
+      "options": [
+        "tx-cbt-panic"
+      ],
+      "claim": {
+        "id": "pan-pw-5",
+        "text": "Recovery requires re-approaching avoided situations, since the avoidance is what sustains the disorder. A graded return to public transport, crowds and being alone is the practical goal of therapy rather than symptom reduction alone.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · Attacks that arrive from nowhere",
+      "text": "Recurrent unexpected panic attacks not tied to a particular situation, with a month or more of persistent worry or behaviour change afterwards.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · The body is misread, not feared",
+      "text": "The insula amplifies a normal bodily change, the anterior cingulate and orbitofrontal cortex give it a threatening meaning, and the amygdala confirms it. The appraisal is the treatment target.",
+      "lens": "circuit",
+      "camera": "front",
+      "lensTarget": "pan-interoceptive"
+    },
+    {
+      "title": "3 · The brainstem generators",
+      "text": "Cardiorespiratory and ventilatory components come from brainstem structures that this atlas does resolve, unlike the deeper nuclei it does not.",
+      "lens": "pathology",
+      "camera": "side",
+      "lensTarget": "pan-brainstem-find"
+    },
+    {
+      "title": "4 · Avoidance is the illness",
+      "text": "Contexts paired with an attack acquire negative value in a striatal loop, and the world narrows. Re-approaching them is what reverses the disorder.",
+      "lens": "circuit",
+      "camera": "top",
+      "lensTarget": "pan-avoidance"
+    },
+    {
+      "title": "5 · The two drug systems",
+      "text": "Raphe and locus coeruleus drive the interoceptive and adrenergic signals, and both appear as schematic markers because the atlas does not resolve them.",
+      "lens": "chemistry",
+      "camera": "front",
+      "lensTarget": "serotonin"
+    },
+    {
+      "title": "6 · Genetics has a low ceiling",
+      "text": "The best polygenic discrimination reaches an area under the curve near 0.60, which the source calls modest, so there is no genetic test here.",
+      "lens": "gene",
+      "camera": "home",
+      "lensTarget": "SLC6A4"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "pan-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers panic disorder?",
+      "choices": [
+        "6B00",
+        "6B01",
+        "6B02",
+        "6B04"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6B01 is panic disorder, and the revision separated it from agoraphobia at 6B02 so that the two can be diagnosed together rather than chosen between.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q2",
+      "topic": "Psychopathology",
+      "question": "What makes a panic attack qualify as part of panic disorder rather than fear in a specific situation?",
+      "choices": [
+        "Its physical severity",
+        "That it is unexpected and not restricted to a particular stimulus or situation",
+        "That it lasts more than an hour",
+        "That it occurs at night"
+      ],
+      "answer": 1,
+      "explanation": "Panic disorder requires attacks that come out of the blue and are not bound to a particular situation, which is exactly the boundary ICD-11 draws against a specific phobia.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q3",
+      "topic": "Psychopathology",
+      "question": "Why is anticipatory anxiety the feature that makes the disorder chronic?",
+      "choices": [
+        "It is the most visible symptom",
+        "It maintains baseline arousal, which makes the next attack more likely and converts isolated events into a long-term condition",
+        "It responds best to benzodiazepines",
+        "It only occurs in young people"
+      ],
+      "answer": 1,
+      "explanation": "Fear of the next attack keeps arousal elevated, which lowers the threshold for the following attack, so treating it is essential to converting the course.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q4",
+      "topic": "Psychopathology",
+      "question": "What is a recognised harm of this presentation in primary care?",
+      "choices": [
+        "Over-treatment with antibiotics",
+        "Repeated unnecessary medical investigation driven by health anxiety",
+        "Under-diagnosis of infection",
+        "Inappropriate imaging is rare"
+      ],
+      "answer": 1,
+      "explanation": "Presenting with physical complaints and requesting investigations is common, and iatrogenic harm from unnecessary testing is a documented consequence, which is one reason explaining the mechanism is part of treatment.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q5",
+      "topic": "Brain pathology",
+      "question": "Which structure carries the interoceptive signal that is misread in a panic attack?",
+      "choices": [
+        "The cerebellum",
+        "The insula, which represents internal bodily state and relays it to the cingulate and amygdala",
+        "The occipital pole",
+        "The corpus callosum"
+      ],
+      "answer": 1,
+      "explanation": "The insula represents internal bodily state and connects to the anterior cingulate and amygdala, so its amplification of a normal bodily change is the central step in the attack.",
+      "sourceIds": [
+        "sad-neuroimaging-2014",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q6",
+      "topic": "Brain pathology",
+      "question": "How does hyperventilation contribute to the attack?",
+      "choices": [
+        "It lowers carbon dioxide, which amplifies the sensation of threat",
+        "It raises carbon dioxide and relieves the attack",
+        "It has no role",
+        "It stimulates the serotonin transporter"
+      ],
+      "answer": 0,
+      "explanation": "Hyperventilation lowers carbon dioxide, which widens airways and increases the sense of breathlessness and of imminent catastrophe, so it is both a symptom and a maintaining mechanism.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q7",
+      "topic": "Neurochemistry",
+      "question": "What is the pharmacological principle for choosing a first drug?",
+      "choices": [
+        "Always use the newest class",
+        "Prefer a drug the individual previously responded to, rather than switching class",
+        "Combine two SSRIs from the start",
+        "Avoid medication entirely"
+      ],
+      "answer": 1,
+      "explanation": "Guidelines advise reusing a previously effective drug rather than switching class, which is a specific and often overlooked point in panic disorder.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "pan-q8",
+      "topic": "Pharmacology",
+      "question": "Why is a 5-HT1A partial agonist chosen when there is substance misuse?",
+      "choices": [
+        "It is stronger",
+        "It gives anxiolysis without dependence, tolerance or withdrawal",
+        "It has no receptor action",
+        "It acts on the dopamine transporter"
+      ],
+      "answer": 1,
+      "explanation": "Buspirone's partial agonism at 5-HT1A produces anxiolysis with no dependence or withdrawal liability, which is its specific role in people with misuse problems.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "iuphar"
+      ]
+    },
+    {
+      "id": "pan-q9",
+      "topic": "Pharmacology",
+      "question": "What limits benzodiazepines in this disorder?",
+      "choices": [
+        "They are too slow",
+        "Tolerance and dependence develop within weeks and they do not treat the avoidance that sustains the disorder",
+        "They cause hypertension",
+        "They are contraindicated with SSRIs"
+      ],
+      "answer": 1,
+      "explanation": "Benzodiazepines act quickly but produce tolerance and dependence within weeks and leave the learned avoidance untouched, so they are limited to short-term crisis use.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "pan-q10",
+      "topic": "Pharmacology",
+      "question": "Why is full-dose treatment sometimes reached earlier than in depression?",
+      "choices": [
+        "Because the drug is weaker",
+        "Because the target is avoidance and the avoidance has to be disinhibited before behavioural work can succeed",
+        "Because of renal failure",
+        "Because of the carbon dioxide level"
+      ],
+      "answer": 1,
+      "explanation": "Behavioural work cannot proceed while avoidance prevents engagement, so the drug target is behavioural access, which is why dose escalation may be needed sooner than in depression.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q11",
+      "topic": "Treatments",
+      "question": "What is first-line psychotherapy and what does it change?",
+      "choices": [
+        "Psychoanalysis, by resolving childhood causes",
+        "Cognitive behavioural therapy, by testing the catastrophic interpretation and reversing avoidance",
+        "Family therapy, by involving relatives",
+        "Supportive counselling, by reassurance"
+      ],
+      "answer": 1,
+      "explanation": "Cognitive behavioural therapy targets the misreading of bodily sensation and the safety behaviours that follow, which is why it can work where reassurance alone has not.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "pan-q12",
+      "topic": "Treatments",
+      "question": "What is the practical definition of recovery in this disorder?",
+      "choices": [
+        "Symptom reduction alone",
+        "Re-approaching avoided situations and restoring function, not merely fewer attacks",
+        "Being free of attack for one month",
+        "Stopping medication"
+      ],
+      "answer": 1,
+      "explanation": "Because avoidance is what sustains the disorder, recovery is defined by going back to public transport, crowds and being alone, not by attack frequency alone.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q13",
+      "topic": "Genetics",
+      "question": "How well do polygenic scores discriminate panic disorder in the largest study?",
+      "choices": [
+        "Almost perfectly, making genetic diagnosis feasible",
+        "Modestly, with the best area under the curve around 0.60",
+        "Not at all",
+        "Better than clinical diagnosis"
+      ],
+      "answer": 1,
+      "explanation": "Combining polygenic scores improved classification but the best area under the curve was about 0.60, which the authors describe as modest, so genetics has no diagnostic role.",
+      "sourceIds": [
+        "panic-pgs-2024"
+      ]
+    },
+    {
+      "id": "pan-q14",
+      "topic": "Genetics",
+      "question": "Why does this page list the serotonin transporter gene for this disorder?",
+      "choices": [
+        "Because it is a proven susceptibility gene",
+        "Because it encodes the pharmacological target of first-line treatment, and no susceptibility gene is established",
+        "Because it is the only gene studied",
+        "Because it explains the sex ratio"
+      ],
+      "answer": 1,
+      "explanation": "The gene listed encodes the target of first-line drug treatment rather than a risk gene, and this is stated explicitly so the distinction is not misread as a susceptibility finding.",
+      "sourceIds": [
+        "panic-pgs-2024",
+        "iuphar"
+      ]
+    },
+    {
+      "id": "pan-q15",
+      "topic": "Biomarkers",
+      "question": "Is there a validated diagnostic test for panic disorder?",
+      "choices": [
+        "Yes, a carbon dioxide challenge in routine use",
+        "No; polygenic discrimination is weak and imaging findings are group-level model applications",
+        "Yes, a brain scan threshold",
+        "Yes, a serum marker"
+      ],
+      "answer": 1,
+      "explanation": "Carbon dioxide challenge is an experimental research tool rather than a clinical test, and the genetics and imaging findings are group-level, so no test can diagnose an individual.",
+      "sourceIds": [
+        "panic-pgs-2024",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "pan-q16",
+      "topic": "Pathway",
+      "question": "How do ICD-11 and previous classifications differ in how panic and agoraphobia are coded?",
+      "choices": [
+        "Agoraphobia was removed",
+        "They are now separate diagnoses that can be assigned together rather than alternatives",
+        "They were merged into one code",
+        "Panic was reclassified as a mood disorder"
+      ],
+      "answer": 1,
+      "explanation": "ICD-11 separated panic disorder from agoraphobia so that a person meeting both sets of requirements can receive both diagnoses, which is a substantive change from choosing one or the other.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    }
+  ],
+  "related": [
+    "gad",
+    "sad",
+    "ptsd",
+    "mdd"
+  ]
+}

@@ -496,6 +496,238 @@
       "authors": "National Institute for Health and Care Excellence",
       "year": 2005,
       "url": "https://www.nice.org.uk/guidance/cg31"
+    },
+    {
+      "id": "hoogman-adhd-sub-2017",
+      "type": "meta-analysis",
+      "title": "Subcortical brain volume differences in participants with attention deficit hyperactivity disorder in children and adults: a cross-sectional mega-analysis",
+      "authors": "Hoogman M et al., ENIGMA ADHD Working Group",
+      "year": 2017,
+      "doi": "10.1016/S2215-0366(17)30049-4",
+      "pmid": "28219628",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28219628/"
+    },
+    {
+      "id": "hoogman-adhd-cort-2019",
+      "type": "meta-analysis",
+      "title": "Brain imaging of the cortex in ADHD: a coordinated analysis of large-scale clinical and population-based samples",
+      "authors": "Hoogman M et al., ENIGMA ADHD Working Group",
+      "year": 2019,
+      "doi": "10.1176/appi.ajp.2019.18091033",
+      "pmid": "31014101",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31014101/"
+    },
+    {
+      "id": "enigma-asd-2018",
+      "type": "meta-analysis",
+      "title": "Cortical and subcortical brain morphometry differences between patients with autism spectrum disorder and healthy individuals across the lifespan: results from the ENIGMA ASD Working Group",
+      "authors": "ENIGMA ASD Working Group",
+      "year": 2018,
+      "doi": "10.1176/appi.ajp.2017.17010100",
+      "pmid": "29145754",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29145754/"
+    },
+    {
+      "id": "asd-cort-meta-2024",
+      "type": "meta-analysis",
+      "title": "Cortical thickness abnormalities in autism spectrum disorder: a coordinate-based meta-analysis",
+      "authors": "Eur Child Adolesc Psychiatry",
+      "year": 2024,
+      "doi": "10.1007/s00787-022-02133-0",
+      "pmid": "36542200",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36542200/"
+    },
+    {
+      "id": "asd-rare-2022",
+      "type": "meta-analysis",
+      "title": "Rare coding variation provides insight into the genetic architecture and phenotypic context of autism",
+      "authors": "Fu JM et al.",
+      "year": 2022,
+      "doi": "10.1038/s41588-022-01104-0",
+      "pmid": "35982160",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35982160/"
+    },
+    {
+      "id": "asd-sex-2025",
+      "type": "primary",
+      "title": "Contribution of autosomal rare and de novo variants to sex differences in autism",
+      "authors": "Am J Hum Genet",
+      "year": 2025,
+      "doi": "10.1016/j.ajhg.2025.01.016",
+      "pmid": "39954678",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39954678/"
+    },
+    {
+      "id": "logue-ptsd-2018",
+      "type": "meta-analysis",
+      "title": "Smaller hippocampal volume in posttraumatic stress disorder: a multisite ENIGMA-PGC study",
+      "authors": "Logue MW et al., ENIGMA PTSD Working Group",
+      "year": 2018,
+      "doi": "10.1016/j.biopsych.2017.09.006",
+      "pmid": "29217296",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29217296/"
+    },
+    {
+      "id": "duncan-ptsd-gwas-2019",
+      "type": "gwas",
+      "title": "International meta-analysis of PTSD genome-wide association studies identifies sex- and ancestry-specific genetic risk loci",
+      "authors": "Duncan LE et al.",
+      "year": 2019,
+      "doi": "10.1038/s41467-019-12576-w",
+      "pmid": "31594949",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31594949/"
+    },
+    {
+      "id": "nievergelt-ptsd-gwas-2019",
+      "type": "gwas",
+      "title": "Largest GWAS of PTSD (N=20070) yields genetic overlap with schizophrenia and sex differences in heritability",
+      "authors": "Mol Psychiatry",
+      "year": 2019,
+      "doi": "10.1038/mp.2017.77",
+      "pmid": "28439101",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28439101/"
+    },
+    {
+      "id": "ptsd-psych-nma-2023",
+      "type": "meta-analysis",
+      "title": "Comparative effectiveness of psychotherapies in adults with posttraumatic stress disorder: a network meta-analysis of randomised controlled trials",
+      "authors": "Psychol Med",
+      "year": 2023,
+      "doi": "10.1017/S0033291722003737",
+      "pmid": "36628572",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36628572/"
+    },
+    {
+      "id": "ptsd-drug-nma-2023",
+      "type": "meta-analysis",
+      "title": "Clinical outcomes of recommended active pharmacotherapy agents from NICE guideline for post-traumatic stress disorder: network meta-analysis",
+      "authors": "Prog Neuropsychopharmacol Biol Psychiatry",
+      "year": 2023,
+      "doi": "10.1016/j.pnpbp.2023.110754",
+      "pmid": "36934999",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36934999/"
+    },
+    {
+      "id": "vadod-ptsd-2023",
+      "type": "guideline",
+      "title": "The management of posttraumatic stress disorder and acute stress disorder: synopsis of the 2023 US Department of Veterans Affairs and Department of Defense clinical practice guideline",
+      "authors": "Ann Intern Med",
+      "year": 2024,
+      "doi": "10.7326/M23-2757",
+      "pmid": "38408360",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38408360/"
+    },
+    {
+      "id": "enigma-cross-disorder-2020",
+      "type": "meta-analysis",
+      "title": "Cross-disorder analysis of brain structural abnormalities in six major psychiatric disorders: a secondary analysis of mega- and meta-analytical findings from the ENIGMA consortium",
+      "authors": "Biol Psychiatry",
+      "year": 2020,
+      "doi": "10.1016/j.biopsych.2020.04.027",
+      "pmid": "32646651",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32646651/"
+    },
+    {
+      "id": "wfsbp-anxiety-2023",
+      "type": "guideline",
+      "title": "WFSBP guidelines for treatment of anxiety, obsessive-compulsive and posttraumatic stress disorders, version 3, part I: anxiety disorders",
+      "authors": "World Federation of Societies of Biological Psychiatry (WFSBP)",
+      "year": 2023,
+      "doi": "10.1080/15622975.2022.2086295",
+      "pmid": "35900161",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35900161/"
+    },
+    {
+      "id": "sad-neuroimaging-2014",
+      "type": "meta-analysis",
+      "title": "Neuroimaging in social anxiety disorder: a meta-analytic review resulting in a new neurofunctional model",
+      "authors": "Neurosci Biobehav Rev",
+      "year": 2014,
+      "doi": "10.1016/j.neubiorev.2014.08.003",
+      "pmid": "25124509",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25124509/"
+    },
+    {
+      "id": "panic-pgs-2024",
+      "type": "primary",
+      "title": "Discrimination between healthy participants and people with panic disorder based on polygenic scores for psychiatric disorders and intermediate phenotypes using machine learning",
+      "authors": "Aust N Z Psychiatry",
+      "year": 2024,
+      "doi": "10.1177/00048674241242936",
+      "pmid": "38581251",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38581251/"
+    },
+    {
+      "id": "gad-gwas-2017",
+      "type": "gwas",
+      "title": "Genome-wide association study of generalized anxiety symptoms in the Hispanic Community Health Study/Study of Latinos",
+      "authors": "Am J Med Genet B Neuropsychiatr Genet",
+      "year": 2017,
+      "doi": "10.1002/ajmg.b.32448",
+      "pmid": "27159506",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27159506/"
+    },
+    {
+      "id": "sadt-icd11-2022",
+      "type": "classification",
+      "title": "Disorders specifically associated with stress in ICD-11",
+      "authors": "Clin Psychol Eur",
+      "year": 2022,
+      "doi": "10.32872/cpe.9711",
+      "pmid": "36760318",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36760318/"
+    },
+    {
+      "id": "adhd-stimulant-genetics-2026",
+      "type": "primary",
+      "title": "Common and rare variant contributions to discontinuation of stimulant treatment in ADHD",
+      "authors": "Transl Psychiatry",
+      "year": 2026,
+      "doi": "10.1038/s41398-026-03925-7",
+      "pmid": "41764167",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41764167/"
+    },
+    {
+      "id": "nice-cg113",
+      "type": "guideline",
+      "title": "Generalised anxiety disorder and panic disorder in adults: management (CG113)",
+      "authors": "National Institute for Health and Care Excellence",
+      "url": "https://www.nice.org.uk/guidance/cg113"
+    },
+    {
+      "id": "nice-cg159",
+      "type": "guideline",
+      "title": "Social anxiety disorder: recognition, assessment and treatment (CG159)",
+      "authors": "National Institute for Health and Care Excellence",
+      "url": "https://www.nice.org.uk/guidance/cg159"
+    },
+    {
+      "id": "nice-ng87",
+      "type": "guideline",
+      "title": "Attention deficit hyperactivity disorder: diagnosis and management (NG87)",
+      "authors": "National Institute for Health and Care Excellence",
+      "url": "https://www.nice.org.uk/guidance/ng87"
+    },
+    {
+      "id": "nice-cg128",
+      "type": "guideline",
+      "title": "Autism spectrum disorder in under 19s: support and management (CG128)",
+      "authors": "National Institute for Health and Care Excellence",
+      "url": "https://www.nice.org.uk/guidance/cg128"
+    },
+    {
+      "id": "enigma-adhd-group",
+      "type": "database",
+      "title": "ENIGMA ADHD Working Group: case-control brain maps and medication analyses",
+      "authors": "ENIGMA consortium",
+      "url": "https://enigma.ini.usc.edu/ongoing/enigma-adhd-working-group/"
+    },
+    {
+      "id": "enigma-asd-group",
+      "type": "database",
+      "title": "ENIGMA ASD Working Group: lifespan brain morphometry maps",
+      "authors": "ENIGMA consortium",
+      "url": "https://enigma.ini.usc.edu/ongoing/enigma-asd-working-group/"
     }
   ]
 }

@@ -3,15 +3,22 @@
     {
       "id": "risperidone",
       "generic": "Risperidone",
-      "brand": ["Risperdal"],
-      "classes": ["Second-generation antipsychotic"],
+      "brand": [
+        "Risperdal"
+      ],
+      "classes": [
+        "Second-generation antipsychotic"
+      ],
       "atc": "N05AX08",
       "mechanism": [
         {
           "id": "risp-mech",
           "text": "Risperidone blocks dopamine D2 and serotonin 5-HT2A receptors, easing positive symptoms at D2 occupancies that rise steeply with dose.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg", "nord-farde-2011"],
+          "sourceIds": [
+            "ips-cpg",
+            "nord-farde-2011"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -24,7 +31,10 @@
             "id": "risp-d2",
             "text": "Striatal D2 blockade drives antipsychotic response and, at higher occupancy, extrapyramidal symptoms and prolactin elevation.",
             "evidence": "established",
-            "sourceIds": ["nord-farde-2011", "ips-cpg"],
+            "sourceIds": [
+              "nord-farde-2011",
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
@@ -36,7 +46,9 @@
             "id": "risp-2a",
             "text": "Cortical 5-HT2A blockade contributes to efficacy and may modestly soften motor side effects versus pure D2 blockade.",
             "evidence": "moderate",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -47,30 +59,41 @@
           "id": "risp-occ",
           "text": "Response generally tracks substantial striatal D2 blockade, while blockade pushed higher brings extrapyramidal symptoms and prolactin rise.",
           "evidence": "strong",
-          "sourceIds": ["nord-farde-2011"],
+          "sourceIds": [
+            "nord-farde-2011"
+          ],
           "lastReviewed": "2026-09-28"
         }
       },
       "adverseEffects": [
         {
           "effect": "Extrapyramidal symptoms",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "risp-eps",
             "text": "High nigrostriatal D2 blockade produces parkinsonism, akathisia and dystonia, especially at higher doses.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "sourceIds": [
+              "ips-cpg",
+              "nice-cg178"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
         {
           "effect": "Hyperprolactinaemia",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "risp-prl",
             "text": "Tuberoinfundibular D2 blockade removes dopamine's brake on prolactin, raising levels more than most second-generation agents.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -79,22 +102,30 @@
         "id": "risp-mon",
         "text": "Monitor weight, glucose, lipids and prolactin-related symptoms alongside movement scales.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178"],
+        "sourceIds": [
+          "nice-cg178"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "olanzapine",
       "generic": "Olanzapine",
-      "brand": ["Zyprexa"],
-      "classes": ["Second-generation antipsychotic"],
+      "brand": [
+        "Zyprexa"
+      ],
+      "classes": [
+        "Second-generation antipsychotic"
+      ],
       "atc": "N05AH03",
       "mechanism": [
         {
           "id": "olan-mech",
           "text": "Olanzapine combines D2 and 5-HT2A blockade with strong antihistamine and anticholinergic actions, giving broad efficacy with heavy metabolic cost.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -107,7 +138,10 @@
             "id": "olan-d2",
             "text": "Mesolimbic D2 blockade controls positive symptoms with somewhat lower motor liability than risperidone at usual doses.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "sourceIds": [
+              "ips-cpg",
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
@@ -119,7 +153,9 @@
             "id": "olan-2a",
             "text": "Cortical 5-HT2A blockade complements D2 antagonism in the second-generation profile.",
             "evidence": "moderate",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -127,23 +163,32 @@
       "adverseEffects": [
         {
           "effect": "Weight gain and metabolic syndrome",
-          "receptorIds": ["HTR2A"],
+          "receptorIds": [
+            "HTR2A"
+          ],
           "mechanism": {
             "id": "olan-met",
             "text": "Histamine and serotonin blockade plus orexigenic effects drive the largest weight gain in class, with diabetes and lipid risk.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "sourceIds": [
+              "ips-cpg",
+              "nice-cg178"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
         {
           "effect": "Sedation",
-          "receptorIds": ["HTR2A"],
+          "receptorIds": [
+            "HTR2A"
+          ],
           "mechanism": {
             "id": "olan-sed",
             "text": "Antihistamine activity causes prominent early sedation that partly wears off with continued treatment.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -152,22 +197,31 @@
         "id": "olan-mon",
         "text": "Baseline and ongoing weight, waist, glucose, lipids and blood pressure are mandatory given the metabolic liability.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178"],
+        "sourceIds": [
+          "nice-cg178"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "aripiprazole",
       "generic": "Aripiprazole",
-      "brand": ["Abilify"],
-      "classes": ["Third-generation antipsychotic", "D2 partial agonist"],
+      "brand": [
+        "Abilify"
+      ],
+      "classes": [
+        "Third-generation antipsychotic",
+        "D2 partial agonist"
+      ],
       "atc": "N05AX12",
       "mechanism": [
         {
           "id": "ari-mech",
           "text": "Aripiprazole is a D2 partial agonist that dampens dopamine signalling where it is excessive and supports it where it is deficient.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -180,7 +234,10 @@
             "id": "ari-d2",
             "text": "Partial agonism stabilizes dopamine tone, giving antipsychotic efficacy with low prolactin elevation and modest metabolic effects.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "sourceIds": [
+              "ips-cpg",
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -188,12 +245,16 @@
       "adverseEffects": [
         {
           "effect": "Akathisia and nausea",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "ari-aka",
             "text": "Intrinsic dopaminergic activity commonly causes early restlessness and nausea, usually manageable by slow titration.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -202,22 +263,30 @@
         "id": "ari-mon",
         "text": "Monitor for akathisia, impulse-control symptoms and standard metabolic parameters.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178"],
+        "sourceIds": [
+          "nice-cg178"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "quetiapine",
       "generic": "Quetiapine",
-      "brand": ["Seroquel"],
-      "classes": ["Second-generation antipsychotic"],
+      "brand": [
+        "Seroquel"
+      ],
+      "classes": [
+        "Second-generation antipsychotic"
+      ],
       "atc": "N05AH04",
       "mechanism": [
         {
           "id": "quet-mech",
           "text": "Quetiapine's fast-dissociating D2 blockade plus histamine antagonism gives dose-dependent effects from sedation at low doses to full antipsychotic action at high doses.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg"],
+          "sourceIds": [
+            "ips-cpg"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -230,7 +299,10 @@
             "id": "quet-d2",
             "text": "Transient D2 occupancy controls psychosis with comparatively low motor and prolactin burden.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "sourceIds": [
+              "ips-cpg",
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
@@ -242,7 +314,9 @@
             "id": "quet-2a",
             "text": "5-HT2A blockade contributes to the second-generation profile including mood-stabilizing effects.",
             "evidence": "moderate",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -250,12 +324,16 @@
       "adverseEffects": [
         {
           "effect": "Sedation and orthostatic hypotension",
-          "receptorIds": ["HTR2A"],
+          "receptorIds": [
+            "HTR2A"
+          ],
           "mechanism": {
             "id": "quet-sed",
             "text": "Histamine blockade sedates while alpha-adrenergic blockade drops standing pressure, worst during titration.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -264,22 +342,31 @@
         "id": "quet-mon",
         "text": "Monitor sedation, postural vitals, weight, glucose and lipids, plus QT risk at high doses.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178"],
+        "sourceIds": [
+          "nice-cg178"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "clozapine",
       "generic": "Clozapine",
-      "brand": ["Clozaril"],
-      "classes": ["Second-generation antipsychotic"],
+      "brand": [
+        "Clozaril"
+      ],
+      "classes": [
+        "Second-generation antipsychotic"
+      ],
       "atc": "N05AH02",
       "mechanism": [
         {
           "id": "cloz-mech",
           "text": "Clozapine binds broadly across dopamine, serotonin, adrenergic, histamine and muscarinic receptors with relatively low D2 occupancy, an unmatched profile in treatment resistance.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg", "trrip-2017"],
+          "sourceIds": [
+            "ips-cpg",
+            "trrip-2017"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -292,7 +379,9 @@
             "id": "cloz-d2",
             "text": "Low striatal D2 occupancy with efficacy driven substantially through non-dopaminergic actions.",
             "evidence": "strong",
-            "sourceIds": ["nord-farde-2011"],
+            "sourceIds": [
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
@@ -304,7 +393,9 @@
             "id": "cloz-m1",
             "text": "Muscarinic blockade contributes to hypersalivation, constipation and tachycardia rather than benefit.",
             "evidence": "moderate",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -312,23 +403,33 @@
       "adverseEffects": [
         {
           "effect": "Agranulocytosis",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "cloz-agr",
             "text": "Idiosyncratic neutrophil loss in roughly one percent mandates compulsory blood monitoring; stop immediately on threshold breach.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "sourceIds": [
+              "ips-cpg",
+              "nice-cg178"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
         {
           "effect": "Myocarditis and severe constipation",
-          "receptorIds": ["CHRM1"],
+          "receptorIds": [
+            "CHRM1"
+          ],
           "mechanism": {
             "id": "cloz-car",
             "text": "Cardiac inflammation clusters in the first months while anticholinergic gut slowing can progress to ileus without monitoring.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nice-cg178"],
+            "sourceIds": [
+              "ips-cpg",
+              "nice-cg178"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -337,22 +438,32 @@
         "id": "cloz-mon",
         "text": "Mandatory absolute neutrophil monitoring, plus cardiac, metabolic, bowel and seizure vigilance.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178", "ips-cpg"],
+        "sourceIds": [
+          "nice-cg178",
+          "ips-cpg"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "haloperidol",
       "generic": "Haloperidol",
-      "brand": ["Haldol"],
-      "classes": ["First-generation antipsychotic"],
+      "brand": [
+        "Haldol"
+      ],
+      "classes": [
+        "First-generation antipsychotic"
+      ],
       "atc": "N05AD01",
       "mechanism": [
         {
           "id": "hal-mech",
           "text": "Haloperidol is a high-potency D2 antagonist with tight slow-dissociating binding and minimal serotonergic activity.",
           "evidence": "established",
-          "sourceIds": ["ips-cpg", "wfsbp-longterm-2012"],
+          "sourceIds": [
+            "ips-cpg",
+            "wfsbp-longterm-2012"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -365,7 +476,10 @@
             "id": "hal-d2",
             "text": "Potent striatal blockade gives reliable antipsychotic effect with the highest motor and prolactin burden in class.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg", "nord-farde-2011"],
+            "sourceIds": [
+              "ips-cpg",
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -373,12 +487,16 @@
       "adverseEffects": [
         {
           "effect": "Dystonia, parkinsonism and tardive dyskinesia",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "hal-eps",
             "text": "Near-complete nigrostriatal blockade produces acute and tardive movement disorders, especially with chronic use.",
             "evidence": "established",
-            "sourceIds": ["ips-cpg"],
+            "sourceIds": [
+              "ips-cpg"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -387,21 +505,29 @@
         "id": "hal-mon",
         "text": "Movement scales, ECG for QT, and prolactin symptoms; use the lowest effective dose.",
         "evidence": "established",
-        "sourceIds": ["nice-cg178"],
+        "sourceIds": [
+          "nice-cg178"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
     {
       "id": "xanomeline-trospium",
       "generic": "Xanomeline-trospium",
-      "brand": ["Cobenfy"],
-      "classes": ["Muscarinic agonist antipsychotic"],
+      "brand": [
+        "Cobenfy"
+      ],
+      "classes": [
+        "Muscarinic agonist antipsychotic"
+      ],
       "mechanism": [
         {
           "id": "xan-mech",
           "text": "Xanomeline stimulates central M1 and M4 muscarinic receptors without direct dopamine blockade, while trospium blocks peripheral muscarinic effects.",
           "evidence": "strong",
-          "sourceIds": ["fda-cobenfy-2024"],
+          "sourceIds": [
+            "fda-cobenfy-2024"
+          ],
           "lastReviewed": "2026-09-28"
         }
       ],
@@ -414,7 +540,9 @@
             "id": "xan-m1",
             "text": "Central M1 activation is pursued for psychotic and cognitive symptoms through a non-dopaminergic route.",
             "evidence": "moderate",
-            "sourceIds": ["fda-cobenfy-2024"],
+            "sourceIds": [
+              "fda-cobenfy-2024"
+            ],
             "lastReviewed": "2026-09-28"
           }
         },
@@ -426,7 +554,9 @@
             "id": "xan-m4",
             "text": "Central M4 activation restrains striatal dopamine release without D2 blockade.",
             "evidence": "moderate",
-            "sourceIds": ["fda-cobenfy-2024"],
+            "sourceIds": [
+              "fda-cobenfy-2024"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -434,12 +564,17 @@
       "adverseEffects": [
         {
           "effect": "Nausea, vomiting and dyspepsia",
-          "receptorIds": ["CHRM1", "CHRM4"],
+          "receptorIds": [
+            "CHRM1",
+            "CHRM4"
+          ],
           "mechanism": {
             "id": "xan-gi",
             "text": "Central and residual peripheral muscarinic stimulation causes prominent early gastrointestinal effects.",
             "evidence": "moderate",
-            "sourceIds": ["fda-cobenfy-2024"],
+            "sourceIds": [
+              "fda-cobenfy-2024"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -448,15 +583,22 @@
     {
       "id": "fluoxetine",
       "generic": "Fluoxetine",
-      "brand": ["Prozac"],
-      "classes": ["Selective serotonin reuptake inhibitor"],
+      "brand": [
+        "Prozac"
+      ],
+      "classes": [
+        "Selective serotonin reuptake inhibitor"
+      ],
       "atc": "N06AB03",
       "mechanism": [
         {
           "id": "flx-mech",
           "text": "Fluoxetine blocks the serotonin transporter, raising synaptic serotonin; it also has mild direct activity at 5-HT2C and sigma receptors, and among SSRIs it inhibits CYP2D6.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -469,7 +611,10 @@
             "id": "flx-sert",
             "text": "Serotonin reuptake blockade is the shared antidepressant mechanism; in depression the benefit is thought to require adaptive plasticity downstream rather than acute serotonin elevation.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -481,7 +626,9 @@
             "id": "flx-2c",
             "text": "5-HT2C antagonism is thought to disinhibit noradrenergic and dopaminergic release and contributes to the profile of some serotonergic agents.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -489,23 +636,31 @@
       "adverseEffects": [
         {
           "effect": "Gastrointestinal upset and sexual dysfunction",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "flx-ae",
             "text": "Increased serotonergic tone in gut and sexual pathways causes nausea and reduced libido, with sexual dysfunction persisting in a substantial minority after stopping.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
         {
           "effect": "Initial anxiety or activation",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "flx-act",
             "text": "Rapidly raising synaptic serotonin can transiently increase agitation and insomnia before mood improves, so doses are usually started low and increased slowly.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -514,22 +669,32 @@
         "id": "flx-mon",
         "text": "Check activation and suicidality in the first weeks, review sexual function, and note the long half-life when interactions or switching are considered.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "sertraline",
       "generic": "Sertraline",
-      "brand": ["Zoloft"],
-      "classes": ["Selective serotonin reuptake inhibitor"],
+      "brand": [
+        "Zoloft"
+      ],
+      "classes": [
+        "Selective serotonin reuptake inhibitor"
+      ],
       "atc": "N06AB06",
       "mechanism": [
         {
           "id": "ser-mech",
           "text": "Sertraline selectively blocks the serotonin transporter with relatively little effect on other monoamine transporters, making it a common first-line choice across depression, anxiety and obsessive-compulsive disorder.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023", "nice-cg31"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023",
+            "nice-cg31"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -542,7 +707,10 @@
             "id": "ser-sert",
             "text": "Serotonin reuptake blockade underlies antidepressant and anti-obsessional efficacy; higher doses are typically used for obsessive-compulsive disorder than for depression.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-ocd-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -550,12 +718,16 @@
       "adverseEffects": [
         {
           "effect": "Diarrhoea, nausea and sexual dysfunction",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "ser-ae",
             "text": "Serotonergic excess in the gut and sexual pathways is the main tolerability problem, and discontinuation symptoms are common if doses are stopped abruptly.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -564,22 +736,32 @@
         "id": "ser-mon",
         "text": "Taper rather than stop abruptly, and monitor agitation, bleeding risk with antiplatelets and hyponatraemia with diuretics.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "escitalopram",
       "generic": "Escitalopram",
-      "brand": ["Cipralex", "Lexapro"],
-      "classes": ["Selective serotonin reuptake inhibitor"],
+      "brand": [
+        "Cipralex",
+        "Lexapro"
+      ],
+      "classes": [
+        "Selective serotonin reuptake inhibitor"
+      ],
       "atc": "N06AB10",
       "mechanism": [
         {
           "id": "esc-mech",
           "text": "Escitalopram is the S-enantiomer of citalopram with high selectivity for the serotonin transporter, producing similar antidepressant effects at lower milligram doses.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -592,7 +774,9 @@
             "id": "esc-sert",
             "text": "Selective serotonin reuptake inhibition supports antidepressant use in adults and is a preferred option in older patients because of its low interaction burden.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -600,12 +784,16 @@
       "adverseEffects": [
         {
           "effect": "Sexual dysfunction and dose-dependent QT prolongation",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "esc-ae",
             "text": "Serotonergic adverse effects dominate, and citalopram-derived agents carry a dose-related QT signal, so ECG monitoring is advised at higher doses or with other QT-prolonging drugs.",
             "evidence": "moderate",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -614,22 +802,31 @@
         "id": "esc-mon",
         "text": "Watch sodium, bleeding, and cardiac risk factors at high dose; it is generally well tolerated in older adults.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "fluvoxamine",
       "generic": "Fluvoxamine",
-      "brand": ["Luvox"],
-      "classes": ["Selective serotonin reuptake inhibitor"],
+      "brand": [
+        "Luvox"
+      ],
+      "classes": [
+        "Selective serotonin reuptake inhibitor"
+      ],
       "atc": "N06AB08",
       "mechanism": [
         {
           "id": "flv-mech",
           "text": "Fluvoxamine blocks the serotonin transporter and is among the most strongly evidence-supported SSRIs for obsessive-compulsive disorder, including at higher doses than depression requires.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-ocd-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -642,7 +839,10 @@
             "id": "flv-sert",
             "text": "Serotonin reuptake blockade reduces obsessional drive; guidelines accept SSRI dose escalation above the usual antidepressant range before adding other agents.",
             "evidence": "strong",
-            "sourceIds": ["wfsbp-ocd-2023", "iuphar"],
+            "sourceIds": [
+              "wfsbp-ocd-2023",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -650,12 +850,16 @@
       "adverseEffects": [
         {
           "effect": "Nausea, sexual dysfunction and CYP1A2 inhibition",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "flv-ae",
             "text": "Common serotonergic adverse effects occur, and potent CYP1A2 inhibition raises theophylline and clozapine levels, so interaction review is needed before co-prescribing.",
             "evidence": "strong",
-            "sourceIds": ["wfsbp-ocd-2023"],
+            "sourceIds": [
+              "wfsbp-ocd-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -664,22 +868,31 @@
         "id": "flv-mon",
         "text": "Review interacting drugs, especially theophylline and clozapine, and taper to avoid discontinuation symptoms.",
         "evidence": "strong",
-        "sourceIds": ["wfsbp-ocd-2023"],
+        "sourceIds": [
+          "wfsbp-ocd-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "clomipramine",
       "generic": "Clomipramine",
-      "brand": ["Anafranil"],
-      "classes": ["Tricyclic antidepressant"],
+      "brand": [
+        "Anafranil"
+      ],
+      "classes": [
+        "Tricyclic antidepressant"
+      ],
       "atc": "N06AA02",
       "mechanism": [
         {
           "id": "clo-mech",
           "text": "Clomipramine is a tricyclic antidepressant with strong serotonin transporter inhibition plus antagonist actions at alpha-1, muscarinic and histamine receptors, and it has specific anti-obsessional efficacy.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-ocd-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -692,7 +905,10 @@
             "id": "clo-sert",
             "text": "Potent serotonin reuptake blockade underlies its antidepressant and anti-obsessional action, the basis for its use in treatment-resistant obsessive-compulsive disorder.",
             "evidence": "strong",
-            "sourceIds": ["wfsbp-ocd-2023", "iuphar"],
+            "sourceIds": [
+              "wfsbp-ocd-2023",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -704,7 +920,10 @@
             "id": "clo-m1",
             "text": "Muscarinic blockade causes dry mouth, constipation, blurred vision and urinary retention, and in overdose anticholinergic delirium is a medical emergency.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-ocd-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -716,7 +935,10 @@
             "id": "clo-a1a",
             "text": "Alpha-1 blockade causes orthostatic hypotension, reflex tachycardia and dizziness, worsened by the anticholinergic effect on gut motility and sweating.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-ocd-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -728,7 +950,9 @@
             "id": "clo-h1",
             "text": "Histamine blockade adds sedation and weight gain, which can be limiting in people who are depressed and sleep-deprived.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -736,12 +960,19 @@
       "adverseEffects": [
         {
           "effect": "Anticholinergic burden, orthostasis and cardiotoxicity",
-          "receptorIds": ["CHRM1", "ADRA1A", "HRH1"],
+          "receptorIds": [
+            "CHRM1",
+            "ADRA1A",
+            "HRH1"
+          ],
           "mechanism": {
             "id": "clo-ae",
             "text": "Simultaneous muscarinic, adrenergic and histamine blockade produces the classic tricyclic adverse-effect cluster, with cardiotoxic risk from sodium-channel blockade that matters in overdose.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "wfsbp-ocd-2023"],
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-ocd-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -750,22 +981,31 @@
         "id": "clo-mon",
         "text": "Check ECG and blood pressure, warn about overdose lethality, and expect a slow titration because of sedation and anticholinergic effects.",
         "evidence": "strong",
-        "sourceIds": ["wfsbp-ocd-2023"],
+        "sourceIds": [
+          "wfsbp-ocd-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "amitriptyline",
       "generic": "Amitriptyline",
-      "brand": ["Elavil"],
-      "classes": ["Tricyclic antidepressant"],
+      "brand": [
+        "Elavil"
+      ],
+      "classes": [
+        "Tricyclic antidepressant"
+      ],
       "atc": "N06AA09",
       "mechanism": [
         {
           "id": "ami-mech",
           "text": "Amitriptyline is a tricyclic antidepressant with serotonin and noradrenaline reuptake inhibition plus muscarinic, alpha-1 and histamine antagonism, and strong effects on sleep and neuropathic pain.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -778,7 +1018,9 @@
             "id": "ami-sert",
             "text": "Serotonin reuptake blockade contributes to antidepressant and hypnotic action.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -790,7 +1032,10 @@
             "id": "ami-h1",
             "text": "Histamine blockade explains the useful sedation at low dose and most of the weight gain and cognitive dulling at higher dose.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -802,7 +1047,9 @@
             "id": "ami-m1",
             "text": "Muscarinic blockade causes anticholinergic adverse effects and is a contributor to cardiotoxic overdose risk.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -810,12 +1057,19 @@
       "adverseEffects": [
         {
           "effect": "Sedation, weight gain, constipation and orthostasis",
-          "receptorIds": ["HRH1", "CHRM1", "ADRA1A"],
+          "receptorIds": [
+            "HRH1",
+            "CHRM1",
+            "ADRA1A"
+          ],
           "mechanism": {
             "id": "ami-ae",
             "text": "The combined histamine, muscarinic and adrenergic blockade explains the whole adverse profile, including the anticholinergic delirium risk in overdose.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -824,22 +1078,31 @@
         "id": "ami-mon",
         "text": "Useful in insomnia and neuropathic pain but needs ECG and blood-pressure checks and careful dose limits in older adults.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "venlafaxine",
       "generic": "Venlafaxine",
-      "brand": ["Effexor"],
-      "classes": ["Serotonin-noradrenaline reuptake inhibitor"],
+      "brand": [
+        "Effexor"
+      ],
+      "classes": [
+        "Serotonin-noradrenaline reuptake inhibitor"
+      ],
       "atc": "N06AF16",
       "mechanism": [
         {
           "id": "ven-mech",
           "text": "Venlafaxine inhibits both serotonin and noradrenaline reuptake, acting predominantly serotonergic at low doses and more noradrenergic as dose rises.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -852,7 +1115,9 @@
             "id": "ven-sert",
             "text": "Serotonin reuptake blockade is the low-dose component of its antidepressant action.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -864,7 +1129,10 @@
             "id": "ven-2a",
             "text": "Raised noradrenergic tone activates alpha-2A autoreceptors at higher doses, which is part of the withdrawal picture when doses fall.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -872,12 +1140,16 @@
       "adverseEffects": [
         {
           "effect": "Hypertension at higher dose and discontinuation symptoms",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "ven-ae",
             "text": "Noradrenergic load raises blood pressure at higher doses, and its shorter half-life makes missed or stopped doses produce noticeable dizziness and electric-shock sensations.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -886,22 +1158,31 @@
         "id": "ven-mon",
         "text": "Measure blood pressure, and taper over weeks to avoid discontinuation symptoms.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "duloxetine",
       "generic": "Duloxetine",
-      "brand": ["Cymbalta"],
-      "classes": ["Serotonin-noradrenaline reuptake inhibitor"],
+      "brand": [
+        "Cymbalta"
+      ],
+      "classes": [
+        "Serotonin-noradrenaline reuptake inhibitor"
+      ],
       "atc": "N06AB05",
       "mechanism": [
         {
           "id": "dul-mech",
           "text": "Duloxetine inhibits serotonin and noradrenaline reuptake and is used across depression, generalised anxiety, pain and diabetic neuropathy, reflecting its central and spinal actions.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -914,7 +1195,10 @@
             "id": "dul-sert",
             "text": "Serotonin reuptake blockade supports antidepressant and anxiolytic effects in depression with comorbid pain.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -922,12 +1206,16 @@
       "adverseEffects": [
         {
           "effect": "Sexual dysfunction, hypertension and hyponatraemia",
-          "receptorIds": ["SLC6A4"],
+          "receptorIds": [
+            "SLC6A4"
+          ],
           "mechanism": {
             "id": "dul-ae",
             "text": "Dual reuptake inhibition carries the serotonergic adverse-effect set plus noradrenergic blood-pressure effects, and rare hyponatraemia is reported especially in older women on diuretics.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -936,22 +1224,31 @@
         "id": "dul-mon",
         "text": "Check blood pressure, sodium in at-risk patients, and hepatic function, and avoid abrupt stopping.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "mirtazapine",
       "generic": "Mirtazapine",
-      "brand": ["Remeron"],
-      "classes": ["Noradrenergic and specific serotonergic antidepressant"],
+      "brand": [
+        "Remeron"
+      ],
+      "classes": [
+        "Noradrenergic and specific serotonergic antidepressant"
+      ],
       "atc": "N06AX12",
       "mechanism": [
         {
           "id": "mir-mech",
           "text": "Mirtazapine does not block serotonin reuptake; instead it antagonises alpha-2A autoreceptors and heteroreceptors and blocks 5-HT2A, 5-HT2C, 5-HT3 and H1 receptors, raising both monoamines while increasing sleep and appetite.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -964,7 +1261,10 @@
             "id": "mir-2a",
             "text": "Blocking alpha-2A autoreceptors increases noradrenaline and serotonin release, which is the antidepressant mechanism.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -976,7 +1276,10 @@
             "id": "mir-2a5",
             "text": "5-HT2A antagonism is a distinctive part of its profile and is proposed to reduce the sexual dysfunction and emotional blunting of other serotonergic antidepressants.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -988,7 +1291,10 @@
             "id": "mir-h1",
             "text": "Potent histamine blockade gives rapid sedation and improved sleep latency together with increased appetite and weight, so it suits depressed patients with insomnia and poor appetite.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -996,12 +1302,16 @@
       "adverseEffects": [
         {
           "effect": "Weight gain and sedation",
-          "receptorIds": ["HRH1"],
+          "receptorIds": [
+            "HRH1"
+          ],
           "mechanism": {
             "id": "mir-ae",
             "text": "H1 blockade drives appetite and weight gain alongside the same sedation that makes the drug useful, and weight and glucose should be monitored.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1010,22 +1320,31 @@
         "id": "mir-mon",
         "text": "Track weight, glucose and lipids, and expect residual sedation in the morning if dosed at night.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "bupropion",
       "generic": "Bupropion",
-      "brand": ["Wellbutrin"],
-      "classes": ["Noradrenergic-dopaminergic antidepressant"],
+      "brand": [
+        "Wellbutrin"
+      ],
+      "classes": [
+        "Noradrenergic-dopaminergic antidepressant"
+      ],
       "atc": "N06DA02",
       "mechanism": [
         {
           "id": "bup-mech",
           "text": "Bupropion inhibits noradrenaline and dopamine reuptake with little direct serotonergic effect, and it is used where weight gain, sexual side effects or smoking are also concerns.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "canmat-depression-2023"],
+          "sourceIds": [
+            "iuphar",
+            "canmat-depression-2023"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1038,7 +1357,10 @@
             "id": "bup-2a",
             "text": "Raised noradrenergic tone engages alpha-2A autoreceptors and downstream adrenergic signalling, supporting its alerting antidepressant profile without serotonergic sexual effects.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-depression-2023"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1046,12 +1368,16 @@
       "adverseEffects": [
         {
           "effect": "Insomnia, agitation and seizure risk in predisposed patients",
-          "receptorIds": ["ADRA2A"],
+          "receptorIds": [
+            "ADRA2A"
+          ],
           "mechanism": {
             "id": "bup-ae",
             "text": "Its noradrenergic action can produce insomnia and jittery activation, and dose-related seizure risk requires avoidance in eating disorders, abrupt alcohol withdrawal and those with a seizure history.",
             "evidence": "strong",
-            "sourceIds": ["canmat-depression-2023"],
+            "sourceIds": [
+              "canmat-depression-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1060,22 +1386,31 @@
         "id": "bup-mon",
         "text": "Screen for seizure risk and eating disorders, dose earlier in the day if insomnia appears, and expect less weight gain than serotonin-first agents.",
         "evidence": "strong",
-        "sourceIds": ["canmat-depression-2023"],
+        "sourceIds": [
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "esketamine",
       "generic": "Esketamine (intranasal)",
-      "brand": ["Spravato"],
-      "classes": ["Glutamate system modulator"],
+      "brand": [
+        "Spravato"
+      ],
+      "classes": [
+        "Glutamate system modulator"
+      ],
       "atc": "N06AX14",
       "mechanism": [
         {
           "id": "esk-mech",
           "text": "Esketamine is an NMDA receptor antagonist given intranasally in a monitored setting, producing rapid antidepressant effects through downstream glutamate and plasticity signalling rather than monoamine reuptake inhibition.",
           "evidence": "strong",
-          "sourceIds": ["iuphar", "ketamine-dep-2026"],
+          "sourceIds": [
+            "iuphar",
+            "ketamine-dep-2026"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1088,7 +1423,10 @@
             "id": "esk-nmda",
             "text": "NMDA blockade triggers a glutamate surge that drives AMPA receptor activation, synaptogenesis and rapid mood improvement in treatment-resistant depression.",
             "evidence": "strong",
-            "sourceIds": ["ketamine-dep-2026", "iuphar"],
+            "sourceIds": [
+              "ketamine-dep-2026",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -1100,7 +1438,10 @@
             "id": "esk-ampa",
             "text": "Increased GluA1 AMPA signalling on inhibitory interneurons is the leading plasticity explanation for the rapid antidepressant effect.",
             "evidence": "moderate",
-            "sourceIds": ["ketamine-dep-2026", "iuphar"],
+            "sourceIds": [
+              "ketamine-dep-2026",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1108,12 +1449,16 @@
       "adverseEffects": [
         {
           "effect": "Transient dissociation, hypertension and misuse potential",
-          "receptorIds": ["GRIN2A"],
+          "receptorIds": [
+            "GRIN2A"
+          ],
           "mechanism": {
             "id": "esk-ae",
             "text": "Acute NMDA blockade can cause brief dissociation, dizziness and blood-pressure spikes, and because of stimulant-like effects it is dispensed only under a monitored programme with a REMS-style protocol.",
             "evidence": "strong",
-            "sourceIds": ["ketamine-dep-2026"],
+            "sourceIds": [
+              "ketamine-dep-2026"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1122,22 +1467,34 @@
         "id": "esk-mon",
         "text": "Administer in a clinic with blood-pressure monitoring, and screen for substance-use disorder and for blood pressure elevation before each dose.",
         "evidence": "strong",
-        "sourceIds": ["ketamine-dep-2026"],
+        "sourceIds": [
+          "ketamine-dep-2026"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "lithium",
       "generic": "Lithium",
-      "brand": ["Lithosun", "Eskalith"],
-      "classes": ["Mood stabilizer"],
+      "brand": [
+        "Lithosun",
+        "Eskalith"
+      ],
+      "classes": [
+        "Mood stabilizer"
+      ],
       "atc": "N05BA01",
       "mechanism": [
         {
           "id": "li-mech",
           "text": "Lithium is a first-line mood stabilizer with a narrow therapeutic index whose exact molecular target is still debated; inhibiting enzymes including GSK3B is one proposed mechanism, and imaging associates long-term treatment with altered subcortical and cortical volume.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "lithium-volumes-2025", "bipolar-exome-akap11-2022", "enigma-bipolar-cortical-2018"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "lithium-volumes-2025",
+            "bipolar-exome-akap11-2022",
+            "enigma-bipolar-cortical-2018"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1150,7 +1507,10 @@
             "id": "li-gsk3b",
             "text": "Lithium competes with magnesium at NMDA receptors and is associated with brain structure differences, but the classic target is the AKAP11-interacting kinase GSK3B rather than a single neurotransmitter receptor.",
             "evidence": "moderate",
-            "sourceIds": ["bipolar-exome-akap11-2022", "iuphar"],
+            "sourceIds": [
+              "bipolar-exome-akap11-2022",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1158,12 +1518,17 @@
       "adverseEffects": [
         {
           "effect": "Nephrogenic diabetes insipidus, hypothyroid and tremor",
-          "receptorIds": ["GRIN2A"],
+          "receptorIds": [
+            "GRIN2A"
+          ],
           "mechanism": {
             "id": "li-ae",
             "text": "Chronic lithium exposure impairs renal concentrating ability, inhibits thyroid hormone release and causes fine tremor, so renal, thyroid and serum level monitoring are mandatory.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary", "lithium-volumes-2025"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary",
+              "lithium-volumes-2025"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1172,22 +1537,34 @@
         "id": "li-mon",
         "text": "Check serum lithium, renal function, thyroid function, calcium and ECG; higher target ranges are used for acute mania and lower ranges for maintenance and relapse prevention.",
         "evidence": "strong",
-        "sourceIds": ["canmat-bipolar-2018-summary", "canmat-bipolar-recommendations-2021"],
+        "sourceIds": [
+          "canmat-bipolar-2018-summary",
+          "canmat-bipolar-recommendations-2021"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "valproate",
       "generic": "Sodium valproate / divalproex",
-      "brand": ["Depakote"],
-      "classes": ["Mood stabilizer", "Anticonvulsant"],
+      "brand": [
+        "Depakote"
+      ],
+      "classes": [
+        "Mood stabilizer",
+        "Anticonvulsant"
+      ],
       "atc": "N03AG01",
       "mechanism": [
         {
           "id": "val-mech",
           "text": "Valproate is a broad anticonvulsant that raises brain GABA and blocks voltage-gated sodium channels, making it effective for acute mania and rapid cycling.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "lithium-volumes-2025", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "lithium-volumes-2025",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1200,7 +1577,10 @@
             "id": "val-gaba",
             "text": "Its main action is GABAergic potentiation and sodium-channel blockade rather than a specific receptor target, so no single-receptor site is claimed here.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1208,12 +1588,16 @@
       "adverseEffects": [
         {
           "effect": "Weight gain, hepatotoxicity and teratogenicity",
-          "receptorIds": ["CHRM2"],
+          "receptorIds": [
+            "CHRM2"
+          ],
           "mechanism": {
             "id": "val-ae",
             "text": "Weight gain, liver enzyme elevation and serious fetal risk in pregnancy make liver and pregnancy testing essential, so it is avoided in women of childbearing potential unless alternatives fail.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1222,22 +1606,32 @@
         "id": "val-mon",
         "text": "Liver function tests, full blood count, pregnancy testing and weight monitoring before and during treatment.",
         "evidence": "strong",
-        "sourceIds": ["canmat-bipolar-2018-summary"],
+        "sourceIds": [
+          "canmat-bipolar-2018-summary"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "lamotrigine",
       "generic": "Lamotrigine",
-      "brand": ["Lamictal"],
-      "classes": ["Mood stabilizer", "Anticonvulsant"],
+      "brand": [
+        "Lamictal"
+      ],
+      "classes": [
+        "Mood stabilizer",
+        "Anticonvulsant"
+      ],
       "atc": "N03AX09",
       "mechanism": [
         {
           "id": "lam-mech",
           "text": "Lamotrigine is an anticonvulsant that inhibits voltage-gated sodium channels and modulates glutamate release, and it is the mood stabilizer of choice for bipolar depressive relapse prevention rather than for acute mania.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1250,7 +1644,10 @@
             "id": "lam-glu",
             "text": "Modulation of glutamate release and sodium-channel blockade underlie its use, with clinical utility concentrated in preventing depressive rather than manic relapse.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1258,12 +1655,17 @@
       "adverseEffects": [
         {
           "effect": "Rash and Stevens-Johnson syndrome",
-          "receptorIds": ["GRIN2A"],
+          "receptorIds": [
+            "GRIN2A"
+          ],
           "mechanism": {
             "id": "lam-ae",
             "text": "A rare but serious risk of severe skin reaction, especially with rapid titration or valproate co-prescription, mandates very slow dose escalation and immediate withdrawal if a rash appears.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1272,22 +1674,32 @@
         "id": "lam-mon",
         "text": "Titrate very slowly, counsel about rash, and monitor mood and dose if valproate is co-prescribed.",
         "evidence": "strong",
-        "sourceIds": ["canmat-bipolar-2018-summary"],
+        "sourceIds": [
+          "canmat-bipolar-2018-summary"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "carbamazepine",
       "generic": "Carbamazepine",
-      "brand": ["Tegretol"],
-      "classes": ["Mood stabilizer", "Anticonvulsant"],
+      "brand": [
+        "Tegretol"
+      ],
+      "classes": [
+        "Mood stabilizer",
+        "Anticonvulsant"
+      ],
       "atc": "N03AF01",
       "mechanism": [
         {
           "id": "car-mech",
           "text": "Carbamazepine is an anticonvulsant that blocks voltage-gated sodium channels and reduces excitatory neurotransmission, effective in mania but with substantial drug-interaction and haematological caveats.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1300,7 +1712,10 @@
             "id": "car-glu",
             "text": "Sodium-channel blockade and reduced glutamate release account for its antimanic action, without a receptor-selective profile.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1308,12 +1723,16 @@
       "adverseEffects": [
         {
           "effect": "Aplastic anaemia, hyponatraemia and many drug interactions",
-          "receptorIds": ["GRIN2A"],
+          "receptorIds": [
+            "GRIN2A"
+          ],
           "mechanism": {
             "id": "car-ae",
             "text": "Its enzyme-inducing effect lowers levels of many co-prescribed drugs, and rare agranulocytosis and aplastic anaemia plus hyponatraemia require blood count and sodium monitoring.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1322,22 +1741,31 @@
         "id": "car-mon",
         "text": "Full blood count, liver function, sodium, HLA-B*1502 typing where relevant, and an interaction review with every co-prescribed drug.",
         "evidence": "strong",
-        "sourceIds": ["canmat-bipolar-2018-summary"],
+        "sourceIds": [
+          "canmat-bipolar-2018-summary"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
     {
       "id": "lurasidone",
       "generic": "Lurasidone",
-      "brand": ["Latuda"],
-      "classes": ["Second-generation antipsychotic"],
+      "brand": [
+        "Latuda"
+      ],
+      "classes": [
+        "Second-generation antipsychotic"
+      ],
       "atc": "N05AL01",
       "mechanism": [
         {
           "id": "lur-mech",
           "text": "Lurasidone is a second-generation antipsychotic with D2 and 5-HT2A antagonism and additional 5-HT7 antagonism, recommended as a treatment for bipolar depression with a low metabolic burden.",
           "evidence": "strong",
-          "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+          "sourceIds": [
+            "canmat-bipolar-2018-summary",
+            "iuphar"
+          ],
           "lastReviewed": "2026-09-29"
         }
       ],
@@ -1350,7 +1778,10 @@
             "id": "lur-d2",
             "text": "D2 antagonism with relatively loose binding gives efficacy with less prolactin and extrapyramidal burden than typical antipsychotics.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "canmat-bipolar-2018-summary"],
+            "sourceIds": [
+              "iuphar",
+              "canmat-bipolar-2018-summary"
+            ],
             "lastReviewed": "2026-09-29"
           }
         },
@@ -1362,7 +1793,10 @@
             "id": "lur-2a",
             "text": "5-HT2A antagonism, with additional 5-HT7 antagonism, supports efficacy in bipolar depression with a favourable metabolic profile.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1370,12 +1804,17 @@
       "adverseEffects": [
         {
           "effect": "Akathisia, nausea and somnolence",
-          "receptorIds": ["DRD2"],
+          "receptorIds": [
+            "DRD2"
+          ],
           "mechanism": {
             "id": "lur-ae",
             "text": "Mild D2 blockade commonly causes restlessness and nausea that improve with slower titration, and somnolence is frequent so evening dosing is usual.",
             "evidence": "strong",
-            "sourceIds": ["canmat-bipolar-2018-summary", "iuphar"],
+            "sourceIds": [
+              "canmat-bipolar-2018-summary",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -1384,7 +1823,883 @@
         "id": "lur-mon",
         "text": "Take with food, monitor weight, glucose and lipids, and give early attention to akathisia.",
         "evidence": "strong",
-        "sourceIds": ["canmat-bipolar-2018-summary"],
+        "sourceIds": [
+          "canmat-bipolar-2018-summary"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "buspirone",
+      "generic": "Buspirone",
+      "brand": [
+        "BuSpar"
+      ],
+      "classes": [
+        "Azapirone anxiolytic"
+      ],
+      "atc": "N05BE01",
+      "mechanism": [
+        {
+          "id": "bus-mech",
+          "text": "Buspirone is a partial agonist at the serotonin 5-HT1A receptor and has no action at the serotonin transporter, so it does not cause dependence or a withdrawal syndrome.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "HTR1A",
+          "action": "partial-agonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "bus-1a",
+            "text": "Partial 5-HT1A agonism reduces anxiety without sedation, dependence or sexual adverse effects, which is its main advantage over benzodiazepines in people with alcohol or substance misuse.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Dizziness, nausea and headache",
+          "receptorIds": [
+            "HTR1A"
+          ],
+          "mechanism": {
+            "id": "bus-ae",
+            "text": "Initial dizziness and nausea are common and usually settle; unlike benzodiazepines there is no dependence, tolerance or withdrawal liability.",
+            "evidence": "strong",
+            "sourceIds": [
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "bus-mon",
+        "text": "Benefit takes several weeks to appear, so it is not a drug for acute agitation, and it has no abuse potential.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "pregabalin",
+      "generic": "Pregabalin",
+      "brand": [
+        "Lyrica"
+      ],
+      "classes": [
+        "Anticonvulsant; anxiolytic"
+      ],
+      "atc": "N03AX16",
+      "mechanism": [
+        {
+          "id": "pre-mech",
+          "text": "Pregabalin binds to the alpha-2-delta subunit of voltage-gated calcium channels and reduces excitatory neurotransmitter release. The analgesic and anxiolytic actions are separate, and the same drug is used for epilepsy and neuropathic pain.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "SLC6A4",
+          "action": "other",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "pre-5ht",
+            "text": "Its anxiolytic effect is attributed to reduced excitatory release rather than to serotonin reuptake inhibition, and it is a guideline option for generalised anxiety when SSRIs are unsuitable.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Sedation, dizziness, weight gain and misuse",
+          "receptorIds": [
+            "SLC6A4"
+          ],
+          "mechanism": {
+            "id": "pre-ae",
+            "text": "Somnolence and dizziness are the commonest effects, with weight gain and peripheral oedema, and it has a recognised misuse potential that has grown in some populations.",
+            "evidence": "strong",
+            "sourceIds": [
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "pre-mon",
+        "text": "Titrate slowly, warn about driving impairment and respiratory depression with opioids or alcohol, and screen for misuse.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "hydroxyzine",
+      "generic": "Hydroxyzine",
+      "brand": [
+        "Atarax",
+        "Vistaril"
+      ],
+      "classes": [
+        "First-generation antihistamine"
+      ],
+      "atc": "R06AE07",
+      "mechanism": [
+        {
+          "id": "hyd-mech",
+          "text": "Hydroxyzine is a first-generation histamine H1 antagonist with additional antimuscarinic and alpha-adrenergic activity, giving it anxiolytic and sedative effects without acting on the serotonin transporter.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "HRH1",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "hyd-h1",
+            "text": "H1 blockade is the shared mechanism of sedating antihistamines; in anxiety it is a short-term or intermittent option rather than a first-line long-term treatment.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Sedation, dry mouth, constipation and urinary retention",
+          "receptorIds": [
+            "HRH1",
+            "CHRM3"
+          ],
+          "mechanism": {
+            "id": "hyd-ae",
+            "text": "Histamine and muscarinic blockade together produce marked sedation and anticholinergic effects, with urinary retention a particular risk in older adults.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "hyd-mon",
+        "text": "Use only short term or intermittently, and avoid in older adults because of anticholinergic burden and fall risk.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "propranolol",
+      "generic": "Propranolol",
+      "brand": [
+        "Inderal"
+      ],
+      "classes": [
+        "Beta blocker"
+      ],
+      "atc": "C07AA05",
+      "mechanism": [
+        {
+          "id": "pro-mech",
+          "text": "Propranolol is a nonselective beta-adrenergic antagonist that crosses the blood-brain barrier, blocking the peripheral surge of adrenergic activity that drives the physical symptoms of anxiety.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "nice-cg159"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "ADRB1",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "pro-b1",
+            "text": "Beta-1 blockade blunts tachycardia and tremor without any effect on the anxiety itself, so it is used for performance and somatic symptoms, and for tremor in essential tremor.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-cg159"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Bradycardia, hypotension, bronchospasm and fatigue",
+          "receptorIds": [
+            "ADRB1"
+          ],
+          "mechanism": {
+            "id": "pro-ae",
+            "text": "Beta blockade slows heart rate and conduction, lowers blood pressure, and beta-2 blockade makes it contraindicated in asthma and a poor choice for athletes.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "pro-mon",
+        "text": "Check pulse and blood pressure, avoid in asthma and decompensated heart failure, and taper rather than stopping abruptly.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "nice-cg159"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "atenolol",
+      "generic": "Atenolol",
+      "brand": [
+        "Tenormin"
+      ],
+      "classes": [
+        "Beta blocker"
+      ],
+      "atc": "C07AB03",
+      "mechanism": [
+        {
+          "id": "ate-mech",
+          "text": "Atenolol is a relatively cardioselective beta-1 antagonist that penetrates the brain poorly, so it reduces the physical symptoms of anxiety without central beta blockade.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "ADRB1",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "ate-b1",
+            "text": "Cardioselective blockade limits palpitations and tremor without bronchospasm, making it a common option when propranolol is unsuitable.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Bradycardia, cold extremities and sleep disturbance",
+          "receptorIds": [
+            "ADRB1"
+          ],
+          "mechanism": {
+            "id": "ate-ae",
+            "text": "Heart rate and blood pressure fall, and poorly penetrating beta blockade can disturb sleep, which matters in anxiety.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "ate-mon",
+        "text": "Monitor pulse, blood pressure and sleep, and taper gradually.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "diazepam",
+      "generic": "Diazepam",
+      "brand": [
+        "Valium"
+      ],
+      "classes": [
+        "Benzodiazepine"
+      ],
+      "atc": "N05BA01",
+      "mechanism": [
+        {
+          "id": "dia-mech",
+          "text": "Diazepam is a positive allosteric modulator of the GABA-A receptor at its benzodiazepine site, potentiating inhibitory chloride currents. The rapid onset and the loss of that effect with repeated use produce both its short-term efficacy and its dependence risk.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "wfsbp-anxiety-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "CHRM3",
+          "action": "other",
+          "relevance": "adverse",
+          "effect": {
+            "id": "dia-mus",
+            "text": "Benzodiazepines act on GABA-A rather than muscarinic receptors; their anticholinergic-like confusion in older adults is a central effect of the same sedation that makes them feel relieving.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Dependence, tolerance, cognitive impairment and falls",
+          "receptorIds": [
+            "CHRM3"
+          ],
+          "mechanism": {
+            "id": "dia-ae",
+            "text": "Tolerance and physical dependence develop within weeks, cognition and reaction time worsen, and in older adults the combination of sedation and impaired balance causes falls and delirium.",
+            "evidence": "strong",
+            "sourceIds": [
+              "wfsbp-anxiety-2023",
+              "vadod-ptsd-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "dia-mon",
+        "text": "Use short term only, never with opioids or alcohol, and taper slowly. Guidelines recommend against benzodiazepines for post-traumatic stress disorder because of dependence and of the risk of worsening outcomes.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "paroxetine",
+      "generic": "Paroxetine",
+      "brand": [
+        "Paxil",
+        "Seroxat"
+      ],
+      "classes": [
+        "Selective serotonin reuptake inhibitor"
+      ],
+      "atc": "N06AB05",
+      "mechanism": [
+        {
+          "id": "par-mech",
+          "text": "Paroxetine blocks the serotonin transporter and among SSRIs it is notable for strong anticholinergic activity, which contributes to both its weight gain and its withdrawal syndrome.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "ptsd-drug-nma-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "SLC6A4",
+          "action": "reuptake-inhibitor",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "par-sert",
+            "text": "Serotonin reuptake inhibition is the mechanism; in a network meta-analysis paroxetine produced a standardised mean difference of about minus 0.48 against placebo on clinician-rated PTSD symptoms, and it is one of three drugs recommended by the 2023 US guideline.",
+            "evidence": "strong",
+            "sourceIds": [
+              "ptsd-drug-nma-2023",
+              "vadod-ptsd-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Weight gain, sexual dysfunction, anticholinergic effects and withdrawal",
+          "receptorIds": [
+            "SLC6A4",
+            "CHRM3"
+          ],
+          "mechanism": {
+            "id": "par-ae",
+            "text": "Paroxetine is the most anticholinergic of the SSRIs, and because it is a short half-life drug with these properties it has the highest rate of discontinuation symptoms in its class.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "canmat-depression-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "par-mon",
+        "text": "One of the three guideline-recommended antidepressants for post-traumatic stress disorder, and among the best-tolerated SSRIs in sexual function; taper slowly to limit withdrawal.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "prazosin",
+      "generic": "Prazosin",
+      "brand": [
+        "Minipress"
+      ],
+      "classes": [
+        "Alpha-1 blocker"
+      ],
+      "atc": "C07CA02",
+      "mechanism": [
+        {
+          "id": "pra-mech",
+          "text": "Prazosin is a selective alpha-1 adrenergic antagonist that lowers blood pressure, and is used in post-traumatic stress disorder specifically to reduce trauma-related nightmares rather than the disorder as a whole.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "iuphar",
+            "vadod-ptsd-2023"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "ADRA1A",
+          "action": "antagonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "pra-1a",
+            "text": "Alpha-1 blockade reduces noradrenergic hyperarousal during sleep, which is the mechanism proposed for its effect on nightmares. Guidelines treat it as a targeted nightmare treatment, not as a treatment for core PTSD symptoms.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "vadod-ptsd-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Orthostatic hypotension and first-dose syncope",
+          "receptorIds": [
+            "ADRA1A"
+          ],
+          "mechanism": {
+            "id": "pra-ae",
+            "text": "Blood pressure falls on standing, with a first-dose phenomenon, so patients need to be told to rise slowly and to start with a very low dose at night.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "vadod-ptsd-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "pra-mon",
+        "text": "Start at night at a low dose and titrate slowly, monitoring postural blood pressure. Symptom benefit for nightmares is usually assessed before further increases.",
+        "evidence": "strong",
+        "sourceIds": [
+          "vadod-ptsd-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "methylphenidate",
+      "generic": "Methylphenidate",
+      "brand": [
+        "Ritalin",
+        "Concerta"
+      ],
+      "classes": [
+        "Stimulant; central nervous system stimulant"
+      ],
+      "atc": "N06BA02",
+      "mechanism": [
+        {
+          "id": "met-mech",
+          "text": "Methylphenidate blocks the dopamine transporter, raising extracellular dopamine and noradrenaline in prefrontal and striatal circuits. It is the first-line pharmacological treatment for attention deficit hyperactivity disorder and is a controlled drug.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "SLC6A3",
+          "action": "reuptake-inhibitor",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "met-dat",
+            "text": "Dopamine transporter blockade in the striatum and cortex is the therapeutic mechanism; in a registry study of 18362 people starting stimulants, 39 percent had discontinued within a year, and genetic effects on discontinuation were small.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "adhd-stimulant-genetics-2026"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Reduced appetite, insomnia, increased heart rate and blood pressure",
+          "receptorIds": [
+            "SLC6A3",
+            "ADRB1"
+          ],
+          "mechanism": {
+            "id": "met-ae",
+            "text": "Sympathomimetic and anorectic effects reduce appetite and sleep and raise heart rate and blood pressure, and dose is monitored against growth in children.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "met-mon",
+        "text": "Track height, weight, appetite, sleep, heart rate and blood pressure, and monitor pulse before and during treatment.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "atomoxetine",
+      "generic": "Atomoxetine",
+      "brand": [
+        "Strattera"
+      ],
+      "classes": [
+        "Noradrenergic reuptake inhibitor"
+      ],
+      "atc": "N06BA16",
+      "mechanism": [
+        {
+          "id": "ato-mech",
+          "text": "Atomoxetine selectively blocks the noradrenaline transporter, and because its effect builds over several weeks it suits people who cannot take a stimulant or in whom diversion is a concern.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "ADRA2A",
+          "action": "other",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "ato-2a",
+            "text": "Raised noradrenergic tone engages alpha-2A autoreceptors in prefrontal cortex, which is the leading account of how noradrenergic drugs improve attention and impulse control in this disorder.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Nausea, dry mouth, appetite suppression and raised blood pressure",
+          "receptorIds": [
+            "ADRA2A"
+          ],
+          "mechanism": {
+            "id": "ato-ae",
+            "text": "Nausea is common and usually transient, with reduced appetite and occasional increases in heart rate and blood pressure, and there is no dependence liability.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "ato-mon",
+        "text": "Explain the slow onset so the drug is not abandoned early, and monitor blood pressure and heart rate as well as growth and appetite.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "lisdexamfetamine",
+      "generic": "Lisdexamfetamine",
+      "brand": [
+        "Elvanse",
+        "Vyvanse"
+      ],
+      "classes": [
+        "Stimulant; prodrug amphetamine"
+      ],
+      "atc": "N06BA13",
+      "mechanism": [
+        {
+          "id": "lis-mech",
+          "text": "Lisdexamfetamine is a prodrug converted by gut and liver esterases to dextroamphetamine, giving a controlled release of amphetamine that acts on the dopamine and noradrenaline transporters.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "SLC6A3",
+          "action": "reuptake-inhibitor",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "lis-dat",
+            "text": "Amphetamine blocks the dopamine transporter and also promotes dopamine release, giving more sustained benefit than immediate-release preparations but the same need for cardiovascular monitoring.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Reduced appetite, insomnia, raised heart rate and blood pressure, misuse potential",
+          "receptorIds": [
+            "SLC6A3",
+            "ADRB1"
+          ],
+          "mechanism": {
+            "id": "lis-ae",
+            "text": "Appetite suppression and insomnia are dose-related, cardiovascular effects need monitoring, and as a Schedule 2 drug it carries diversion and misuse risk.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "lis-mon",
+        "text": "Monitor growth, appetite, sleep, heart rate and blood pressure, and discuss the controlled-drug status honestly before prescribing.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "guanfacine",
+      "generic": "Guanfacine",
+      "brand": [
+        "Intuniv"
+      ],
+      "classes": [
+        "Noradrenergic alpha-2A agonist"
+      ],
+      "atc": "C01AC05",
+      "mechanism": [
+        {
+          "id": "gua-mech",
+          "text": "Guanfacine is a selective alpha-2A adrenergic agonist that reduces noradrenergic outflow from the locus coeruleus, a non-stimulant option with a slow titration schedule.",
+          "evidence": "strong",
+          "sourceIds": [
+            "iuphar",
+            "nice-ng87"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "ADRA2A",
+          "action": "agonist",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "gua-2a",
+            "text": "Alpha-2A agonism decreases noradrenaline release in prefrontal cortex, improving working memory and impulse control through the opposite receptor action to atomoxetine.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Sedation, dizziness, dry mouth and rebound hypertension on stopping",
+          "receptorIds": [
+            "ADRA2A"
+          ],
+          "mechanism": {
+            "id": "gua-ae",
+            "text": "Sedation and orthostatic dizziness are dose-related, and abrupt withdrawal can cause rebound hypertension, so it must be tapered rather than stopped suddenly.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "gua-mon",
+        "text": "Titrate no faster than the licensed schedule, give with or without food consistently, and taper over at least a week when stopping.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-ng87"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "melatonin",
+      "generic": "Melatonin",
+      "brand": [
+        "Circadin"
+      ],
+      "classes": [
+        "Hormone; sleep aid"
+      ],
+      "atc": "N05CY01",
+      "mechanism": [
+        {
+          "id": "mel-mech",
+          "text": "Melatonin acts on MT1 and MT2 receptors to transmit the darkness signal that entrains the circadian rhythm, and at pharmacological doses it is used to shorten sleep onset latency rather than to treat a sleep disorder directly.",
+          "evidence": "moderate",
+          "sourceIds": [
+            "iuphar",
+            "nice-cg128"
+          ],
+          "lastReviewed": "2026-09-29"
+        }
+      ],
+      "receptorProfile": [
+        {
+          "receptorId": "GRIN2B",
+          "action": "other",
+          "relevance": "therapeutic",
+          "effect": {
+            "id": "mel-note",
+            "text": "Its target is a melatonin receptor, not any of the glutamate receptors here; it is listed because persistent sleep disturbance is one of the most common and most modifiable contributors to autistic daytime dysregulation.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "nice-cg128"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "adverseEffects": [
+        {
+          "effect": "Morning grogginess, vivid dreams and headache",
+          "receptorIds": [
+            "GRIN2B"
+          ],
+          "mechanism": {
+            "id": "mel-ae",
+            "text": "Drowsiness the next morning and vivid dreams are the commonest effects, and it should be used alongside behavioural sleep work rather than as a substitute for it.",
+            "evidence": "strong",
+            "sourceIds": [
+              "nice-cg128"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ],
+      "monitoring": {
+        "id": "mel-mon",
+        "text": "Use alongside a structured sleep routine and a sleep diary, and start with the lowest dose in the evening.",
+        "evidence": "strong",
+        "sourceIds": [
+          "nice-cg128"
+        ],
         "lastReviewed": "2026-09-29"
       }
     }

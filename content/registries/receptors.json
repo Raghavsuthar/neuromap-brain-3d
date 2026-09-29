@@ -8,17 +8,29 @@
         "id": "drd2-sig",
         "text": "The D2 receptor couples to Gi/o proteins, inhibiting adenylyl cyclase and reducing neuronal excitability and dopamine release at terminals.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-28"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"], "precision": "exact" },
+          "where": {
+            "atlasLabels": [
+              "Caudate nucleus",
+              "Putamen",
+              "Nucleus accumbens"
+            ],
+            "precision": "exact"
+          },
           "claim": {
             "id": "drd2-striatum",
             "text": "D2 receptors are densely expressed in the dorsal and ventral striatum, where antipsychotic blockade produces both therapeutic response and extrapyramidal or prolactin effects.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "nord-farde-2011"],
+            "sourceIds": [
+              "iuphar",
+              "nord-farde-2011"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -32,17 +44,28 @@
         "id": "htr2a-sig",
         "text": "The 5-HT2A receptor couples to Gq/11, activating phospholipase C and increasing cortical pyramidal excitability.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-28"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Middle frontal gyrus",
+              "Superior frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "htr2a-pfc",
             "text": "5-HT2A receptors are richly expressed across prefrontal cortex, where second-generation antipsychotics block them alongside D2.",
             "evidence": "strong",
-            "sourceIds": ["iuphar", "hansen-2022"],
+            "sourceIds": [
+              "iuphar",
+              "hansen-2022"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -62,17 +85,28 @@
         "id": "chrm1-sig",
         "text": "The M1 receptor couples to Gq/11 and is concentrated postsynaptically in cortex and hippocampus, supporting memory and cognition.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-28"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Hippocampus",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "chrm1-sites",
             "text": "M1 receptors predominate in cortex and hippocampus; selective M1 activation is pursued for cognitive symptoms with fewer peripheral effects.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "fda-cobenfy-2024"],
+            "sourceIds": [
+              "iuphar",
+              "fda-cobenfy-2024"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -86,17 +120,28 @@
         "id": "chrm4-sig",
         "text": "The M4 receptor couples to Gi/o and acts largely as an inhibitory autoreceptor and striatal modulator of dopamine release.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-28"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Caudate nucleus", "Putamen"], "precision": "exact" },
+          "where": {
+            "atlasLabels": [
+              "Caudate nucleus",
+              "Putamen"
+            ],
+            "precision": "exact"
+          },
           "claim": {
             "id": "chrm4-striatum",
             "text": "M4 receptors in the striatum restrain dopamine release, which is the rationale for M4-preferring agonism in psychosis.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "fda-cobenfy-2024"],
+            "sourceIds": [
+              "iuphar",
+              "fda-cobenfy-2024"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -110,17 +155,28 @@
         "id": "grin2a-sig",
         "text": "GluN2A is a regulatory subunit of the NMDA glutamate receptor, a calcium-permeable coincidence detector central to synaptic plasticity.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-28"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Hippocampus",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "grin2a-sites",
             "text": "GluN2A-containing NMDA receptors are prominent in hippocampus and cortex, including on parvalbumin interneurons implicated in the glutamate model of psychosis.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "howes-kapur-2009"],
+            "sourceIds": [
+              "iuphar",
+              "howes-kapur-2009"
+            ],
             "lastReviewed": "2026-09-28"
           }
         }
@@ -134,17 +190,27 @@
         "id": "htr1a-sig",
         "text": "The 5-HT1A receptor couples to Gi/o and acts as a presynaptic autoreceptor in raphe and as a postsynaptic heteroreceptor in cortex and hippocampus, lowering neuronal firing when activated.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Middle frontal gyrus", "Hippocampus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Middle frontal gyrus",
+              "Hippocampus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "htr1a-sites",
             "text": "5-HT1A receptors are dense in prefrontal and hippocampal cortex and on raphe neurons, where partial agonism can raise 5-HT release from raphe while dampening cortical 5-HT1A-mediated effects.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -158,17 +224,29 @@
         "id": "slc6a4-sig",
         "text": "SERT is the presynaptic reuptake carrier for serotonin; inhibiting it raises and prolongs serotonin in the synaptic cleft, and is the shared mechanism of most antidepressants used in mood and anxiety disorders.",
         "evidence": "strong",
-        "sourceIds": ["iuphar", "canmat-depression-2023"],
+        "sourceIds": [
+          "iuphar",
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Midbrain", "Pons", "Middle frontal gyrus"], "precision": "schematic" },
+          "where": {
+            "atlasLabels": [
+              "Midbrain",
+              "Pons",
+              "Middle frontal gyrus"
+            ],
+            "precision": "schematic"
+          },
           "claim": {
             "id": "slc6a4-sites",
             "text": "SERT is expressed along the raphe projections and in prefrontal and limbic cortex; the raphe itself is not resolved in the atlas so the midbrain and pons stand in as a schematic anchor.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -182,17 +260,27 @@
         "id": "htr2c-sig",
         "text": "The 5-HT2C receptor couples to Gq/11 and is a widespread inhibitory heteroreceptor in midbrain and cortex, modulating monoamine release and feeding behaviour.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Midbrain", "Middle frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Midbrain",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "htr2c-sites",
             "text": "5-HT2C receptors in midbrain and cortico-striatal circuits are implicated in appetite and metabolic effects of antipsychotic and antidepressant drugs.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -206,17 +294,27 @@
         "id": "hrh1-sig",
         "text": "The H1 receptor couples to Gq and is widely expressed in cortex and thalamus, promoting wakefulness and arousal.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Middle frontal gyrus", "Pulvinar"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Middle frontal gyrus",
+              "Pulvinar"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "hrh1-sites",
             "text": "H1 blockade is the shared mechanism behind sedation and appetite increase across tricyclic, mirtazapine, and sedating antipsychotic drugs.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -230,17 +328,27 @@
         "id": "adra2a-sig",
         "text": "The alpha-2A adrenergic receptor couples to Gi/o and acts as an inhibitory presynaptic autoreceptor on noradrenergic and serotonergic terminals.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "markerId": "lc", "atlasLabels": ["Middle frontal gyrus"], "precision": "schematic" },
+          "where": {
+            "markerId": "lc",
+            "atlasLabels": [
+              "Middle frontal gyrus"
+            ],
+            "precision": "schematic"
+          },
           "claim": {
             "id": "adra2a-sites",
             "text": "Alpha-2A agonism in the locus coeruleus and cortex reduces noradrenaline release and is the main mechanism of mirtazapine's antidepressant and sedative action.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -254,17 +362,27 @@
         "id": "adra1a-sig",
         "text": "The alpha-1A receptor couples to Gq and mediates excitatory postsynaptic noradrenergic transmission, including vascular smooth muscle contraction.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "markerId": "lc", "atlasLabels": ["Middle frontal gyrus"], "precision": "schematic" },
+          "where": {
+            "markerId": "lc",
+            "atlasLabels": [
+              "Middle frontal gyrus"
+            ],
+            "precision": "schematic"
+          },
           "claim": {
             "id": "adra1a-sites",
             "text": "Alpha-1A blockade lowers standing blood pressure and is the main orthostatic and urinary source of adverse effects for tricyclics, mirtazapine and antipsychotics.",
             "evidence": "strong",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -278,17 +396,28 @@
         "id": "gria1-sig",
         "text": "GluA1 is the principal postsynaptic subunit of AMPA receptors, which mediate the fast excitatory transmission required for synaptic plasticity and learning.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Hippocampus",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "gria1-sites",
             "text": "GluA1-containing AMPA receptors dominate cortico-hippocampal excitatory transmission, and rapid-acting antidepressants such as ketamine increase GluA1 signalling on inhibitory interneurons.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar", "ketamine-dep-2026"],
+            "sourceIds": [
+              "iuphar",
+              "ketamine-dep-2026"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -302,17 +431,29 @@
         "id": "ntrk2-sig",
         "text": "TrkB is the receptor for brain-derived neurotrophic factor and couples to MAPK and PI3K signalling, regulating neuronal survival, growth and synaptic plasticity.",
         "evidence": "strong",
-        "sourceIds": ["iuphar", "pgc-depression-2019"],
+        "sourceIds": [
+          "iuphar",
+          "pgc-depression-2019"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Hippocampus", "Middle frontal gyrus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Hippocampus",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "ntrk2-sites",
             "text": "BDNF-TrkB signalling in hippocampus and prefrontal cortex supports the neuroplasticity hypothesis of depression, with BDNF pathway genes enriched in large GWAS of depression.",
             "evidence": "moderate",
-            "sourceIds": ["pgc-depression-2019", "iuphar"],
+            "sourceIds": [
+              "pgc-depression-2019",
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -326,17 +467,27 @@
         "id": "chrm2-sig",
         "text": "The M2 receptor couples to Gi/o and serves as an inhibitory presynaptic autoreceptor in cholinergic terminals, limiting acetylcholine release.",
         "evidence": "strong",
-        "sourceIds": ["iuphar"],
+        "sourceIds": [
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "atlasLabels": ["Basolateral complex", "Hippocampus"], "precision": "proxy" },
+          "where": {
+            "atlasLabels": [
+              "Basolateral complex",
+              "Hippocampus"
+            ],
+            "precision": "proxy"
+          },
           "claim": {
             "id": "chrm2-sites",
             "text": "Cholinergic M2 autoreceptors in cortex, hippocampus and amygdala modulate limbic circuitry implicated in mood regulation, and cholinergic anti-muscarinic activity contributes to cognitive adverse effects.",
             "evidence": "moderate",
-            "sourceIds": ["iuphar"],
+            "sourceIds": [
+              "iuphar"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }
@@ -350,17 +501,238 @@
         "id": "taar1-sig",
         "text": "TAAR1 is an intracellular Gs-coupled receptor on monoaminergic neurons that modulates dopamine, serotonin and norepinephrine release, and is activated by amphetamines and trace amines.",
         "evidence": "moderate",
-        "sourceIds": ["iuphar", "achtyes-2023-taar1"],
+        "sourceIds": [
+          "iuphar",
+          "achtyes-2023-taar1"
+        ],
         "lastReviewed": "2026-09-29"
       },
       "principalSites": [
         {
-          "where": { "markerId": "vta", "precision": "schematic" },
+          "where": {
+            "markerId": "vta",
+            "precision": "schematic"
+          },
           "claim": {
             "id": "taar1-sites",
             "text": "TAAR1 agonism was developed as a schizophrenia and mood therapy, though the large DIAMOND phase 3 trials in schizophrenia failed to meet their primary endpoint.",
             "evidence": "moderate",
-            "sourceIds": ["achtyes-2023-taar1", "otsuka-diamond-2023"],
+            "sourceIds": [
+              "achtyes-2023-taar1",
+              "otsuka-diamond-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "HTR3A",
+      "name": "Serotonin 5-HT3 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "htr3a-sig",
+        "text": "The 5-HT3 receptor is a ligand-gated cation channel rather than a GPCR, and rapid depolarisation of the neuron it innervates explains the fast onset of 5-HT3 antagonist effects.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Basolateral complex",
+              "Insula (Subcentral gyrus and ant. and post. sulci)"
+            ],
+            "precision": "proxy"
+          },
+          "claim": {
+            "id": "htr3a-sites",
+            "text": "5-HT3 receptors sit on limbic and insular interneurons, and blocking them reduces nausea and the nausea that limits some serotonergic drugs.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "wfsbp-anxiety-2023"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ADRB1",
+      "name": "Adrenergic beta-1 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "adrb1-sig",
+        "text": "The beta-1 adrenergic receptor couples to Gs and is the main cardiac target of adrenergic blockade.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Middle frontal gyrus"
+            ],
+            "precision": "schematic",
+            "markerId": "lc"
+          },
+          "claim": {
+            "id": "adrb1-sites",
+            "text": "Beta-1 blockade slows heart rate and conduction, which is the main adverse-effect mechanism of propranolol and of propranolol used for performance anxiety.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-cg159"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CHRM3",
+      "name": "Muscarinic M3 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "chrm3-sig",
+        "text": "The M3 receptor couples to Gq and drives smooth-muscle contraction in gut, bladder and airways, as well as glandular secretion.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Basolateral complex",
+              "Hippocampus"
+            ],
+            "precision": "proxy"
+          },
+          "claim": {
+            "id": "chrm3-sites",
+            "text": "M3 receptors mediate the peripheral anticholinergic burden that limits tricyclic and antihistamine drugs, while central M3 and M1 blockade adds cognitive adverse effects.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DRD4",
+      "name": "Dopamine D4 receptor",
+      "family": "GPCR",
+      "signalling": {
+        "id": "drd4-sig",
+        "text": "The D4 receptor couples to Gi/o and is expressed in cortex and striatum, with the longest-known association in psychiatry being a variable-number tandem repeat in its coding region.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Middle frontal gyrus",
+              "Caudate nucleus"
+            ],
+            "precision": "proxy"
+          },
+          "claim": {
+            "id": "drd4-sites",
+            "text": "D4 receptors are enriched in prefrontal cortex and striatum, regions implicated in attention and in the cortical surface-area findings reported in children with ADHD.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "hoogman-adhd-cort-2019"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SLC6A3",
+      "name": "Dopamine transporter (DAT)",
+      "family": "transporter",
+      "signalling": {
+        "id": "slc6a3-sig",
+        "text": "The dopamine transporter clears synaptic dopamine and is the target of stimulants, which block reuptake and raise extracellular dopamine.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar",
+          "adhd-stimulant-genetics-2026"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Caudate nucleus",
+              "Putamen",
+              "Nucleus accumbens",
+              "Middle frontal gyrus"
+            ],
+            "precision": "exact"
+          },
+          "claim": {
+            "id": "slc6a3-sites",
+            "text": "Dopamine transporter density is highest in striatum and is modulated by methylphenidate and amphetamine, the mechanism behind stimulant treatment of attention deficit hyperactivity disorder.",
+            "evidence": "strong",
+            "sourceIds": [
+              "iuphar",
+              "nice-ng87"
+            ],
+            "lastReviewed": "2026-09-29"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GRIN2B",
+      "name": "NMDA receptor subunit epsilon-2 (GluN2B)",
+      "family": "ion-channel",
+      "signalling": {
+        "id": "grin2b-sig",
+        "text": "GluN2B is a regulatory subunit of the NMDA receptor that controls calcium entry and the trafficking of the channel into synapses.",
+        "evidence": "strong",
+        "sourceIds": [
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "principalSites": [
+        {
+          "where": {
+            "atlasLabels": [
+              "Hippocampus",
+              "Middle frontal gyrus"
+            ],
+            "precision": "proxy"
+          },
+          "claim": {
+            "id": "grin2b-sites",
+            "text": "GluN2B-containing receptors are prominent in cortex and hippocampus, the circuits whose plasticity is targeted by behavioural treatments for post-traumatic stress disorder and by cognitive remediation.",
+            "evidence": "moderate",
+            "sourceIds": [
+              "iuphar",
+              "ptsd-psych-nma-2023"
+            ],
             "lastReviewed": "2026-09-29"
           }
         }

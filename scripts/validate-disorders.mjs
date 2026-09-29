@@ -163,6 +163,11 @@ for (const f of disorderFiles) {
   for (const b of d.brainFindings || []) {
     checkAtlasRef(b.where, `${W}.findings/${b.id}`);
     if (b.effectSize && !SOURCE_IDS.has(b.effectSize.sourceId)) err(`${W}.findings/${b.id}: unknown effect source`);
+    // Guards a real bug class: an effectSize object written into "stage",
+    // which renders as "[object Object]" in the UI instead of failing here.
+    if (typeof b.stage !== 'string') err(`${W}.findings/${b.id}: stage must be a string, got ${typeof b.stage}`);
+    if (b.effectSize && typeof b.effectSize !== 'object') err(`${W}.findings/${b.id}: effectSize must be an object`);
+    if (b.effectSize && typeof b.effectSize.value !== 'number') err(`${W}.findings/${b.id}: effectSize.value must be a number`);
     checkClaim(b.claim, `${W}.findings/${b.id}.claim`);
   }
   for (const c of d.circuits || []) {

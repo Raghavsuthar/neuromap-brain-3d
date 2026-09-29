@@ -1,0 +1,928 @@
+{
+  "id": "gad",
+  "name": "Generalized anxiety disorder",
+  "icd11": {
+    "code": "6B00",
+    "url": "https://icd.who.int/browse11/l-m/en"
+  },
+  "dsm5tr": {
+    "code": "300.22",
+    "url": "https://www.psychiatry.org/psychiatrists/practice/dsm"
+  },
+  "block": "Anxiety or fear-related disorders",
+  "overview": [
+    {
+      "id": "gad-ov-1",
+      "text": "Generalized anxiety disorder is characterised by excessive, difficult to control worry across multiple life domains on most days for several months, together with at least one physical symptom of arousal. It is one of the most common mental disorders and is frequently comorbid with depression.",
+      "evidence": "established",
+      "sourceIds": [
+        "icd11-browser",
+        "dsm5tr-overview",
+        "wfsbp-anxiety-2023"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "gad-ov-2",
+      "text": "Guidelines are unusually consistent here: the WFSBP third-version guideline reviewed more than a thousand randomised trials and places selective serotonin reuptake inhibitors and serotonin-noradrenaline reuptake inhibitors first, with cognitive behavioural therapy as the first-line psychotherapy.",
+      "evidence": "strong",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ],
+      "lastReviewed": "2026-09-29"
+    },
+    {
+      "id": "gad-ov-3",
+      "text": "Structural imaging evidence is much weaker for this disorder than for depression, attention deficit hyperactivity disorder or autism spectrum disorder, and no large coordinated study has established a reproducible brain difference. That gap is stated here rather than filled with plausible-looking but unsourced findings.",
+      "evidence": "moderate",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "enigma-cross-disorder-2020"
+      ],
+      "lastReviewed": "2026-09-29"
+    }
+  ],
+  "symptomDomains": [
+    {
+      "id": "free-floating-worry",
+      "name": "Excessive worry",
+      "description": {
+        "id": "gad-sym-worry",
+        "text": "Worry that is difficult to control and not confined to one situation, contrasting with the stimulus-bound fear of a phobia. It is the defining symptom and is present on most days.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "dsm5tr-overview"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-threat-loop"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "physical-anxiety",
+      "name": "Physical arousal",
+      "description": {
+        "id": "gad-sym-phys",
+        "text": "Restlessness, fatigue, difficulty concentrating, irritability, muscle tension and sleep disturbance are required or strongly associated symptoms. The muscle tension and sleep difficulty are among the most treatment-responsive and are often forgotten in a symptom list.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "dsm5tr-overview"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-threat-loop"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "hypervigilance",
+      "name": "Hypervigilance and threat scanning",
+      "description": {
+        "id": "gad-sym-vigil",
+        "text": "Constant scanning for danger and overestimation of the probability of harm, maintained by repeated checking and reassurance-seeking. This is the behavioural engine that keeps worry going, and it is a direct target of cognitive behavioural therapy.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-threat-loop"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "insomnia",
+      "name": "Sleep disturbance",
+      "description": {
+        "id": "gad-sym-sleep",
+        "text": "Difficulty falling asleep, maintaining sleep, or restless unsatisfying sleep, driven by worry and muscular tension. It is both a diagnostic criterion and the symptom patients most want treated.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-threat-loop"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "concentration",
+      "name": "Impaired concentration",
+      "description": {
+        "id": "gad-sym-conc",
+        "text": "Difficulty concentrating and a subjective sense of mental inefficiency from sustained arousal. It is often mistaken for mild cognitive impairment, so attention problems predating an anxiety disorder should prompt developmental assessment instead.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-prefrontal-control"
+      ],
+      "brainFindingIds": []
+    },
+    {
+      "id": "depressive-comorbidity",
+      "name": "Depressive comorbidity",
+      "description": {
+        "id": "gad-sym-dep",
+        "text": "Depressive episodes co-occur with generalised anxiety more often than chance would predict, and the combination predicts a worse course and poorer treatment response than either alone. Guidelines advise treating both actively rather than assuming one will lift the other.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "circuitIds": [
+        "gad-threat-loop"
+      ],
+      "brainFindingIds": []
+    }
+  ],
+  "brainFindings": [
+    {
+      "id": "gad-evidence-gap",
+      "where": {
+        "atlasLabels": [
+          "Middle frontal gyrus",
+          "Basolateral complex",
+          "Insula (Subcentral gyrus and ant. and post. sulci)"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "other",
+      "stage": "any",
+      "claim": {
+        "id": "gad-gap-c",
+        "text": "The fear circuit formed by amygdala, insula, anterior cingulate and prefrontal cortex is the framework used in anxiety neuroscience, and it is confirmed as hyperactive in the closely related disorder of social anxiety disorder. It is mapped here for this disorder as a shared circuit model, explicitly not as a reported finding in generalised anxiety disorder.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "gad-network-framework",
+      "where": {
+        "atlasLabels": [
+          "Medial occipitotemporal gyrus (Parahippocampal)",
+          "Hippocampus",
+          "Cingulate gyrus and sulcus (Middle posterior part)",
+          "Precuneus"
+        ],
+        "precision": "proxy"
+      },
+      "finding": "other",
+      "stage": "any",
+      "claim": {
+        "id": "gad-network-c",
+        "text": "A network rather than a single-region account is now preferred, and in social anxiety disorder meta-analysis a disconnected medial parietal hub has been proposed. That network framing is the best available model for this disorder and is applied as a proxy mapping rather than as a measured difference.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "circuits": [
+    {
+      "id": "gad-threat-loop",
+      "name": "Amygdala-prefrontal threat appraisal circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Central nucleus",
+            "Lateral nucleus",
+            "Corticomedial group"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Cingulate gyrus and sulcus (Middle anterior part)",
+            "Cingulate gyrus (Posteroventral part)"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus"
+          ],
+          "precision": "proxy"
+        },
+        {
+          "atlasLabels": [
+            "Insula (Subcentral gyrus and ant. and post. sulci)"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Middle frontal gyrus",
+          "to": "Basolateral complex",
+          "type": "inhibitory",
+          "transmitter": "GABA"
+        },
+        {
+          "from": "Basolateral complex",
+          "to": "Cingulate gyrus and sulcus (Middle anterior part)",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "gad-threat-f",
+        "text": "Threat is overvalued in the amygdala and confirmed by the insula, while the anterior cingulate and prefrontal regions that should downgrade it are under-engaged. The worry of this disorder is the cognitive output of that imbalance, which is why cognitive behavioural therapy that tests the appraisal works alongside drugs that dampen the circuit.",
+        "evidence": "strong",
+        "sourceIds": [
+          "sad-neuroimaging-2014",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "gad-prefrontal-control",
+      "name": "Prefrontal executive control circuit",
+      "nodes": [
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Superior frontal gyrus",
+            "Anterior nuclei of thalamus"
+          ],
+          "precision": "exact"
+        },
+        {
+          "atlasLabels": [
+            "Frontal aslant tract",
+            "Superior longitudinal fasciculus III",
+            "Inferior fronto-occipital fasciculus"
+          ],
+          "precision": "exact"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Anterior nuclei of thalamus",
+          "to": "Middle frontal gyrus",
+          "type": "excitatory",
+          "transmitter": "glutamate"
+        }
+      ],
+      "function": {
+        "id": "gad-pfc-f",
+        "text": "Worry that cannot be disengaged reflects weak top-down control over the appraisal loop, and the same prefrontal inefficiency produces the concentration complaints that patients describe as brain fog.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "id": "gad-serotonergic",
+      "name": "Serotonergic and noradrenergic arousal circuit",
+      "nodes": [
+        {
+          "markerId": "raphe-medial",
+          "precision": "schematic"
+        },
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Hippocampus",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "edges": [
+        {
+          "from": "Raphe (schematic)",
+          "to": "Hippocampus",
+          "type": "modulatory",
+          "transmitter": "serotonin"
+        },
+        {
+          "from": "Locus coeruleus (schematic)",
+          "to": "Middle frontal gyrus",
+          "type": "modulatory",
+          "transmitter": "noradrenaline"
+        }
+      ],
+      "function": {
+        "id": "gad-serotonergic-f",
+        "text": "Both the serotonin and noradrenaline systems implicated here are the ones every guideline first-line drug acts on, and the brainstem nuclei that generate them are not resolved by the atlas so they appear as calibrated markers.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "neurochemistry": [
+    {
+      "transmitter": "serotonin",
+      "alteration": "Reduced serotonergic modulation of threat appraisal",
+      "where": [
+        {
+          "markerId": "raphe-medial",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "gad-nc-5ht",
+        "text": "Serotonin transporter inhibition is the first-line mechanism of drug treatment here, and 5-HT1A partial agonism gives anxiolysis without dependence, which is why it suits people with substance misuse problems.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "noradrenaline",
+      "alteration": "Adrenergic arousal surge",
+      "where": [
+        {
+          "markerId": "lc",
+          "precision": "schematic"
+        },
+        {
+          "atlasLabels": [
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "gad-nc-na",
+        "text": "The adrenergic surge produces tachycardia, tremor and sweating during worry, which is why beta blockade reduces the physical symptoms without touching the fear, and why noradrenaline reuptake inhibitors help.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "GABA",
+      "alteration": "GABAergic inhibition targeted by benzodiazepines",
+      "where": [
+        {
+          "atlasLabels": [
+            "Basolateral complex",
+            "Hippocampus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "gad-nc-gaba",
+        "text": "Benzodiazepines potentiate GABA-A signalling and act within hours, which is why they are effective but restricted to short-term use because tolerance and dependence develop within weeks.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "transmitter": "glutamate",
+      "alteration": "Excitatory transmission reduced by calcium-channel ligands",
+      "where": [
+        {
+          "atlasLabels": [
+            "Hippocampus",
+            "Middle frontal gyrus"
+          ],
+          "precision": "proxy"
+        }
+      ],
+      "claim": {
+        "id": "gad-nc-glu",
+        "text": "Pregabalin reduces excitatory release by binding the alpha-2-delta subunit of voltage-gated calcium channels, giving anxiolysis without any serotonergic action, which is its rationale as a second-line option.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "genetics": {
+    "geneSymbols": [
+      "SLC6A4"
+    ],
+    "architecture": [
+      {
+        "id": "gad-gen-1",
+        "text": "A genome-wide association study of generalised anxiety symptoms in a large Latino cohort identified loci of small effect, supporting a polygenic architecture rather than a single susceptibility gene.",
+        "evidence": "strong",
+        "sourceIds": [
+          "gad-gwas-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "gad-gen-2",
+        "text": "Because the phenotype studied is usually continuous worry rather than the binary diagnosis, much of the genetic signal is shared with neuroticism and with internalising symptoms generally. No individual gene is established as causal, and no genetic test has any clinical use in this disorder.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "gad-gwas-2017",
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    ]
+  },
+  "biomarkers": [
+    {
+      "name": "Continuous symptom dimensions",
+      "finding": {
+        "id": "gad-bm-cont",
+        "text": "Trait worry is a continuous, heritable dimension rather than a categorical illness, and genetics studies therefore index symptoms rather than diagnoses. This is a research framing and not a diagnostic test.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "gad-gwas-2017"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Fear circuit activity",
+      "finding": {
+        "id": "gad-bm-circuit",
+        "text": "Hyperactivity of the amygdala, insula, anterior cingulate and prefrontal fear circuit is confirmed in the related disorder of social anxiety disorder, and is the shared model applied here. It is a group-level task finding, not a clinical marker.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "sad-neuroimaging-2014"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "name": "Structural imaging",
+      "finding": {
+        "id": "gad-bm-struct",
+        "text": "No large coordinated structural study has established a reproducible brain difference for this disorder, so no structural effect size is claimed. Presenting one would misrepresent the state of the evidence.",
+        "evidence": "emerging",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "enigma-cross-disorder-2020"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "treatments": [
+    "tx-ssri-gad",
+    "tx-snri-gad",
+    "tx-buspirone-gad",
+    "tx-pregabalin-gad",
+    "tx-hydroxyzine-gad",
+    "tx-cbt-gad",
+    "tx-benzo-gad"
+  ],
+  "pathway": [
+    {
+      "step": "Mild to moderate: drug or cognitive behavioural therapy",
+      "options": [
+        "tx-ssri-gad",
+        "tx-cbt-gad"
+      ],
+      "claim": {
+        "id": "gad-pw-1",
+        "text": "Guidelines recommend offering either medication or cognitive behavioural therapy first for mild to moderate generalised anxiety, with the choice guided by preference, comorbidity and whether the person wishes to avoid medication.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Marked or chronic anxiety: combine",
+      "options": [
+        "tx-ssri-gad",
+        "tx-cbt-gad"
+      ],
+      "claim": {
+        "id": "gad-pw-2",
+        "text": "For more severe or long-standing illness, combined pharmacological and psychological treatment is recommended, and treating the depressive component actively is part of the plan rather than something to wait for.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Choice of drug",
+      "options": [
+        "tx-ssri-gad",
+        "tx-snri-gad",
+        "tx-buspirone-gad"
+      ],
+      "claim": {
+        "id": "gad-pw-3",
+        "text": "An SSRI or SNRI is first line, and a drug the person has responded to before is preferred. A 5-HT1A partial agonist is preferred where there is alcohol or substance misuse or a history of benzodiazepine dependence.",
+        "evidence": "established",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "If first line is unsuitable",
+      "options": [
+        "tx-pregabalin-gad",
+        "tx-hydroxyzine-gad"
+      ],
+      "claim": {
+        "id": "gad-pw-4",
+        "text": "Where SSRIs and SNRIs are contraindicated or not tolerated, a calcium-channel ligand or a sedating antihistamine can be used, with the trade-off of sedation, weight gain and in the older adult anticholinergic burden.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "wfsbp-anxiety-2023"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "step": "Short-term crisis use only",
+      "options": [
+        "tx-benzo-gad"
+      ],
+      "claim": {
+        "id": "gad-pw-5",
+        "text": "Benzodiazepines are restricted to short-term crisis use because tolerance and dependence develop within weeks. Discontinuation should be gradual and planned, never abrupt.",
+        "evidence": "strong",
+        "sourceIds": [
+          "wfsbp-anxiety-2023",
+          "nice-cg113"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    }
+  ],
+  "tour": [
+    {
+      "title": "1 · Worry that will not stop",
+      "text": "Excessive, uncontrolled worry across most domains on most days for months, plus at least one physical arousal symptom. It is not a response to a specific threat.",
+      "lens": "pathology",
+      "camera": "home"
+    },
+    {
+      "title": "2 · The threat loop, drawn",
+      "text": "Amygdala overvalues threat, insula confirms the physical signal, and the prefrontal and cingulate regions that should downgrade it are under-engaged.",
+      "lens": "circuit",
+      "camera": "front",
+      "lensTarget": "gad-threat-loop"
+    },
+    {
+      "title": "3 · Serotonin first",
+      "text": "SSRIs and SNRIs are guideline first-line, with 5-HT1A partial agonism preferred where dependence is a concern. The raphe and locus coeruleus are shown as schematic markers.",
+      "lens": "chemistry",
+      "camera": "side",
+      "lensTarget": "serotonin"
+    },
+    {
+      "title": "4 · Control and concentration",
+      "text": "Weak prefrontal disengagement explains why worry cannot be interrupted, and the same inefficiency produces the concentration complaints patients call brain fog.",
+      "lens": "circuit",
+      "camera": "top",
+      "lensTarget": "gad-prefrontal-control"
+    },
+    {
+      "title": "5 · An honest evidence gap",
+      "text": "No large coordinated study has found a reproducible structural brain difference for this disorder. Nothing is claimed here beyond the shared circuit model, which is labelled as a model.",
+      "lens": "pathology",
+      "camera": "front",
+      "lensTarget": "gad-evidence-gap"
+    },
+    {
+      "title": "6 · Treatment is stepwise",
+      "text": "Drug or therapy first, combine when more severe, choose a class by comorbidity and misuse risk, and keep benzodiazepines to short crisis use only.",
+      "lens": "drug",
+      "camera": "home",
+      "lensTarget": "buspirone"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "gad-q1",
+      "topic": "Classification",
+      "question": "What ICD-11 code covers generalized anxiety disorder?",
+      "choices": [
+        "6B00",
+        "6B01",
+        "6B04",
+        "6A20"
+      ],
+      "answer": 0,
+      "explanation": "ICD-11 code 6B00 is generalized anxiety disorder; 6B01 is panic disorder and 6B04 is social anxiety disorder.",
+      "sourceIds": [
+        "icd11-browser",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "gad-q2",
+      "topic": "Psychopathology",
+      "question": "Which feature most distinguishes generalized anxiety disorder from a specific phobia?",
+      "choices": [
+        "The presence of physical symptoms",
+        "Worry that is not confined to a particular stimulus or situation",
+        "The duration of illness",
+        "The age of onset"
+      ],
+      "answer": 1,
+      "explanation": "Generalized anxiety is free-floating across multiple life domains, whereas a phobia requires a specific focus of apprehension, which is the organising principle the ICD-11 uses across the anxiety group.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "icd11-browser"
+      ]
+    },
+    {
+      "id": "gad-q3",
+      "topic": "Psychopathology",
+      "question": "Why are sleep difficulty and muscle tension important to ask about?",
+      "choices": [
+        "They are rare in this disorder",
+        "They are diagnostic criteria and among the most treatment-responsive symptoms",
+        "They rule out depression",
+        "They indicate psychosis"
+      ],
+      "answer": 1,
+      "explanation": "Restlessness, fatigue, difficulty concentrating, irritability, muscle tension and sleep disturbance are the associated symptom set, and the tension and sleep symptoms are frequently the ones patients most want treated and are often missed.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "dsm5tr-overview"
+      ]
+    },
+    {
+      "id": "gad-q4",
+      "topic": "Brain pathology",
+      "question": "What is the honest state of structural imaging evidence for this disorder?",
+      "choices": [
+        "Cortical thinning is established with a large effect",
+        "No large coordinated study has established a reproducible structural difference, so none is claimed",
+        "Hipocampal enlargement is reported",
+        "Striatal volume is reduced"
+      ],
+      "answer": 1,
+      "explanation": "Unlike depression, ADHD and autism spectrum disorder, generalized anxiety disorder has no large coordinated imaging study establishing a reproducible brain difference, and this page says so rather than filling the gap with an unsourced finding.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "enigma-cross-disorder-2020"
+      ]
+    },
+    {
+      "id": "gad-q5",
+      "topic": "Brain pathology",
+      "question": "Which circuit is confirmed as hyperactive in the closely related disorder of social anxiety disorder, and used here as a shared model?",
+      "choices": [
+        "The reward circuit",
+        "The amygdala, insula, anterior cingulate and prefrontal fear circuit",
+        "The language circuit",
+        "The cerebellum"
+      ],
+      "answer": 1,
+      "explanation": "Meta-analysis in social anxiety disorder confirms hyperactivation of the amygdala, insula, anterior cingulate and prefrontal cortex, and that shared fear-circuit model is what is mapped on this page and labelled as a model.",
+      "sourceIds": [
+        "sad-neuroimaging-2014"
+      ]
+    },
+    {
+      "id": "gad-q6",
+      "topic": "Neurochemistry",
+      "question": "What is the guideline first-line pharmacological approach?",
+      "choices": [
+        "Benzodiazepine monotherapy",
+        "An SSRI or SNRI, with a 5-HT1A partial agonist preferred where there is substance misuse",
+        "Pregabalin monotherapy",
+        "An antipsychotic"
+      ],
+      "answer": 1,
+      "explanation": "The WFSBP third-version guideline, which reviewed over a thousand randomised trials, places SSRIs and SNRIs first line and a 5-HT1A partial agonist where dependence risk matters.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "gad-q7",
+      "topic": "Neurochemistry",
+      "question": "Why does beta blockade help performance anxiety but not the fear itself?",
+      "choices": [
+        "It reduces amygdala activation",
+        "It blocks the adrenergic surge producing the physical symptoms while leaving the appraisal of threat untouched",
+        "It raises serotonin",
+        "It acts on the dopamine transporter"
+      ],
+      "answer": 1,
+      "explanation": "Beta antagonists act on the peripheral surge that produces palpitations and tremor, so the physical rehearsal of anxiety is blunted without any change to the belief about the danger, which is why exposure and cognitive work remain necessary.",
+      "sourceIds": [
+        "iuphar",
+        "nice-cg159"
+      ]
+    },
+    {
+      "id": "gad-q8",
+      "topic": "Pharmacology",
+      "question": "Why are benzodiazepines restricted to short-term crisis use?",
+      "choices": [
+        "They are ineffective after a week",
+        "Tolerance and physical dependence develop within weeks, with cognitive impairment and fall risk in older adults",
+        "They interact fatally with SSRIs",
+        "They are contraindicated in younger people only"
+      ],
+      "answer": 1,
+      "explanation": "Benzodiazepines work quickly but produce tolerance, dependence, slowed cognition and sedation, which is why guidelines limit them to short periods and require gradual discontinuation.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "gad-q9",
+      "topic": "Pharmacology",
+      "question": "Which drug class is preferred when there is alcohol or substance misuse?",
+      "choices": [
+        "Benzodiazepine",
+        "Buspirone, a 5-HT1A partial agonist, because it has no dependence potential",
+        "A first-generation antihistamine",
+        "A tricyclic antidepressant"
+      ],
+      "answer": 1,
+      "explanation": "Buspirone gives anxiolysis through 5-HT1A partial agonism without dependence, tolerance or withdrawal, which is its specific advantage in people with misuse problems.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "iuphar"
+      ]
+    },
+    {
+      "id": "gad-q10",
+      "topic": "Pharmacology",
+      "question": "What is the main safety problem with sedating antihistamines in older adults?",
+      "choices": [
+        "Weight gain only",
+        "Anticholinergic burden causing confusion, constipation, urinary retention and falls",
+        "Hypertension",
+        "Weight loss"
+      ],
+      "answer": 1,
+      "explanation": "First-generation antihistamines combine H1 with muscarinic and alpha-adrenergic blockade, so in older adults they add confusion, urinary retention, constipation and fall risk, which is why they are short-term or intermittent options only.",
+      "sourceIds": [
+        "iuphar",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "gad-q11",
+      "topic": "Treatments",
+      "question": "What is the first-line psychotherapy for anxiety disorders?",
+      "choices": [
+        "Psychoanalysis",
+        "Cognitive behavioural therapy",
+        "Supportive counselling",
+        "Family therapy"
+      ],
+      "answer": 1,
+      "explanation": "The WFSBP guideline identifies cognitive behavioural therapy as the first-line psychotherapy for anxiety disorders, targeting the appraisal and the safety behaviours that maintain worry.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "gad-q12",
+      "topic": "Treatments",
+      "question": "Why should depressive comorbidity be treated actively rather than left to resolve?",
+      "choices": [
+        "It does not affect outcome",
+        "It is common, predicts a worse course and poorer response, and leaving it untreated prolongs illness",
+        "Depression cannot coexist with this disorder",
+        "It only occurs in younger people"
+      ],
+      "answer": 1,
+      "explanation": "Depressive episodes co-occur with generalized anxiety more often than chance predicts and the combination worsens prognosis, so guidelines advise treating both rather than assuming improvement in one will lift the other.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "gad-q13",
+      "topic": "Genetics",
+      "question": "What does genetics research in this disorder actually index?",
+      "choices": [
+        "Single causal genes",
+        "Continuous worry symptoms rather than categorical diagnoses, with a polygenic architecture",
+        "Only rare recessive mutations",
+        "Brain structure"
+      ],
+      "answer": 1,
+      "explanation": "Most studies index continuous worry rather than the binary diagnosis, which explains both the polygenic architecture and the extensive genetic sharing with neuroticism and internalising symptoms.",
+      "sourceIds": [
+        "gad-gwas-2017"
+      ]
+    },
+    {
+      "id": "gad-q14",
+      "topic": "Biomarkers",
+      "question": "Is there a blood or scan test that confirms this disorder?",
+      "choices": [
+        "Yes, a serum serotonin test",
+        "No; genetic findings index a symptom dimension, and imaging findings are group-level task results",
+        "Yes, a cortical thickness threshold",
+        "Yes, a heart-rate variability cutoff"
+      ],
+      "answer": 1,
+      "explanation": "There is no validated diagnostic test. Genetics studies a continuous symptom trait and imaging results are group-level, so neither can diagnose an individual.",
+      "sourceIds": [
+        "gad-gwas-2017",
+        "wfsbp-anxiety-2023"
+      ]
+    },
+    {
+      "id": "gad-q15",
+      "topic": "Pathway",
+      "question": "What is first line for mild to moderate illness?",
+      "choices": [
+        "Benzodiazepine monotherapy",
+        "Either an antidepressant or cognitive behavioural therapy, guided by preference and comorbidity",
+        "Electroconvulsive therapy",
+        "A stimulant"
+      ],
+      "answer": 1,
+      "explanation": "Guidelines offer either medication or structured cognitive behavioural therapy first, with the choice driven by patient preference, comorbidity and the wish to avoid medication.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    },
+    {
+      "id": "gad-q16",
+      "topic": "Pathway",
+      "question": "What must happen if a patient has been taking a benzodiazepine long term and wishes to stop?",
+      "choices": [
+        "Stop it immediately",
+        "Taper gradually and plan the taper, because abrupt withdrawal is dangerous",
+        "Switch to an antipsychotic",
+        "Double the dose first"
+      ],
+      "answer": 1,
+      "explanation": "Benzodiazepine withdrawal after long use can cause seizures, so discontinuation must be gradual and planned, and the underlying anxiety treated with a guideline first-line option at the same time.",
+      "sourceIds": [
+        "wfsbp-anxiety-2023",
+        "nice-cg113"
+      ]
+    }
+  ],
+  "related": [
+    "panic",
+    "sad",
+    "mdd",
+    "ptsd"
+  ]
+}

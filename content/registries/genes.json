@@ -8,7 +8,9 @@
         "id": "c4a-function",
         "text": "C4A encodes a complement immune protein expressed by neurons that tags synapses for microglial pruning during development; greater C4A expression is associated with schizophrenia risk.",
         "evidence": "strong",
-        "sourceIds": ["sekar-2016-c4"],
+        "sourceIds": [
+          "sekar-2016-c4"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
@@ -20,10 +22,15 @@
         "id": "grin2a-function",
         "text": "GRIN2A encodes the GluN2A NMDA-receptor subunit; rare protein-disrupting variants confer substantial schizophrenia risk, directly implicating glutamate signalling.",
         "evidence": "strong",
-        "sourceIds": ["schema-browser", "schema-paper"],
+        "sourceIds": [
+          "schema-browser",
+          "schema-paper"
+        ],
         "lastReviewed": "2026-09-28"
       },
-      "linkedReceptorIds": ["GRIN2A"]
+      "linkedReceptorIds": [
+        "GRIN2A"
+      ]
     },
     {
       "symbol": "GRIA3",
@@ -33,7 +40,10 @@
         "id": "gria3-function",
         "text": "GRIA3 encodes the GluA3 AMPA-receptor subunit that mediates fast excitatory transmission; rare coding variants are enriched in schizophrenia.",
         "evidence": "strong",
-        "sourceIds": ["schema-browser", "schema-paper"],
+        "sourceIds": [
+          "schema-browser",
+          "schema-paper"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
@@ -45,7 +55,10 @@
         "id": "setd1a-function",
         "text": "SETD1A encodes a chromatin-modifying enzyme; rare loss-of-function variants carry large schizophrenia risk, pointing to neurodevelopmental gene regulation.",
         "evidence": "strong",
-        "sourceIds": ["schema-browser", "schema-paper"],
+        "sourceIds": [
+          "schema-browser",
+          "schema-paper"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
@@ -57,7 +70,9 @@
         "id": "del22q11-function",
         "text": "Deletion of the 22q11.2 region is among the largest known genetic risk factors for schizophrenia, also affecting cardiac, immune and cognitive development.",
         "evidence": "strong",
-        "sourceIds": ["enigma-consortium"],
+        "sourceIds": [
+          "enigma-consortium"
+        ],
         "lastReviewed": "2026-09-28"
       }
     },
@@ -73,7 +88,9 @@
         "id": "akap11-function",
         "text": "AKAP11 encodes a scaffold that localises PKA signalling to specific substrates; at protein level AKAP-11 interacts with GSK3B, the kinase hypothesised as a key target of lithium.",
         "evidence": "strong",
-        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "sourceIds": [
+          "bipolar-exome-akap11-2022"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -85,7 +102,10 @@
         "id": "gsk3b-function",
         "text": "GSK3B is a constitutively active kinase that suppresses signalling including beta-catenin and is the long-hypothesised cellular target of lithium in bipolar disorder, linked to AKAP11 at the protein level.",
         "evidence": "moderate",
-        "sourceIds": ["bipolar-exome-akap11-2022", "canmat-bipolar-2018-summary"],
+        "sourceIds": [
+          "bipolar-exome-akap11-2022",
+          "canmat-bipolar-2018-summary"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -97,7 +117,9 @@
         "id": "chd8-function",
         "text": "CHD8 is a chromatin remodeler regulating neuronal development; ultra-rare disruptive variants are enriched among bipolar disorder cases and it interacts with schizophrenia risk genes.",
         "evidence": "strong",
-        "sourceIds": ["bipolar-exome-akap11-2022"],
+        "sourceIds": [
+          "bipolar-exome-akap11-2022"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -109,10 +131,14 @@
         "id": "bdnf-function",
         "text": "BDNF supports neuronal survival and synaptic plasticity through TrkB and p75 receptors, and BDNF-pathway genes and synaptic gene sets are enriched in large genome-wide studies of depression.",
         "evidence": "strong",
-        "sourceIds": ["pgc-depression-2019"],
+        "sourceIds": [
+          "pgc-depression-2019"
+        ],
         "lastReviewed": "2026-09-29"
       },
-      "linkedReceptorIds": ["NTRK2"]
+      "linkedReceptorIds": [
+        "NTRK2"
+      ]
     },
     {
       "symbol": "SLC6A4",
@@ -122,7 +148,10 @@
         "id": "slc6a4-gene",
         "text": "SLC6A4 encodes the serotonin transporter targeted by SSRIs; a promoter polymorphism affecting expression has been studied extensively as a moderator of stress and antidepressant response, though its effect size is small and debated.",
         "evidence": "moderate",
-        "sourceIds": ["iuphar", "canmat-depression-2023"],
+        "sourceIds": [
+          "iuphar",
+          "canmat-depression-2023"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -134,10 +163,15 @@
         "id": "gria1-gene",
         "text": "GRIA1 encodes the GluA1 AMPA-receptor subunit mediating fast excitatory transmission and plasticity, the pathway through which rapid-acting antidepressants such as ketamine are thought to act.",
         "evidence": "moderate",
-        "sourceIds": ["ketamine-dep-2026", "iuphar"],
+        "sourceIds": [
+          "ketamine-dep-2026",
+          "iuphar"
+        ],
         "lastReviewed": "2026-09-29"
       },
-      "linkedReceptorIds": ["GRIA1"]
+      "linkedReceptorIds": [
+        "GRIA1"
+      ]
     },
     {
       "symbol": "DLGAP1",
@@ -147,7 +181,10 @@
         "id": "dlgap1-gene",
         "text": "DLGAP1 encodes a postsynaptic scaffold at excitatory synapses that assembles glutamate receptor and signalling complexes, a candidate gene for cortico-striatal synapse dysfunction in obsessive-compulsive disorder.",
         "evidence": "moderate",
-        "sourceIds": ["ocd-gwas-2013", "ocd-neurocircuit-taxonomy-2021"],
+        "sourceIds": [
+          "ocd-gwas-2013",
+          "ocd-neurocircuit-taxonomy-2021"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -159,7 +196,10 @@
         "id": "slc1a1-gene",
         "text": "SLC1A1 encodes a presynaptic glutamate reuptake transporter that clears synaptic glutamate, central to cortico-striatal glutamatergic signalling implicated in obsessive-compulsive disorder.",
         "evidence": "moderate",
-        "sourceIds": ["ocd-gwas-2013", "ocd-neurocircuit-taxonomy-2021"],
+        "sourceIds": [
+          "ocd-gwas-2013",
+          "ocd-neurocircuit-taxonomy-2021"
+        ],
         "lastReviewed": "2026-09-29"
       }
     },
@@ -171,7 +211,42 @@
         "id": "btbd3-gene",
         "text": "BTBD3 regulates transcriptional programmes and circadian timing and has been implicated as a rare-variant risk gene in obsessive-compulsive disorder alongside immunologically related genes.",
         "evidence": "moderate",
-        "sourceIds": ["ocd-gwas-2013", "ocd-exome-2016"],
+        "sourceIds": [
+          "ocd-gwas-2013",
+          "ocd-exome-2016"
+        ],
+        "lastReviewed": "2026-09-29"
+      }
+    },
+    {
+      "symbol": "PARK2",
+      "name": "Parkinson's disease (PARK2) associated protein",
+      "variantClass": "common-GWAS",
+      "function": {
+        "id": "park2-function",
+        "text": "PARK2 encodes parkin, an E3 ubiquitin ligase in the PINK1-PARKIN mitophagy pathway. In a large multi-ancestry PTSD genome-wide study it was the named gene associated with PTSD, and it is also a known Parkinson's disease gene involved in dopamine regulation.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "duncan-ptsd-gwas-2019",
+          "iuphar"
+        ],
+        "lastReviewed": "2026-09-29"
+      },
+      "linkedReceptorIds": [
+        "SLC6A3"
+      ]
+    },
+    {
+      "symbol": "SLC5A12",
+      "name": "Solute carrier family 5 member 12",
+      "variantClass": "other",
+      "function": {
+        "id": "slc5a12-function",
+        "text": "SLC5A12 encodes a sodium-dependent transporter expressed in brain. In a study of 18362 people with attention deficit hyperactivity disorder starting stimulants it was the only locus to reach genome-wide significance, and only in children, for discontinuation of treatment rather than for the disorder itself.",
+        "evidence": "moderate",
+        "sourceIds": [
+          "adhd-stimulant-genetics-2026"
+        ],
         "lastReviewed": "2026-09-29"
       }
     }
