@@ -92,6 +92,9 @@ function checkGenes() {
     for (const r of g.linkedReceptorIds || []) if (!RECEPTOR_IDS.has(r)) err(`genes/${g.symbol}: unknown receptor ${r}`);
     if (g.effect && !g.effect.sourceId) err(`genes/${g.symbol}: effect without sourceId`);
     if (g.effect?.sourceId && !SOURCE_IDS.has(g.effect.sourceId)) err(`genes/${g.symbol}: unknown effect source`);
+    if (g.constraint && !g.constraint.sourceId) err(`genes/${g.symbol}: constraint without sourceId`);
+    if (g.constraint?.sourceId && !SOURCE_IDS.has(g.constraint.sourceId)) err(`genes/${g.symbol}: unknown constraint source`);
+    if (g.constraint && (typeof g.constraint.pLI !== 'number' || typeof g.constraint.oeLoF !== 'number')) err(`genes/${g.symbol}: constraint without numeric pLI/oeLoF`);
   }
 }
 

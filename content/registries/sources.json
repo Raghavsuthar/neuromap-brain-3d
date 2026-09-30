@@ -742,6 +742,23 @@
       "title": "Glutamate and dopamine in schizophrenia: an update for the 21st century",
       "authors": "Howes O, McCutcheon R, Stone J",
       "url": "https://doi.org/10.1177/0269881114563634"
+    },
+    {
+      "id": "gnomad-browser",
+      "type": "database",
+      "title": "gnomAD browser v4 — gene loss-of-function constraint (pLI, observed/expected LoF)",
+      "authors": "Broad Institute / gnomAD Consortium",
+      "url": "https://gnomad.broadinstitute.org/"
+    },
+    {
+      "id": "karczewski-2020-constraint",
+      "type": "primary",
+      "title": "The mutational constraint spectrum quantified from variation in 141,456 humans",
+      "authors": "Karczewski KJ et al., Genome Aggregation Database Consortium",
+      "year": 2020,
+      "doi": "10.1038/s41586-020-2308-7",
+      "pmid": "32461654",
+      "url": "https://doi.org/10.1038/s41586-020-2308-7"
     }
   ]
 }

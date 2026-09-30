@@ -12,6 +12,16 @@
           "sekar-2016-c4"
         ],
         "lastReviewed": "2026-09-28"
+      },
+      "constraint": {
+        "pLI": 0.9993962276190557,
+        "oeLoF": 0.2627651606943279,
+        "oeLoFLower": 0.16837943962266666,
+        "oeLoFUpper": 0.4257358211904775,
+        "obsLoF": 12,
+        "expLoF": 45.668154668188606,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -30,7 +40,17 @@
       },
       "linkedReceptorIds": [
         "GRIN2A"
-      ]
+      ],
+      "constraint": {
+        "pLI": 0.9999999999997278,
+        "oeLoF": 0.19403343416101207,
+        "oeLoFLower": 0.13864127768565992,
+        "oeLoFUpper": 0.277069250351326,
+        "obsLoF": 22,
+        "expLoF": 113.38252139445228,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
+      }
     },
     {
       "symbol": "GRIA3",
@@ -45,6 +65,16 @@
           "schema-paper"
         ],
         "lastReviewed": "2026-09-28"
+      },
+      "constraint": {
+        "pLI": 0.9999999999983294,
+        "oeLoF": 0.04759558187839706,
+        "oeLoFLower": 0.021676906374822263,
+        "oeLoFUpper": 0.12301326471072997,
+        "obsLoF": 3,
+        "expLoF": 63.03106048088165,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -60,6 +90,16 @@
           "schema-paper"
         ],
         "lastReviewed": "2026-09-28"
+      },
+      "constraint": {
+        "pLI": 1,
+        "oeLoF": 0.19345029803933173,
+        "oeLoFLower": 0.144046955769562,
+        "oeLoFUpper": 0.2637659608742106,
+        "obsLoF": 29,
+        "expLoF": 149.90930638992248,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -92,6 +132,16 @@
           "bipolar-exome-akap11-2022"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 0.999999999999353,
+        "oeLoF": 0.24645893875968963,
+        "oeLoFLower": 0.1889149906030946,
+        "oeLoFUpper": 0.3254677412641181,
+        "obsLoF": 36,
+        "expLoF": 146.06895648082735,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -107,6 +157,16 @@
           "canmat-bipolar-2018-summary"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 0.9998881642451246,
+        "oeLoF": 0.265842832227111,
+        "oeLoFLower": 0.1778658107877667,
+        "oeLoFUpper": 0.40934709278350045,
+        "obsLoF": 15,
+        "expLoF": 56.42431610563574,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -121,6 +181,16 @@
           "bipolar-exome-akap11-2022"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 1,
+        "oeLoF": 0.11101211647102627,
+        "oeLoFLower": 0.0834290168673142,
+        "oeLoFUpper": 0.14982206115023283,
+        "obsLoF": 31,
+        "expLoF": 279.2487972075632,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -138,7 +208,17 @@
       },
       "linkedReceptorIds": [
         "NTRK2"
-      ]
+      ],
+      "constraint": {
+        "pLI": 0.9996001757319627,
+        "oeLoF": 0.051410688266022526,
+        "oeLoFLower": 0.01826937984827174,
+        "oeLoFUpper": 0.24388533993122305,
+        "obsLoF": 1,
+        "expLoF": 19.4512081772868,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
+      }
     },
     {
       "symbol": "SLC6A4",
@@ -153,6 +233,16 @@
           "canmat-depression-2023"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 0.9998745655239175,
+        "oeLoF": 0.29970591664080554,
+        "oeLoFLower": 0.2141466566970771,
+        "oeLoFUpper": 0.427963840399885,
+        "obsLoF": 22,
+        "expLoF": 73.40529091511655,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -171,7 +261,17 @@
       },
       "linkedReceptorIds": [
         "GRIA1"
-      ]
+      ],
+      "constraint": {
+        "pLI": 0.9999793704168497,
+        "oeLoF": 0.312653670673863,
+        "oeLoFLower": 0.2349688411812718,
+        "oeLoFUpper": 0.42195770025490775,
+        "obsLoF": 31,
+        "expLoF": 99.15124275747553,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
+      }
     },
     {
       "symbol": "DLGAP1",
@@ -186,6 +286,16 @@
           "ocd-neurocircuit-taxonomy-2021"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 0.9999999999999699,
+        "oeLoF": 0.12120358719824635,
+        "oeLoFLower": 0.07629449046995464,
+        "oeLoFUpper": 0.20061964010661035,
+        "obsLoF": 11,
+        "expLoF": 90.75638975938787,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -201,6 +311,16 @@
           "ocd-neurocircuit-taxonomy-2021"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 2.0327744630083277e-12,
+        "oeLoF": 0.8062477728897917,
+        "oeLoFLower": 0.6316223286294385,
+        "oeLoFUpper": 1.0396659045780834,
+        "obsLoF": 43,
+        "expLoF": 53.33348065679283,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -216,6 +336,16 @@
           "ocd-exome-2016"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 0.9493838152566315,
+        "oeLoF": 0.33647718385419234,
+        "oeLoFLower": 0.22222708889921433,
+        "oeLoFUpper": 0.52602165317338,
+        "obsLoF": 14,
+        "expLoF": 41.607576001547564,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     },
     {
@@ -234,7 +364,19 @@
       },
       "linkedReceptorIds": [
         "SLC6A3"
-      ]
+      ],
+      "constraint": {
+        "geneQueried": "PRKN",
+        "note": "PARK2 is an alias of PRKN; constraint values are PRKN’s.",
+        "pLI": 2.0239024792377776e-18,
+        "oeLoF": 0.9405728253919998,
+        "oeLoFLower": 0.7587660721105522,
+        "oeLoFUpper": 1.1750506931848697,
+        "obsLoF": 56,
+        "expLoF": 59.5381861863392,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
+      }
     },
     {
       "symbol": "SLC5A12",
@@ -248,6 +390,16 @@
           "adhd-stimulant-genetics-2026"
         ],
         "lastReviewed": "2026-09-29"
+      },
+      "constraint": {
+        "pLI": 8.94364163190465e-10,
+        "oeLoF": 0.6330823185269476,
+        "oeLoFLower": 0.4998581805124671,
+        "oeLoFUpper": 0.8094621569277076,
+        "obsLoF": 46,
+        "expLoF": 72.66037710077347,
+        "sourceId": "gnomad-browser",
+        "fetchedAt": "2026-09-30"
       }
     }
   ]

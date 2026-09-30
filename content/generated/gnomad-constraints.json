@@ -1,0 +1,196 @@
+{
+  "fetchedAt": "2026-09-30T14:29:11Z",
+  "endpoint": "https://gnomad.broadinstitute.org/api",
+  "referenceGenome": "GRCh38",
+  "query": "query Constraint($symbol: String!) { gene(gene_symbol: $symbol, reference_genome: GRCh38) { gene_id symbol gnomad_constraint { exp_lof obs_lof oe_lof oe_lof_lower oe_lof_upper pLI } } }",
+  "methodPaper": "Karczewski et al., Nature 2020 (PMID 32461654, doi:10.1038/s41586-020-2308-7)",
+  "results": [
+    {
+      "symbol": "C4A",
+      "gene_id": "ENSG00000244731",
+      "gnomad_constraint": {
+        "exp_lof": 45.668154668188606,
+        "obs_lof": 12,
+        "oe_lof": 0.2627651606943279,
+        "oe_lof_lower": 0.16837943962266666,
+        "oe_lof_upper": 0.4257358211904775,
+        "pLI": 0.9993962276190557
+      }
+    },
+    {
+      "symbol": "GRIN2A",
+      "gene_id": "ENSG00000183454",
+      "gnomad_constraint": {
+        "exp_lof": 113.38252139445228,
+        "obs_lof": 22,
+        "oe_lof": 0.19403343416101207,
+        "oe_lof_lower": 0.13864127768565992,
+        "oe_lof_upper": 0.277069250351326,
+        "pLI": 0.9999999999997278
+      }
+    },
+    {
+      "symbol": "GRIA3",
+      "gene_id": "ENSG00000125675",
+      "gnomad_constraint": {
+        "exp_lof": 63.03106048088165,
+        "obs_lof": 3,
+        "oe_lof": 0.04759558187839706,
+        "oe_lof_lower": 0.021676906374822263,
+        "oe_lof_upper": 0.12301326471072997,
+        "pLI": 0.9999999999983294
+      }
+    },
+    {
+      "symbol": "SETD1A",
+      "gene_id": "ENSG00000099381",
+      "gnomad_constraint": {
+        "exp_lof": 149.90930638992248,
+        "obs_lof": 29,
+        "oe_lof": 0.19345029803933173,
+        "oe_lof_lower": 0.144046955769562,
+        "oe_lof_upper": 0.2637659608742106,
+        "pLI": 1
+      }
+    },
+    {
+      "symbol": "AKAP11",
+      "gene_id": "ENSG00000023516",
+      "gnomad_constraint": {
+        "exp_lof": 146.06895648082735,
+        "obs_lof": 36,
+        "oe_lof": 0.24645893875968963,
+        "oe_lof_lower": 0.1889149906030946,
+        "oe_lof_upper": 0.3254677412641181,
+        "pLI": 0.999999999999353
+      }
+    },
+    {
+      "symbol": "GSK3B",
+      "gene_id": "ENSG00000082701",
+      "gnomad_constraint": {
+        "exp_lof": 56.42431610563574,
+        "obs_lof": 15,
+        "oe_lof": 0.265842832227111,
+        "oe_lof_lower": 0.1778658107877667,
+        "oe_lof_upper": 0.40934709278350045,
+        "pLI": 0.9998881642451246
+      }
+    },
+    {
+      "symbol": "CHD8",
+      "gene_id": "ENSG00000100888",
+      "gnomad_constraint": {
+        "exp_lof": 279.2487972075632,
+        "obs_lof": 31,
+        "oe_lof": 0.11101211647102627,
+        "oe_lof_lower": 0.0834290168673142,
+        "oe_lof_upper": 0.14982206115023283,
+        "pLI": 1
+      }
+    },
+    {
+      "symbol": "BDNF",
+      "gene_id": "ENSG00000176697",
+      "gnomad_constraint": {
+        "exp_lof": 19.4512081772868,
+        "obs_lof": 1,
+        "oe_lof": 0.051410688266022526,
+        "oe_lof_lower": 0.01826937984827174,
+        "oe_lof_upper": 0.24388533993122305,
+        "pLI": 0.9996001757319627
+      }
+    },
+    {
+      "symbol": "SLC6A4",
+      "gene_id": "ENSG00000108576",
+      "gnomad_constraint": {
+        "exp_lof": 73.40529091511655,
+        "obs_lof": 22,
+        "oe_lof": 0.29970591664080554,
+        "oe_lof_lower": 0.2141466566970771,
+        "oe_lof_upper": 0.427963840399885,
+        "pLI": 0.9998745655239175
+      }
+    },
+    {
+      "symbol": "GRIA1",
+      "gene_id": "ENSG00000155511",
+      "gnomad_constraint": {
+        "exp_lof": 99.15124275747553,
+        "obs_lof": 31,
+        "oe_lof": 0.312653670673863,
+        "oe_lof_lower": 0.2349688411812718,
+        "oe_lof_upper": 0.42195770025490775,
+        "pLI": 0.9999793704168497
+      }
+    },
+    {
+      "symbol": "DLGAP1",
+      "gene_id": "ENSG00000170579",
+      "gnomad_constraint": {
+        "exp_lof": 90.75638975938787,
+        "obs_lof": 11,
+        "oe_lof": 0.12120358719824635,
+        "oe_lof_lower": 0.07629449046995464,
+        "oe_lof_upper": 0.20061964010661035,
+        "pLI": 0.9999999999999699
+      }
+    },
+    {
+      "symbol": "SLC1A1",
+      "gene_id": "ENSG00000106688",
+      "gnomad_constraint": {
+        "exp_lof": 53.33348065679283,
+        "obs_lof": 43,
+        "oe_lof": 0.8062477728897917,
+        "oe_lof_lower": 0.6316223286294385,
+        "oe_lof_upper": 1.0396659045780834,
+        "pLI": 2.0327744630083277e-12
+      }
+    },
+    {
+      "symbol": "BTBD3",
+      "gene_id": "ENSG00000132640",
+      "gnomad_constraint": {
+        "exp_lof": 41.607576001547564,
+        "obs_lof": 14,
+        "oe_lof": 0.33647718385419234,
+        "oe_lof_lower": 0.22222708889921433,
+        "oe_lof_upper": 0.52602165317338,
+        "pLI": 0.9493838152566315
+      }
+    },
+    {
+      "symbol": "PARK2",
+      "error": "[{'message': 'Gene not found'}]"
+    },
+    {
+      "symbol": "SLC5A12",
+      "gene_id": "ENSG00000148942",
+      "gnomad_constraint": {
+        "exp_lof": 72.66037710077347,
+        "obs_lof": 46,
+        "oe_lof": 0.6330823185269476,
+        "oe_lof_lower": 0.4998581805124671,
+        "oe_lof_upper": 0.8094621569277076,
+        "pLI": 8.94364163190465e-10
+      }
+    },
+    {
+      "symbol": "PRKN",
+      "gene_id": "ENSG00000185345",
+      "gnomad_constraint": {
+        "exp_lof": 59.5381861863392,
+        "obs_lof": 56,
+        "oe_lof": 0.9405728253919998,
+        "oe_lof_lower": 0.7587660721105522,
+        "oe_lof_upper": 1.1750506931848697,
+        "pLI": 2.0239024792377776e-18
+      }
+    }
+  ],
+  "aliasNotes": {
+    "PARK2": "Alias of PRKN; queried as PRKN."
+  }
+}

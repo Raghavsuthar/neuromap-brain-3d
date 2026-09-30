@@ -27,6 +27,10 @@ const STRINGS = {
 const $ = (id) => document.getElementById(id);
 const V = () => window.__neuroMap || {};
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// Display shortening for constraint metrics. Stored values keep full precision;
+// these only trim decimals for the card (2dp; pLI ≈ 0 or 1 at the extremes).
+const fmtP = (v) => (v == null || !Number.isFinite(v) ? 'n/a' : String(Math.round(v * 100) / 100));
+const fmtN = (v) => (v == null || !Number.isFinite(v) ? 'n/a' : String(Math.round(v * 10) / 10));
 
 const FINDING_COLORS = {
   'volume-reduction': '#60A5FA', 'volume-increase': '#34D399', 'thickness-reduction': '#60A5FA',
@@ -384,6 +388,7 @@ function entityCard(kind, id) {
         ? `<h3>Brain expression</h3>` + g.brainExpression.map((b) => `<p>${atlasChips(b.where)}</p>${claimHtml(b.claim)}`).join('')
         : '<h3>Brain expression</h3><p>No reliable regional data.</p>'}
       ${g.effect ? `<h3>Effect size</h3><p>${esc(g.effect.text)}</p>` : ''}
+      ${g.constraint ? `<h3>Loss-of-function constraint</h3><p>pLI ${esc(fmtP(g.constraint.pLI))}; observed/expected LoF ${esc(fmtP(g.constraint.oeLoF))} (90% CI ${esc(fmtP(g.constraint.oeLoFLower))}–${esc(fmtP(g.constraint.oeLoFUpper))}; ${esc(g.constraint.obsLoF)} observed vs ${esc(fmtN(g.constraint.expLoF))} expected). Highly constrained genes tolerate protein-truncating variation poorly, so rare disruptive variants in them are more likely to matter.${g.constraint.geneQueried ? ` Queried as ${esc(g.constraint.geneQueried)} (${esc(g.symbol)} is an alias).` : ''}</p>${srcLinks(['gnomad-browser', 'karczewski-2020-constraint'])}` : ''}
       ${linkedDisordersText('gene', id)}`;
   }
   if (kind === 'drug') {
