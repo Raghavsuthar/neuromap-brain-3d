@@ -116,6 +116,8 @@ Apache 2.0 patent grant does not extend to them.
 
 - The DrugBank-derived data in `content/registries/drugs.json` is summary pharmacology with citations only — raw Ki values or full DrugBank records are NOT included. Full DrugBank access requires a separate license from DrugBank.
 
+- `public/clinical/space-map.json` is a derived annotation authored in this repository: it joins clinical display strings to registry IDs and atlas labels already present here. It introduces no third-party text, image, mesh or dataset, so no new license attaches; like the other curated content it is CC BY-SA 4.0. No receptor-density values, PET maps or textbook prose were copied into it.
+
 - The 3D model was preprocessed offline using Blender + glTF-Transform + draco3dgltf. The preprocessing scripts are in `/scripts` (not included in the shipped app).
 
 ## Attribution Summary (for end-user display)

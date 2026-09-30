@@ -60,7 +60,25 @@ const loadmsg = $('loadmsg');
 
 // ---------- renderer / scene ----------
 const container = $('scene');
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+let renderer = null;
+try {
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+} catch (err) {
+  // WebGL unavailable (blocked GPU, old device, disabled flag): nothing below
+  // can render, but the module imports above already ran, so the clinical and
+  // disorder text panels keep working. Show a legible message instead of a
+  // stuck fullscreen loader, and let the user dismiss it.
+  const title = document.querySelector('.loader-title');
+  if (title) title.textContent = '3D view unavailable';
+  loadmsg.textContent = 'This browser or device blocked WebGL, so the brain cannot render here. All text reference panels remain usable — or try a recent Chrome/Edge/Firefox with hardware acceleration on.';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = 'Continue without 3D';
+  btn.style.marginTop = '12px';
+  btn.addEventListener('click', () => loaderEl.classList.add('done'));
+  loadmsg.after(btn);
+  throw new Error(`WebGL unavailable: ${err?.message || err}`);
+}
 const baseDPR = Math.min(window.devicePixelRatio || 1, 2);
 renderer.setPixelRatio(baseDPR);
 // Adaptive quality: the render loop below steps the pixel ratio down when

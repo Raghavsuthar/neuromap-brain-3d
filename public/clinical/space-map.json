@@ -1,0 +1,134 @@
+{
+  "_note": "Clinical-to-atlas spatial mapping. The ONLY place where clinical display names (transmitter subtype labels, drug target strings, pathway strings) are joined to registry IDs and atlas geometry. UI code must never hardcode these joins. Statuses: mapped = registry record for that exact subtype/target; family = registry record for the same family (sites may differ; note says how); none = no record (note says why); off-atlas = real anatomy outside this model. Regenerated never by hand-check: scripts/coverage-map.mjs validates every ID, label and marker here.",
+  "subtypeReceptors": {
+    "dopamine": {
+      "D1": { "receptors": [], "status": "none", "note": "No D1 receptor record in the registry; site map cannot be drawn." },
+      "D2": { "receptors": ["DRD2"], "status": "mapped", "note": "Registry DRD2 principal sites (striatum, exact)." },
+      "D3": { "receptors": [], "status": "none", "note": "No D3 receptor record in the registry; site map cannot be drawn." },
+      "D4": { "receptors": ["DRD4"], "status": "mapped", "note": "Registry DRD4 principal sites (prefrontal proxy, striatal proxy)." },
+      "D5": { "receptors": [], "status": "none", "note": "No D5 receptor record in the registry; site map cannot be drawn." }
+    },
+    "serotonin": {
+      "5-HT1A": { "receptors": ["HTR1A"], "status": "mapped", "note": "Registry HTR1A principal sites." },
+      "5-HT1D": { "receptors": [], "status": "none", "note": "No 5-HT1D receptor record in the registry." },
+      "5-HT2A": { "receptors": ["HTR2A"], "status": "mapped", "note": "Registry HTR2A principal sites." },
+      "5-HT2C": { "receptors": ["HTR2C"], "status": "mapped", "note": "Registry HTR2C principal sites." },
+      "5-HT3": { "receptors": ["HTR3A"], "status": "mapped", "note": "Registry HTR3A record; mechanism agrees (ligand-gated cation)." },
+      "5-HT7": { "receptors": [], "status": "none", "note": "No 5-HT7 receptor record in the registry." }
+    },
+    "norepinephrine": {
+      "Alpha-1": { "receptors": ["ADRA1A"], "status": "family", "note": "Registry ADRA1A sites are cortical/LC-schematic; the subtype row describes vascular smooth muscle. Shown as family-level, not exact." },
+      "Alpha-2A": { "receptors": ["ADRA2A"], "status": "mapped", "note": "Registry ADRA2A principal sites." },
+      "Beta-1": { "receptors": ["ADRB1"], "status": "family", "note": "Registry ADRB1 sites are cortical-schematic; the subtype row includes cardiac sites outside this atlas. Shown as family-level." },
+      "Beta-2": { "receptors": [], "status": "none", "note": "No Beta-2 receptor record; listed sites (lungs, muscle) are off-atlas." }
+    },
+    "gaba": {
+      "GABA-A": { "receptors": [], "status": "none", "note": "No GABA-A receptor record in the registry." },
+      "GABA-B": { "receptors": [], "status": "none", "note": "No GABA-B receptor record in the registry." }
+    },
+    "glutamate": {
+      "NMDA (GluN1/2)": { "receptors": ["GRIN2A", "GRIN2B"], "status": "family", "note": "Registry holds GluN2A/GluN2B subunit records; shown together as the NMDA family, not a single subtype." },
+      "AMPA (GluA1-4)": { "receptors": ["GRIA1"], "status": "family", "note": "Registry holds GluA1 only; shown as family-level for GluA1-4." },
+      "mGluR1-8": { "receptors": [], "status": "none", "note": "No metabotropic glutamate receptor records in the registry." }
+    },
+    "acetylcholine": {
+      "M1 (Muscarinic)": { "receptors": ["CHRM1"], "status": "mapped", "note": "Registry CHRM1 principal sites." },
+      "M2/M4": { "receptors": ["CHRM2", "CHRM4"], "status": "mapped", "note": "Split across the CHRM2 and CHRM4 registry records." },
+      "Alpha-4-Beta-2 Nicotinic": { "receptors": [], "status": "none", "note": "No nicotinic receptor records in the registry." },
+      "Alpha-7 Nicotinic": { "receptors": [], "status": "none", "note": "No nicotinic receptor records in the registry." }
+    }
+  },
+  "drugTargets": {
+    "SERT (5-HTT)": { "receptors": ["SLC6A4"], "status": "mapped" },
+    "SERT": { "receptors": ["SLC6A4"], "status": "mapped" },
+    "SERT (Primary site)": { "receptors": ["SLC6A4"], "status": "mapped" },
+    "SERT (Allosteric site)": { "receptors": ["SLC6A4"], "status": "mapped", "note": "Allosteric site shares the transporter protein." },
+    "DAT": { "receptors": ["SLC6A3"], "status": "mapped" },
+    "NET": { "receptors": [], "status": "none", "note": "No noradrenaline transporter (SLC6A2) record in the registry." },
+    "NET (via Norquetiapine)": { "receptors": [], "status": "none", "note": "No noradrenaline transporter (SLC6A2) record in the registry." },
+    "Sigma-1": { "receptors": [], "status": "none", "note": "No sigma-1 record in the registry." },
+    "5-HT1A": { "receptors": ["HTR1A"], "status": "mapped" },
+    "5-HT2A": { "receptors": ["HTR2A"], "status": "mapped" },
+    "5-HT2C": { "receptors": ["HTR2C"], "status": "mapped" },
+    "5-HT3": { "receptors": ["HTR3A"], "status": "mapped" },
+    "H1": { "receptors": ["HRH1"], "status": "mapped" },
+    "H1 Histamine": { "receptors": ["HRH1"], "status": "mapped" },
+    "D2": { "receptors": ["DRD2"], "status": "mapped" },
+    "D2": { "receptors": ["DRD2"], "status": "mapped" },
+    "D3": { "receptors": [], "status": "none", "note": "No D3 receptor record in the registry." },
+    "D4": { "receptors": ["DRD4"], "status": "mapped" },
+    "Alpha-1": { "receptors": ["ADRA1A"], "status": "family", "note": "Family-level; see Alpha-1 subtype note." },
+    "Alpha-1 Adrenergic": { "receptors": ["ADRA1A"], "status": "family", "note": "Family-level; see Alpha-1 subtype note." },
+    "Alpha-2": { "receptors": ["ADRA2A"], "status": "family", "note": "Subtype (A/B/C) not distinguished in the target string." },
+    "Alpha-2 Autoreceptor": { "receptors": ["ADRA2A"], "status": "family", "note": "Subtype (A/B/C) not distinguished in the target string." },
+    "Alpha-1": { "receptors": ["ADRA1A"], "status": "family", "note": "Family-level; low-affinity interaction." },
+    "M1": { "receptors": ["CHRM1"], "status": "mapped" },
+    "M1 Muscarinic": { "receptors": ["CHRM1"], "status": "mapped" },
+    "M1/M4": { "receptors": ["CHRM1", "CHRM4"], "status": "mapped", "note": "Split across the CHRM1 and CHRM4 registry records." },
+    "Alpha-3-Beta-4 Nicotinic": { "receptors": [], "status": "none", "note": "No nicotinic receptor records in the registry." },
+    "GSK-3beta": { "receptors": [], "status": "none", "note": "Enzyme, not a receptor record; see gene record GSK3B." },
+    "Inositol Monophosphatase (IMPase)": { "receptors": [], "status": "none", "note": "Enzyme, not a receptor record." },
+    "NMDA Receptor": { "receptors": ["GRIN2A", "GRIN2B"], "status": "family", "note": "Subunit not distinguished in the target string; NMDA family." },
+    "NMDA Receptor (PCP site)": { "receptors": ["GRIN2A", "GRIN2B"], "status": "family", "note": "Subunit not distinguished in the target string; NMDA family." },
+    "AMPA Receptor": { "receptors": ["GRIA1"], "status": "family", "note": "Registry holds GluA1 only." },
+    "mTORC1 Pathway": { "receptors": [], "status": "none", "note": "Intracellular signalling pathway, not a receptor record." },
+    "Mu Opioid Receptor": { "receptors": [], "status": "none", "note": "No opioid receptor records in the registry." },
+    "GABA Transaminase (GABA-T)": { "receptors": [], "status": "none", "note": "Enzyme, not a receptor record." },
+    "Voltage-Gated Na+ Channels": { "receptors": [], "status": "none", "note": "Ion channel family, no records in the registry." },
+    "N- and P-Type Ca2+ Channels": { "receptors": [], "status": "none", "note": "Ion channel family, no records in the registry." },
+    "T-type Ca2+ Channels": { "receptors": [], "status": "none", "note": "Ion channel family, no records in the registry." },
+    "Presynaptic Glutamate Release": { "receptors": [], "status": "none", "note": "Physiological process, not a receptor record." },
+    "GABA-A Receptor (alpha1, alpha2, alpha3, alpha5 subunits)": { "receptors": [], "status": "none", "note": "No GABA-A receptor records in the registry." }
+  },
+  "pathways": {
+    "dopamine": [
+      {
+        "id": "da-mesolimbic",
+        "label": "Mesolimbic (VTA → NAcc)",
+        "caption": "Reward & positive symptoms",
+        "nodes": [
+          { "key": "vta", "markerId": "vta", "precision": "schematic", "note": "VTA is not segmented in the source model; shown as a schematic marker anchored to substantia nigra." },
+          { "key": "nacc", "atlasLabels": ["Nucleus accumbens"], "precision": "exact" }
+        ],
+        "edges": [{ "from": "vta", "to": "nacc", "type": "modulatory", "note": "Dopaminergic projection; modulatory, not classical excitatory/inhibitory." }],
+        "omitted": [],
+        "circuitId": "mesolimbic_pathway"
+      },
+      {
+        "id": "da-mesocortical",
+        "label": "Mesocortical (VTA → Cortex)",
+        "caption": "Motivation & negative symptoms",
+        "nodes": [
+          { "key": "vta", "markerId": "vta", "precision": "schematic", "note": "VTA is not segmented in the source model; shown as a schematic marker anchored to substantia nigra." },
+          { "key": "pfc", "atlasLabels": ["Middle frontal gyrus", "Superior frontal gyrus"], "precision": "proxy", "note": "Frontal cortex mapped to gyral proxies." }
+        ],
+        "edges": [{ "from": "vta", "to": "pfc", "type": "modulatory", "note": "Dopaminergic projection; modulatory, not classical excitatory/inhibitory." }],
+        "omitted": [],
+        "circuitId": "mesocortical_pathway"
+      },
+      {
+        "id": "da-nigrostriatal",
+        "label": "Nigrostriatal (SN → Striatum)",
+        "caption": "EPS & movement",
+        "nodes": [
+          { "key": "sn", "atlasLabels": ["Substantia nigra"], "precision": "exact" },
+          { "key": "striatum", "atlasLabels": ["Caudate nucleus", "Putamen", "Nucleus accumbens"], "precision": "exact" }
+        ],
+        "edges": [{ "from": "sn", "to": "striatum", "type": "modulatory", "note": "Dopaminergic projection; modulatory, not classical excitatory/inhibitory." }],
+        "omitted": [],
+        "circuitId": null
+      },
+      {
+        "id": "da-tuberoinfundibular",
+        "label": "Tuberoinfundibular (Hypothalamus → Pituitary)",
+        "caption": "Prolactin control",
+        "nodes": [
+          { "key": "hypothalamus", "atlasLabels": ["Tuberal hypothalamus", "Anterior hypothalamus"], "precision": "exact" }
+        ],
+        "edges": [],
+        "omitted": ["Pituitary: off-atlas endpoint. The pituitary is not segmented in the source model, so no structure is drawn; the hypothalamus→pituitary relationship is stated in text."],
+        "circuitId": null
+      }
+    ]
+  }
+}

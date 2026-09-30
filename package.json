@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "node scripts/validate-disorders.mjs && node scripts/check-functions.mjs && vite build && node scripts/copy-content.mjs",
     "preview": "vite preview",
-    "test": "node scripts/validate-disorders.mjs --strict && node scripts/test-mapping.mjs && node scripts/check-functions.mjs",
+    "test": "node scripts/validate-disorders.mjs --strict && node scripts/test-mapping.mjs && node scripts/check-functions.mjs && node scripts/coverage-map.mjs",
     "lint:content": "node scripts/validate-disorders.mjs",
     "lint:content:strict": "node scripts/validate-disorders.mjs --strict",
     "test:mapping": "node scripts/test-mapping.mjs",

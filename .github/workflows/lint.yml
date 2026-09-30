@@ -26,6 +26,8 @@ jobs:
           node --check scripts/copy-content.mjs
           node --check scripts/check-functions.mjs
           node --check scripts/coverage.mjs
+          node --check scripts/coverage-map.mjs
+          node --check src/explore.js
 
       # 2. JSON well-formedness for the whole content tree.
       - name: Validate content JSON
@@ -47,6 +49,11 @@ jobs:
       #     rule may silently stop matching the atlas.
       - name: Function classification audit
         run: node scripts/check-functions.mjs
+
+      # 4c. Universal explore coverage: space-map integrity, resolver unit
+      #     tests, and the regenerated per-entity mapping audit.
+      - name: Explore coverage audit
+        run: node scripts/coverage-map.mjs
 
       # 5. Production build, including the content/ copy step.
       - name: Build
