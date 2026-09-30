@@ -389,6 +389,7 @@ function entityCard(kind, id) {
         : '<h3>Brain expression</h3><p>No reliable regional data.</p>'}
       ${g.effect ? `<h3>Effect size</h3><p>${esc(g.effect.text)}</p>` : ''}
       ${g.constraint ? `<h3>Loss-of-function constraint</h3><p>pLI ${esc(fmtP(g.constraint.pLI))}; observed/expected LoF ${esc(fmtP(g.constraint.oeLoF))} (90% CI ${esc(fmtP(g.constraint.oeLoFLower))}–${esc(fmtP(g.constraint.oeLoFUpper))}; ${esc(g.constraint.obsLoF)} observed vs ${esc(fmtN(g.constraint.expLoF))} expected). Highly constrained genes tolerate protein-truncating variation poorly, so rare disruptive variants in them are more likely to matter.${g.constraint.geneQueried ? ` Queried as ${esc(g.constraint.geneQueried)} (${esc(g.symbol)} is an alias).` : ''}</p>${srcLinks(['gnomad-browser', 'karczewski-2020-constraint'])}` : ''}
+      ${g.ensemblId ? `<h3>External resources</h3><div class="src-list"><a href="https://platform.opentargets.org/target/${esc(g.ensemblId)}" target="_blank" rel="noopener">Open Targets gene–disease evidence <span>↗</span></a><a href="https://gnomad.broadinstitute.org/gene/${esc(g.ensemblId)}" target="_blank" rel="noopener">gnomAD gene page <span>↗</span></a></div>${g.ensemblNote ? `<p><small>${esc(g.ensemblNote)}</small></p>` : ''}` : ''}
       ${linkedDisordersText('gene', id)}`;
   }
   if (kind === 'drug') {

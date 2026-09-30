@@ -22,7 +22,8 @@
         "expLoF": 45.668154668188606,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000244731"
     },
     {
       "symbol": "GRIN2A",
@@ -50,7 +51,8 @@
         "expLoF": 113.38252139445228,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000183454"
     },
     {
       "symbol": "GRIA3",
@@ -75,7 +77,8 @@
         "expLoF": 63.03106048088165,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000125675"
     },
     {
       "symbol": "SETD1A",
@@ -100,7 +103,8 @@
         "expLoF": 149.90930638992248,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000099381"
     },
     {
       "symbol": "DEL22Q11",
@@ -142,7 +146,8 @@
         "expLoF": 146.06895648082735,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000023516"
     },
     {
       "symbol": "GSK3B",
@@ -167,7 +172,8 @@
         "expLoF": 56.42431610563574,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000082701"
     },
     {
       "symbol": "CHD8",
@@ -191,7 +197,8 @@
         "expLoF": 279.2487972075632,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000100888"
     },
     {
       "symbol": "BDNF",
@@ -218,7 +225,8 @@
         "expLoF": 19.4512081772868,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000176697"
     },
     {
       "symbol": "SLC6A4",
@@ -243,7 +251,8 @@
         "expLoF": 73.40529091511655,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000108576"
     },
     {
       "symbol": "GRIA1",
@@ -271,7 +280,8 @@
         "expLoF": 99.15124275747553,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000155511"
     },
     {
       "symbol": "DLGAP1",
@@ -296,7 +306,8 @@
         "expLoF": 90.75638975938787,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000170579"
     },
     {
       "symbol": "SLC1A1",
@@ -321,7 +332,8 @@
         "expLoF": 53.33348065679283,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000106688"
     },
     {
       "symbol": "BTBD3",
@@ -346,7 +358,8 @@
         "expLoF": 41.607576001547564,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000132640"
     },
     {
       "symbol": "PARK2",
@@ -376,7 +389,9 @@
         "expLoF": 59.5381861863392,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000185345",
+      "ensemblNote": "Ensembl record is PRKN (PARK2 is an alias)."
     },
     {
       "symbol": "SLC5A12",
@@ -400,7 +415,8 @@
         "expLoF": 72.66037710077347,
         "sourceId": "gnomad-browser",
         "fetchedAt": "2026-09-30"
-      }
+      },
+      "ensemblId": "ENSG00000148942"
     }
   ]
 }

@@ -95,6 +95,7 @@ function checkGenes() {
     if (g.constraint && !g.constraint.sourceId) err(`genes/${g.symbol}: constraint without sourceId`);
     if (g.constraint?.sourceId && !SOURCE_IDS.has(g.constraint.sourceId)) err(`genes/${g.symbol}: unknown constraint source`);
     if (g.constraint && (typeof g.constraint.pLI !== 'number' || typeof g.constraint.oeLoF !== 'number')) err(`genes/${g.symbol}: constraint without numeric pLI/oeLoF`);
+    if (g.ensemblId && !/^ENSG\d+$/.test(g.ensemblId)) err(`genes/${g.symbol}: malformed ensemblId`);
   }
 }
 
