@@ -264,10 +264,10 @@
       ],
       "claim": {
         "id": "scz-nc-glu",
-        "text": "NMDA-receptor blockers reproduce the full symptom spectrum including negative and cognitive features, and risk genes converge on glutamate signalling, supporting upstream glutamate dysfunction.",
+        "text": "NMDA-receptor blockers reproduce the full symptom spectrum including negative and cognitive features, and risk genes converge on glutamate signalling, supporting upstream glutamate dysfunction. In vivo imaging has since given the glutamate and dopamine pictures greater anatomical and functional specificity than the original pharmacological account.",
         "evidence": "moderate",
-        "sourceIds": ["howes-kapur-2009", "schema-paper"],
-        "lastReviewed": "2026-09-28"
+        "sourceIds": ["howes-kapur-2009", "howes-2015", "schema-paper"],
+        "lastReviewed": "2026-09-29"
       }
     },
     {
@@ -341,6 +341,27 @@
         "evidence": "strong",
         "sourceIds": ["schema-paper", "schema-browser"],
         "lastReviewed": "2026-09-28"
+      },
+      {
+        "id": "scz-gen-arch3",
+        "text": "A landmark multi-stage genome-wide association study reached genome-wide significance at 108 conservatively defined loci through 128 independent associations, in up to 36,989 cases and 113,075 controls, with 83 of the loci not previously reported.",
+        "evidence": "strong",
+        "sourceIds": ["pgc2-2014"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "scz-gen-arch4",
+        "text": "Associated loci were enriched among genes expressed in brain and, independently of that signal, among genes expressed in tissues important for immunity, which supports immune involvement rather than making it a by-product of brain-expression bias.",
+        "evidence": "strong",
+        "sourceIds": ["pgc2-2014"],
+        "lastReviewed": "2026-09-29"
+      },
+      {
+        "id": "scz-gen-arch5",
+        "text": "Associations at DRD2 and at several genes involved in glutamatergic neurotransmission place genetic risk on the same pathways as the leading dopamine and glutamate hypotheses, so those hypotheses are now partly genetic in origin rather than only pharmacologically derived.",
+        "evidence": "strong",
+        "sourceIds": ["pgc2-2014", "howes-2015"],
+        "lastReviewed": "2026-09-29"
       }
     ]
   },

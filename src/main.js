@@ -11,6 +11,7 @@ const MODEL_URL = `${BASE}brain-atlas/models/brain.glb`;
 const MANIFEST_URL = `${BASE}brain-atlas/models/manifest.json`;
 const FUNCTIONS_URL = `${BASE}brain-atlas/functions.json`;
 const CIRCUITS_URL = `${BASE}brain-atlas/circuits3d.json`;
+const FUNCSYS_URL = `${BASE}brain-atlas/function-systems.json`;
 const DRACO_PATH = `${BASE}brain-atlas/vendor/draco/`;
 
 // Entries that are scene-graph/collection bookkeeping, not anatomy.
@@ -39,6 +40,20 @@ const CATEGORY_STYLE = {
 };
 
 const $ = (id) => document.getElementById(id);
+const escHtml = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// Forgiving text match used by structure search (and anything else that needs
+// it): lowercase, accent-folded, Greek letters readable by name, dashes as
+// spaces. Defined once at module scope so the index build and the query path
+// fold identically.
+const GREEK_FOLD = { α: 'alpha', β: 'beta', γ: 'gamma', δ: 'delta', ε: 'epsilon', κ: 'kappa', μ: 'mu', σ: 'sigma', τ: 'tau', ω: 'omega' };
+const foldText = (s) => String(s ?? '').toLowerCase()
+  .normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/[αβγδεκμστω]/g, (c) => ` ${GREEK_FOLD[c]} `)
+  .replace(/[^a-z0-9]+/g, ' ')
+  .replace(/\s+/g, ' ')
+  .trim();
 const loaderEl = $('loader');
 const loadfill = $('loadfill');
 const loadmsg = $('loadmsg');
@@ -46,7 +61,16 @@ const loadmsg = $('loadmsg');
 // ---------- renderer / scene ----------
 const container = $('scene');
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+const baseDPR = Math.min(window.devicePixelRatio || 1, 2);
+renderer.setPixelRatio(baseDPR);
+// Adaptive quality: the render loop below steps the pixel ratio down when
+// sustained animation runs slowly and back up when it recovers, with
+// hysteresis so it never flaps. Content-preserving — geometry, colours and
+// camera are untouched; only shaded-pixel count changes.
+let renderQuality = 1;
+let qEMA = 60;
+let qDownSince = 0;
+let qUpSince = 0;
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.1;
@@ -166,6 +190,37 @@ const LOBE_COLORS = {
 let lobeMode = false;
 const lobeMats = {}; // region -> shared physical material
 
+// ---------- colour-by-function mode ----------
+// A teaching classification loaded from public/brain-atlas/function-systems.json
+// and derived by rule from each structure's own name plus the atlas function
+// note. It is NOT an official parcellation. Categories the spec lists as
+// uncoloured (vessels, cranial nerves, meninges) keep their category colour, and
+// anything no rule matches stays in the 'other' bucket rather than being guessed.
+// scripts/check-functions.mjs re-implements the same order and fails if the
+// rules stop matching, so a stale rule cannot go unnoticed.
+let funcSys = null;
+let funcMode = false;
+let funcIsolate = null; // system id soloed from the legend, or null
+const funcMats = {}; // system id -> shared material
+let funcSystemOf = null; // (anat) -> system id | null
+
+function funcMaterial(sysId) {
+  if (!funcMats[sysId]) {
+    const sys = (funcSys.systems || []).find((s) => s.id === sysId);
+    const hex = sys ? sys.color : '#6E6E6E';
+    const m = baseMats.cortex.clone();
+    m.color = new THREE.Color(hex);
+    // Small emissive lift so flat teaching colours stay legible under the
+    // studio rig instead of going muddy in shadow.
+    m.emissive = new THREE.Color(hex).multiplyScalar(0.18);
+    m.emissiveIntensity = 1;
+    m.roughness = 0.55;
+    m.clippingPlanes = [slicePlane];
+    funcMats[sysId] = m;
+  }
+  return funcMats[sysId];
+}
+
 function variantMat(cat, emissiveScale, opacity) {
   const src = baseMats[cat];
   const m = src.clone();
@@ -197,11 +252,19 @@ function lobeMaterial(region) {
   return lobeMats[region];
 }
 
-// Base material honoring lobe-color mode (cortex only; other layers unchanged).
+// Base material honoring the lobe-colour and function-colour modes.
+// Lobe mode applies to cortex only; function mode applies to every category
+// the spec covers, and leaves the rest on their category colour.
 function baseMaterialFor(mesh) {
-  const cat = mesh.userData.anat.cat;
-  if (lobeMode && cat === 'cortex' && LOBE_COLORS[mesh.userData.anat.region]) {
-    return lobeMaterial(mesh.userData.anat.region);
+  const anat = mesh.userData.anat;
+  const cat = anat.cat;
+  if (funcMode) {
+    const sys = funcSystemOf ? funcSystemOf(anat) : null;
+    if (sys) return funcMaterial(sys);
+    return baseMats[cat];
+  }
+  if (lobeMode && cat === 'cortex' && LOBE_COLORS[anat.region]) {
+    return lobeMaterial(anat.region);
   }
   return baseMats[cat];
 }
@@ -322,7 +385,10 @@ function showCard(anat) {
   $('cardSide').textContent = anat.side || '—';
   $('cardName').textContent = anat.label + (anat.side === 'left' || anat.side === 'right' ? ` (${anat.side})` : '');
   const catLabel = (CATEGORY_STYLE[anat.cat] || {}).label || anat.cat;
+  const sys = anat.funcSystem ? (funcSys.systems || []).find((s) => s.id === anat.funcSystem) : null;
   $('cardMeta').textContent = `${catLabel}${anat.region ? ` · ${anat.region}` : ''}`;
+  $('cardFuncSys').textContent = sys ? `Function group: ${sys.label}` : '';
+  $('cardFuncSys').hidden = !sys;
   $('cardTa2').textContent = cleanTa2(anat.ta2, anat.region, anat.parent, anat.label).join(' › ') || '—';
   const func = functions[String(anat.id)];
   $('cardFunc').textContent = func || '';
@@ -437,7 +503,10 @@ function updateVisibility() {
     // (no animation object) still isolates members outright.
     const catOn = circuitAnim ? true : activeCircuit ? circuitMembers.has(m) : catState[a.cat] !== false;
     const sideOn = hemi === 'both' || a.side === 'median' || a.side === hemi;
-    m.visible = catOn && sideOn && (!matchSet || matchSet.has(m));
+    // A functional solo is an extra AND, so hemisphere, search and category
+    // toggles keep behaving exactly as they do in every other mode.
+    const funcOn = !funcIsolate || a.funcSystem === funcIsolate;
+    m.visible = catOn && sideOn && funcOn && (!matchSet || matchSet.has(m));
     const sp = m.userData.sprite;
     if (sp) sp.visible = labelsOn && m.visible;
   }
@@ -1064,6 +1133,9 @@ window.__neuroMap = Object.assign(window.__neuroMap || {}, {
       reducedMotion: REDUCED_MOTION,
     };
   },
+  renderQuality() {
+    return { quality: Math.round(renderQuality * 100) / 100, fps: Math.round(qEMA) };
+  },
   cameraState() {
     const r = (v) => Math.round(v * 1000) / 1000;
     return {
@@ -1097,6 +1169,7 @@ function allMats() {
     ...Object.values(hoverMats),
     ...Object.values(selectMats),
     ...Object.values(lobeMats),
+    ...Object.values(funcMats),
     ...Object.values(hlMats),
     ...labelMats,
   ];
@@ -1292,44 +1365,119 @@ function wireViewerUI() {
   });
 
   // ----- search: isolate matches, click result to inspect -----
+  // Results rank label-prefix first, then word-prefix, then substring, then
+  // other indexed fields; ArrowUp/Down + Enter walks the list without a mouse.
+  // (foldText lives at module scope so the index build folds identically.)
   const searchInput = $('search');
   const resultsBox = $('results');
+  resultsBox.setAttribute('role', 'listbox');
+  resultsBox.setAttribute('aria-label', 'Matching structures');
+  let searchActive = 0;
+  // Viewer controls join the same index by carrying data-search in index.html,
+  // named by their own visible label (aliases optional). A pick clicks the
+  // real control, so search owns no second definition of what it does.
+  const controlIndex = () => [...document.querySelectorAll('[data-search]')].map((el) => ({
+    el,
+    label: (el.textContent || '').trim(),
+    aliases: (el.getAttribute('data-search') || '').trim(),
+  })).filter((c) => c.label && !c.el.disabled && c.el.offsetParent !== null);
+  function renderSearch(matches, controls, qFold) {
+    resultsBox.hidden = false;
+    resultsBox.innerHTML = '';
+    const count = document.createElement('div');
+    count.className = 'count';
+    const n = matches.length + controls.length;
+    count.textContent = n === 0 ? 'No structures found' : `${n} match${n === 1 ? '' : 'es'}`;
+    resultsBox.appendChild(count);
+    const addBtn = (text, tag, onPick, idx) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'option');
+      b.setAttribute('aria-selected', idx === searchActive ? 'true' : 'false');
+      if (idx === searchActive) b.classList.add('active');
+      b.innerHTML = '';
+      b.append(document.createTextNode(text));
+      if (tag) {
+        const t = document.createElement('small');
+        t.textContent = ` · ${tag}`;
+        b.append(t);
+      }
+      b.addEventListener('click', onPick);
+      b.dataset.searchIdx = String(idx);
+      resultsBox.appendChild(b);
+      return b;
+    };
+    let idx = 0;
+    for (const c of controls.slice(0, 5)) {
+      const b = addBtn(c.label, 'control', () => c.el.click(), idx);
+      if (idx === searchActive) b.scrollIntoView({ block: 'nearest' });
+      idx += 1;
+    }
+    for (const e of matches.slice(0, 40)) {
+      const a = e.mesh.userData.anat;
+      const b = addBtn(`${a.label}${a.side === 'left' || a.side === 'right' ? ` (${a.side})` : ''}`, '', () => {
+        select(e.mesh);
+        focusOn(e.mesh);
+      }, idx);
+      if (idx === searchActive) b.scrollIntoView({ block: 'nearest' });
+      idx += 1;
+    }
+    return idx;
+  }
+  let searchTotal = 0;
   searchInput.addEventListener('input', () => {
-    const q = searchInput.value.trim().toLowerCase();
-    if (!q) {
+    const qFold = foldText(searchInput.value);
+    searchActive = 0;
+    if (!qFold) {
       matchSet = null;
       resultsBox.hidden = true;
       resultsBox.innerHTML = '';
       updateVisibility();
       return;
     }
-    const matches = searchIndex.filter((e) => e.hay.includes(q));
-    matchSet = new Set(matches.map((e) => e.mesh));
-    updateVisibility();
-    resultsBox.hidden = false;
-    resultsBox.innerHTML = '';
-    const count = document.createElement('div');
-    count.className = 'count';
-    count.textContent =
-      matches.length === 0 ? 'No structures found' : `${matches.length} match${matches.length === 1 ? '' : 'es'}`;
-    resultsBox.appendChild(count);
-    for (const e of matches.slice(0, 40)) {
-      const b = document.createElement('button');
-      b.type = 'button';
-      const a = e.mesh.userData.anat;
-      b.textContent = `${a.label}${a.side === 'left' || a.side === 'right' ? ` (${a.side})` : ''}`;
-      b.addEventListener('click', () => {
-        select(e.mesh);
-        focusOn(e.mesh);
-      });
-      resultsBox.appendChild(b);
+    const qFlat = qFold.replace(/ /g, '');
+    const ranked = [];
+    for (const e of searchIndex) {
+      const labelFold = e.labelFold;
+      let rank = -1;
+      if (labelFold.startsWith(qFold)) rank = 0;
+      else if (labelFold.split(' ').some((w) => w.startsWith(qFold))) rank = 1;
+      else if (labelFold.includes(qFold)) rank = 2;
+      else if (e.hayFold.includes(qFold)) rank = 3;
+      else if (qFlat && (labelFold.replace(/ /g, '').includes(qFlat) || e.hayFold.replace(/ /g, '').includes(qFlat))) rank = 4;
+      if (rank >= 0) ranked.push({ e, rank });
     }
+    ranked.sort((a, b) => a.rank - b.rank);
+    const matches = ranked.map((r) => r.e);
+    const controls = controlIndex().filter((c) => {
+      const hay = foldText(`${c.label} ${c.aliases}`);
+      return hay.includes(qFold) || (qFlat && hay.replace(/ /g, '').includes(qFlat));
+    });
+    matchSet = matches.length ? new Set(matches.map((e) => e.mesh)) : null;
+    updateVisibility();
+    searchTotal = renderSearch(matches, controls, qFold);
   });
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       searchInput.value = '';
       searchInput.dispatchEvent(new Event('input'));
+      return;
     }
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp' && e.key !== 'Enter') return;
+    if (resultsBox.hidden || searchTotal === 0) return;
+    e.preventDefault();
+    if (e.key === 'Enter') {
+      const b = resultsBox.querySelector(`[data-search-idx="${searchActive}"]`);
+      if (b) b.click();
+      return;
+    }
+    searchActive = (searchActive + (e.key === 'ArrowDown' ? 1 : -1) + searchTotal) % searchTotal;
+    resultsBox.querySelectorAll('[role="option"]').forEach((b) => {
+      const on = Number(b.dataset.searchIdx) === searchActive;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      if (on) b.scrollIntoView({ block: 'nearest' });
+    });
   });
 
   // ----- labels -----
@@ -1374,11 +1522,100 @@ function wireViewerUI() {
   // ----- lobe colors -----
   $('lobeBtn').addEventListener('click', () => {
     lobeMode = !lobeMode;
+    // Symmetric with the function mode: turning one on turns the other off, so
+    // the two teaching colour schemes can never both be telling a story.
+    if (lobeMode && funcMode) {
+      funcMode = false;
+      funcIsolate = null;
+      $('funcBtn').textContent = 'Function colors: off';
+      $('funcLegendWrap').hidden = true;
+    }
     $('lobeBtn').textContent = `Lobe colors: ${lobeMode ? 'on' : 'off'}`;
+    refreshMeshMaterials();
+  });
+
+  // ----- function colors -----
+  // The legend is the authoritative key. With fourteen groups, hue alone is not
+  // a reliable cue for a colour-blind reader, so every group is named in text
+  // here and repeated in the structure card. The "other" row is labelled
+  // "not classified" rather than being hidden, so the reader knows the
+  // grouping is a teaching aid and not an exhaustive claim.
+  function funcCounts() {
+    const counts = new Map();
     for (const m of anatomyMeshes) {
-      if (m.userData.anat.cat === 'cortex') m.material = materialFor(m);
+      const s = m.userData.anat.funcSystem;
+      if (s) counts.set(s, (counts.get(s) || 0) + 1);
+    }
+    return counts;
+  }
+
+  function renderFuncLegend() {
+    const host = $('funcLegend');
+    const wrap = $('funcLegendWrap');
+    if (!host || !funcSys) { if (wrap) wrap.hidden = true; return; }
+    if (wrap) {
+      // A collapsed <details> renders its children but does not let them take
+      // keyboard focus, so expand it whenever the legend is shown.
+      wrap.hidden = false;
+      wrap.open = true;
+    }
+    const counts = funcCounts();
+    const total = [...counts.values()].reduce((a, b) => a + b, 0);
+    host.hidden = false;
+    host.innerHTML = (funcSys.systems || [])
+      .filter((s) => counts.has(s.id))
+      .map((s) => {
+        const n = counts.get(s.id);
+        const pct = total ? Math.round((n / total) * 100) : 0;
+        const on = funcIsolate === s.id ? ' on' : '';
+        const dim = funcIsolate && funcIsolate !== s.id ? ' dim' : '';
+        return `<button type="button" class="frow${on}${dim}" data-func="${escHtml(s.id)}"`
+          + ` title="${escHtml(s.blurb)} - ${n} structures (${pct}%)">`
+          + `<span class="fswatch" style="background:${escHtml(s.color)}"></span>`
+          + `<span class="flabel">${escHtml(s.label)}</span>`
+          + `<span class="fcount">${n}</span></button>`;
+      })
+      .join('')
+      + `<p class="fnote">Teaching grouping derived from structure names and the atlas`
+      + ` function notes. Not an official parcellation. Vessels, cranial nerves and`
+      + ` meninges keep their category colour.</p>`;
+    host.querySelectorAll('[data-func]').forEach((b) => {
+      b.addEventListener('click', () => {
+        const id = b.dataset.func;
+        // Clicking the active row clears the solo, so the legend is a toggle.
+        funcIsolate = funcIsolate === id ? null : id;
+        if (funcIsolate && selected && selected.userData.anat.funcSystem !== funcIsolate) clearSelection();
+        updateVisibility();
+        renderFuncLegend();
+        const sys = (funcSys.systems || []).find((x) => x.id === funcIsolate);
+        $('sr-status').textContent = funcIsolate
+          ? `Isolated ${sys ? sys.label : funcIsolate}, ${counts.get(funcIsolate) || 0} structures.`
+          : 'Showing all structures.';
+      });
+    });
+  }
+
+  $('funcBtn').addEventListener('click', () => {
+    funcMode = !funcMode;
+    // The two teaching colour modes are mutually exclusive, so the brain is
+    // never telling two different stories at once.
+    if (funcMode) {
+      lobeMode = false;
+      $('lobeBtn').textContent = 'Lobe colors: off';
+    }
+    $('funcBtn').textContent = `Function colors: ${funcMode ? 'on' : 'off'}`;
+    refreshMeshMaterials();
+    if (funcMode) {
+      renderFuncLegend();
+      $('funcLegendWrap').open = true;
+    } else {
+      funcIsolate = null;
+      updateVisibility();
+      $('funcLegendWrap').hidden = true;
     }
   });
+  $('funcBtn').disabled = !funcSys;
+  $('funcLegendWrap').hidden = true;
 
   // ----- preset camera views -----
   document.querySelectorAll('[data-view3d]').forEach((b) => {
@@ -1450,12 +1687,36 @@ function wireViewerUI() {
 
 async function init() {
   loadmsg.textContent = 'Fetching metadata';
-  const [manifest, funcs, circuitsFile] = await Promise.all([
+  const [manifest, funcs, circuitsFile, funcSpec] = await Promise.all([
     (await fetch(MANIFEST_URL)).json(),
     (await fetch(FUNCTIONS_URL)).json().catch(() => ({})),
     (await fetch(CIRCUITS_URL)).json().catch(() => ({ circuits: [] })),
+    (await fetch(FUNCSYS_URL)).json().catch(() => null),
   ]);
   functions = funcs;
+  if (funcSpec && Array.isArray(funcSpec.systems)) {
+    funcSys = funcSpec;
+    // Build the resolver before meshes are created, so anat.funcSystem is
+    // populated in one pass rather than recomputed per hover.
+    const inScope = new Set(funcSys.appliesToCategories || []);
+    const override = funcSys.categoryOverrides || {};
+    const rules = (funcSys.rules || []).map((r) => ({
+      system: r.system,
+      any: r.any.map((p) => p.toLowerCase()),
+    }));
+    funcSystemOf = (anat) => {
+      if (!inScope.has(anat.cat)) return null;
+      // No manifest record: the category above is a fallback, so the honest
+      // answer is "not classified" rather than a rule match on a guessed name.
+      if (anat.inManifest === false) return 'other';
+      if (override[anat.cat]) return override[anat.cat];
+      const hay = `${anat.label} ${functions[String(anat.id)] || ''}`.toLowerCase();
+      for (const r of rules) {
+        if (r.any.some((p) => hay.includes(p))) return r.system;
+      }
+      return 'other';
+    };
+  }
   circuits3d = circuitsFile.circuits || [];
   for (const n of manifest.nodes) manifestById.set(n.id, n);
 
@@ -1519,6 +1780,12 @@ async function init() {
       ta2: (rec && rec.ta2) || [],
       source: extra.bx_source || (rec && rec.source) || '',
     };
+    // The GLB carries more meshes than the manifest describes. Anything with
+    // no manifest record falls back to cat 'cortex' above, which is an assumption,
+    // so it is flagged here and never given a functional system on that basis.
+    anat.inManifest = !!rec;
+    // Resolved once here so the card, the legend and the 3D colour all agree.
+    anat.funcSystem = funcSystemOf ? funcSystemOf(anat) : null;
     if (!baseMats[cat]) baseMats[cat] = tissueMaterial(cat);
     obj.material = baseMats[cat];
     obj.castShadow = true;
@@ -1526,6 +1793,8 @@ async function init() {
     obj.userData.anat = anat;
     searchIndex.push({
       mesh: obj,
+      labelFold: foldText(anat.label),
+      hayFold: foldText(`${anat.label} ${anat.region} ${anat.parent} ${(CATEGORY_STYLE[cat] || {}).label || cat}`),
       hay: `${anat.label} ${anat.region} ${anat.parent} ${(CATEGORY_STYLE[cat] || {}).label || cat}`.toLowerCase(),
     });
     anatomyMeshes.push(obj);
@@ -1657,6 +1926,36 @@ renderer.setAnimationLoop(() => {
     camera.position.lerpVectors(camTween.p0, camTween.p1, e);
     controls.target.lerpVectors(camTween.t0, camTween.t1, e);
     if (s >= 1) camTween = null;
+  }
+  // Adaptive quality only measures while something animates, so a static
+  // scene never triggers a needless resize. Thresholds mirror the existing
+  // simple-mode degradation (15fps) with headroom: step down below 30fps
+  // sustained 2s, step back up above 55fps sustained 6s.
+  const animating = (circuitAnim && animPlaying && motionAllowed() && !animSimple) || !!camTween;
+  if (!document.hidden && rawDt > 0 && rawDt < 1) {
+    qEMA = qEMA * 0.95 + (1 / Math.max(rawDt, 1e-3)) * 0.05;
+    if (animating) {
+      if (qEMA < 30) {
+        qDownSince += rawDt;
+        qUpSince = 0;
+        if (qDownSince > 2 && renderQuality > 0.5) {
+          renderQuality = Math.max(0.5, renderQuality - 0.15);
+          renderer.setPixelRatio(baseDPR * renderQuality);
+          qDownSince = 0;
+        }
+      } else if (qEMA > 55) {
+        qUpSince += rawDt;
+        qDownSince = 0;
+        if (qUpSince > 6 && renderQuality < 1) {
+          renderQuality = Math.min(1, renderQuality + 0.15);
+          renderer.setPixelRatio(baseDPR * renderQuality);
+          qUpSince = 0;
+        }
+      } else {
+        qDownSince = 0;
+        qUpSince = 0;
+      }
+    }
   }
   controls.update();
   renderer.render(scene, camera);

@@ -12,6 +12,53 @@
   display: none;
 }
 
+#shortcutModal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#shortcutModal[hidden] {
+  display: none;
+}
+
+.shortcuts {
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.shortcuts div {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.shortcuts dt {
+  min-width: 92px;
+}
+
+.shortcuts dd {
+  margin: 0;
+  color: var(--dim);
+}
+
+.shortcuts kbd {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
 .picker-box {
   width: min(420px, calc(100vw - 48px));
   max-height: 70vh;

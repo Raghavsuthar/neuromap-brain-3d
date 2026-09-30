@@ -1,23 +1,66 @@
-NeuroMap 3D Brain — dual-license notice
-==========================================
+NeuroMap 3D Brain — licence notice
+==================================
 
-Viewer source code (HTML/CSS/JS, Vite config, deploy workflow):
-  Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0).
-  Copyright 2026 the NeuroMap contributors.
+This repository is multi-licensed. The components do NOT all share one
+licence, and the Apache 2.0 code licence does not relicense the 3D assets.
 
-3D anatomy assets (public/brain-atlas/models/brain.glb and the metadata
-derived from it, public/brain-atlas/models/manifest.json):
-  Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0),
-  https://creativecommons.org/licenses/by/4.0/
-  © Z-Anatomy contributors and BodyParts3D / DBCLS
-  (The Database Center for Life Science).
+CODE
+----
+Viewer source code (src/*.js, src/*.css, index.html), build and validation
+scripts (scripts/*.mjs), configuration (package.json, vite.config.*) and
+CI/deploy workflows (.github/workflows/*):
 
-CC BY-SA is share-alike: if you distribute a modified version of the
-model, it must stay under CC BY-SA 4.0 and keep this attribution. The
-Apache 2.0 code licence does NOT relicense the model.
+    Apache License 2.0
+    Copyright 2026 the NeuroMap contributors.
+    Full licence text: LICENSE-APACHE-2.0.txt
+    https://www.apache.org/licenses/LICENSE-2.0
 
+3D ANATOMY ASSETS
+-----------------
+public/brain-atlas/models/brain.glb and the metadata derived from it,
+public/brain-atlas/models/manifest.json:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    https://creativecommons.org/licenses/by-sa/4.0/
+    (c) Z-Anatomy contributors and BodyParts3D / DBCLS
+    (The Database Center for Life Science)
+    Upstream: https://github.com/itayinbarr/brainproject
+
+CC BY-SA is share-alike: if you distribute a modified version of the model,
+it must stay under CC BY-SA 4.0 and keep this attribution. The Apache 2.0
+code licence above does NOT relicense the model, and the model is not
+covered by the Apache 2.0 patent grant.
+
+CLINICAL AND DISORDER CONTENT
+-----------------------------
+content/registries/*.json, content/disorders/*.json, content/markers.json
+and content/schema/*:
+
+    Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    https://creativecommons.org/licenses/by-sa/4.0/
+
+All claims are original summaries carrying source IDs that resolve to
+content/registries/sources.json. No text is copied verbatim from copyrighted
+guidelines or reference works. DrugBank material is cited only; no raw
+DrugBank records, affinity tables or Ki values are redistributed.
+
+PRECISION AND INTENDED USE
+-------------------------
 Imaging-registered structures (globus pallidus internal/external split,
 thalamic nuclei groups, subthalamic nucleus, substantia nigra, nucleus
 accumbens, amygdala functional groups, hypothalamus zones, white-matter
-tracts) remain CC BY-SA 4.0. They are approximate (about 7 mm,
-educational, not for clinical use). See README for the per-atlas credits.
+tracts) remain CC BY-SA 4.0. They are approximate (about 7 mm resolution),
+are educational, and are not for clinical use. Mapping precision is labelled
+per structure as exact, proxy or schematic. See README.md for per-atlas
+credits and the public/brain-atlas/models/manifest.json note.
+
+THIRD-PARTY COMPONENTS
+----------------------
+Three.js, Draco, Vite and the anatomy data sources are third-party works
+under their own licences. They are enumerated in THIRD-PARTY-NOTICES.md and
+DATA_LICENSES.md.
+
+A note on a past inconsistency: an earlier revision of DATA_LICENSES.md
+described the code as MIT. No MIT licence file or SPDX header ever existed in
+this repository, and the Apache 2.0 notice above is the operative grant. The
+discrepancy is recorded in DATA_LICENSES.md.

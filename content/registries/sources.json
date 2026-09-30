@@ -728,6 +728,20 @@
       "title": "ENIGMA ASD Working Group: lifespan brain morphometry maps",
       "authors": "ENIGMA consortium",
       "url": "https://enigma.ini.usc.edu/ongoing/enigma-asd-working-group/"
+    },
+    {
+      "id": "pgc2-2014",
+      "type": "genomics",
+      "title": "Biological insights from 108 schizophrenia-associated genetic loci",
+      "authors": "Schizophrenia Working Group of the Psychiatric Genomics Consortium (Ripke S, Neale BM, Corvin A, et al.)",
+      "url": "https://doi.org/10.1038/nature13595"
+    },
+    {
+      "id": "howes-2015",
+      "type": "review",
+      "title": "Glutamate and dopamine in schizophrenia: an update for the 21st century",
+      "authors": "Howes O, McCutcheon R, Stone J",
+      "url": "https://doi.org/10.1177/0269881114563634"
     }
   ]
 }

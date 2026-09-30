@@ -238,7 +238,7 @@ function applyLens(lens, target) {
       S._hl = { labels: [...(tg.atlasLabels || [])], markers: [] };
     }
   } else if (lens === 'gene') {
-    const g = S.reg.genes[target] || S.reg.genes[d.genetics.geneSymbols[0]];
+    const g = S.reg.genes[target] || S.reg.genes[pickGene(d)];
     if (g) {
       const siteWheres = (g.linkedReceptorIds || []).flatMap((id) => (S.reg.receptors[id]?.principalSites || []).map((p) => p.where));
       const exprWheres = (g.brainExpression || []).map((b) => b.where);
@@ -268,6 +268,23 @@ const FINDING_COLORS_CB = {
 };
 function cbPalette() {
   return localStorage.getItem('nmcb') === 'on' ? FINDING_COLORS_CB : FINDING_COLORS;
+}
+
+// A gene only lights up the brain if the registry can resolve it to structures,
+// i.e. it has linkedReceptorIds whose receptors carry principalSites with atlas
+// labels. Many genes are deliberately registry-only (C4A, SETD1A, GRIA3,
+// DEL22Q11 have no linked receptor), so picking geneSymbols[0] blindly left the
+// Gene lens doing nothing visible. Prefer the first gene that can actually be
+// shown, and fall back to the first gene so behaviour is never worse than before.
+function pickGene(d) {
+  const symbols = (d.genetics && d.genetics.geneSymbols) || [];
+  const resolvable = symbols.find((sym) => {
+    const g = S.reg.genes && S.reg.genes[sym];
+    if (!g) return false;
+    const sites = (g.linkedReceptorIds || []).flatMap((id) => (S.reg.receptors[id] || {}).principalSites || []);
+    return sites.some((p) => ((p.where || {}).atlasLabels || []).length);
+  });
+  return resolvable || symbols[0];
 }
 
 // Screen-reader (and sighted) text alternative for every visual highlight:
@@ -324,7 +341,7 @@ function openLensTargetPicker(lens) {
       const t = Object.values(S.reg.treatments).find((x) => x.kind === 'neuromodulation' && x.indication && x.indication.disorderId === d.id);
       applyLens('neuromod', t && t.id);
     },
-    gene: () => applyLens('gene', d.genetics.geneSymbols[0]),
+    gene: () => applyLens('gene', pickGene(d)),
   }[lens];
   if (first) first();
 }
@@ -514,7 +531,7 @@ function applyTabLens() {
     psychopathology: () => applyLens('symptom', d.symptomDomains[0] && d.symptomDomains[0].id),
     brain: () => applyLens('pathology', 'all'),
     neurochemistry: () => applyLens('chemistry', d.neurochemistry[0] && d.neurochemistry[0].transmitter),
-    genetics: () => applyLens('gene', d.genetics.geneSymbols[0]),
+    genetics: () => applyLens('gene', pickGene(d)),
     treatments: () => {
       const t = d.treatments.map((id) => S.reg.treatments[id]).find((x) => x && x.drugId);
       applyLens('drug', t && t.drugId);
@@ -749,6 +766,17 @@ function setFocusMode(on) {
   }
 }
 
+// ---------- keyboard-shortcut help ----------
+// The list itself lives in index.html (#shortcutModal) so it can be read
+// without JS; these two functions only show/hide it and manage focus.
+function openShortcuts() {
+  $('shortcutModal').hidden = false;
+  $('shortcutClose').focus();
+}
+function closeShortcuts() {
+  $('shortcutModal').hidden = true;
+}
+
 // ---------- shareable exact-state links ----------
 // Encodes topic + lens + selected id + entity + camera, so a specific circuit
 // state reopens exactly as seen. Extends the existing #d= scheme.
@@ -844,6 +872,10 @@ async function openDisorder(id, opts = {}) {
   codes.innerHTML = `<a href="${S.disorder.icd11.url}" target="_blank" rel="noopener">ICD-11 ${esc(S.disorder.icd11.code)} &nearr;</a>`
     + (S.disorder.dsm5tr ? ` &middot; <a href="${S.disorder.dsm5tr.url}" target="_blank" rel="noopener">DSM-5-TR ${esc(S.disorder.dsm5tr.code)} &nearr;</a>` : '');
   activeTab = 'overview';
+  // The panel is the app's largest medical surface, so the educational-use
+  // notice is rendered in the panel chrome (not inside #dpBody) and therefore
+  // persists across every tab, lens and entity view.
+  $('dpDisclaimer').textContent = STRINGS.disclaimer;
   renderBody();
   applyTabLens();
   recordReview('overview');
@@ -856,6 +888,7 @@ function exitDisorder() {
   S.tourIdx = -1;
   $('tourCard').hidden = true;
   $('disorderPanel').hidden = true;
+  $('dpDisclaimer').textContent = '';
   if (window.__neuroMap && window.__neuroMap.clear) window.__neuroMap.clear();
   if (window.location.hash) history.replaceState(null, '', window.location.pathname + window.location.search);
   const brainTab = document.querySelector('[data-view="brain"]');
@@ -930,8 +963,7 @@ async function bootDisorder() {
     }
   };
   renderPicker('');
-  $('disorderSearch').addEventListener('input', (e) => renderPicker(e.target.value.trim().toLowerCase()));
-  const disordersTab = document.querySelector('[data-view="disorders"]');
+  $('disorderSearch').addEventListener('input', (e) => renderPicker(e.target.value.trim().toLowerCase()));  const disordersTab = document.querySelector('[data-view="disorders"]');
   if (disordersTab) disordersTab.addEventListener('click', () => { $('disorderPicker').hidden = false; });
   $('pickerClose').addEventListener('click', () => { $('disorderPicker').hidden = true; });
   $('dpClose').addEventListener('click', exitDisorder);
@@ -939,6 +971,11 @@ async function bootDisorder() {
   $('focusExit').addEventListener('click', () => setFocusMode(false));
   $('dpShare').addEventListener('click', (e) => copyStateLink(e.currentTarget));
   $('synapseClose').addEventListener('click', () => { $('synapseCard').hidden = true; });
+  $('shortcutBtn').addEventListener('click', openShortcuts);
+  $('shortcutClose').addEventListener('click', closeShortcuts);
+  $('shortcutModal').addEventListener('click', (e) => {
+    if (e.target === $('shortcutModal')) closeShortcuts();
+  });
   $('tourBack').addEventListener('click', () => { stopTourAuto(); S.tourIdx -= 1; renderTour(); });
   $('tourNext').addEventListener('click', () => { stopTourAuto(); S.tourIdx += 1; renderTour(); });
   $('tourExit').addEventListener('click', () => { stopTourAuto(); S.tourIdx = -1; renderTour(); });
@@ -962,10 +999,15 @@ async function bootDisorder() {
       || e.target instanceof HTMLTextAreaElement
       || e.target instanceof HTMLSelectElement) return;
     if (e.key === 'Escape') {
+      if (!$('shortcutModal').hidden) { closeShortcuts(); return; }
       if (document.body.classList.contains('focus-mode')) setFocusMode(false);
       else if (!$('synapseCard').hidden) $('synapseCard').hidden = true;
       else if (!$('disorderPicker').hidden) $('disorderPicker').hidden = true;
       else if (S.lens) { stopTourAuto(); clearLens(); }
+      return;
+    }
+    if (e.key === '?') {
+      openShortcuts();
       return;
     }
     if (e.key === '/') {

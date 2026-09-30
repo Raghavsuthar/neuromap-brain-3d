@@ -53,13 +53,42 @@ npm run dev
 
 ## Attribution & licence
 
-This project is **dual-licensed**:
+This project is **multi-licensed** — the components do *not* all share one
+licence, and the Apache 2.0 code licence does not relicense the 3D assets.
 
-- **Viewer source code** (HTML/CSS/JS, Vite config, deploy workflow): **Apache License 2.0**. Use it, fork it, embed it, do what you like.
+- **Viewer source code** (HTML/CSS/JS, Vite config, build/validation scripts,
+  CI and deploy workflows): **Apache License 2.0**. Full text in
+  `LICENSE-APACHE-2.0.txt`, as required by Apache-2.0 §4(a). Use it, fork it,
+  embed it, do what you like.
 
-- **3D anatomy assets** (the `brain.glb` model and the metadata derived from it): **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)**, © Z-Anatomy contributors and BodyParts3D / DBCLS.
+- **3D anatomy assets** (the `brain.glb` model and the metadata derived from
+  it): **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)**,
+  © Z-Anatomy contributors and BodyParts3D / DBCLS.
 
-**CC BY-SA is share-alike:** if you distribute a modified version of the *model*, it must stay under CC BY-SA and keep this attribution. The Apache 2.0 code licence does **not** relicense the model; keep this notice with the `.glb`.
+- **Clinical and disorder content** (`content/registries/*.json`,
+  `content/disorders/*.json`, `content/markers.json`, `content/schema/*`):
+  **CC BY-SA 4.0**. All claims are original summaries carrying source IDs
+  that resolve to `content/registries/sources.json`. DrugBank material is
+  cited only — no raw records, affinity tables or Ki values are redistributed.
+
+Third-party components (Three.js MIT, Draco Apache-2.0, Vite MIT) and the
+anatomy data sources are enumerated with links in
+[`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md); dataset-level detail is in
+[`DATA_LICENSES.md`](DATA_LICENSES.md). Both documents ship with the build and
+are reachable from the in-app footer.
+
+> **Resolved discrepancy.** An earlier revision of `DATA_LICENSES.md` described
+> the source code as **MIT**, contradicting the root `LICENSE`, which has
+> always granted **Apache-2.0**. No MIT licence file or SPDX header ever existed
+> in this repository, so **Apache-2.0 governs the code** and the MIT line was
+> stale documentation. The reasoning is recorded in `DATA_LICENSES.md` so the
+> change is auditable. Separately, `DATA_LICENSES.md` listed a "Zod (validator
+> dependency)" that is not actually a dependency; that phantom entry was removed.
+
+**CC BY-SA is share-alike:** if you distribute a modified version of the *model*
+or of the *content*, it must stay under CC BY-SA and keep this attribution. The
+Apache 2.0 code licence does **not** relicense them, and the Apache 2.0 patent
+grant does not extend to them; keep this notice with the `.glb`.
 
 - Z-Anatomy, built on BodyParts3D, © The Database Center for Life Science (DBCLS).
 
@@ -274,12 +303,20 @@ Every topic tab drives the 3D brain as that topic's circuit diagram
 |---|---|---|
 | Content lint (release) | `npm run lint:content:strict` | 0 errors, 0 warnings |
 | Data to 3D mapping | `npm run test:mapping` | 3767 assertions, 552 claims |
-| Build | `npm run build` | lints, bundles, copies `content/` to `dist/` |
-| CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check |
+| Build | `npm run build` | lints, bundles, copies `content/` and the licence documents to `dist/` |
+| CI | GitHub Actions `Content lint and tests` | syntax, JSON, lint, mapping tests, build, shipped-content check, shipped-licences check |
 | Browser: animation + learning | `pwtest/verify_anim.cjs` | 32 checks, 0 page errors |
 | Browser: edge cases | `pwtest/verify_edge_cases.cjs` | 11 checks incl. reduced-motion, 0 page errors |
 | Browser: disorders | `pwtest/verify_disorder.cjs` | 33 checks, 0 page errors |
 | Browser: clinical regression | `pwtest/verify_clinical.cjs` | 15 checks, 0 page errors |
+| Browser: safety + compliance | `pwtest/verify_compliance.cjs` | 27 checks: disclaimers on every medical surface, credits served, licence text intact |
+
+Release-by-release changes, including what was deliberately left out and why, are recorded in
+[`CHANGELOG.md`](CHANGELOG.md).
+
+Figures quoted in this README were re-verified against the source data on
+2026-09-29. See [`INTEGRATION_NOTES.md`](INTEGRATION_NOTES.md) for the full
+verification record and the licence resolution.
 
 `scripts/test-mapping.mjs` is the important one: it mirrors the viewer's
 `meshesForLabels()` and fails if any atlas label, circuit node,

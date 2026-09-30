@@ -1,0 +1,355 @@
+{
+  "_note": "Functional grouping for the colour-by-function mode. This is a TEACHING classification derived by rule from each structure's own name and the function note in public/brain-atlas/functions.json. It is not an official parcellation and carries no claim about connectivity or measured function. Rules are ordered: the first match wins, so specific rules precede general ones. Anything unmatched falls back to 'other' and is reported as such in the legend, never silently guessed. Auditable with `npm run check:functions`.",
+  "_provenance": "Derived annotation. No new external dataset, model or third-party asset is introduced; the CC BY-SA 4.0 chain for the atlas is unchanged.",
+  "appliesToCategories": [
+    "cortex",
+    "deep_grey",
+    "diencephalon",
+    "brainstem",
+    "cerebellum",
+    "white_matter",
+    "tracts",
+    "ventricles"
+  ],
+  "uncolouredCategories": [
+    "arteries",
+    "veins_sinuses",
+    "cranial_nerves",
+    "meninges_dura"
+  ],
+  "_uncolouredReason": "Vessels, cranial nerves and meninges are infrastructure rather than functional tissue, so they keep their category colour in this mode. Assigning a 'function' to the superior sagittal sinus would be meaningless.",
+  "categoryOverrides": {
+    "tracts": "tracts",
+    "white_matter": "tracts",
+    "cerebellum": "coordination",
+    "ventricles": "csf"
+  },
+  "systems": [
+    {
+      "id": "motor",
+      "label": "Motor control",
+      "color": "#E8703A",
+      "blurb": "Voluntary movement, basal ganglia loops and descending motor pathways."
+    },
+    {
+      "id": "somatosensory",
+      "label": "Somatosensation",
+      "color": "#D9A520",
+      "blurb": "Touch, pain, temperature and proprioception from the body."
+    },
+    {
+      "id": "vision",
+      "label": "Vision",
+      "color": "#2E6FB7",
+      "blurb": "Retinal input, visual cortex and the dorsal and ventral visual streams."
+    },
+    {
+      "id": "audition",
+      "label": "Hearing",
+      "color": "#3FB0D8",
+      "blurb": "Auditory relay, primary auditory cortex and association."
+    },
+    {
+      "id": "language",
+      "label": "Language",
+      "color": "#D268A2",
+      "blurb": "Production, comprehension, phonological loop and reading."
+    },
+    {
+      "id": "memory",
+      "label": "Memory",
+      "color": "#2E9E6B",
+      "blurb": "Hippocampal formation, the Papez circuit and episodic retrieval."
+    },
+    {
+      "id": "emotion",
+      "label": "Emotion & interoception",
+      "color": "#9B59B6",
+      "blurb": "Amygdala, cingulate, insula and orbitofrontal affect and bodily awareness."
+    },
+    {
+      "id": "executive",
+      "label": "Executive & association",
+      "color": "#5D6D7E",
+      "blurb": "Prefrontal working memory, planning, attention and association cortex."
+    },
+    {
+      "id": "reward",
+      "label": "Reward & habit",
+      "color": "#B8860B",
+      "blurb": "Ventral striatum, reinforcement, habit and action selection."
+    },
+    {
+      "id": "arousal",
+      "label": "Arousal, sleep & body",
+      "color": "#17A2A2",
+      "blurb": "Sleep-wake switching, hypothalamus, brainstem autonomic and endocrine control."
+    },
+    {
+      "id": "coordination",
+      "label": "Balance & coordination",
+      "color": "#8B5E3C",
+      "blurb": "Cerebellar timing, posture, balance and gaze stabilisation."
+    },
+    {
+      "id": "csf",
+      "label": "CSF spaces",
+      "color": "#6FB7D6",
+      "blurb": "Ventricular system and the fluid channels that drain and produce cerebrospinal fluid."
+    },
+    {
+      "id": "tracts",
+      "label": "White-matter tracts",
+      "color": "#B8B8B8",
+      "blurb": "Commissures, association bundles, radiations and projection pathways."
+    },
+    {
+      "id": "other",
+      "label": "Not classified",
+      "color": "#6E6E6E",
+      "blurb": "No rule matched. Treated as unclassified rather than assigned by guess."
+    }
+  ],
+  "rules": [
+    {
+      "system": "memory",
+      "any": [
+        "hippocamp",
+        "papez",
+        "fornix",
+        "mamillary",
+        "anterior nuclei of thalamus",
+        "precuneus",
+        "episodic memory",
+        "spatial navigation",
+        "entorhinal",
+        "inferior temporal sulcus"
+      ]
+    },
+    {
+      "system": "language",
+      "any": [
+        "broca",
+        "wernicke",
+        "speech production",
+        "language articulation",
+        "phonological",
+        "arcuate fasciculus",
+        "conduction aphasia",
+        "frontal aslant",
+        "speech initiation",
+        "reading",
+        "semantic memory",
+        "word recognition"
+      ]
+    },
+    {
+      "system": "audition",
+      "any": [
+        "auditory",
+        "heschl",
+        "transverse temporal gyri",
+        "medial geniculate",
+        "acoustic radiation",
+        "inferior colliculus",
+        "temporal plane",
+        "planum temporale",
+        "superior temporal sulcus",
+        "superior temporal gyrus"
+      ]
+    },
+    {
+      "system": "vision",
+      "any": [
+        "visual cortex",
+        "calcarine",
+        "lateral geniculate",
+        "optic radiation",
+        "optic tract",
+        "optic chiasm",
+        "superior colliculus",
+        "occipital",
+        "cuneus",
+        "what pathway",
+        "object-selective",
+        "higher-order vision",
+        "visual orienting",
+        "geniculocalcarine",
+        "visual attention",
+        "lunate",
+        "visual orienting reflexes",
+        "collateral sulcus",
+        "collateral"
+      ]
+    },
+    {
+      "system": "somatosensory",
+      "any": [
+        "primary somatosensory",
+        "postcentral",
+        "medial lemniscus",
+        "fine-touch",
+        "intralaminar",
+        "proprioception",
+        "pain and temperature"
+      ]
+    },
+    {
+      "system": "motor",
+      "any": [
+        "primary motor cortex",
+        "precentral",
+        "motor homunculus",
+        "voluntary movement",
+        "motor striatum",
+        "basal ganglia loops",
+        "corticostriatal",
+        "corticospinal",
+        "corticobulbar",
+        "rubrospinal",
+        "reticulospinal",
+        "pyramid of medulla",
+        "motor thalamus",
+        "ventral anterior nucleus",
+        "ventral laterodorsal",
+        "ventral lateroventral",
+        "subthalamic",
+        "globus pallidus",
+        "putamen",
+        "dentatorubrothalamic",
+        "red nucleus",
+        "supplementary motor",
+        "corticopontine",
+        "eye-movement motor nucleus",
+        "lateral eye-movement",
+        "motor learning",
+        "fine limb coordination",
+        "paracentral",
+        "motor nucleus",
+        "oculomotor"
+      ]
+    },
+    {
+      "system": "emotion",
+      "any": [
+        "amygdala",
+        "cingulate",
+        "insula",
+        "interoceptive",
+        "orbitofrontal",
+        "orbital gyri",
+        "reward value",
+        "salience",
+        "septal",
+        "habenula",
+        "anti-reward",
+        "empathy",
+        "emotion",
+        "limbic cortex",
+        "bodily awareness"
+      ]
+    },
+    {
+      "system": "reward",
+      "any": [
+        "nucleus accumbens",
+        "ventral striatum",
+        "addiction",
+        "reinforcement",
+        "habit formation",
+        "action selection",
+        "feeding behaviour",
+        "dopamine source"
+      ]
+    },
+    {
+      "system": "executive",
+      "any": [
+        "dorsolateral prefrontal",
+        "prefrontal",
+        "working memory",
+        "executive control",
+        "most anterior prefrontal",
+        "intraparietal",
+        "association cortex",
+        "association area",
+        "association bundle",
+        "abstract reasoning",
+        "prospective memory",
+        "multitasking",
+        "numerical cognition",
+        "spatial awareness",
+        "social decision-making",
+        "impulse control",
+        "orbital frontal",
+        "frontal sulcus",
+        "subparietal",
+        "inferior frontal sulcus",
+        "superior frontal sulcus",
+        "inferior temporal gyrus",
+        "spatial attention",
+        "visually directed reaching"
+      ]
+    },
+    {
+      "system": "arousal",
+      "any": [
+        "sleep onset",
+        "sleep-wake",
+        "wakefulness",
+        "arousal",
+        "reticular formation",
+        "melatonin",
+        "circadian",
+        "thermoregulation",
+        "temperature set-point",
+        "thirst",
+        "hunger centre",
+        "autonomic control",
+        "sympathetic activation",
+        "cardiorespiratory",
+        "hypothalamus",
+        "anterior pituitary",
+        "posterior pituitary",
+        "hormones",
+        "suprachiasmatic",
+        "orexin",
+        "salivatory",
+        "parasympathetic"
+      ]
+    },
+    {
+      "system": "coordination",
+      "any": [
+        "cerebell",
+        "vermis",
+        "vestibulo-ocular",
+        "gaze stabilisation",
+        "trunk balance",
+        "olive",
+        "posture and gait",
+        "gaze-stabilization",
+        "balance",
+        "vestibular"
+      ]
+    },
+    {
+      "system": "motor",
+      "any": [
+        "movement",
+        "motor cortex",
+        "locomotion"
+      ]
+    },
+    {
+      "system": "csf",
+      "any": [
+        "cerebrospinal-fluid",
+        "cerebrospinal fluid",
+        "aqueduct",
+        "choroid plexus",
+        "ventricle"
+      ]
+    }
+  ]
+}

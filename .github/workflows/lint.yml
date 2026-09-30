@@ -24,6 +24,8 @@ jobs:
           node --check scripts/validate-disorders.mjs
           node --check scripts/test-mapping.mjs
           node --check scripts/copy-content.mjs
+          node --check scripts/check-functions.mjs
+          node --check scripts/coverage.mjs
 
       # 2. JSON well-formedness for the whole content tree.
       - name: Validate content JSON
@@ -41,6 +43,11 @@ jobs:
       - name: Mapping tests
         run: node scripts/test-mapping.mjs
 
+      # 4b. The colour-by-function classification must still resolve, and no
+      #     rule may silently stop matching the atlas.
+      - name: Function classification audit
+        run: node scripts/check-functions.mjs
+
       # 5. Production build, including the content/ copy step.
       - name: Build
         run: npm ci && npm run build
@@ -53,3 +60,26 @@ jobs:
           for d in dist/content/disorders/*.json; do
             echo "  shipped: $d"
           done
+
+      # 7. Licence and attribution documents must be reachable on the
+      #    deployed site, and the in-app footer must still point at them.
+      #    Apache-2.0 s4(a) requires recipients are given a copy of the
+      #    licence; CC BY-SA 4.0 requires the model attribution travels
+      #    with any redistribution.
+      - name: Verify licences and attribution shipped
+        run: |
+          for f in LICENSE LICENSE-APACHE-2.0.txt DATA_LICENSES.md THIRD-PARTY-NOTICES.md; do
+            test -f "dist/$f" || { echo "  MISSING from dist: $f"; exit 1; }
+            echo "  shipped: dist/$f"
+          done
+          # The footer link target must exist, or the credits link 404s.
+          grep -q 'THIRD-PARTY-NOTICES.md' dist/index.html \
+            || { echo "  footer no longer links the credits page"; exit 1; }
+          # Attribution and the educational-use notice must be present.
+          grep -q 'Z-Anatomy' dist/index.html || { echo "  model attribution missing"; exit 1; }
+          grep -qi 'not diagnostic advice' dist/index.html \
+            || { echo "  educational-use disclaimer missing from the global UI"; exit 1; }
+          # The full Apache-2.0 text must actually be the licence, not a stub.
+          grep -q 'TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION' \
+            dist/LICENSE-APACHE-2.0.txt || { echo "  Apache-2.0 text looks truncated"; exit 1; }
+          echo "  licences and attribution verified"

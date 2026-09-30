@@ -6,12 +6,14 @@
   "description": "Realistic browser-based interactive 3D brain rendered from sourced scan-derived anatomy.",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/validate-disorders.mjs && vite build && node scripts/copy-content.mjs",
+    "build": "node scripts/validate-disorders.mjs && node scripts/check-functions.mjs && vite build && node scripts/copy-content.mjs",
     "preview": "vite preview",
-    "test": "node scripts/validate-disorders.mjs --strict && node scripts/test-mapping.mjs",
+    "test": "node scripts/validate-disorders.mjs --strict && node scripts/test-mapping.mjs && node scripts/check-functions.mjs",
     "lint:content": "node scripts/validate-disorders.mjs",
     "lint:content:strict": "node scripts/validate-disorders.mjs --strict",
-    "test:mapping": "node scripts/test-mapping.mjs"
+    "test:mapping": "node scripts/test-mapping.mjs",
+    "check:functions": "node scripts/check-functions.mjs",
+    "coverage": "node scripts/coverage.mjs"
   },
   "dependencies": {
     "three": "0.170.0"

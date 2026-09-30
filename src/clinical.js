@@ -65,7 +65,8 @@ function detailHtml(layer, e) {
       <h3>Key structures</h3><p>${esc((e.brainStructures || []).join(' → '))}</p>
       <h3>Transmitters</h3>${chips(e.linkedTransmitters, 'transmitters')}
       <h3>Syndromes</h3>${chips(e.linkedSyndromes, 'syndromes')}
-      <h3>Drugs</h3>${chips(e.linkedDrugs, 'drugs')}`;
+      <h3>Drugs</h3>${chips(e.linkedDrugs, 'drugs')}
+      ${disclaimerHtml()}`;
   }
   if (layer === 'transmitters') {
     const rows = (e.receptorSubtypes || [])
@@ -83,7 +84,8 @@ function detailHtml(layer, e) {
       <ul>${(e.majorPathways || []).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>
       <h3>Circuits</h3>${chips(e.linkedCircuits, 'circuits')}
       <h3>Syndromes</h3>${chips(e.linkedSyndromes, 'syndromes')}
-      <h3>Drugs</h3>${chips(e.linkedDrugs, 'drugs')}`;
+      <h3>Drugs</h3>${chips(e.linkedDrugs, 'drugs')}
+      ${disclaimerHtml()}`;
   }
   if (layer === 'syndromes') {
     return `
@@ -100,11 +102,16 @@ function detailHtml(layer, e) {
       ${disclaimerHtml()}`;
   }
   // drugs
-  const ki = (v) => (v === null || v === undefined ? 'N/A' : String(v));
+  // 27 of 78 receptor targets have no sourced Ki. Those are labelled as
+  // unsourced rather than printed as "Ki N/A nM", which reads like a broken
+  // value and can be misread as zero. Nothing is estimated.
+  const kiCell = (v) => (v === null || v === undefined
+    ? '<small>affinity not sourced</small>'
+    : `<small>Ki ${esc(String(v))} nM</small>`);
   const trows = (e.receptorTargets || [])
     .map(
       (r) =>
-        `<tr><td><b>${esc(r.target)}</b> — ${esc(r.action)}<br><small>${esc(r.clinicalRelevance)}</small></td><td>${esc(r.affinityRating)}<br><small>Ki ${esc(ki(r.kiNm))} nM</small></td></tr>`,
+        `<tr><td><b>${esc(r.target)}</b> — ${esc(r.action)}<br><small>${esc(r.clinicalRelevance)}</small></td><td>${esc(r.affinityRating)}<br>${kiCell(r.kiNm)}</td></tr>`,
     )
     .join('');
   const se = (e.sideEffectMechanisms || [])
