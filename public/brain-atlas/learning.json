@@ -1,0 +1,275 @@
+{
+  "Anterior nuclei of thalamus": {
+    "definition": "A group of thalamic nuclei that forms an important relay within limbic memory circuitry.",
+    "functions": [
+      "Relays hippocampal and mammillary-body related signals toward cingulate cortex.",
+      "Contributes to episodic memory and contextual processing."
+    ],
+    "connections": ["Mammillary bodies", "Cingulate cortex", "Hippocampal formation"],
+    "clinical": [
+      "Damage can contribute to anterograde and contextual memory impairment.",
+      "Part of the Papez circuit; circuit-level models should not be interpreted as a single-region explanation for psychiatric disorders."
+    ],
+    "exam": "Anterior thalamic nuclei → mammillothalamic/cingulate limbic circuitry → memory."
+  },
+  "Anterior cingulate cortex": {
+    "definition": "Medial frontal cortical region involved in cognitive control, motivation, affective processing and autonomic integration.",
+    "functions": [
+      "Monitors conflict, errors and salient internal or external events.",
+      "Supports motivation, effort allocation and affective/autonomic responses."
+    ],
+    "connections": ["Prefrontal cortex", "Amygdala", "Insula", "Striatum", "Thalamus"],
+    "clinical": [
+      "Dysfunction is implicated across several psychiatric disorders, but findings are network-level and not diagnostically specific.",
+      "Important in models of depression, OCD, addiction and schizophrenia involving salience, control and motivation."
+    ],
+    "exam": "Think monitoring, motivation, conflict/error processing and affective control."
+  },
+  "Amygdala": {
+    "definition": "A group of medial temporal nuclei that assigns emotional and motivational significance to sensory information.",
+    "functions": [
+      "Supports threat detection and fear learning.",
+      "Contributes to emotional memory and modulation of autonomic/endocrine responses."
+    ],
+    "connections": ["Hippocampus", "Prefrontal cortex", "Hypothalamus", "Insula", "Thalamus"],
+    "clinical": [
+      "Central to fear/anxiety circuitry and emotional learning.",
+      "Altered amygdala activity is reported in multiple disorders but is neither necessary nor sufficient for diagnosis."
+    ],
+    "exam": "Amygdala = emotional salience, threat/fear learning and emotional memory."
+  },
+  "Hippocampus": {
+    "definition": "A medial temporal allocortical structure essential for forming and retrieving contextual and episodic memories.",
+    "functions": [
+      "Encodes and retrieves contextual relationships within episodic memory.",
+      "Interacts with cortical networks during memory consolidation and retrieval."
+    ],
+    "connections": ["Entorhinal cortex", "Fornix", "Mammillary bodies", "Anterior thalamic nuclei", "Prefrontal cortex"],
+    "clinical": [
+      "Bilateral hippocampal injury causes prominent anterograde episodic-memory impairment.",
+      "Stress, depression, epilepsy and neurodegenerative disease can involve hippocampal structural or functional changes, with disorder-specific evidence varying."
+    ],
+    "exam": "Hippocampus → episodic/contextual memory; fornix is a major output pathway."
+  },
+  "Dorsolateral prefrontal cortex": {
+    "definition": "Lateral prefrontal association cortex supporting executive control and goal-directed cognition.",
+    "functions": [
+      "Working memory and manipulation of information.",
+      "Planning, cognitive flexibility, inhibition of competing responses and goal maintenance."
+    ],
+    "connections": ["Parietal association cortex", "Striatum", "Thalamus", "Anterior cingulate cortex"],
+    "clinical": [
+      "Executive-control dysfunction is described across schizophrenia, ADHD, depression and other conditions.",
+      "Psychiatric symptoms should be interpreted as network phenomena rather than lesions of a single named area."
+    ],
+    "exam": "DLPFC → working memory, planning, set shifting and executive control."
+  },
+  "Orbitofrontal cortex": {
+    "definition": "Ventromedial prefrontal association cortex that evaluates reward, punishment and changing outcome value.",
+    "functions": [
+      "Updates the expected value of outcomes.",
+      "Supports flexible decision-making when reward contingencies change."
+    ],
+    "connections": ["Amygdala", "Striatum", "Thalamus", "Insula"],
+    "clinical": [
+      "Orbitofrontal dysfunction is relevant to disinhibition and maladaptive reward-based decision-making.",
+      "It is also studied in OCD and addiction within broader cortico-striato-thalamo-cortical networks."
+    ],
+    "exam": "OFC → outcome value, reversal learning, reward/punishment-guided behaviour."
+  },
+  "Insula": {
+    "definition": "A buried cortical region involved in interoception, salience, taste and integration of bodily and emotional signals.",
+    "functions": [
+      "Represents internal bodily states and contributes to conscious interoception.",
+      "Integrates salient sensory, autonomic and affective information."
+    ],
+    "connections": ["Anterior cingulate cortex", "Amygdala", "Thalamus", "Somatosensory cortex"],
+    "clinical": [
+      "The insula is a major node of salience and interoceptive networks.",
+      "Relevant to anxiety, panic, addiction, pain and awareness of bodily states."
+    ],
+    "exam": "Insula → interoception + salience + integration of bodily/affective signals."
+  },
+  "Nucleus accumbens": {
+    "definition": "A ventral striatal region integrating limbic information with motivational and action-selection systems.",
+    "functions": [
+      "Contributes to reward learning, incentive motivation and reinforcement.",
+      "Integrates cortical, limbic and dopaminergic signals."
+    ],
+    "connections": ["Ventral tegmental area", "Prefrontal cortex", "Amygdala", "Hippocampus"],
+    "clinical": [
+      "Important in contemporary models of addiction and reward-related behaviour.",
+      "Dopamine signalling here is better understood as contributing to salience, prediction and reinforcement than as a simple 'pleasure centre'."
+    ],
+    "exam": "VTA dopamine → nucleus accumbens is a key mesolimbic reward/motivation pathway."
+  },
+  "Caudate nucleus": {
+    "definition": "A component of the dorsal striatum involved in action selection, associative learning and cognitive control.",
+    "functions": [
+      "Integrates cortical information into basal-ganglia action-selection loops.",
+      "Contributes to habit learning, goal-directed behaviour and cognitive flexibility."
+    ],
+    "connections": ["Prefrontal cortex", "Thalamus", "Globus pallidus", "Substantia nigra"],
+    "clinical": [
+      "Cortico-striato-thalamo-cortical loops involving the caudate are relevant to OCD and other disorders of repetitive behaviour and cognitive control.",
+      "Striatal dysfunction also contributes to movement and neurodegenerative disorders."
+    ],
+    "exam": "Caudate → associative/cognitive striatum; putamen is more strongly linked to sensorimotor loops."
+  },
+  "Putamen": {
+    "definition": "A major component of the dorsal striatum with prominent sensorimotor and associative connections.",
+    "functions": [
+      "Helps select and scale motor programmes.",
+      "Participates in habit learning and corticostriatal reinforcement loops."
+    ],
+    "connections": ["Motor cortex", "Premotor cortex", "Globus pallidus", "Substantia nigra"],
+    "clinical": [
+      "Degeneration or dysfunction of striatal circuits produces characteristic motor and behavioural changes.",
+      "Striatal circuitry is also relevant to tic disorders, OCD and addiction."
+    ],
+    "exam": "Putamen → predominantly sensorimotor striatal loops."
+  },
+  "Globus pallidus": {
+    "definition": "A major basal-ganglia output/relay structure regulating thalamocortical activity.",
+    "functions": [
+      "The internal pallidal segment provides inhibitory output toward thalamic and brainstem targets.",
+      "Helps regulate selection and suppression of competing motor programmes."
+    ],
+    "connections": ["Striatum", "Subthalamic nucleus", "Thalamus", "Substantia nigra"],
+    "clinical": [
+      "Basal-ganglia circuit dysfunction can produce hypokinetic or hyperkinetic movement disorders.",
+      "The internal segment is an established deep-brain-stimulation target in selected movement disorders."
+    ],
+    "exam": "GPi is a major inhibitory output node of the basal ganglia."
+  },
+  "Thalamus": {
+    "definition": "A paired diencephalic structure containing multiple nuclei that relay and transform information between subcortical systems and cortex.",
+    "functions": [
+      "Relays sensory, motor, limbic and cognitive information through nucleus-specific circuits.",
+      "Contributes to attention, arousal and cortical state regulation."
+    ],
+    "connections": ["Cerebral cortex", "Basal ganglia", "Cerebellum", "Limbic structures", "Brainstem"],
+    "clinical": [
+      "Thalamic lesions can produce sensory, cognitive, arousal and movement syndromes depending on the nucleus affected.",
+      "Thalamocortical dysregulation is a recurring concept in models of schizophrenia, sleep and consciousness."
+    ],
+    "exam": "Do not treat the thalamus as one functional unit: thalamic nuclei have distinct connectivity and roles."
+  },
+  "Hypothalamus": {
+    "definition": "A small diencephalic region that integrates autonomic, endocrine, homeostatic and behavioural signals.",
+    "functions": [
+      "Regulates temperature, hunger, thirst, circadian timing and reproductive/endocrine functions.",
+      "Controls pituitary function and coordinates autonomic responses."
+    ],
+    "connections": ["Pituitary", "Brainstem autonomic nuclei", "Limbic system", "Retina/suprachiasmatic nucleus"],
+    "clinical": [
+      "Hypothalamic dysfunction can disturb sleep, appetite, endocrine function and thermoregulation.",
+      "It links emotional states with autonomic and endocrine responses."
+    ],
+    "exam": "Hypothalamus = homeostasis + autonomic/endocrine integration."
+  },
+  "Ventral tegmental area": {
+    "definition": "A midbrain dopaminergic region that provides major projections to limbic and prefrontal targets.",
+    "functions": [
+      "Supports reinforcement learning, motivation, salience and adaptive behavioural responses.",
+      "Provides dopaminergic input to mesolimbic and mesocortical circuits."
+    ],
+    "connections": ["Nucleus accumbens", "Prefrontal cortex", "Amygdala", "Hippocampus"],
+    "clinical": [
+      "Dopaminergic VTA projections are central to reward and reinforcement models.",
+      "Dopamine pathways involving the midbrain are also relevant to psychosis and antipsychotic pharmacology."
+    ],
+    "exam": "VTA → mesolimbic/mesocortical dopamine; distinguish pathway from receptor-specific effects."
+  },
+  "Substantia nigra": {
+    "definition": "A midbrain structure containing dopaminergic neurons and other neuronal populations; pars compacta provides major nigrostriatal dopamine.",
+    "functions": [
+      "Nigrostriatal dopamine modulates basal-ganglia motor and action-selection circuits.",
+      "Other substantia-nigra components participate in basal-ganglia output and motor control."
+    ],
+    "connections": ["Striatum", "Globus pallidus", "Subthalamic nucleus", "Brainstem"],
+    "clinical": [
+      "Loss of substantia-nigra pars compacta dopaminergic neurons is a core pathology of Parkinson disease.",
+      "Nigrostriatal dopamine blockade contributes to extrapyramidal adverse effects of antipsychotics."
+    ],
+    "exam": "Nigrostriatal dopamine: substantia nigra pars compacta → striatum."
+  },
+  "Raphe nuclei": {
+    "definition": "A distributed group of brainstem nuclei containing the brain's major serotonergic cell populations.",
+    "functions": [
+      "Modulate mood, arousal, sleep-wake regulation, pain and behavioural flexibility.",
+      "Provide widespread serotonergic projections throughout the brain and spinal cord."
+    ],
+    "connections": ["Cerebral cortex", "Limbic system", "Hypothalamus", "Spinal cord"],
+    "clinical": [
+      "Serotonergic systems are targets of SSRIs, SNRIs and several other psychotropics.",
+      "Serotonin should not be reduced to a single 'mood chemical'; receptor subtype, circuit and treatment context matter."
+    ],
+    "exam": "Raphe nuclei → major source of central serotonin."
+  },
+  "Locus coeruleus": {
+    "definition": "A pontine nucleus containing the brain's principal noradrenergic neurons.",
+    "functions": [
+      "Modulates arousal, attention, vigilance and stress-related responses.",
+      "Provides widespread noradrenergic projections to cortex, hippocampus, cerebellum and spinal cord."
+    ],
+    "connections": ["Prefrontal cortex", "Hippocampus", "Amygdala", "Cerebral cortex", "Spinal cord"],
+    "clinical": [
+      "Noradrenergic systems are involved in attention, arousal and stress responses.",
+      "Relevant to pharmacology of antidepressants, ADHD medications and drugs affecting autonomic arousal."
+    ],
+    "exam": "Locus coeruleus → principal brainstem source of noradrenaline."
+  },
+  "Corpus callosum": {
+    "definition": "The largest commissural white-matter tract connecting homologous and related cortical regions across the cerebral hemispheres.",
+    "functions": [
+      "Enables interhemispheric transfer and integration of cortical information.",
+      "Supports coordinated bilateral sensorimotor and cognitive processing."
+    ],
+    "connections": ["Left cerebral cortex", "Right cerebral cortex"],
+    "clinical": [
+      "Callosal lesions can produce disconnection syndromes depending on location.",
+      "Callosal anatomy is an important reference point when interpreting structural neuroimaging."
+    ],
+    "exam": "Corpus callosum = largest commissural pathway between cerebral hemispheres."
+  },
+  "Arcuate fasciculus": {
+    "definition": "A long association-fibre system linking frontal and temporal language-related cortical regions within a hemisphere.",
+    "functions": [
+      "Supports communication between posterior temporal and frontal language networks.",
+      "Participates in speech-language processing and repetition through a broader distributed network."
+    ],
+    "connections": ["Temporal language cortex", "Inferior frontal cortex", "Parietal association cortex"],
+    "clinical": [
+      "Classically associated with conduction aphasia when the relevant language network is disrupted.",
+      "Modern language neuroscience treats language as a distributed network rather than a single tract-to-symptom mapping."
+    ],
+    "exam": "Arcuate fasciculus is a major intrahemispheric language association pathway."
+  },
+  "Fornix": {
+    "definition": "A major white-matter output pathway of the hippocampal formation.",
+    "functions": [
+      "Carries hippocampal formation signals toward mammillary bodies and septal/basal forebrain regions.",
+      "Forms an important connection within memory circuitry."
+    ],
+    "connections": ["Hippocampus", "Mammillary bodies", "Septal/basal forebrain regions"],
+    "clinical": [
+      "Fornix injury can impair memory through disruption of hippocampal output.",
+      "It is a useful tract to recognize when studying the Papez circuit."
+    ],
+    "exam": "Hippocampus → fornix → mammillary bodies is a classic memory-circuit relationship."
+  },
+  "Cerebellum": {
+    "definition": "A hindbrain structure that compares intended and ongoing actions to refine motor, cognitive and affective processes.",
+    "functions": [
+      "Coordinates movement, timing, balance and motor learning.",
+      "Cerebellar connections also support language, cognition and affect."
+    ],
+    "connections": ["Cerebral cortex", "Vestibular system", "Brainstem", "Thalamus"],
+    "clinical": [
+      "Cerebellar lesions can cause ataxia, dysmetria, dysarthria and nystagmus.",
+      "Cerebellar contributions to cognition and psychiatric symptoms are an active area of research and should be described as network contributions."
+    ],
+    "exam": "Cerebellum is not purely motor: posterior cerebellar networks participate in cognition and affect."
+  }
+}
