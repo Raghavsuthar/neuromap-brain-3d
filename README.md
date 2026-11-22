@@ -232,7 +232,7 @@ See `content/disorders/TEMPLATE.json` for the full field structure. Key rules:
 - **IUPHAR/Guide to Pharmacology:** CC BY 4.0
 - **ENIGMA / PGC3 / SCHEMA / Sekar 2016 / Howes & Kapur 2009 / IUPHAR / DrugBank (cited) / FDA labels:** Open access or cited-only
 - **3D model vendor:** itayinbarr/brainproject (CC BY-SA 4.0)
-- **Code:** MIT License
+- **Code:** Apache License 2.0
 - **Content (registries, disorders):** CC BY-SA 4.0 (share-alike per model license)
 - **See `DATA_LICENSES.md` for full breakdown**
 
