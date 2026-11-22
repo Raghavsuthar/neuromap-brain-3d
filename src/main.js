@@ -5,6 +5,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import './clinical.js';
 import './disorder.js';
+import './learning.js';
 
 const BASE = import.meta.env.BASE_URL;
 const MODEL_URL = `${BASE}brain-atlas/models/brain.glb`;
@@ -419,6 +420,7 @@ function showCard(anat) {
   $('card').hidden = false;
   // Screen-reader announcement: canvas sprites expose no semantics.
   $('sr-status').textContent = `${$('cardName').textContent}. ${$('cardMeta').textContent}`;
+  window.dispatchEvent(new CustomEvent('neuromap:structure-selected', { detail: anat }));
 }
 
 function select(mesh, pushHash = true) {
