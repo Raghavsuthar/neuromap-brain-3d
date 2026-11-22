@@ -32,6 +32,13 @@ function classify(node) {
   return 'other';
 }
 
+const missingFunction = man.nodes.filter((n) => !Object.prototype.hasOwnProperty.call(fn, String(n.id)));
+if (missingFunction.length) {
+  console.error(`ERROR: ${missingFunction.length} manifest structures have no function summary`);
+  for (const n of missingFunction) console.error(`  ${n.id}: ${n.label}`);
+  process.exit(1);
+}
+
 const scoped = man.nodes.filter((n) => spec.appliesToCategories.includes(n.category));
 const outside = man.nodes.filter((n) => !spec.appliesToCategories.includes(n.category));
 const counts = new Map();
